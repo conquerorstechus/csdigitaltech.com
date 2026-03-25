@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Allow Next.js static assets (images, JS chunks, CSS)
+Allow: /_next/static/media/
+Allow: /_next/static/chunks/
+Allow: /_next/static/css/
+
+# Disallow admin and API routes
+Disallow: /admin/
+Disallow: /api/
+# Disallow other Next.js internals (but allow static assets above)
+Disallow: /_next/
+Disallow: /404
+Disallow: /500
+
+# Sitemap
+Sitemap: https://www.conquerorstech.com/sitemap.xml
