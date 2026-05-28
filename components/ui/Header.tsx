@@ -8,7 +8,6 @@ import { useState } from 'react'
 import { useNavigation } from '@/hooks/useNavigation'
 import SearchModal from './SearchModal'
 
-
 const servicesCategories = [
   {
     category: 'AI Services',
@@ -79,9 +78,15 @@ const Header = () => {
     navigate(href)
   }
 
-  const isActive = (path: string) => {
-    return path === '/' ? pathname === '/' : pathname.startsWith(path)
-  }
+  const isActive = (path: string) =>
+    path === '/' ? pathname === '/' : pathname.startsWith(path)
+
+  const getNavLinkClassName = (href: string) =>
+    `flex items-center font-medium ${
+      isActive(href)
+        ? 'text-red-600'
+        : 'text-gray-700 font-semibold hover:text-red-600'
+    }`
 
   return (
     <>
@@ -94,12 +99,13 @@ const Header = () => {
             {/* Logo */}
             <Link href='/' onClick={() => handleNavigation('/')}>
               <Image
-                src='/Conquerors-2.svg'
-                title='Conquerors Technologies Home - Software Development Company Florida'
-                alt='Conquerors Technologies Logo'
-                width={48}
-                height={48}
-                className='w-64 h-16 object-contain'
+                src='/covenant-logo.png'
+                title='Covenant Software Solutions — Digital Growth'
+                alt='Covenant Software Solutions logo'
+                width={320}
+                height={80}
+                priority
+                className='w-56 sm:w-64 h-auto object-contain'
               />
             </Link>
 
@@ -111,11 +117,7 @@ const Header = () => {
                     <Link
                       href={item.href}
                       onClick={() => handleNavigation(item.href)}
-                      className={`flex items-center font-medium ${
-                        isActive(item.href)
-                          ? 'text-red-600'
-                          : 'text-gray-700 font-semibold hover:text-red-600'
-                      }`}
+                      className={getNavLinkClassName(item.href)}
                     >
                       {item.label}
                       {(item.hasMegaMenu || item.hasDropdown) && (
@@ -125,7 +127,7 @@ const Header = () => {
 
                     {/* Mega Menu for Services */}
                     {item.hasMegaMenu && (
-                      <div className='absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[800px] bg-white shadow-2xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100 z-40'>
+                      <div className='absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[800px] bg-white shadow-2xl rounded-lg opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all duration-300 border border-gray-100 z-40'>
                         <div className='p-6'>
                           <div className='grid grid-cols-4 gap-6'>
                             {servicesCategories.map((category, idx) => (

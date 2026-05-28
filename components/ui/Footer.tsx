@@ -43,11 +43,11 @@ const Footer = () => {
             <div className='flex items-center space-x-3'>
               <Link href='/'>
                 <Image
-                  src='/Conquerors-1.svg'
-                  alt='Conquerors Technologies Logo'
-                  title='Conquerors Technologies - Custom Software Development Company Florida'
-                  width={240}
-                  height={60}
+                  src='/covenant-logo-footer.png'
+                  alt='Covenant Software Solutions logo'
+                  title='Covenant Software Solutions — Digital Growth'
+                  width={320}
+                  height={80}
                   className='w-56 md:w-64 h-auto object-contain'
                 />
               </Link>

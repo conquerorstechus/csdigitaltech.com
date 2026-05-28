@@ -67,7 +67,7 @@ const FeaturesSection = () => {
             Our Unique Services
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Delivering end-to-end <h1 className='inline-block font-bold'>Technology Solutions</h1> that bring clarity to complexity and accelerate your digital evolution.
+          Delivering end-to-end <span className='inline-block font-bold'>Technology Solutions</span> that bring clarity to complexity and accelerate your digital evolution.
           </p>
         </div>
 

@@ -8,8 +8,13 @@ export const useNavigation = () => {
   const router = useRouter()
 
   const navigate = useCallback((href: string) => {
+    if (/^https?:\/\//.test(href)) {
+      window.location.assign(href)
+      return
+    }
+
     setIsLoading(true)
-    
+
     // Simulate loading time for better UX
     setTimeout(() => {
       router.push(href)
