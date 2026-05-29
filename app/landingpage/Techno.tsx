@@ -96,7 +96,7 @@ export default function Techno() {
             // TECHNOLOGY
           </p>
           <h2 className="text-2xl lg:text-5xl font-bold text-white leading-tight mb-4">
-            <span className="italic">We UNITE as 'Conquerors'</span>
+            <span className="italic">We UNITE as 'ConvenantSoft'</span>
           </h2>
           <h2 className="text-2xl lg:text-5xl font-bold text-white leading-tight">
             <span className="italic">to DIVIDE & CONQUER complex problems</span>

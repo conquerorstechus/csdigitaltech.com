@@ -57,7 +57,7 @@ export default function CloudDevelopmentClient() {
               Fortunately, there is a vast selection of computing companies that
               are there to help meet the rising demand. However, the
               considerable number of cloud computing companies also pose a
-              challenge for applicants among them Conquerors are aspiring teams,
+              challenge for applicants among them ConvenantSoft are aspiring teams,
               one of the best cloud computing companies and it's worth investing
               your efforts and time..
             </p>

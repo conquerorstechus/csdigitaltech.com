@@ -4,7 +4,7 @@ import DataScienceServicesClient from "./DataScienceServicesClient";
 
 export const metadata = getComprehensiveMetadata(
   "Data Science services in Florida",
-  "Get advanced data science solutions in Florida with Conquerors Technologies. We turn your data into actionable insights, predictive models, and business growth.",
+  "Get advanced data science solutions in Florida with ConvenantSoft Technologies. We turn your data into actionable insights, predictive models, and business growth.",
   "/data-science-services-florida",
   "/WebDevlopment/one-min-1.jpg",
   [
@@ -43,8 +43,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function DataScienceServices() {
   const structuredData = getStructuredData(
-    "Data Science services in Florida | Conquerors Tech",
-    "Get advanced data science solutions in Florida with Conquerors Technologies. We turn your data into actionable insights, predictive models, and business growth.",
+    "Data Science services in Florida | ConvenantSoft Tech",
+    "Get advanced data science solutions in Florida with ConvenantSoft Technologies. We turn your data into actionable insights, predictive models, and business growth.",
     "/data-science-services-florida",
     "Service"
   );

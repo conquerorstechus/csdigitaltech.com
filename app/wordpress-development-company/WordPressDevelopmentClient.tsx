@@ -56,7 +56,7 @@ export default function WordPressDevelopmentClient() {
               </h2>
 
               <p className='text-gray-700 text-sm sm:text-lg leading-relaxed'>
-                <strong>CONQUERORS</strong> is a leading WordPress development company 
+                <strong>ConvenantSoft</strong> is a leading WordPress development company 
                 specializing in creating custom WordPress websites, themes, and plugins. 
                 Our expert WordPress developers deliver powerful, scalable, and user-friendly 
                 solutions that drive business growth and enhance online presence.

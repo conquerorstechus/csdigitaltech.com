@@ -4,7 +4,7 @@ import StructuredData from '@/components/ui/StructuredData'
 
 export const metadata = getComprehensiveMetadata(
   'Top AI Learning Solutions in Florida',
-  'Transform education with AI-Powered Learning Solutions in Florida by Conquerors Technologies, offering personalized, smart, and scalable learning experiences for institutions.',
+  'Transform education with AI-Powered Learning Solutions in Florida by ConvenantSoft Technologies, offering personalized, smart, and scalable learning experiences for institutions.',
   '/services/ai-learning-in-Florida',
   '/Digitalcloud/business-brainstorming-graph-chart-report-data-concept_53876-31213.webp',
   [

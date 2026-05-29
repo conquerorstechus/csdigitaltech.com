@@ -4,7 +4,7 @@ import StructuredData from '@/components/ui/StructuredData'
 
 export const metadata = getComprehensiveMetadata(
   'IT Consulting Services in Florida',
-  'Unlock AI-powered IT consulting in Florida with Conquerors Technologies. Custom solutions from automation to ERP. Boost efficiency today with a free consult!',
+  'Unlock AI-powered IT consulting in Florida with ConvenantSoft Technologies. Custom solutions from automation to ERP. Boost efficiency today with a free consult!',
   '/services/it-consulting-in-Florida',
   '/Digitalcloud/business-brainstorming-graph-chart-report-data-concept_53876-31213.webp',
   [

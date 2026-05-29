@@ -4,7 +4,7 @@ import MobileAppDevelopmentClient from './MobileAppDevelopmentClient'
 
 export const metadata = getComprehensiveMetadata(
   'Mobile App Development Company Florida',
-  'Grow your business with Conquerors Technologies — a top mobile app development company that builds high-performing, engaging apps to delight your users and accelerate success.',
+  'Grow your business with ConvenantSoft Technologies — a top mobile app development company that builds high-performing, engaging apps to delight your users and accelerate success.',
   '/mobile-app-development',
   '/WebDevlopment/smartphone-with-open-pages-landing-page_52683-22969.jpg',
   [

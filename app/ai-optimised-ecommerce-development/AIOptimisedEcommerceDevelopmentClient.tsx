@@ -73,7 +73,7 @@ export default function AIOptimisedEcommerceDevelopmentClient() {
               AI-Optimised eCommerce Development
             </h1>
             <p className='lg:text-lg text-base font-bold drop-shadow-md tracking-wider mt-4'>
-              "Conquerors Software Technologies" Transforming Online Shopping with AI-Powered Solutions
+              "Convenantsoft  Transforming Online Shopping with AI-Powered Solutions
             </p>
           </div>
         </section>
@@ -85,7 +85,7 @@ export default function AIOptimisedEcommerceDevelopmentClient() {
               Best AI-Optimised eCommerce Development Company in Florida
             </h2>
             <p className='mt-4 text-gray-500  text-sm sm:text-lg lg:leading-8'>
-              At Conquerors, we combine cutting-edge artificial intelligence technologies with robust 
+              At ConvenantSoft, we combine cutting-edge artificial intelligence technologies with robust 
               eCommerce platforms to create intelligent, personalized, and highly efficient online stores. 
               Our AI-optimised eCommerce development services help businesses increase sales, improve 
               customer experiences, and optimize operations through data-driven insights and automation.

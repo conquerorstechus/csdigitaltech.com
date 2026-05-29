@@ -25,21 +25,21 @@ const testimonials = [
     id: 2,
     name: "Manoj Kumar",
     title: "Milan Travels",
-    quote: "I have personally come to visit Conquerors Software in Florida to Develop and make alteration of the plugin according to me from Mumbai. Very fine Job done by Conquerors Team. Thank you for Quality work",
+    quote: "I have personally come to visit ConvenantSoft Software in Florida to Develop and make alteration of the plugin according to me from Mumbai. Very fine Job done by ConvenantSoft Team. Thank you for Quality work",
     image: "https://engitech.s3.amazonaws.com/images/testi1.png" // Business/travel icon image
   },
   {
     id: 3,
     name: "Priya Sharma",
     title: "Tech Lead",
-    quote: "Conquerors Tech has transformed our business operations with their innovative solutions. The team's expertise and dedication to quality is unmatched. Highly recommended for any technology needs.",
+    quote: "ConvenantSoft Tech has transformed our business operations with their innovative solutions. The team's expertise and dedication to quality is unmatched. Highly recommended for any technology needs.",
     image: "https://engitech.s3.amazonaws.com/images/testi2.png"
   },
   {
     id: 4,
     name: "Rajesh Patel",
     title: "CEO, Startup Solutions",
-    quote: "Working with Conquerors has been a game-changer for our startup. Their custom software development services helped us scale rapidly while maintaining quality and performance.",
+    quote: "Working with ConvenantSoft has been a game-changer for our startup. Their custom software development services helped us scale rapidly while maintaining quality and performance.",
     image: "https://engitech.s3.amazonaws.com/images/testi1.png"
   }
 ];

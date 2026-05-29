@@ -58,7 +58,7 @@ export default function AndroidAppDevelopmentClient() {
               Top Native Application Development Company in Florida
             </h1>
             <p className='mt-4 lg:text-lg text-sm mx-auto drop-shadow-md'>
-              "Conquerors Software Technologies Pvt. Ltd" Customer Satisfaction
+              "ConvenantSoft Software Technologies Pvt. Ltd" Customer Satisfaction
               Is Our Best Business Strategy
             </p>
           </div>
@@ -69,18 +69,18 @@ export default function AndroidAppDevelopmentClient() {
             {/* Right Content */}
             <div className='w-full space-y-5  md:text-left'>
               <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900'>
-                Conquerors, We Follow The Road Map of SUCCESS
+                ConvenantSoft, We Follow The Road Map of SUCCESS
               </h2>
 
               <p className='text-gray-500 font-medium text-base sm:text-lg lg:leading-8 leading-8 text-justify'>
-                At CONQUERORS we aim for innovation not only in our development
+                At ConvenantSoft we aim for innovation not only in our development
                 organization but also in the way we approach every aspect of our
                 business. With a conscientious team and skills, we crafted
                 applications using multiple technologies. We employ the full
                 potential of our team to support and move forward with
                 dedication in implementing different projects in various
                 technologies including Native Applications. Our imagination and
-                design are unique, we work with creativity. At conquerors, we
+                design are unique, we work with creativity. At ConvenantSoft, we
                 follow " We never stop making progress", we are always ready to
                 add updated technical skill sets to bring a professional
                 approach to implementing client's projects.
@@ -116,7 +116,7 @@ export default function AndroidAppDevelopmentClient() {
               </p>
               <p className='text-gray-500 font-medium text-base sm:text-lg lg:leading-8 leading-8 text-justify mt-4'>
                 Native Application Development is an old approach to building
-                the best performance applications. At Conquerors, we develop
+                the best performance applications. At ConvenantSoft, we develop
                 applications based on Native language that is more secure
                 comparatively with the latest technologies like Ionic, PWA, and
                 Flutter.
@@ -162,7 +162,7 @@ export default function AndroidAppDevelopmentClient() {
 
             <div>
               <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900'>
-                Conquerors Digital Hub Where Technology Meets Innovation
+                ConvenantSoft Digital Hub Where Technology Meets Innovation
               </h2>
 
               <p className='text-gray-500 font-medium text-base sm:text-lg lg:leading-8 leading-8 text-justify mt-4'>

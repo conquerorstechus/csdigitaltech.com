@@ -68,7 +68,7 @@ export default function ContentManagementServicesClient() {
                 </h2>
 
                 <p className='text-gray-500 lg:text-base text-sm font-medium lg:leading-8'>
-                  At Conquerors, we help clients to achieve their business
+                  At ConvenantSoft, we help clients to achieve their business
                   objectives by turning the challenge of producing and managing
                   the best quality content they require into an opportunity for
                   their business to excel. We focus on creating
@@ -79,7 +79,7 @@ export default function ContentManagementServicesClient() {
                 </p>
                 <p className='text-gray-500 lg:text-base text-sm font-medium lg:leading-8'>
                   Our pledge is to provide every client with the best skillful
-                  project team, led by a Conquerors Software technologies
+                  project team, led by a ConvenantSoft Software technologies
                   Content Solutions project manager, that also learns about
                   their unique business needs. The project manager will always
                   ensure that we deliver the content solutions as required by
@@ -135,10 +135,10 @@ export default function ContentManagementServicesClient() {
 
             <div className='mt-16 '>
               <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 '>
-                Conquerors with best CMS Applications:
+                ConvenantSoft with best CMS Applications:
               </h2>
               <p className='mt-4 text-gray-500  text-sm sm:text-lg lg:leading-8'>
-               Conquerors technology provides an excellent CMS application with two popular types Open source applications and proprietary CMS applications.
+               ConvenantSoft technology provides an excellent CMS application with two popular types Open source applications and proprietary CMS applications.
               </p>
               <p className='mt-4 text-gray-500  text-sm sm:text-lg lg:leading-8'>
               <span className='font-semibold text-gray-700'>Open Source CMS Applications:</span> Open-source applications are those applications which are  the most commonly used CMS models as it offers the free downloading packages with free of charge collected for up-gradation in the future as well. These CMS applications have various user-friendly templates, extensions, and compatible plugins at less cost. Examples of open source applications are WordPress, Drupal, Joomla, Prestashop, and Magento, which are very popular for their very easy accessibility to develop our websites at a quick phase.

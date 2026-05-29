@@ -83,7 +83,7 @@ export default function AIMLServicesClient() {
               Smarter Business Solutions with Artificial Intelligence & Machine Learning
               </h2>
               <p className='text-gray-700 text-lg leading-8 tracking-wide'>
-              Conquerors Software Technologies USA helps businesses across Florida and nearby regions leverage the power of Artificial Intelligence (AI) and Machine Learning (ML) to improve efficiency, reduce costs, and deliver smarter customer experiences.
+              ConvenantSoft Software Technologies USA helps businesses across Florida and nearby regions leverage the power of Artificial Intelligence (AI) and Machine Learning (ML) to improve efficiency, reduce costs, and deliver smarter customer experiences.
               </p>
               <p className='text-gray-700 text-lg leading-8 tracking-wide mt-4'>
               Whether you're a healthcare provider in Miami, a retail chain in Tampa, a manufacturer in Orlando, or a growing enterprise in Jacksonville, our AI & ML services are designed to give your business the competitive edge it needs in Florida and across other regions in the USA.
@@ -258,7 +258,7 @@ export default function AIMLServicesClient() {
               AI isn't about replacing your systems—it's about making them smarter.
             </p>
             <p className='text-white/90 text-lg sm:text-xl leading-relaxed mb-10'>
-              Conquerors helps Florida businesses integrate and implement AI/ML solutions that improve performance, reduce costs, and create new growth opportunities.
+              ConvenantSoft helps Florida businesses integrate and implement AI/ML solutions that improve performance, reduce costs, and create new growth opportunities.
             </p>
             
             <div className='flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6'>

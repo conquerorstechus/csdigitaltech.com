@@ -4,7 +4,7 @@ import AIEnabledInfrastructureSupportServicesClient from "./AIEnabledInfrastruct
 
 export const metadata = getComprehensiveMetadata(
   "AI Infra & Support Services Florida",
-  "Enhance efficiency with AI-enabled infrastructure and support services from Conquerors Technologies, a trusted Florida company delivering smart, automated IT operations.",
+  "Enhance efficiency with AI-enabled infrastructure and support services from ConvenantSoft Technologies, a trusted Florida company delivering smart, automated IT operations.",
   "/ai-enabled-infrastructure-support-services",
   "/WebDevlopment/1-min.webp",
   [
@@ -38,8 +38,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function AIEnabledInfrastructureSupportServices() {
   const structuredData = getStructuredData(
-    "AI-Enabled Infrastructure & Support Services Company in Florida | Conquerors Tech",
-    "Conquerors Technologies is a leading AI-enabled infrastructure and support services company in Florida offering AI-powered IT infrastructure management, intelligent monitoring, predictive maintenance, automated optimization, and proactive support services. Expert AI infrastructure solutions.",
+    "AI-Enabled Infrastructure & Support Services Company in Florida | ConvenantSoft Tech",
+    "Convenantsoft is a leading AI-enabled infrastructure and support services company in Florida offering AI-powered IT infrastructure management, intelligent monitoring, predictive maintenance, automated optimization, and proactive support services. Expert AI infrastructure solutions.",
     "/ai-enabled-infrastructure-support-services",
     "Service"
   );

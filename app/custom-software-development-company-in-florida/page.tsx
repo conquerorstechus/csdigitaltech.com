@@ -4,7 +4,7 @@ import CustomSoftwareDevelopmentClient from "./CustomSoftwareDevelopmentClient";
 
 export const metadata = getComprehensiveMetadata(
   "Custom Software Company in Florida",
-  "Conquerors Technologies is a leading Custom Software Development Company in Florida delivering tailored, scalable, and secure digital solutions to accelerate your business growth.",
+  "ConvenantSoft Technologies is a leading Custom Software Development Company in Florida delivering tailored, scalable, and secure digital solutions to accelerate your business growth.",
   "/custom-software-development-company-in-florida",
   "/WebDevlopment/1-min.webp",
   [
@@ -53,8 +53,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function CustomSoftwareDevelopment() {
   const structuredData = getStructuredData(
-    "Custom Software Development Company in Florida | Conquerors Tech",
-    "Conquerors Technologies is a leading custom software development company in Florida offering custom software solutions, enterprise software development, full stack development services, and digital cloud solutions. Expert software developers for your business needs.",
+    "Custom Software Development Company in Florida | ConvenantSoft Tech",
+    "ConvenantSoft Technologies is a leading custom software development company in Florida offering custom software solutions, enterprise software development, full stack development services, and digital cloud solutions. Expert software developers for your business needs.",
     "/custom-software-development-company-in-florida",
     "Service"
   );

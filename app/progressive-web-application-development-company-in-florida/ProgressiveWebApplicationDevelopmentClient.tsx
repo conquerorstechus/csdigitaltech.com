@@ -42,7 +42,7 @@ export default function ProgressiveWebApplicationDevelopmentClient() {
               Top Progressive Web Application Development Company in Florida
             </h1>
             <p className='mt-4 lg:text-lg text-sm mx-auto drop-shadow-md'>
-              "Conquerors Software Technologies Pvt. Ltd" Customer Satisfaction
+              "ConvenantSoft Software Technologies Pvt. Ltd" Customer Satisfaction
               Is Our Best Business Strategy
             </p>
           </div>
@@ -53,11 +53,11 @@ export default function ProgressiveWebApplicationDevelopmentClient() {
             {/* Right Content */}
             <div className='w-full space-y-5  md:text-left'>
               <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900'>
-                PWA Development at Conquerors
+                PWA Development at ConvenantSoft
               </h2>
 
               <p className='text-gray-500 font-medium text-base sm:text-lg lg:leading-8 leading-8 text-justify'>
-                At Conquerors, we have an expert team in developing Progressive
+                At ConvenantSoft, we have an expert team in developing Progressive
                 Web Applications that take the benefit of the latest
                 technologies to achieve the best web and mobile apps. Recent
                 enhancements in the browser and Push APIs have enabled web
@@ -84,11 +84,11 @@ export default function ProgressiveWebApplicationDevelopmentClient() {
           <div className='max-w-7xl mx-auto mt-12 px-4 sm:px-6 space-y-8'>
             <div>
               <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900'>
-                How Conquerors Works To Solve Client's Problems
+                How ConvenantSoft Works To Solve Client's Problems
               </h2>
 
               <p className='text-gray-500 font-medium text-base sm:text-lg lg:leading-8 leading-8 text-justify mt-4'>
-                At Conquerors, we are experts in handling different projects in
+                At ConvenantSoft, we are experts in handling different projects in
                 multiple technologies including Progressive Web Application. We
                 are a great team with an updated skill set crafted on
                 distinctive requirements with great exposure in a challenging
@@ -120,7 +120,7 @@ export default function ProgressiveWebApplicationDevelopmentClient() {
 
             <div>
               <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900'>
-                Conquerors Digital Hub Where Technology Meets Innovation
+                ConvenantSoft Digital Hub Where Technology Meets Innovation
               </h2>
 
               <p className='text-gray-500 font-medium text-base sm:text-lg lg:leading-8 leading-8 text-justify mt-4'>

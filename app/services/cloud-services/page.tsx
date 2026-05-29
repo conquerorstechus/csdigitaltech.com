@@ -4,7 +4,7 @@ import StructuredData from "@/components/ui/StructuredData";
 
 export const metadata = getComprehensiveMetadata(
   "Cloud Services & Support in Florida",
-  "Need reliable cloud support? Conquerors Technologies in Florida provides cloud services that keep your data safe, your systems scalable, and your costs under control.",
+  "Need reliable cloud support? ConvenantSoft Technologies in Florida provides cloud services that keep your data safe, your systems scalable, and your costs under control.",
   "/services/cloud-services-in-Florida",
   "/Digitalcloud/cloud-computing-banner-background-smart-city_53876-108504.webp",
   [

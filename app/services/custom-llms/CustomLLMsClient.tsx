@@ -184,7 +184,7 @@ export default function CustomLLMsClient() {
                 Smarter Business Solutions Through Enterprise AI Integration
               </h2>
               <p className='text-gray-700 text-sm sm:text-lg leading-7 md:leading-8 tracking-wide text-justify md:text-left'>
-                Conquerors Software Technologies USA helps enterprises across Florida and surrounding regions harness the power of Large Language Models (LLMs) by seamlessly implementing, customising, and integrating them into existing business systems.
+                ConvenantSoft Software Technologies USA helps enterprises across Florida and surrounding regions harness the power of Large Language Models (LLMs) by seamlessly implementing, customising, and integrating them into existing business systems.
               </p>
               <p className='text-gray-700 text-sm sm:text-lg leading-7 md:leading-8 tracking-wide mt-4 text-justify md:text-left'>
                 From Miami and Orlando to Tampa and Jacksonville, we enable businesses to enhance customer engagement, streamline workflows, and unlock real-time insights with LLM-powered chatbots, document assistants, and intelligent automation.

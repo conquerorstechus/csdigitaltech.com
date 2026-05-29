@@ -4,7 +4,7 @@ import IOTDevelopmentClient from "./IOTDevelopmentClient";
 
 export const metadata = getComprehensiveMetadata(
   "IoT Development Services in Florida",
-  "Get advanced IoT solutions in Florida with Conquerors Technologies — custom device software, cloud connectivity, real-time monitoring, and IoT analytics.",
+  "Get advanced IoT solutions in Florida with ConvenantSoft Technologies — custom device software, cloud connectivity, real-time monitoring, and IoT analytics.",
   "/iot-development-services-florida",
   "/WebDevlopment/9 (1).jpg",
   [
@@ -60,8 +60,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function IOTDevelopment() {
   const structuredData = getStructuredData(
-    "Iot Development Services in Florida | Conquerors Tech",
-    "Conquerors Technologies is a leading IoT development services company in Florida offering custom IoT development, industrial IoT solutions, and expert IoT developers. Get scalable IoT solutions with deep analytical layers.",
+    "Iot Development Services in Florida | ConvenantSoft Tech",
+    "ConvenantSoft Technologies is a leading IoT development services company in Florida offering custom IoT development, industrial IoT solutions, and expert IoT developers. Get scalable IoT solutions with deep analytical layers.",
     "/iot-development-services-florida",
     "Service"
   );

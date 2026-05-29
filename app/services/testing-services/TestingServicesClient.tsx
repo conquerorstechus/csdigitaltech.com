@@ -76,7 +76,7 @@ export default function TestingServicesClient() {
               </h2>
               <div className='space-y-4 text-gray-800 text-sm sm:text-base leading-7 md:leading-8 tracking-wide text-justify md:text-left'>
                 <p>
-                  <span className='font-semibold'>Conquerors</span> offers various
+                  <span className='font-semibold'>ConvenantSoft</span> offers various
                   services in testing by designing an engagement model that works
                   best for customer business needs. We take total responsibility
                   for all test activities and deliver high quality test services

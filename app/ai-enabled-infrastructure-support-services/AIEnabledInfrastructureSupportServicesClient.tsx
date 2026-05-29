@@ -73,7 +73,7 @@ export default function AIEnabledInfrastructureSupportServicesClient() {
               AI-Enabled Infrastructure & Support Services
             </h1>
             <p className='lg:text-lg text-base font-bold drop-shadow-md tracking-wider mt-4'>
-              "Conquerors Software Technologies" Intelligent Infrastructure Management for Modern Businesses
+              "Convenantsoft " Intelligent Infrastructure Management for Modern Businesses
             </p>
           </div>
         </section>
@@ -85,7 +85,7 @@ export default function AIEnabledInfrastructureSupportServicesClient() {
               Best AI-Enabled Infrastructure & Support Services Company in Florida
             </h2>
             <p className='mt-4 text-gray-500  text-sm sm:text-lg lg:leading-8'>
-              At Conquerors, we leverage artificial intelligence to transform your IT infrastructure 
+              At Convenantsoft, we leverage artificial intelligence to transform your IT infrastructure 
               management and support services. Our AI-enabled infrastructure solutions provide intelligent 
               monitoring, predictive maintenance, automated optimization, and proactive support to ensure 
               your systems run efficiently, securely, and reliably around the clock.

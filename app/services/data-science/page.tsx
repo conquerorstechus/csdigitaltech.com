@@ -4,7 +4,7 @@ import StructuredData from '@/components/ui/StructuredData'
 
 export const metadata = getComprehensiveMetadata(
   'AI-Driven Data Analytics Solutions',
-  'Leverage Conquerors Technologies’ AI-driven data analytics to build robust predictive models, real-time dashboards, and actionable BI solutions that drive business value.',
+  'Leverage ConvenantSoft Technologies’ AI-driven data analytics to build robust predictive models, real-time dashboards, and actionable BI solutions that drive business value.',
   '/services/data-science',
   '/Digitalcloud/business-brainstorming-graph-chart-report-data-concept_53876-31213.webp',
   [

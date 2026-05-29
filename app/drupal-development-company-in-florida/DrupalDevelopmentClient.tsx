@@ -10,15 +10,15 @@ export default function DrupalDevelopmentClient() {
   const cardData = [
     {
       title: 'Detailed Discovery',
-      description: "At Conquerors, we deliver custom-tailored solutions to modern web development problems. We don’t use cookie-cutter kinds of solutions to common development issues and we take the time to get to know every client. We’ll research your product and service catalog, customer interactions, competitors, and various other facets of your organization to develop a completely designed solution."
+      description: "At ConvenantSoft, we deliver custom-tailored solutions to modern web development problems. We don’t use cookie-cutter kinds of solutions to common development issues and we take the time to get to know every client. We’ll research your product and service catalog, customer interactions, competitors, and various other facets of your organization to develop a completely designed solution."
     },
     {
       title: 'Robust Code / Application',
-      description: 'Our development team at Conquerors has considerable experience in creating powerful applications along with robust code. Regardless of how many integrations or extensions require for your individualized program/system, Conquerors has the expertise to handle everything seamlessly from blueprinting and wire-framing to coding and testing to deliver a robust application.'
+      description: 'Our development team at ConvenantSoft has considerable experience in creating powerful applications along with robust code. Regardless of how many integrations or extensions require for your individualized program/system, ConvenantSoft has the expertise to handle everything seamlessly from blueprinting and wire-framing to coding and testing to deliver a robust application.'
     },
     {
       title: 'User Experience',
-      description: 'Conquerors go one more extra mile to ensure the user experience will be top-notch in every facet of your project. Crafting a new and personalized UX strategy in developing every project has been our core principle.'
+      description: 'ConvenantSoft go one more extra mile to ensure the user experience will be top-notch in every facet of your project. Crafting a new and personalized UX strategy in developing every project has been our core principle.'
     }
   ]
 
@@ -46,7 +46,7 @@ export default function DrupalDevelopmentClient() {
               Custom Drupal Development Company in Florida
             </h2>
             <p className='mt-4 text-gray-500 text-sm sm:text-lg lg:leading-8'>
-              Conquerors, We are the best Drupal Application Development Company in Florida, 
+              ConvenantSoft, We are the best Drupal Application Development Company in Florida, 
               where we design and craft websites. Drupal is a content management system (CMS), 
               Drupal is used to build websites. Due to its versatile features and extensive modules, 
               many well-established companies trust Drupal to run their high-traffic sites.

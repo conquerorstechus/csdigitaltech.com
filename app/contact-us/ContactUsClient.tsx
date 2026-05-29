@@ -124,7 +124,7 @@ export default function ContactUsClient() {
                 info@conquerorstech.com
               </p>
               <p className="font-medium text-gray-600 border rounded-lg px-3 bg-gray-50 mt-3 w-fit">
-                Conquerors Software Technologies LLC.
+                ConvenantSoft Software Technologies LLC.
               </p>
             </div>
           </div>
@@ -161,7 +161,7 @@ export default function ContactUsClient() {
 
               {/* Company Name */}
               <p className="font-medium text-gray-600 border rounded-lg px-3 bg-gray-50 w-fit">
-                Conquerors Software Technologies Pvt. Ltd.
+                ConvenantSoft Software Technologies Pvt. Ltd.
               </p>
 
             </div>

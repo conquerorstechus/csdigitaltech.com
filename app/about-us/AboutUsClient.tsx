@@ -160,7 +160,7 @@ export default function AboutUsClient() {
             <Image
               src='/Digitalcloud/image1-about.webp'
               alt='About Us Main'
-              title='Conquerors Technologies team collaboration and innovation'
+              title= 'Convenantsoft'
               fill
               className='object-cover rounded-lg shadow-lg'
             />
@@ -185,7 +185,7 @@ export default function AboutUsClient() {
             </div>
 
             <p className='text-lg md:text-xl leading-relaxed md:leading-loose text-white font-normal'>
-              <span className='font-bold'>Conquerors</span> is the partner of
+              <span className='font-bold'>ConvenantSoft</span> is the partner of
               choice for many of the world’s leading enterprises. We help our
               clients to accelerate their business growth by providing
               innovative digital solutions, unique ideas to solve complex
@@ -201,7 +201,7 @@ export default function AboutUsClient() {
           {/* Left column - text */}
           <div className='w-full lg:w-2/3 text-lg text-justify leading-8'>
             <p>
-              <strong>Conquerors Software Technologies</strong> is the pioneers
+              <strong>Covenantsoft </strong> is the pioneers
               in the software development services, digital solutions and
               marketing industry, established by the seasoned professionals in
               the year 2009. We help our clients to accelerate their business
@@ -257,7 +257,7 @@ export default function AboutUsClient() {
                 <Image
                   src={item.src}
                   alt={item.title}
-                  title={`Conquerors Technologies ${item.title}`}
+                  title={`Convenantsoft ${item.title}`}
                   fill
                   className='object-cover transition-transform duration-300 group-hover:scale-105'
                 />

@@ -4,7 +4,7 @@ import FullstackDevelopmentClient from "./FullstackDevelopmentClient";
 
 export const metadata = getComprehensiveMetadata(
   "Top Fullstack Development in  Florida",
-  "Get end-to-end web and app solutions with Conquerors Technologies, a leading Fullstack Development Company in Florida delivering scalable, secure, and high-performance products.",
+  "Get end-to-end web and app solutions with ConvenantSoft Technologies, a leading Fullstack Development Company in Florida delivering scalable, secure, and high-performance products.",
   "/fullstack-development-company-florida",
   "/WebDevlopment/2020-08-05-3.jpg",
   [
@@ -35,7 +35,7 @@ export const metadata = getComprehensiveMetadata(
 export default function FullstackDevelopment() {
   const structuredData = getStructuredData(
     "Fullstack Development Company in Florida - Full Stack Web Development Services",
-    "Conquerors Technologies is a leading fullstack development company in Florida offering end-to-end full stack web development services including frontend, backend, database, and DevOps. Expert fullstack developers for complete web solutions.",
+    "ConvenantSoft Technologies is a leading fullstack development company in Florida offering end-to-end full stack web development services including frontend, backend, database, and DevOps. Expert fullstack developers for complete web solutions.",
     "/fullstack-development-company-florida",
     "Service"
   );

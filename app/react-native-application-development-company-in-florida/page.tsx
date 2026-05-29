@@ -4,7 +4,7 @@ import ReactNativeApplicationClient from './ReactNativeApplicationClient'
 
 export const metadata = getComprehensiveMetadata(
   'React Native Application Development Services in Florida ',
-  'Conquerors Technologies is a React Native application development company in Florida offering mobile app solutions and branding agency services to help businesses grow with smart, scalable digital tools.',
+  'ConvenantSoft Technologies is a React Native application development company in Florida offering mobile app solutions and branding agency services to help businesses grow with smart, scalable digital tools.',
   '/react-native-application-development-company-in-florida',
   '/WebDevlopment/smartphone-with-open-pages-landing-page_52683-22969.jpg',
   [
@@ -48,7 +48,7 @@ export const metadata = getComprehensiveMetadata(
 export default function MobileAppDevelopment() {
   const structuredData = getStructuredData(
     'Mobile App Development Company - Custom Mobile Application Development Services',
-    'Conquerors Technologies is a leading mobile app development company offering custom iOS, Android, React Native, Flutter, and cross-platform mobile application development services. Expert mobile developers for your business needs.',
+    'ConvenantSoft Technologies is a leading mobile app development company offering custom iOS, Android, React Native, Flutter, and cross-platform mobile application development services. Expert mobile developers for your business needs.',
     '/mobile-app-development',
     'Service'
   )

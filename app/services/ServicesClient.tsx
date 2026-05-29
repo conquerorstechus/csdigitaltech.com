@@ -31,6 +31,10 @@ import Header from '@/components/ui/Header'
 import Footer from '@/components/ui/Footer'
 import Link from 'next/link'
 
+const DIGITAL_MARKETING_URL = 'https://conquerors-quotegen.vercel.app/'
+
+const isExternalUrl = (href: string) => /^https?:\/\//.test(href)
+
 const services = [
   {
     title: 'Software Development Services',
@@ -66,7 +70,7 @@ const services = [
     title: 'Digital Marketing',
     desc: 'Digital marketing is the marketing and advertising of a business, person, product, or service using online channels, electronic devices, social media, email, pay-per-click (PPC), search engine optimization (SEO),',
     icon: <FaBullhorn className='text-3xl' />,
-    link: '/services/branding-agency'
+    link: DIGITAL_MARKETING_URL
   }
 ]
 
@@ -127,50 +131,75 @@ export default function ServicesClient () {
             What We Do
           </h2>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-white'>
-            {services.map((service, i) => (
-              <div
-                key={i}
-                className='group bg-[#262152] rounded-xl lg:p-6 px-6 py-8 relative overflow-hidden h-80 lg:h-96  flex flex-col justify-between transition-colors duration-300 hover:bg-white hover:shadow-2xl'
-              >
-                {/* Circular background glow (bottom right) */}
-                <div className='absolute -bottom-14 -right-12 w-36 h-36 rounded-full  transition-colors duration-300 bg-[#332d5f] group-hover:bg-[#84b642] '></div>
+            {services.map((service, i) => {
+              const cardClassName =
+                'group bg-[#262152] rounded-xl lg:p-6 px-6 py-8 relative overflow-hidden h-80 lg:h-96 flex flex-col justify-between transition-colors duration-300 hover:bg-white hover:shadow-2xl'
 
-                {/* Card background number */}
-                <div className='absolute text-[6rem] text-indigo-800 font-bold top-0 right-4 opacity-20 pointer-events-none'>
-                  {`0${i + 1}`}
-                </div>
+              const learnMoreClassName =
+                'group inline-flex items-center gap-2 text-green-400 font-semibold text-sm transition-all duration-300'
 
-                {/* Card content */}
-                <div>
-                  <h3 className='lg:text-2xl text-xl font-semibold mb-3 transition-colors duration-300 group-hover:text-black'>
-                    {service.title}
-                  </h3>
-                  <p className='lg:text-base text-sm mt-6 tracking-wide text-gray-300 transition-colors font-normal duration-300 group-hover:text-gray-700 !leading-7'>
-                    {service.desc}
-                  </p>
-                </div>
+              const learnMoreContent = (
+                <>
+                  <FaArrowRight className='w-3 h-3 transform transition-transform duration-300 group-hover:-translate-x-1' />
+                  <span className='transform transition-transform duration-300 group-hover:-translate-x-1'>
+                    LEARN MORE
+                  </span>
+                </>
+              )
 
-                {/* Bottom row: Learn More + Icon */}
-                <div className='flex justify-between items-end pt-6'>
-                <Link
-  href={service.link}
-  className='group inline-flex items-center gap-2 text-green-400 font-semibold text-sm transition-all duration-300'
->
-  <FaArrowRight className='w-3 h-3 transform transition-transform duration-300 group-hover:-translate-x-1' />
-  <span className='transform transition-transform duration-300 group-hover:-translate-x-1'>
-    LEARN MORE
-  </span>
-</Link>
+              const inner = (
+                <>
+                  <div className='absolute -bottom-14 -right-12 w-36 h-36 rounded-full transition-colors duration-300 bg-[#332d5f] group-hover:bg-[#84b642]'></div>
 
-                  <div className=' transition-colors duration-300'>
-                    {/* Icon itself */}
-                    <span className='relative z-10 text-white transition-colors duration-300'>
-                      {service.icon}
-                    </span>
+                  <div className='absolute text-[6rem] text-indigo-800 font-bold top-0 right-4 opacity-20 pointer-events-none'>
+                    {`0${i + 1}`}
                   </div>
+
+                  <div>
+                    <h3 className='lg:text-2xl text-xl font-semibold mb-3 transition-colors duration-300 group-hover:text-black'>
+                      {service.title}
+                    </h3>
+                    <p className='lg:text-base text-sm mt-6 tracking-wide text-gray-300 transition-colors font-normal duration-300 group-hover:text-gray-700 !leading-7'>
+                      {service.desc}
+                    </p>
+                  </div>
+
+                  <div className='flex justify-between items-end pt-6'>
+                    {isExternalUrl(service.link) ? (
+                      <span className={learnMoreClassName}>{learnMoreContent}</span>
+                    ) : (
+                      <Link href={service.link} className={learnMoreClassName}>
+                        {learnMoreContent}
+                      </Link>
+                    )}
+
+                    <div className='transition-colors duration-300'>
+                      <span className='relative z-10 text-white transition-colors duration-300'>
+                        {service.icon}
+                      </span>
+                    </div>
+                  </div>
+                </>
+              )
+
+              if (isExternalUrl(service.link)) {
+                return (
+                  <a
+                    key={service.title}
+                    href={service.link}
+                    className={cardClassName}
+                  >
+                    {inner}
+                  </a>
+                )
+              }
+
+              return (
+                <div key={service.title} className={cardClassName}>
+                  {inner}
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </section>
 

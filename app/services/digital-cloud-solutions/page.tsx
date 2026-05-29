@@ -4,7 +4,7 @@ import StructuredData from '@/components/ui/StructuredData'
 
 export const metadata = getComprehensiveMetadata(
   'Digital & Cloud Solutions in Florida',
-  'Power your business with Conquerors Technologies—Florida’s top choice for secure, scalable, and high-performance digital and cloud solutions that drive real transformation.',
+  'Power your business with ConvenantSoft Technologies—Florida’s top choice for secure, scalable, and high-performance digital and cloud solutions that drive real transformation.',
   '/services/digital-cloud-solutions-in-Florida',
   '/Digitalcloud/cloud-computing-banner-background-smart-city_53876-108504.webp',
   [

@@ -99,7 +99,7 @@ const serviceCards = [
 
           <div className='text-gray-700 font-normal space-y-6 text-justify text-lg leading-8 tracking-wide'>
             <p>
-            Conquerors Software Technologies, the best custom software development company in the US, doesn’t just build applications; we engineer intelligent solutions. By fusing Artificial Intelligence with secure web and mobile app development, we deliver smarter, scalable, and more personalized digital experiences that keep your business ahead. 
+            ConvenantSoft Software Technologies, the best custom software development company in the US, doesn’t just build applications; we engineer intelligent solutions. By fusing Artificial Intelligence with secure web and mobile app development, we deliver smarter, scalable, and more personalized digital experiences that keep your business ahead. 
             </p>
 
             <p>
@@ -330,12 +330,12 @@ const serviceCards = [
           </div>
         </section>
 
-        {/* Why Conquerors Section */}
+        {/* Why ConvenantSoft Section */}
         <section className='py-12 sm:py-16 px-4 bg-gray-50'>
           <div className='max-w-6xl mx-auto'>
             <div className='text-center mb-10'>
               <h2 className='text-2xl sm:text-3xl font-bold text-gray-900 mb-4'>
-                Why Conquerors?
+                Why ConvenantSoft?
               </h2>
               <p className='text-gray-700 text-base sm:text-lg leading-8 tracking-wide font-normal max-w-4xl mx-auto'>
                 Your trusted partner for AI-powered, secure, and scalable digital solutions.

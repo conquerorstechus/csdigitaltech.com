@@ -3,19 +3,19 @@ import StructuredData from '@/components/ui/StructuredData'
 import OurTeamClient from './OurTeamClient'
 
 export const metadata = getComprehensiveMetadata(
-  'Our Team - Conquerors Technologies',
-  'Meet the talented team behind Conquerors Technologies. Our experienced professionals and leadership team driving innovation in software development, digital solutions, and technology consulting.',
+  'Our Team - ConvenantSoft Technologies',
+  'Meet the talented team behind ConvenantSoft Technologies. Our experienced professionals and leadership team driving innovation in software development, digital solutions, and technology consulting.',
   '/our-team',
   '/About/Artboard-–-21.webp',
   [
-    'conquerors technologies team',
+    'ConvenantSoft technologies team',
     'software development team',
     'technology team Florida',
     'IT professionals',
     'software engineers',
     'development team',
     'technology experts',
-    'conquerors team members',
+    'ConvenantSoft team members',
     'leadership team',
     'CTO team',
     'CEO team',
@@ -26,8 +26,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function OurTeam() {
   const structuredData = getStructuredData(
-    'Our Team - Conquerors Technologies',
-    'Meet the talented team behind Conquerors Technologies. Our experienced professionals and leadership team driving innovation in software development, digital solutions, and technology consulting.',
+    'Our Team - ConvenantSoft Technologies',
+    'Meet the talented team behind ConvenantSoft Technologies. Our experienced professionals and leadership team driving innovation in software development, digital solutions, and technology consulting.',
     '/our-team',
     'Organization'
   )

@@ -58,7 +58,7 @@ export default function IOSAppDevelopmentClient() {
               Top iOS Application Development Company in Florida
             </h1>
             <p className='mt-4 lg:text-lg text-sm mx-auto drop-shadow-md'>
-              "Conquerors Software Technologies Pvt. Ltd" Customer Satisfaction
+              "ConvenantSoft Software Technologies Pvt. Ltd" Customer Satisfaction
               Is Our Best Business Strategy
             </p>
           </div>
@@ -69,7 +69,7 @@ export default function IOSAppDevelopmentClient() {
             {/* Right Content */}
             <div className='w-full space-y-5  md:text-left'>
               <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900'>
-                At Conquerors, We Follow a Semantic Approach
+                At ConvenantSoft, We Follow a Semantic Approach
               </h2>
 
               <p className='text-gray-500 font-medium text-base sm:text-lg lg:leading-8 leading-8 text-justify'>
@@ -80,7 +80,7 @@ export default function IOSAppDevelopmentClient() {
                 support and move forward with dedication in implementing
                 different projects in various technologies including Native
                 Applications. Our imagination and design are unique, we work
-                with creativity. At conquerors, we follow " We never stop making
+                with creativity. At ConvenantSoft, we follow " We never stop making
                 progress", we are always ready to acquire the latest technical
                 skill set to bring a professional approach to implementing
                 client's projects.
@@ -116,7 +116,7 @@ export default function IOSAppDevelopmentClient() {
               </p>
               <p className='text-gray-500 font-medium text-base sm:text-lg lg:leading-8 leading-8 text-justify mt-4'>
                 Native Application Development is an old approach to building
-                the best performance applications. At Conquerors, we develop
+                the best performance applications. At ConvenantSoft, we develop
                 applications based on Native language that is more secure
                 comparatively with the latest technologies like Ionic, PWA, and
                 Flutter.
@@ -162,7 +162,7 @@ export default function IOSAppDevelopmentClient() {
 
             <div>
               <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900'>
-                Conquerors Digital Hub Where Technology Meets Innovation
+                ConvenantSoft Digital Hub Where Technology Meets Innovation
               </h2>
 
               <p className='text-gray-500 font-medium text-base sm:text-lg lg:leading-8 leading-8 text-justify mt-4'>

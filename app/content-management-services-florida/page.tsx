@@ -4,7 +4,7 @@ import ContentManagementServicesClient from "./ContentManagementServicesClient";
 
 export const metadata = getComprehensiveMetadata(
   "Content Management Services in Florida",
-  "Streamline and scale your content with Conquerors Technologies’ content management services in Florida — from CMS setup to content governance and publishing.",
+  "Streamline and scale your content with ConvenantSoft Technologies’ content management services in Florida — from CMS setup to content governance and publishing.",
   "/content-management-services-florida",
   "/WebDevlopment/10-2-min.jpg",
   [
@@ -43,8 +43,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function ContentManagementServices() {
   const structuredData = getStructuredData(
-    "Content Management Services in Florida | Conquerors Tech",
-    "Conquerors Technologies is a leading content management services company in Florida offering CMS solutions, WordPress, Drupal, Joomla development, and enterprise content management. Get professional CMS consulting and development services.",
+    "Content Management Services in Florida | ConvenantSoft Tech",
+    "ConvenantSoft Technologies is a leading content management services company in Florida offering CMS solutions, WordPress, Drupal, Joomla development, and enterprise content management. Get professional CMS consulting and development services.",
     "/content-management-services-florida",
     "Service"
   );

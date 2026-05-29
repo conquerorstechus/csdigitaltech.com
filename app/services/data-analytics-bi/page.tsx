@@ -4,7 +4,7 @@ import StructuredData from '@/components/ui/StructuredData'
 
 export const metadata = getComprehensiveMetadata(
   'AI Data & BI Solutions in Florida',
-  'Unlock valuable insights with AI Data Analytics & BI experts in Florida. Conquerors Technologies delivers smart, scalable, data-driven solutions to power your business growth.',
+  'Unlock valuable insights with AI Data Analytics & BI experts in Florida. ConvenantSoft Technologies delivers smart, scalable, data-driven solutions to power your business growth.',
   '/services/data-analytics-bi-in-Florida',
   '/Digitalcloud/business-brainstorming-graph-chart-report-data-concept_53876-31213.webp',
   [

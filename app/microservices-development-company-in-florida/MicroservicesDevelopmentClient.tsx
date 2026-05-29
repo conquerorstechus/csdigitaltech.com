@@ -58,7 +58,7 @@ export default function MicroservicesDevelopmentClient() {
               We Work for you on Microservices
             </h2>
             <p className='mt-4 text-gray-500  text-sm sm:text-lg lg:leading-8'>
-              The team at Conquerors is equipped with the best developers who
+              The team at ConvenantSoft is equipped with the best developers who
               are highly knowledgeable and fully experienced and do the
               microservices architecture. Irrelevant to small or big businesses,
               we can work together to deliver your requirement and the solutions

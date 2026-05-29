@@ -4,7 +4,7 @@ import StructuredData from '@/components/ui/StructuredData'
 
 export const metadata = getComprehensiveMetadata(
   'AI Custom LLMs for Enterprises Florida ',
-  'AI-driven custom LLM integration boosts Florida enterprises efficiency and customer engagement, powered by Conquerors expertise in intelligent automation and real-time insights',
+  'AI-driven custom LLM integration boosts Florida enterprises efficiency and customer engagement, powered by ConvenantSoft expertise in intelligent automation and real-time insights',
   '/services/custom-llms-in-Florida',
   '/Digitalcloud/business-brainstorming-graph-chart-report-data-concept_53876-31213.webp',
   [

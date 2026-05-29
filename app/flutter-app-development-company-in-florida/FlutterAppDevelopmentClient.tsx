@@ -75,7 +75,7 @@ export default function FlutterAppDevelopmentClient() {
               Flutter Development Company in Florida, USA
             </h1>
             <p className='mt-4 lg:text-lg text-sm mx-auto drop-shadow-md'>
-              "Conquerors Technologies" is the Top Flutter App Development
+              "ConvenantSoft Technologies" is the Top Flutter App Development
               Company that provides the Fastest way to develop Apps on
               cross-platform"
             </p>
@@ -92,7 +92,7 @@ export default function FlutterAppDevelopmentClient() {
               </h2>
 
               <p className='text-gray-500 font-medium text-base sm:text-lg lg:leading-8 leading-8 text-justify'>
-                At Conquerors, we specialized in Flutter development services
+                At ConvenantSoft, we specialized in Flutter development services
                 with 10 years of experience and having skills to create robust
                 web and app development in Florida. As the Leading Flutter App
                 Development Company in Florida, we craft mobile solutions that
@@ -121,11 +121,11 @@ export default function FlutterAppDevelopmentClient() {
           <div className='max-w-7xl mx-auto mt-12 px-4 sm:px-6 space-y-8'>
             <div>
               <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900'>
-                Why Choose Conquerors for Flutter App Development?
+                Why Choose ConvenantSoft for Flutter App Development?
               </h2>
 
               <p className='text-gray-500 font-medium text-base sm:text-lg lg:leading-8 leading-8 text-justify mt-4'>
-                At Conquerors, we are experts in handling different projects in
+                At ConvenantSoft, we are experts in handling different projects in
                 multiple technologies including Flutter. We are a great team
                 with an updated skill set crafted on distinctive requirements
                 with great exposure in a challenging environment. As our
@@ -156,7 +156,7 @@ export default function FlutterAppDevelopmentClient() {
 
             <div>
               <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900'>
-                Conquerors Digital Hub Where Technology Meets Innovation
+                ConvenantSoft Digital Hub Where Technology Meets Innovation
               </h2>
 
               <p className='text-gray-500 font-medium text-base sm:text-lg lg:leading-8 leading-8 text-justify mt-4'>

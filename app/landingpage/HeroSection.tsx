@@ -62,7 +62,7 @@ export default function HeroSection() {
   const [hoveredImageIndex, setHoveredImageIndex] = useState(0);
   const [textBackgroundOpacity, setTextBackgroundOpacity] = useState(0);
 
-  const fullWelcomeText = 'Welcome to CONQUERORS';
+  const fullWelcomeText = 'Welcome to COVENANTSOFT';
   const fullParagraph =
     'We build world-class web and mobile applications that empower innovation and accelerate digital growth. Our expert team delivers cutting-edge solutions tailored to your business needs, ensuring scalability, performance, and exceptional user experiences.';
 
@@ -339,7 +339,7 @@ export default function HeroSection() {
                     <div className={`relative w-full ${getHeightClasses(item.size)} overflow-hidden rounded-sm`}>
                       <Image
                         src={item.image}
-                        alt={`Conquerors Image ${item.id}`}
+                        alt={`ConvenantSoft Image ${item.id}`}
                         fill
                         className={`object-cover transition-all duration-500 ease-in-out ${
                           isHovered ? 'scale-105 brightness-110' : 'scale-100 brightness-100'

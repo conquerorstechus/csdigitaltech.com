@@ -4,7 +4,7 @@ import BusinessIntelligenceDevelopmentClient from "./BusinessIntelligenceDevelop
 
 export const metadata = getComprehensiveMetadata(
   "Business Intelligence Experts Florida",
-  "Empower data-driven decisions with Conquerors Technologies, a top Business Intelligence Company in Florida delivering smart BI solutions for improved insights and performance.",
+  "Empower data-driven decisions with ConvenantSoft Technologies, a top Business Intelligence Company in Florida delivering smart BI solutions for improved insights and performance.",
   "/business-intelligence-development-company-in-florida",
   "/WebDevlopment/6_1.jpg",
   [
@@ -44,8 +44,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function BusinessIntelligenceDevelopment() {
   const structuredData = getStructuredData(
-    "Business Intelligence Development Company in Florida | Conquerors Tech",
-    "Conquerors Technologies is a leading business intelligence development company in Florida offering BI services, data analytics, dashboards, reporting, and enterprise BI solutions. Get expert business intelligence consulting and development services.",
+    "Business Intelligence Development Company in Florida | ConvenantSoft Tech",
+    "ConvenantSoft Technologies is a leading business intelligence development company in Florida offering BI services, data analytics, dashboards, reporting, and enterprise BI solutions. Get expert business intelligence consulting and development services.",
     "/business-intelligence-development-company-in-florida",
     "Service"
   );

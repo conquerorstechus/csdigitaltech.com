@@ -32,14 +32,14 @@ export default function OurTeamClient() {
       role: 'Senior Technical Manager',
       image: '/About/adi.jpeg',
       linkedin: 'https://www.linkedin.com/in/adiyya-tadikamalla-68705714/',
-      bio: 'Adiyya Tadikamalla is a Senior Technical Manager at Conquerors Software Technologies, where he leads full-cycle software development and delivery across diverse enterprise and web application projects. With more than 15 years of experience in software engineering, Adiyya brings deep technical insight, a hands-on leadership style, and a strong focus on performance, usability, and scalability. Adiyya manages end-to-end project execution — from requirement analysis and architecture design to implementation and delivery — ensuring every solution aligns with client goals and quality standards. His technical proficiency spans modern web technologies across the full stack — including backend languages and frameworks such as PHP, Python, and Laravel; server-side runtime environments such as Node.js, ExpressJS, NestJS, AdonisJS; frontend frameworks such as React, Vue.js, and Inertia.js, NextJS; and database systems including MySQL and PostgreSQL. Since joining Conquerors over a decade ago, Adiyya has played a pivotal role in building high-impact digital platforms and mentoring development teams to deliver world-ready, future-focused software solutions. His leadership in Agile practices and commitment to technical excellence continue to drive the company\'s success in creating scalable, high-performance applications for clients worldwide. Before joining Conquerors, Adiyya worked with several technology and software firms, contributing to solutions across industries, including nonprofit, education, and enterprise digital transformation. He holds a Bachelor\'s degree in Computer Science from Andhra University.'
+      bio: 'Adiyya Tadikamalla is a Senior Technical Manager at ConvenantSoft Software Technologies, where he leads full-cycle software development and delivery across diverse enterprise and web application projects. With more than 15 years of experience in software engineering, Adiyya brings deep technical insight, a hands-on leadership style, and a strong focus on performance, usability, and scalability. Adiyya manages end-to-end project execution — from requirement analysis and architecture design to implementation and delivery — ensuring every solution aligns with client goals and quality standards. His technical proficiency spans modern web technologies across the full stack — including backend languages and frameworks such as PHP, Python, and Laravel; server-side runtime environments such as Node.js, ExpressJS, NestJS, AdonisJS; frontend frameworks such as React, Vue.js, and Inertia.js, NextJS; and database systems including MySQL and PostgreSQL. Since joining ConvenantSoft over a decade ago, Adiyya has played a pivotal role in building high-impact digital platforms and mentoring development teams to deliver world-ready, future-focused software solutions. His leadership in Agile practices and commitment to technical excellence continue to drive the company\'s success in creating scalable, high-performance applications for clients worldwide. Before joining ConvenantSoft, Adiyya worked with several technology and software firms, contributing to solutions across industries, including nonprofit, education, and enterprise digital transformation. He holds a Bachelor\'s degree in Computer Science from Andhra University.'
     },
     {
       name: 'Pradeep Kumar K',
       role: 'Senior Delivery Manager',
       image: '/About/pradeep.png',
       linkedin: 'https://www.linkedin.com/in/pradeep-kumar-k-42a9a715/',
-      bio: 'Pradeep Kumar K serves as Senior Delivery Manager at Conquerors Software Technologies, where he oversees the company\'s global project execution, delivery excellence, and operational strategy. With over 18 years of experience across the technology and software services sectors, his core expertise spans Delivery and Program Management, Agile Leadership, Digital and Cloud Strategy, and Strategic Execution. Pradeep also plays a key role in pre-sales engagement, client collaboration, and talent recruitment — building high-performing teams that drive innovation, operational excellence, and customer success. Since his onboarding, he has been instrumental in reinforcing delivery excellence by adopting agile practices to build web and mobile applications using the latest technologies. He has also driven synergy among Development, QA, DevOps, and Consulting teams to maintain high service standards and ensure customer satisfaction. Prior to Conquerors, Pradeep held leadership and technical roles at Wipro, Aricent (now Capgemini Engineering), and healthcare technology organizations, contributing to R&D initiatives and enterprise transformation programs for global clients, including Nokia, Intel, Microsoft, and Qualcomm. Pradeep holds a Bachelor\'s degree in Computer Science and Engineering from Jawaharlal Nehru Technological University, Hyderabad.'
+      bio: 'Pradeep Kumar K serves as Senior Delivery Manager at ConvenantSoft Software Technologies, where he oversees the company\'s global project execution, delivery excellence, and operational strategy. With over 18 years of experience across the technology and software services sectors, his core expertise spans Delivery and Program Management, Agile Leadership, Digital and Cloud Strategy, and Strategic Execution. Pradeep also plays a key role in pre-sales engagement, client collaboration, and talent recruitment — building high-performing teams that drive innovation, operational excellence, and customer success. Since his onboarding, he has been instrumental in reinforcing delivery excellence by adopting agile practices to build web and mobile applications using the latest technologies. He has also driven synergy among Development, QA, DevOps, and Consulting teams to maintain high service standards and ensure customer satisfaction. Prior to ConvenantSoft, Pradeep held leadership and technical roles at Wipro, Aricent (now Capgemini Engineering), and healthcare technology organizations, contributing to R&D initiatives and enterprise transformation programs for global clients, including Nokia, Intel, Microsoft, and Qualcomm. Pradeep holds a Bachelor\'s degree in Computer Science and Engineering from Jawaharlal Nehru Technological University, Hyderabad.'
     },
   ]
 
@@ -217,7 +217,7 @@ export default function OurTeamClient() {
                   <Image
                     src={ceo.image}
                     alt={ceo.name}
-                    title={`${ceo.name} - ${ceo.role} of Conquerors Technologies`}
+                    title={`${ceo.name} - ${ceo.role} of ConvenantSoft Technologies`}
                     fill
                     className='object-cover'
                   />
@@ -261,7 +261,7 @@ export default function OurTeamClient() {
                   <Image
                     src={member.image}
                     alt={member.name}
-                    title={`Click to view ${member.name}'s profile - ${member.role} of Conquerors Technologies`}
+                    title={`Click to view ${member.name}'s profile - ${member.role} of ConvenantSoft Technologies`}
                     fill
                     className='object-cover'
                   />
@@ -316,7 +316,7 @@ export default function OurTeamClient() {
                   <Image
                     src={member.image}
                     alt={member.name}
-                    title={`${member.name} - ${member.role} of Conquerors Technologies`}
+                    title={`${member.name} - ${member.role} of ConvenantSoft Technologies`}
                     fill
                     className='object-cover'
                   />
@@ -362,7 +362,7 @@ export default function OurTeamClient() {
                   <Image
                     src={member.image}
                     alt={member.name}
-                    title={`${member.name} - ${member.role} of Conquerors Technologies`}
+                    title={`${member.name} - ${member.role} of ConvenantSoft Technologies`}
                     fill
                     className='object-cover'
                   />
@@ -408,7 +408,7 @@ export default function OurTeamClient() {
                   <Image
                     src={member.image}
                     alt={member.name}
-                    title={`${member.name} - ${member.role} of Conquerors Technologies`}
+                    title={`${member.name} - ${member.role} of ConvenantSoft Technologies`}
                     fill
                     className='object-cover'
                   />
@@ -445,7 +445,7 @@ export default function OurTeamClient() {
               <Image
                 src={csWalter.image}
                 alt={csWalter.name}
-                title={`${csWalter.name} - ${csWalter.role} of Conquerors Technologies`}
+                title={`${csWalter.name} - ${csWalter.role} of ConvenantSoft Technologies`}
                 fill
                 className='object-cover'
               />

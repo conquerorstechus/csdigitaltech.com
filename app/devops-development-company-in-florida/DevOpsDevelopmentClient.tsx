@@ -74,7 +74,7 @@ export default function DevOpsDevelopmentClient() {
               DevOps Services
             </h1>
             <p className='lg:text-lg text-base font-bold drop-shadow-md tracking-wider mt-4'>
-              "Conquerors Software Technologies" Customer Satisfaction Is Our
+              "ConvenantSoft Software Technologies" Customer Satisfaction Is Our
               Best Business Strategy
             </p>
           </div>
@@ -87,7 +87,7 @@ export default function DevOpsDevelopmentClient() {
               Best DevOps Development Services Company in Florida
             </h2>
             <p className='mt-4 text-gray-500  text-sm sm:text-lg lg:leading-8'>
-              At Conquerors with our DevOps services, we support companies in
+              At ConvenantSoft with our DevOps services, we support companies in
               the transition from conventional project-based conversion to fast
               and efficient DevOps practices. Our DevOps consulting services
               help organizations streamline their software development and

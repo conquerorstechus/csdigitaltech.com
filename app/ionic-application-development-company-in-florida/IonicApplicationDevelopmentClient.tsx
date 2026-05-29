@@ -57,7 +57,7 @@ export default function IonicApplicationDevelopmentClient() {
               Top Ionic Application Development Company in Florida
             </h1>
             <p className='mt-4 lg:text-lg text-sm mx-auto drop-shadow-md'>
-              "Conquerors Software Technologies Pvt. Ltd" Customer Satisfaction
+              "ConvenantSoft Software Technologies Pvt. Ltd" Customer Satisfaction
               Is Our Best Business Strategy
             </p>
           </div>
@@ -68,11 +68,11 @@ export default function IonicApplicationDevelopmentClient() {
             {/* Right Content */}
             <div className='w-full space-y-5  md:text-left'>
               <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900'>
-                How Conquerors Work to Solve Client Problems
+                How ConvenantSoft Work to Solve Client Problems
               </h2>
 
               <p className='text-gray-500 font-medium text-base sm:text-lg lg:leading-8 leading-8 text-justify'>
-                At Conquerors, we are experts in handling different projects in
+                At ConvenantSoft, we are experts in handling different projects in
                 multiple technologies including Ionic Framework. We are a great
                 team with an updated skill set crafted on distinctive
                 requirements with great exposure in a challenging environment.
@@ -111,7 +111,7 @@ export default function IonicApplicationDevelopmentClient() {
               </p>
               <p className='text-gray-500 font-medium text-base sm:text-lg lg:leading-8 leading-8 text-justify mt-4'>
                 Ionic Application Development is an approach to building
-                the best performance applications. At Conquerors, we develop
+                the best performance applications. At ConvenantSoft, we develop
                 applications based on Ionic Framework that is more secure
                 comparatively with the latest technologies like Flutter, PWA, and
                 React Native.
@@ -157,7 +157,7 @@ export default function IonicApplicationDevelopmentClient() {
 
             <div>
               <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900'>
-                Conquerors Digital Hub Where Technology Meets Innovation
+                ConvenantSoft Digital Hub Where Technology Meets Innovation
               </h2>
 
               <p className='text-gray-500 font-medium text-base sm:text-lg lg:leading-8 leading-8 text-justify mt-4'>
@@ -216,7 +216,7 @@ export default function IonicApplicationDevelopmentClient() {
 
             <div>
               <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900'>
-                About Ionic Framework Development with Conquerors
+                About Ionic Framework Development with ConvenantSoft
               </h2>
 
               <p className='text-gray-500 font-medium text-base sm:text-lg lg:leading-8 leading-8 text-justify mt-4'>

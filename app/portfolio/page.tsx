@@ -6,7 +6,7 @@ import ClientSection from '../landingpage/ClientSection'
 
 export const metadata = getComprehensiveMetadata(
   "Portfolio-Projects & Success Stories",
-  "Explore Conquerors Technologies' impressive portfolio of software development projects including e-commerce applications, CRM systems, learning management platforms, and custom business solutions. View our success stories and client projects.",
+  "Explore ConvenantSoft Technologies' impressive portfolio of software development projects including e-commerce applications, CRM systems, learning management platforms, and custom business solutions. View our success stories and client projects.",
   "/portfolio",
   "/1-E-Commerce.jpg",
   [
@@ -110,7 +110,7 @@ const partners = [
 export default function PortfolioPage() {
   const structuredData = getStructuredData(
     "Portfolio - Software Development Projects & Success Stories",
-    "Explore Conquerors Technologies' impressive portfolio of software development projects including e-commerce applications, CRM systems, learning management platforms, and custom business solutions. View our success stories and client projects.",
+    "Explore ConvenantSoft Technologies' impressive portfolio of software development projects including e-commerce applications, CRM systems, learning management platforms, and custom business solutions. View our success stories and client projects.",
     "/portfolio",
     "WebPage"
   );

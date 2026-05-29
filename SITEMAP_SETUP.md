@@ -1,4 +1,4 @@
-# Sitemap Setup for Conquerors Tech FD
+# Sitemap Setup for ConvenantSoft Tech FD
 
 This project has been configured with automatic sitemap generation. Here's how to use it:
 

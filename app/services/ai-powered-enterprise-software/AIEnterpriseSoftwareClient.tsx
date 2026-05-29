@@ -184,7 +184,7 @@ export default function AIEnterpriseSoftwareClient() {
         <section className='max-w-6xl mx-auto px-4 py-12'>
           <div className='text-gray-700 font-normal space-y-6 text-justify text-lg leading-8 tracking-wide'>
             <p>
-              Conquerors Software Technologies USA builds intelligent, cross-platform enterprise applications that combine artificial intelligence with modern frameworks such as Flutter, React Native, and Progressive Web Apps (PWAs). Our solutions are designed to be scalable, adaptive, and user-centric, empowering businesses to automate workflows, personalize user experiences, and make smarter decisions in Florida and across other regions in the USA.
+              ConvenantSoft Software Technologies USA builds intelligent, cross-platform enterprise applications that combine artificial intelligence with modern frameworks such as Flutter, React Native, and Progressive Web Apps (PWAs). Our solutions are designed to be scalable, adaptive, and user-centric, empowering businesses to automate workflows, personalize user experiences, and make smarter decisions in Florida and across other regions in the USA.
             </p>
             <p>
               With expertise in machine learning, natural language processing, predictive analytics, and automation, we integrate AI into enterprise applications to make them smarter, adaptive, and more efficient. From intelligent dashboards and recommendation engines to AI-driven mobile apps and decision-support systems, our solutions enhance existing platforms, enabling enterprises to boost productivity and unlock new opportunities.
@@ -346,11 +346,11 @@ export default function AIEnterpriseSoftwareClient() {
           </div>
         </section>
 
-        {/* Why Conquerors */}
+        {/* Why ConvenantSoft */}
         <section className='bg-white py-16'>
           <div className='max-w-6xl mx-auto px-4'>
             <h2 className='text-3xl lg:text-4xl font-extrabold text-center text-gray-900 mb-12'>
-              Why Conquerors Software Technologies USA?
+              Why ConvenantSoft Software Technologies USA?
             </h2>
             <div className='grid md:grid-cols-2 gap-6'>
               {whyConquerors.map((reason, index) => (
@@ -373,7 +373,7 @@ export default function AIEnterpriseSoftwareClient() {
               Embrace Intelligent Transformation
             </h2>
             <p className='text-white text-lg mb-8 leading-relaxed'>
-              Enterprise software should do more than support operations—it should drive business growth. With Conquerors, you gain a partner that builds future-ready, AI-powered solutions customized to your needs.
+              Enterprise software should do more than support operations—it should drive business growth. With ConvenantSoft, you gain a partner that builds future-ready, AI-powered solutions customized to your needs.
             </p>
             <div className='flex flex-wrap justify-center gap-4'>
               <Link

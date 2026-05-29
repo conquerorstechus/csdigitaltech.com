@@ -4,7 +4,7 @@ import WebDevelopmentClient from './WebDevelopmentClient'
 
 export const metadata = getComprehensiveMetadata(
   'Web App Development Company Florida',
-  'Partner with Conquerors Technologies to get high-quality custom web applications that drive growth, increase user engagement, and support your long-term digital strategy.',
+  'Partner with ConvenantSoft Technologies to get high-quality custom web applications that drive growth, increase user engagement, and support your long-term digital strategy.',
   '/web-development',
   '/WebDevlopment/2020-08-05-3.jpg',
   [

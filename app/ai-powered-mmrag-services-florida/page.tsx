@@ -4,7 +4,7 @@ import MmragServicesClient from "./MmragServicesClient";
 
 export const metadata = getComprehensiveMetadata(
   "AI-Powered MMRAG Services Florida",
-  "Unlock smarter business insights with Conquerors Technologies' AI-powered Multimodal Retrieval-Augmented Generation (MMRAG) services in Florida. Context-rich AI for improved engagement.",
+  "Unlock smarter business insights with ConvenantSoft Technologies' AI-powered Multimodal Retrieval-Augmented Generation (MMRAG) services in Florida. Context-rich AI for improved engagement.",
   "/ai-powered-mmrag-services-florida",
   "/WebDevlopment/6_1.jpg",
   [
@@ -38,7 +38,7 @@ export const metadata = getComprehensiveMetadata(
     "AI training platform Florida",
     "MMRAG implementation",
     "AI integration services Florida",
-    "Conquerors MMRAG services"
+    "ConvenantSoft MMRAG services"
   ],
   "Service"
 );

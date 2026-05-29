@@ -3,8 +3,8 @@ import StructuredData from "@/components/ui/StructuredData";
 import IOSAppDevelopmentClient from "./IOSAppDevelopmentClient";
 
 export const metadata = getComprehensiveMetadata(
-  "Ios App Development Services in Florida | Conquerors Tech",
-  "Conquerors Technologies is a leading iOS app development company in Florida offering custom iPhone app development, native iOS development, and expert iOS developers. Get high-performance iOS apps built with Swift and Objective-C.",
+  "Ios App Development Services in Florida | ConvenantSoft Tech",
+  "ConvenantSoft Technologies is a leading iOS app development company in Florida offering custom iPhone app development, native iOS development, and expert iOS developers. Get high-performance iOS apps built with Swift and Objective-C.",
   "/ios-app-development-florida",
   "/WebDevlopment/IOsappright.png",
   [
@@ -65,7 +65,7 @@ export const metadata = getComprehensiveMetadata(
 export default function IOSAppDevelopment() {
   const structuredData = getStructuredData(
     "Ios App Development Services in Florida",
-    "Conquerors Technologies is a leading iOS app development company in Florida offering custom iPhone app development, native iOS development, and expert iOS developers. Get high-performance iOS apps built with Swift and Objective-C.",
+    "ConvenantSoft Technologies is a leading iOS app development company in Florida offering custom iPhone app development, native iOS development, and expert iOS developers. Get high-performance iOS apps built with Swift and Objective-C.",
     "/ios-app-development-florida",
     "Service"
   );

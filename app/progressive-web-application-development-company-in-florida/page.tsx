@@ -4,7 +4,7 @@ import ProgressiveWebApplicationDevelopmentClient from "./ProgressiveWebApplicat
 
 export const metadata = getComprehensiveMetadata(
   "Progressive Web App services Florida",
-  "Build fast, secure, and engaging PWAs with Conquerors Technologies, a leading Progressive Web Application Development Company in Florida delivering seamless cross-platform experiences.",
+  "Build fast, secure, and engaging PWAs with ConvenantSoft Technologies, a leading Progressive Web Application Development Company in Florida delivering seamless cross-platform experiences.",
   "/progressive-web-application-development-company-in-florida",
   "/WebDevlopment/2020-08-05-3.jpg",
   [
@@ -49,8 +49,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function ProgressiveWebApplicationDevelopment() {
   const structuredData = getStructuredData(
-    "Progressive Web Application Development Company in Florida | Conquerors Tech",
-    "Conquerors Technologies is a leading progressive web application development company in Florida offering custom PWA development, web development services, and expert PWA developers. Get high-quality progressive web apps built with latest technologies.",
+    "Progressive Web Application Development Company in Florida | ConvenantSoft Tech",
+    "ConvenantSoft Technologies is a leading progressive web application development company in Florida offering custom PWA development, web development services, and expert PWA developers. Get high-quality progressive web apps built with latest technologies.",
     "/progressive-web-application-development-company-in-florida",
     "Service"
   );

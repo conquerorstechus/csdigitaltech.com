@@ -4,7 +4,7 @@ import StructuredData from "@/components/ui/StructuredData";
 
 export const metadata = getComprehensiveMetadata(
   "QA Testing Services in Florida",
-  "Want flawless apps? Conquerors Technologies in Florida runs in-depth QA testing to catch bugs early, boost performance, and make sure your software runs exactly like you want.",
+  "Want flawless apps? ConvenantSoft Technologies in Florida runs in-depth QA testing to catch bugs early, boost performance, and make sure your software runs exactly like you want.",
   "/services/testing-services-in-Florida",
   "/Digitalcloud/testing-services.jpg",
   [

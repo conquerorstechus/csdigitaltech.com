@@ -65,7 +65,7 @@ export default function DataScienceServicesClient() {
              AI-Driven Data Solutions
             </h2>
             <p className='mt-4 text-gray-500  text-sm sm:text-lg lg:leading-8'>
-              Conquerors, one of the top Data Science companies in USA, is a pioneer in analytical applications for any consumer-facing businesses. The specialty areas include Retail Analytics, Consumer Goods Analytics, Customer Analytics, Big Data Analytics, Advanced Analytics Solutions, Cloud Analytics, Retailer Supplier Collaboration, Predictive Analytics, eCommerce Analytics, and Analytics-driven and location-based marketing.
+              ConvenantSoft, one of the top Data Science companies in USA, is a pioneer in analytical applications for any consumer-facing businesses. The specialty areas include Retail Analytics, Consumer Goods Analytics, Customer Analytics, Big Data Analytics, Advanced Analytics Solutions, Cloud Analytics, Retailer Supplier Collaboration, Predictive Analytics, eCommerce Analytics, and Analytics-driven and location-based marketing.
             </p>
             <p className='mt-4 text-gray-500  text-sm sm:text-lg lg:leading-8'>
              We offer consulting services (customer strategy, data management, marketing, digital campaigns management, analytics, and social media), data management platforms,  insights platforms, customer analytics, and marketing optimization platform.
@@ -168,7 +168,7 @@ export default function DataScienceServicesClient() {
                 Python and its major implementation
               </h2>
               <p className='mt-4 text-gray-500  text-sm sm:text-lg lg:leading-8'>
-               Conquerors have expert Python developers for scalable and even reliable application development for your business. We provide Python development services with Django, Tornado, and Flask for the best results. With our truly skilled, resourceful, and agile Python development practices, our only motto is to provide the most effective and efficient working solutions for your business. We have experienced Python developers who can develop scalable, interactive solutions, powerful to make your business processes easier. Get end-to-end Python development services right from conceptualization to support and even maintenance, with Conquerors. We have experts who have great knowledge of data science, machine learning, data analytics, and other modern technologies.
+               ConvenantSoft have expert Python developers for scalable and even reliable application development for your business. We provide Python development services with Django, Tornado, and Flask for the best results. With our truly skilled, resourceful, and agile Python development practices, our only motto is to provide the most effective and efficient working solutions for your business. We have experienced Python developers who can develop scalable, interactive solutions, powerful to make your business processes easier. Get end-to-end Python development services right from conceptualization to support and even maintenance, with ConvenantSoft. We have experts who have great knowledge of data science, machine learning, data analytics, and other modern technologies.
               </p>
               </div>
 
