@@ -99,13 +99,13 @@ const Header = () => {
             {/* Logo */}
             <Link href='/' onClick={() => handleNavigation('/')}>
               <Image
-                src='/covenant-logo.png'
-                title='Covenant Software Solutions — Digital Growth'
-                alt='Covenant Software Solutions logo'
-                width={320}
-                height={80}
+                src='/cornerstone-logo.png'
+                title='Cornerstone Digital Technologies'
+                alt='Cornerstone Digital Technologies logo'
+                width={640}
+                height={213}
                 priority
-                className='w-56 sm:w-64 h-auto object-contain'
+                className='w-56 sm:w-72 h-auto object-contain'
               />
             </Link>
 

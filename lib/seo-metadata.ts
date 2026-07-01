@@ -108,9 +108,9 @@ export function getStructuredData(
       "url": domain,
       "logo": {
         "@type": "ImageObject",
-        "url": `${domain}/covenant-logo.png`,
-        "width": 640,
-        "height": 160
+        "url": `${domain}/cornerstone-logo.png`,
+        "width": 1024,
+        "height": 341
       },
       "sameAs": [
         "https://www.linkedin.com/company/conquerorssoftwaretechnologies",

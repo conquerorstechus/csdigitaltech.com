@@ -43,12 +43,12 @@ const Footer = () => {
             <div className='flex items-center space-x-3'>
               <Link href='/'>
                 <Image
-                  src='/covenant-logo-footer.png'
-                  alt='Covenant Software Solutions logo'
-                  title='Covenant Software Solutions — Digital Growth'
-                  width={320}
-                  height={80}
-                  className='w-56 md:w-64 h-auto object-contain'
+                  src='/cornerstone-logo-footer.png'
+                  alt='Cornerstone Digital Technologies logo'
+                  title='Cornerstone Digital Technologies'
+                  width={640}
+                  height={213}
+                  className='w-56 md:w-72 h-auto object-contain'
                 />
               </Link>
             </div>
