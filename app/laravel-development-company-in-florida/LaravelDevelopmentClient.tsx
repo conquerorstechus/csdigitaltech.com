@@ -50,7 +50,7 @@ export default function LaravelDevelopmentClient() {
               Laravel Development
             </h1>
             <p className='text-base leading-8'>
-              "ConvenantSoft Software Technologies" Customer Satisfaction Is Our
+              "Cornerstone Digital Technologies" Customer Satisfaction Is Our
               Best Business Strategy
             </p>
           </div>
@@ -126,7 +126,7 @@ export default function LaravelDevelopmentClient() {
                   Why choose us for Laravel Development?
                 </h2>
                 <p className='mt-4 text-gray-500  text-sm sm:text-lg lg:leading-8'>
-                  ConvenantSoft technologies as a Laravel Development Company, with
+                  Cornerstone Digital Technologies technologies as a Laravel Development Company, with
                   skilled developers, create a clean design, code readability,
                   and code reusability. Laravel Framework Website Development
                   allows the developers to design web applications, Mobile
@@ -181,7 +181,7 @@ export default function LaravelDevelopmentClient() {
                   applications. Our developers will draft your vision into
                   reality with a combination of versatile domain experience and
                   Laravel framework knowledge. In due course, the Laravel
-                  development team at the ConvenantSoft is one step ahead and
+                  development team at the Cornerstone Digital Technologies is one step ahead and
                   capable of leveraging given features and functionality of the
                   Laravel framework in favor of its clientele. We developed
                   high-end and professional Larvel Frameworks for different

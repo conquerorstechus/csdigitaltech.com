@@ -61,7 +61,7 @@ export default function DigitalCloudSolutionsClient() {
             <div>
               <h3 className='text-lg sm:text-3xl font-bold mb-3'>Smarter, AI-Driven Cloud & Digital Transformation Services</h3>
               <p className='text-gray-500 text-base leading-8 tracking-wide text-justify'>
-                ConvenantSoft Software Technologies USA, helps businesses across Florida and nearby regions transform their operations with AI-powered digital and cloud solutions. Whether you’re modernising legacy systems, migrating to the cloud, or looking to integrate automation and AI into existing workflows, we deliver solutions that are secure, scalable, and built for better customer experiences (CX).
+                Cornerstone Digital Technologies USA, helps businesses across Florida and nearby regions transform their operations with AI-powered digital and cloud solutions. Whether you’re modernising legacy systems, migrating to the cloud, or looking to integrate automation and AI into existing workflows, we deliver solutions that are secure, scalable, and built for better customer experiences (CX).
               </p>
               <p className='text-gray-500 text-base leading-8 tracking-wide text-justify'>We don’t just move you to the cloud—we help you unlock intelligence, automate processes, and orchestrate workflows that make your business more resilient and competitive in today’s digital-first economy in Florida and across other regions in the USA.
               </p>

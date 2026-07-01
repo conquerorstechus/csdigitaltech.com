@@ -65,7 +65,7 @@ export default function FullstackDevelopmentClient() {
               Best Full Stack Web Development Company in Florida
             </h2>
             <p className='mt-4 text-gray-500 text-sm sm:text-lg lg:leading-8'>
-              At ConvenantSoft, Our team is experts in crafting Full stack web
+              At Cornerstone Digital Technologies, Our team is experts in crafting Full stack web
               development, as the world is growing, Full Stack Web Development
               shows technology gradually unfolding new innovations. in brief,
               this process involves three layers – Presentation, Business Logic,

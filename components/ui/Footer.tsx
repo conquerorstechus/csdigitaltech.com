@@ -28,7 +28,7 @@ const Footer = () => {
         <Image
           src='/bg-footer1.webp'
           alt='Footer Background'
-          title='ConvenantSoft Technologies footer background pattern'
+          title='Cornerstone Digital Technologies footer background pattern'
           fill
           className='object-cover'
           priority={false}
@@ -45,9 +45,9 @@ const Footer = () => {
                 <Image
                   src='/cornerstone-logo-footer.png'
                   alt='Cornerstone Digital Technologies logo'
-                  title='Cornerstone Digital Technologies'
-                  width={640}
-                  height={213}
+                  title='Cornerstone Digital Technologies — csdigitaltech.com'
+                  width={866}
+                  height={288}
                   className='w-56 md:w-72 h-auto object-contain'
                 />
               </Link>
@@ -75,7 +75,7 @@ const Footer = () => {
                   href={social.href}
                   target='_blank'
                   rel='noopener noreferrer'
-                  aria-label={`Visit ConvenantSoft Technologies on ${social.label}`}
+                  aria-label={`Visit Cornerstone Digital Technologies on ${social.label}`}
                   className='w-9 h-9 md:w-10 md:h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors'
                 >
                   <span className='text-white text-base md:text-lg'>{social.icon}</span>
@@ -152,8 +152,8 @@ const Footer = () => {
         <div className='border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center'>
           <Link href='/privacy-policy' className='text-sm text-white'>Privacy Policy</Link>
           <div className='text-sm text-white mt-4 md:mt-0'>
-            {/* © 2010–2025 All Rights Reserved. Powered by ConvenantSoft Software Technologies LLC (USA) & ConvenantSoft Software Technologies Pvt. Ltd. (USA). */}
-            © 2010–2026 All Rights Reserved. Powered by ConvenantSoft Software Technologies LLC.
+            {/* © 2010–2025 All Rights Reserved. Powered by Cornerstone Digital Technologies LLC (USA) & Cornerstone Digital Technologies Pvt. Ltd. (USA). */}
+            © 2010–2026 All Rights Reserved. Powered by Cornerstone Digital Technologies LLC.
 
           </div>
         </div>

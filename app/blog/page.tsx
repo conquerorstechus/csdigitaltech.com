@@ -9,13 +9,13 @@ import { Calendar, Clock, User, Eye, ArrowRight } from 'lucide-react'
 const blogPosts = [
   {
     id: 4,
-    title: "Unlock your Custom AI & LLM Solutions with ConvenantSoft",
-    excerpt: "Unlock the potential of custom AI & LLM solutions with ConvenantSoft Tech. Empower your business with intelligent automation and advanced LLM services.",
+    title: "Unlock your Custom AI & LLM Solutions with Cornerstone Digital Technologies",
+    excerpt: "Unlock the potential of custom AI & LLM solutions with Cornerstone Digital Technologies Tech. Empower your business with intelligent automation and advanced LLM services.",
     image: "/Florida Companies.png",
     category: "Artificial Intelligence",
     date: "March 11, 2026",
     readTime: "7 min read",
-    author: "ConvenantSoft Tech Team",
+    author: "Cornerstone Digital Technologies Tech Team",
     views: "1.2k"
   },
   {
@@ -55,7 +55,7 @@ const blogPosts = [
 
 export const metadata = getComprehensiveMetadata(
   "Blog - Latest Tech Insight Articles",
-  "Stay updated with the latest insights, trends, and innovations in technology, software development, cloud computing, and digital transformation. Expert articles from ConvenantSoft Technologies.",
+  "Stay updated with the latest insights, trends, and innovations in technology, software development, cloud computing, and digital transformation. Expert articles from Cornerstone Digital Technologies.",
   "/blog",
   "/technology.jpg",
   [
@@ -86,7 +86,7 @@ export const metadata = getComprehensiveMetadata(
 export default function BlogPage() {
   const structuredData = getStructuredData(
     "Blog - Latest Technology Insights & Software Development Articles",
-    "Stay updated with the latest insights, trends, and innovations in technology, software development, cloud computing, and digital transformation. Expert articles from ConvenantSoft Technologies.",
+    "Stay updated with the latest insights, trends, and innovations in technology, software development, cloud computing, and digital transformation. Expert articles from Cornerstone Digital Technologies.",
     "/blog",
     "WebPage"
   )

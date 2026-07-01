@@ -17,15 +17,15 @@ export function getMetadata(
   const keywordsString = Array.isArray(keywords) ? keywords.join(", ") : keywords;
 
   return {
-    title: `${pageTitle} | ConvenantSoft Technologies`,
+    title: `${pageTitle} | Cornerstone Digital Technologies`,
     description: pageDescription,
     keywords: keywordsString,
     metadataBase: new URL(domain),
     openGraph: {
-      title: `${pageTitle} | ConvenantSoft Technologies`,
+      title: `${pageTitle} | Cornerstone Digital Technologies`,
       description: pageDescription,
       url: fullUrl,
-      siteName: "ConvenantSoft Technologies",
+      siteName: "Cornerstone Digital Technologies",
       images: [
         {
           url: fullImage,
@@ -40,7 +40,7 @@ export function getMetadata(
     },
     twitter: {
       card: "summary_large_image",
-      title: `${pageTitle} | ConvenantSoft Technologies`,
+      title: `${pageTitle} | Cornerstone Digital Technologies`,
       description: pageDescription,
       images: [fullImage],
       site: "@ConquerorsTech",
@@ -74,9 +74,9 @@ export function getMetadata(
     category: "technology",
     classification: "Software Development Company",
     referrer: "origin-when-cross-origin",
-    authors: [{ name: "ConvenantSoft Technologies" }],
-    creator: "ConvenantSoft Technologies",
-    publisher: "ConvenantSoft Technologies",
+    authors: [{ name: "Cornerstone Digital Technologies" }],
+    creator: "Cornerstone Digital Technologies",
+    publisher: "Cornerstone Digital Technologies",
     formatDetection: {
       email: false,
       address: false,
@@ -99,12 +99,12 @@ export function getStructuredData(
   const baseStructuredData = {
     "@context": "https://schema.org",
     "@type": pageType,
-    "name": `${pageTitle} | ConvenantSoft Technologies`,
+    "name": `${pageTitle} | Cornerstone Digital Technologies`,
     "description": pageDescription,
     "url": fullUrl,
     "publisher": {
       "@type": "Organization",
-      "name": "ConvenantSoft Technologies",
+      "name": "Cornerstone Digital Technologies",
       "url": domain,
       "logo": {
         "@type": "ImageObject",
@@ -161,7 +161,7 @@ export function getStructuredData(
       "@type": "Service",
       "provider": {
         "@type": "Organization",
-        "name": "ConvenantSoft Technologies",
+        "name": "Cornerstone Digital Technologies",
         "url": domain
       },
       "serviceType": "Software Development",
@@ -210,7 +210,7 @@ export function getStructuredData(
       "dateModified": additionalData?.dateModified || new Date().toISOString(),
       "author": {
         "@type": "Person",
-        "name": additionalData?.author || "ConvenantSoft Technologies",
+        "name": additionalData?.author || "Cornerstone Digital Technologies",
         "url": domain
       },
       "publisher": baseStructuredData.publisher,
@@ -250,7 +250,7 @@ export function getStructuredData(
     return {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "ConvenantSoft Technologies",
+      "name": "Cornerstone Digital Technologies",
       "description": pageDescription,
       "url": domain,
       "telephone": "+1-813-563-0060",
@@ -554,7 +554,7 @@ export function getAIMLServicesFloridaSchema() {
           "@type": "Place",
           "name": "Florida, USA"
         },
-        "description": "ConvenantSoft Technologies delivers end-to-end AI & ML services in Florida—AI strategy development, data engineering, predictive analytics, custom model building, NLP solutions, automation systems, and enterprise AI implementation.",
+        "description": "Cornerstone Digital Technologies delivers end-to-end AI & ML services in Florida—AI strategy development, data engineering, predictive analytics, custom model building, NLP solutions, automation systems, and enterprise AI implementation.",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "AI & ML Services Catalog",
@@ -620,7 +620,7 @@ export function getCustomLLMsFloridaSchema() {
           "@type": "Place",
           "name": "Florida, USA"
         },
-        "description": "ConvenantSoft Technologies provides complete custom LLM development services in Florida—enterprise training, domain-specific model creation, LLM fine-tuning, RAG implementation, vector database integration, AI chatbot building, and end-to-end LLM deployment for businesses.",
+        "description": "Cornerstone Digital Technologies provides complete custom LLM development services in Florida—enterprise training, domain-specific model creation, LLM fine-tuning, RAG implementation, vector database integration, AI chatbot building, and end-to-end LLM deployment for businesses.",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Custom LLM Services Catalog",
@@ -686,7 +686,7 @@ export function getAILearningSolutionsFloridaSchema() {
           "@type": "Place",
           "name": "Florida, USA"
         },
-        "description": "ConvenantSoft Technologies offers professional AI learning services in Florida, including personalized AI learning programs, machine learning courses, hands-on AI workshops, corporate AI training, and AI upskilling solutions for businesses, institutions, and individuals.",
+        "description": "Cornerstone Digital Technologies offers professional AI learning services in Florida, including personalized AI learning programs, machine learning courses, hands-on AI workshops, corporate AI training, and AI upskilling solutions for businesses, institutions, and individuals.",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "AI Learning Services Catalog",
@@ -752,7 +752,7 @@ export function getAIPoweredMMRAGServicesFloridaSchema() {
           "@type": "Place",
           "name": "Florida, USA"
         },
-        "description": "ConvenantSoft Technologies delivers cutting-edge AI-powered MMRAG (Multimodal Retrieval-Augmented Generation) services in Florida, enabling enterprises to process and retrieve information from text, images, audio, video, and structured data. Services include custom MMRAG development, multimodal AI pipelines, vector database integration, and AI automation solutions.",
+        "description": "Cornerstone Digital Technologies delivers cutting-edge AI-powered MMRAG (Multimodal Retrieval-Augmented Generation) services in Florida, enabling enterprises to process and retrieve information from text, images, audio, video, and structured data. Services include custom MMRAG development, multimodal AI pipelines, vector database integration, and AI automation solutions.",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "AI-Powered MMRAG Services Catalog",
@@ -818,7 +818,7 @@ export function getDataAnalyticsBIFloridaSchema() {
           "@type": "Place",
           "name": "Florida, USA"
         },
-        "description": "ConvenantSoft Technologies delivers end-to-end Data Analytics and BI solutions in Florida, offering predictive analytics, business dashboards, ETL pipelines, data warehousing, KPI reporting, cloud-based BI, and enterprise data modernization services.",
+        "description": "Cornerstone Digital Technologies delivers end-to-end Data Analytics and BI solutions in Florida, offering predictive analytics, business dashboards, ETL pipelines, data warehousing, KPI reporting, cloud-based BI, and enterprise data modernization services.",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Data Analytics & BI Services Catalog",
@@ -880,7 +880,7 @@ export function getDataScienceServicesSchema() {
         "provider": {
           "@id": `${domain}/#organization`
         },
-        "description": "ConvenantSoft Technologies helps businesses leverage data science to drive insights and innovation, offering predictive modeling, ML development, statistical analysis, data automation, big data pipelines, and enterprise data science consulting.",
+        "description": "Cornerstone Digital Technologies helps businesses leverage data science to drive insights and innovation, offering predictive modeling, ML development, statistical analysis, data automation, big data pipelines, and enterprise data science consulting.",
         "areaServed": {
           "@type": "Place",
           "name": "USA"
@@ -950,7 +950,7 @@ export function getDigitalCloudSolutionsFloridaSchema() {
           "@type": "Place",
           "name": "Florida, USA"
         },
-        "description": "ConvenantSoft Technologies offers complete digital cloud solutions in Florida including cloud infrastructure setup, cloud strategy consulting, multi-cloud deployment, DevOps automation, cloud-native application development, and 24/7 managed cloud operations.",
+        "description": "Cornerstone Digital Technologies offers complete digital cloud solutions in Florida including cloud infrastructure setup, cloud strategy consulting, multi-cloud deployment, DevOps automation, cloud-native application development, and 24/7 managed cloud operations.",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Digital Cloud Solutions Catalog",
@@ -1016,7 +1016,7 @@ export function getCloudServicesFloridaSchema() {
           "@type": "Place",
           "name": "Florida, USA"
         },
-        "description": "ConvenantSoft Technologies provides complete cloud services in Florida including cloud consulting, migration, cloud security implementation, multi-cloud deployment, cloud-native development, and 24/7 managed cloud support for businesses seeking scalability and security.",
+        "description": "Cornerstone Digital Technologies provides complete cloud services in Florida including cloud consulting, migration, cloud security implementation, multi-cloud deployment, cloud-native development, and 24/7 managed cloud support for businesses seeking scalability and security.",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Cloud Services Catalog",
@@ -1089,7 +1089,7 @@ export function getTestingServicesFloridaSchema() {
           "@type": "Place",
           "name": "Florida, USA"
         },
-        "description": "ConvenantSoft Technologies offers comprehensive testing services in Florida, including end-to-end QA solutions, functional testing, test automation, API testing, performance engineering, mobile testing, security audits, and enterprise QA consulting.",
+        "description": "Cornerstone Digital Technologies offers comprehensive testing services in Florida, including end-to-end QA solutions, functional testing, test automation, API testing, performance engineering, mobile testing, security audits, and enterprise QA consulting.",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Software Testing Services Catalog",
@@ -1162,7 +1162,7 @@ export function getBrandingAgencyServicesSchema() {
           "@type": "Place",
           "name": "USA"
         },
-        "description": "ConvenantSoft Technologies delivers complete branding solutions, including brand strategy, logo design, corporate identity development, visual communication, rebranding, digital brand presence, and brand storytelling services tailored for modern businesses.",
+        "description": "Cornerstone Digital Technologies delivers complete branding solutions, including brand strategy, logo design, corporate identity development, visual communication, rebranding, digital brand presence, and brand storytelling services tailored for modern businesses.",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Branding Services Catalog",
@@ -1228,7 +1228,7 @@ export function getMobileAppDevelopmentServicesSchema() {
           "@type": "Place",
           "name": "USA, India, Global"
         },
-        "description": "ConvenantSoft Technologies delivers end-to-end mobile app development services including native Android & iOS apps, hybrid app development, cross-platform apps, UI/UX design, app integration, and scalable enterprise app solutions.",
+        "description": "Cornerstone Digital Technologies delivers end-to-end mobile app development services including native Android & iOS apps, hybrid app development, cross-platform apps, UI/UX design, app integration, and scalable enterprise app solutions.",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Mobile Application Development Services",
@@ -1301,7 +1301,7 @@ export function getWebDevelopmentServicesSchema() {
             "name": "Florida, USA"
           }
         ],
-        "description": "ConvenantSoft Technologies delivers high-performance custom web application development services, specializing in enterprise-grade applications, CMS-based websites, progressive web apps, full-stack development, and secure, scalable web solutions tailored to business requirements.",
+        "description": "Cornerstone Digital Technologies delivers high-performance custom web application development services, specializing in enterprise-grade applications, CMS-based websites, progressive web apps, full-stack development, and secure, scalable web solutions tailored to business requirements.",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Web Development Services Catalog",
@@ -1688,7 +1688,7 @@ export function getAIMLServicesFloridaFAQSchema() {
       },
       {
         "@type": "Question",
-        "name": "What makes ConvenantSoft different from other AI providers in Florida?",
+        "name": "What makes Cornerstone Digital Technologies different from other AI providers in Florida?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "We don't just sell AI—we seamlessly integrate it into your existing systems. With 15+ years of expertise and a skilled team in AI/ML frameworks, we deliver future-ready, compliant, and cost-effective implementations for Florida businesses and across other regions in the USA."
@@ -1794,7 +1794,7 @@ export function getCustomLLMsFloridaFAQSchema() {
       },
       {
         "@type": "Question",
-        "name": "Why should I choose ConvenantSoft Software Technologies USA for LLM integration in Florida?",
+        "name": "Why should I choose Cornerstone Digital Technologies USA for LLM integration in Florida?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Because we're not just AI consultants—we're a service delivery partner. We help businesses in Florida and across other regions in the USA implement AI quickly, securely, and effectively with local support, deep enterprise experience, and proven results."
@@ -2054,7 +2054,7 @@ export function getAIPoweredMMRAGServicesFloridaFAQSchema() {
       },
       {
         "@type": "Question",
-        "name": "Why should I choose ConvenantSoft Software Technologies USA for MMRAG?",
+        "name": "Why should I choose Cornerstone Digital Technologies USA for MMRAG?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "15+ years of enterprise software expertise, AI-first approach with proven implementations, Local experience working with Florida businesses, Customised, secure, and scalable AI solutions, Dedicated support and flexible engagement models."
@@ -2404,7 +2404,7 @@ export function getDigitalCloudSolutionsFloridaFAQSchema() {
       },
       {
         "@type": "Question",
-        "name": "Why choose ConvenantSoft Software Technologies USA?",
+        "name": "Why choose Cornerstone Digital Technologies USA?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Because we deliver AI-powered, future-ready solutions that don't just move you to the cloud but make your business smarter, faster, and more competitive wherever in Florida and across other regions in the USA."
@@ -2672,7 +2672,7 @@ export function getTestingServicesFloridaFAQSchema() {
       },
       {
         "@type": "Question",
-        "name": "What are the benefits of outsourcing QA to ConvenantSoft?",
+        "name": "What are the benefits of outsourcing QA to Cornerstone Digital Technologies?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Outsourcing QA to us provides access to experienced professionals, faster delivery cycles, reduced overhead, lower defect rates, and cost-effective test automation solutions."
@@ -3214,7 +3214,7 @@ export function getWebDevelopmentServicesFAQSchema() {
       },
       {
         "@type": "Question",
-        "name": "Why should I choose ConvenantSoft Software Technologies USA for AI-driven web design in Florida?",
+        "name": "Why should I choose Cornerstone Digital Technologies USA for AI-driven web design in Florida?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Because we combine 15+ years of expertise with AI-first development and deep knowledge of Florida competitive business landscape. We deliver localised, scalable, and intelligent solutions designed for real business growth."
@@ -3232,7 +3232,7 @@ export function getHomePageFAQSchema() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What services does ConvenantSoft Software Technologies offer?",
+        "name": "What services does Cornerstone Digital Technologies offer?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "We provide end-to-end IT solutions, including custom software development, cloud services, mobile applications, UI/UX design, QA & testing, digital marketing, Data Analytics and IT consulting across multiple platforms and industries."
@@ -3384,7 +3384,7 @@ export function getHomePageFAQSchema() {
       },
       {
         "@type": "Question",
-        "name": "How do I get started with ConvenantSoft Software Technologies?",
+        "name": "How do I get started with Cornerstone Digital Technologies?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Contact us for a free consultation where we'll discuss your requirements, provide recommendations, and create a customized project plan."

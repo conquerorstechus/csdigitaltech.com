@@ -148,7 +148,7 @@ export default function DataAnalyticsBIClient() {
               Turn Data into Decisions with AI-Powered Analytics
               </h2>
               <p className='text-gray-700 text-lg leading-8 tracking-wide'>
-              Your business collects data every second—from customers, sales, operations, and digital interactions. But data without intelligence is just noise. ConvenantSoft Software Technologies USA helps businesses across Florida and its surrounding regions unlock the true value of their data through AI-driven data analytics and business intelligence (BI) services.
+              Your business collects data every second—from customers, sales, operations, and digital interactions. But data without intelligence is just noise. Cornerstone Digital Technologies USA helps businesses across Florida and its surrounding regions unlock the true value of their data through AI-driven data analytics and business intelligence (BI) services.
               </p>
               <p className='text-gray-700 text-lg leading-8 tracking-wide mt-4'>
               Our solutions combine Agentic Architecture with advanced AI/ML models to deliver real-time predictive analytics, automated forecasting, and smarter decision-making. Whether you're in Florida and across other regions in the USA like Miami, Orlando, Tampa, Jacksonville, or nearby areas, we design solutions that transform raw data into clear insights, accurate predictions, and business growth opportunities.
@@ -292,7 +292,7 @@ export default function DataAnalyticsBIClient() {
         <section className='py-16 px-4 bg-white'>
           <div className='max-w-6xl mx-auto'>
             <h2 className='text-3xl sm:text-4xl font-bold text-center mb-10 bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent'>
-              Why Florida Businesses Choose ConvenantSoft
+              Why Florida Businesses Choose Cornerstone Digital Technologies
             </h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
               <div className='p-6 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl border-2 border-orange-100'>
@@ -357,7 +357,7 @@ export default function DataAnalyticsBIClient() {
               Your business data holds answers—AI makes them clear.
             </p>
             <p className='text-white/90 text-lg sm:text-xl leading-relaxed mb-10'>
-              With ConvenantSoft' AI-Driven Data Analytics & BI services, companies across Florida can predict trends, optimise decisions, and gain a competitive advantage.
+              With Cornerstone Digital Technologies' AI-Driven Data Analytics & BI services, companies across Florida can predict trends, optimise decisions, and gain a competitive advantage.
             </p>
             
             <div className='flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6'>

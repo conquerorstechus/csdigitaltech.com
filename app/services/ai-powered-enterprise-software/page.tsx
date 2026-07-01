@@ -4,7 +4,7 @@ import StructuredData from '@/components/ui/StructuredData'
 
 export const metadata = getComprehensiveMetadata(
   'AI Enterprise & Custom Software Florida',
-  'Build intelligent AI-powered enterprise software in Florida with scalable, adaptive solutions by ConvenantSoft Technologies. Automate workflows, personalize experiences, and drive smart decisions.',
+  'Build intelligent AI-powered enterprise software in Florida with scalable, adaptive solutions by Cornerstone Digital Technologies. Automate workflows, personalize experiences, and drive smart decisions.',
   '/services/ai-powered-enterprise-software-in-Florida',
   '/Digitalcloud/business-brainstorming-graph-chart-report-data-concept_53876-31213.webp',
   [
@@ -55,7 +55,7 @@ export const metadata = getComprehensiveMetadata(
 export default function AIEnterpriseSoftware() {
   const structuredData = getStructuredData(
     'AI Enterprise & Custom Software Florida',
-    'Build intelligent AI-powered enterprise software in Florida with scalable, adaptive solutions by ConvenantSoft Technologies. Automate workflows, personalize experiences, and drive smart decisions.',
+    'Build intelligent AI-powered enterprise software in Florida with scalable, adaptive solutions by Cornerstone Digital Technologies. Automate workflows, personalize experiences, and drive smart decisions.',
     '/services/ai-powered-enterprise-software-in-Florida',
     'Service'
   )

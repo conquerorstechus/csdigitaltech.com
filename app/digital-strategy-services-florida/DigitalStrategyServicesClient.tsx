@@ -54,7 +54,7 @@ export default function DigitalStrategyServicesClient() {
               Digital Strategy
             </h1>
             <p className='lg:text-lg text-base font-bold drop-shadow-md tracking-wider mt-3'>
-              "ConvenantSoft Software Technologies" Customer Satisfaction Is Our
+              "Cornerstone Digital Technologies" Customer Satisfaction Is Our
               Best Business Strategy
             </p>
           </div>
@@ -75,7 +75,7 @@ export default function DigitalStrategyServicesClient() {
               dominating the digital landscape.
             </p>
             <p className='mt-4 text-gray-500  text-sm sm:text-lg lg:leading-8'>
-              As ConvenantSoft is the best Digital Strategy implementing company in
+              As Cornerstone Digital Technologies is the best Digital Strategy implementing company in
               Florida, To win in the digital era you always need a bold
               ambition and better flawless execution. We can help you with both.
               Our multidisciplinary teams of experts and their implementation of

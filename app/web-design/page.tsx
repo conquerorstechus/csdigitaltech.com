@@ -3,8 +3,8 @@ import StructuredData from "@/components/ui/StructuredData";
 import WebDesignClient from "./WebDesignClient";
 
 export const metadata = getComprehensiveMetadata(
-  "Web design | ConvenantSoft Technologies",
-  "ConvenantSoft Technologies is a leading web design company in Florida offering custom web design, graphic design, corporate identity, and logo design services. Get creative web solutions that cater to your marketing and design needs.",
+  "Web design | Cornerstone Digital Technologies",
+  "Cornerstone Digital Technologies is a leading web design company in Florida offering custom web design, graphic design, corporate identity, and logo design services. Get creative web solutions that cater to your marketing and design needs.",
   "/web-design",
   "/WebDevlopment/2-Web-Design.jpg",
   [
@@ -49,8 +49,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function WebDesign() {
   const structuredData = getStructuredData(
-    "Web design | ConvenantSoft Technologies",
-    "ConvenantSoft Technologies is a leading web design company in Florida offering custom web design, graphic design, corporate identity, and logo design services. Get creative web solutions that cater to your marketing and design needs.",
+    "Web design | Cornerstone Digital Technologies",
+    "Cornerstone Digital Technologies is a leading web design company in Florida offering custom web design, graphic design, corporate identity, and logo design services. Get creative web solutions that cater to your marketing and design needs.",
     "/web-design",
     "Service"
   );

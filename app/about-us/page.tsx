@@ -5,11 +5,11 @@ import StructuredData from "@/components/ui/StructuredData";
 
 export const metadata = getComprehensiveMetadata(
   "About Us -  Software  Company in Florida ",
-  "Discover Convenantsoft - a premier software development company in Florida. Learn about our journey, expertise in custom software development, mobile apps, and digital solutions. Trusted by 500+ clients worldwide.",
+  "Discover Cornerstone Digital Technologies - a premier software development company in Florida. Learn about our journey, expertise in custom software development, mobile apps, and digital solutions. Trusted by 500+ clients worldwide.",
   "/about-us",
   "/About/image-box1.jpg",
   [
-    "about convenantsoft",
+    "about Cornerstone Digital Technologies",
     "software development company Florida",
     "custom software development company",
     "mobile app development company",
@@ -21,7 +21,7 @@ export const metadata = getComprehensiveMetadata(
     "cloud solutions provider",
     "technology consulting services",
     "software development team",
-    "convenantsoft  about",
+    "Cornerstone Digital Technologies  about",
     "Florida software company",
     "custom application development",
     "digital transformation services",
@@ -36,7 +36,7 @@ export const metadata = getComprehensiveMetadata(
 export default function AboutUs() {
   const structuredData = getStructuredData(
     "About Us - Leading Software Development Company in Florida",
-    "Discover Convenantsoft - a premier software development company in Florida. Learn about our journey, expertise in custom software development, mobile apps, and digital solutions. Trusted by 500+ clients worldwide.",
+    "Discover Cornerstone Digital Technologies - a premier software development company in Florida. Learn about our journey, expertise in custom software development, mobile apps, and digital solutions. Trusted by 500+ clients worldwide.",
     "/about-us",
     "Organization"
   );

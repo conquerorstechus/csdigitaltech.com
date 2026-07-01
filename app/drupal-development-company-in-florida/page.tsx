@@ -4,7 +4,7 @@ import DrupalDevelopmentClient from "./DrupalDevelopmentClient";
 
 export const metadata = getComprehensiveMetadata(
   "Drupal Development Company in Florida",
-  "Looking for Drupal web development in Florida? ConvenantSoft Technologies delivers custom, secure, and scalable Drupal sites tailored to your goals.",
+  "Looking for Drupal web development in Florida? Cornerstone Digital Technologies delivers custom, secure, and scalable Drupal sites tailored to your goals.",
   "/drupal-development-company-in-florida",
   "/WebDevlopment/2020-08-05-3.jpg",
   [
@@ -30,7 +30,7 @@ export const metadata = getComprehensiveMetadata(
 export default function DrupalDevelopment() {
   const structuredData = getStructuredData(
     "Drupal Development Company in Florida - Custom Drupal Website Development Services",
-    "ConvenantSoft Technologies is a leading Drupal development company in Florida offering custom Drupal website development, module development, theme customization, and Drupal maintenance services. Expert Drupal developers for enterprise solutions.",
+    "Cornerstone Digital Technologies is a leading Drupal development company in Florida offering custom Drupal website development, module development, theme customization, and Drupal maintenance services. Expert Drupal developers for enterprise solutions.",
     "/drupal-development-company-in-Florida",
     "Service"
   );

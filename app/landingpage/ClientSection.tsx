@@ -101,7 +101,7 @@ export default function ClientSection() {
                       <Image
                         src={client.logo}
                         alt={client.name}
-                        title={`${client.name} - Trusted Partner of ConvenantSoft Technologies`}
+                        title={`${client.name} - Trusted Partner of Cornerstone Digital Technologies`}
                         className="max-h-full max-w-full w-auto h-auto object-contain transition-all duration-500 opacity-70 group-hover:opacity-100 group-hover:scale-110"
                         priority={index < 6}
                       />

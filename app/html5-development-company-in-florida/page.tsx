@@ -4,7 +4,7 @@ import HTML5DevelopmentClient from "./HTML5DevelopmentClient";
 
 export const metadata = getComprehensiveMetadata(
   "HTML5 Development Company in Florida",
-  "Elevate your web presence with ConvenantSoft Technologies — Florida’s expert HTML5 development company delivering interactive, high-performance, user-friendly web applications.",
+  "Elevate your web presence with Cornerstone Digital Technologies — Florida’s expert HTML5 development company delivering interactive, high-performance, user-friendly web applications.",
   "/html5-development-company-in-florida",
   "/WebDevlopment/2020-08-05-3.jpg",
   [
@@ -35,7 +35,7 @@ export const metadata = getComprehensiveMetadata(
 export default function HTML5Development() {
   const structuredData = getStructuredData(
     "HTML5 Development Company in Florida - Custom HTML5 Web Development Services",
-    "ConvenantSoft Technologies is a leading HTML5 development company in Florida offering custom HTML5 web development, responsive design, interactive applications, and modern web solutions. Expert HTML5 developers for your business needs.",
+    "Cornerstone Digital Technologies is a leading HTML5 development company in Florida offering custom HTML5 web development, responsive design, interactive applications, and modern web solutions. Expert HTML5 developers for your business needs.",
     "/html5-development-company-in-Florida",
     "Service"
   );

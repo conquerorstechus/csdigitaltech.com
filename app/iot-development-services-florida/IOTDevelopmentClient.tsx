@@ -50,7 +50,7 @@ export default function IOTDevelopmentClient() {
               Services we Offer on Internet of Things
             </h2>
             <p className='mt-4 text-gray-500  text-sm sm:text-lg lg:leading-8'>
-              ConvenantSoft, the best IoT development services company in
+              Cornerstone Digital Technologies, the best IoT development services company in
               Florida, provides scalable digital products and a dedicated
               development team. We build secure IoT solutions with deep
               analytical layers. Our IoT development services include IoT app

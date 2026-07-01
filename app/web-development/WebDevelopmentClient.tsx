@@ -56,7 +56,7 @@ export default function WebDevelopmentClient() {
               </h2>
 
               <p className='text-gray-700 text-sm sm:text-lg leading-relaxed'>
-                <strong>ConvenantSoft</strong> help businesses across Florida and the Southern USA build websites and applications that don’t just function—they think, adapt, and deliver results. With over a decade of experience, we combine custom web development expertise with the power of Artificial Intelligence to create solutions that help you outpace competitors and grow faster.
+                <strong>Cornerstone Digital Technologies</strong> help businesses across Florida and the Southern USA build websites and applications that don’t just function—they think, adapt, and deliver results. With over a decade of experience, we combine custom web development expertise with the power of Artificial Intelligence to create solutions that help you outpace competitors and grow faster.
               </p>
 
               <p className='text-gray-600 text-sm sm:text-lg leading-relaxed'>
@@ -71,7 +71,7 @@ export default function WebDevelopmentClient() {
             {/* Additional Paragraph */}
             <div className='text-justify text-gray-700 text-sm sm:text-base md:text-lg leading-7 w-full lg:w-1/2'>
               <p>
-                We at ConvenantSoft realize our responsibility and have come up
+                We at Cornerstone Digital Technologies realize our responsibility and have come up
                 with custom web application development solutions in Florida
                 that enhance your business and personal growth. We offer web
                 application development services for the following areas:

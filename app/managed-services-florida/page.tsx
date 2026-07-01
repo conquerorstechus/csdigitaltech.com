@@ -4,7 +4,7 @@ import ManagedServicesClient from "./ManagedServicesClient";
 
 export const metadata = getComprehensiveMetadata(
   "Managed Services in Florida",
-  "Get reliable managed services in Florida from ConvenantSoft Technologies. We handle your IT, cloud systems, monitoring, and support so your business stays efficient and growing.",
+  "Get reliable managed services in Florida from Cornerstone Digital Technologies. We handle your IT, cloud systems, monitoring, and support so your business stays efficient and growing.",
   "/managed-services-florida",
   "/WebDevlopment/9.jpg",
   [
@@ -44,8 +44,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function ManagedServices() {
   const structuredData = getStructuredData(
-    "Managed Services in Florida | ConvenantSoft Techologies",
-    "Get reliable managed services in Florida from ConvenantSoft Technologies. We handle your IT, cloud systems, monitoring, and support so your business stays efficient and growing.",
+    "Managed Services in Florida | Cornerstone Digital Technologies Techologies",
+    "Get reliable managed services in Florida from Cornerstone Digital Technologies. We handle your IT, cloud systems, monitoring, and support so your business stays efficient and growing.",
     "/managed-services-florida",
     "Service"
   );

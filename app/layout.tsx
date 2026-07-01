@@ -11,7 +11,7 @@ import Loader from "../components/ui/loader"
 import Script from "next/script"
 
 export const metadata: Metadata = {
-  title: "ConvenantSoft Technologies",
+  title: "Cornerstone Digital Technologies",
   description:
     "Empowering businesses through innovative technology solutions and digital transformation services.",
 }

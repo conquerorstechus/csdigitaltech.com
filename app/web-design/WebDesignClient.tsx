@@ -58,7 +58,7 @@ export default function WebDesignClient() {
                 There is no doubt that creativity is the most important human
                 resource of all. Making the simple complicated is commonplace;
                 making the complicated simple, awesomely simple, that's
-                creativity. ConvenantSoft is the best web designing company in
+                creativity. Cornerstone Digital Technologies is the best web designing company in
                 Florida, USA providing affordable services to clients all
                 over the world. We intend to take this creativity identity
                 outshine that of your peers; unlike the conventional web design

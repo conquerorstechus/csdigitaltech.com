@@ -4,7 +4,7 @@ import AIOptimisedEcommerceDevelopmentClient from "./AIOptimisedEcommerceDevelop
 
 export const metadata = getComprehensiveMetadata(
   "AI-ECommerce Development Firm Florida ",
-  "Transform your store with AI! ConvenantSoft Technologies, Florida’s trusted eCommerce innovator, builds powerful, scalable, and high-conversion AI-optimised online platforms.",
+  "Transform your store with AI! Cornerstone Digital Technologies, Florida’s trusted eCommerce innovator, builds powerful, scalable, and high-conversion AI-optimised online platforms.",
   "/ai-optimised-ecommerce-development",
   "/WebDevlopment/startup-594090__340-2.jpg",
   [
@@ -38,8 +38,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function AIOptimisedEcommerceDevelopment() {
   const structuredData = getStructuredData(
-    "AI-Optimised eCommerce Development Company in Florida | ConvenantSoft Tech",
-    "ConvenantSoft Technologies is a leading AI-optimised eCommerce development company in Florida offering AI-powered online stores, intelligent product recommendations, personalized shopping experiences, and automated eCommerce solutions. Expert AI eCommerce developers for smart online retail.",
+    "AI-Optimised eCommerce Development Company in Florida | Cornerstone Digital Technologies Tech",
+    "Cornerstone Digital Technologies is a leading AI-optimised eCommerce development company in Florida offering AI-powered online stores, intelligent product recommendations, personalized shopping experiences, and automated eCommerce solutions. Expert AI eCommerce developers for smart online retail.",
     "/ai-optimised-ecommerce-development",
     "Service"
   );

@@ -4,7 +4,7 @@ import LaravelDevelopmentClient from "./LaravelDevelopmentClient";
 
 export const metadata = getComprehensiveMetadata(
   "Laravel Development Company in Florida",
-  "Build powerful web apps with Laravel development services from ConvenantSoft Technologies in Florida — clean code, high performance, and long-term scalability.",
+  "Build powerful web apps with Laravel development services from Cornerstone Digital Technologies in Florida — clean code, high performance, and long-term scalability.",
   "/laravel-development-company-in-florida",
   "/WebDevlopment/Laravel-banner.jpg",
   [
@@ -31,8 +31,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function LaravelDevelopment() {
   const structuredData = getStructuredData(
-    "Laravel Development Company in Florida  | ConvenantSoft Tech",
-    "Build powerful web apps with Laravel development services from ConvenantSoft Technologies in Florida — clean code, high performance, and long-term scalability.",
+    "Laravel Development Company in Florida  | Cornerstone Digital Technologies Tech",
+    "Build powerful web apps with Laravel development services from Cornerstone Digital Technologies in Florida — clean code, high performance, and long-term scalability.",
     "/laravel-development-company-in-florida",
     "Service"
   );

@@ -105,7 +105,7 @@ export default function MmragServicesClient() {
               </h2>
 
               <p className='text-gray-500 font-medium text-base sm:text-lg lg:leading-8 leading-8 text-justify'>
-                At ConvenantSoft Software Technologies USA, we help businesses across Florida and surrounding regions unlock the true potential of AI with our Multimodal Retrieval-Augmented Generation (MMRAG) services. MMRAG combines multiple data sources—documents, PDFs, images, audio, and video—to retrieve the right information and generate meaningful, context-rich responses.
+                At Cornerstone Digital Technologies USA, we help businesses across Florida and surrounding regions unlock the true potential of AI with our Multimodal Retrieval-Augmented Generation (MMRAG) services. MMRAG combines multiple data sources—documents, PDFs, images, audio, and video—to retrieve the right information and generate meaningful, context-rich responses.
               </p>
 
               <p className='text-gray-500 font-medium text-base sm:text-lg lg:leading-8 leading-8 text-justify'>

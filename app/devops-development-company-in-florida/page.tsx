@@ -4,7 +4,7 @@ import DevOpsDevelopmentClient from "./DevOpsDevelopmentClient";
 
 export const metadata = getComprehensiveMetadata(
   "DevOps Development Company in Florida",
-  "Get cutting-edge DevOps services in Florida with ConvenantSoft Technologies: we streamline your delivery pipeline, automate infrastructure, and boost deployment speed.",
+  "Get cutting-edge DevOps services in Florida with Cornerstone Digital Technologies: we streamline your delivery pipeline, automate infrastructure, and boost deployment speed.",
   "/devops-development-company-in-florida",
   "/WebDevlopment/1-min.webp",
   [
@@ -51,8 +51,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function DevOpsDevelopment() {
   const structuredData = getStructuredData(
-    "DevOps Development Company in Florida | ConvenantSoft Tech",
-    "Get cutting-edge DevOps services in Florida with ConvenantSoft Technologies: we streamline your delivery pipeline, automate infrastructure, and boost deployment speed.",
+    "DevOps Development Company in Florida | Cornerstone Digital Technologies Tech",
+    "Get cutting-edge DevOps services in Florida with Cornerstone Digital Technologies: we streamline your delivery pipeline, automate infrastructure, and boost deployment speed.",
     "/devops-development-company-in-florida",
     "Service"
   );

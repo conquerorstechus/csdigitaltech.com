@@ -44,7 +44,7 @@ const servicesCategories = [
 ]
 
 const aboutMenuItems = [
-  { label: 'About ConvenantSoft', href: '/about-us' },
+  { label: 'About Cornerstone Digital Technologies', href: '/about-us' },
   { label: 'Our Team', href: '/our-team' },
   { label: 'Office gallery', href: '/office-gallery' }
 ]

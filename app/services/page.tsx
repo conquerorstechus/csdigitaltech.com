@@ -5,7 +5,7 @@ import StructuredData from "@/components/ui/StructuredData";
 
 export const metadata = getComprehensiveMetadata(
   "Our Services-Software Company Florida",
-  "Explore ConvenantSoft Tech's expert IT services—from web development to digital marketing—designed to accelerate your business growth with innovative, scalable solutions.",
+  "Explore Cornerstone Digital Technologies' expert IT services—from web development to digital marketing—designed to accelerate your business growth with innovative, scalable solutions.",
   "/services",
   "/bg-pheader.jpg",
   [

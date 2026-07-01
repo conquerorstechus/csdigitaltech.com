@@ -3,8 +3,8 @@ import StructuredData from "@/components/ui/StructuredData";
 import BusinessIntelligenceClient from "./BusinessIntelligenceClient";
 
 export const metadata = getComprehensiveMetadata(
-  "Business Intelligence Services | ConvenantSoft Tech",
-  "ConvenantSoft Technologies is a leading business intelligence services company offering comprehensive BI solutions, data analytics, dashboards, and enterprise BI consulting. Get expert business intelligence services for data-driven decision making.",
+  "Business Intelligence Services | Cornerstone Digital Technologies Tech",
+  "Cornerstone Digital Technologies is a leading business intelligence services company offering comprehensive BI solutions, data analytics, dashboards, and enterprise BI consulting. Get expert business intelligence services for data-driven decision making.",
   "/business-intelligence",
   "/Digitalcloud/business-brainstorming-graph-chart-report-data-concept_53876-31213.webp",
   [
@@ -44,8 +44,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function BusinessIntelligence() {
   const structuredData = getStructuredData(
-    "Business Intelligence Services | ConvenantSoft Tech",
-    "ConvenantSoft Technologies is a leading business intelligence services company offering comprehensive BI solutions, data analytics, dashboards, and enterprise BI consulting. Get expert business intelligence services for data-driven decision making.",
+    "Business Intelligence Services | Cornerstone Digital Technologies Tech",
+    "Cornerstone Digital Technologies is a leading business intelligence services company offering comprehensive BI solutions, data analytics, dashboards, and enterprise BI consulting. Get expert business intelligence services for data-driven decision making.",
     "/business-intelligence",
     "Service"
   );

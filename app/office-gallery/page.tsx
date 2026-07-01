@@ -3,12 +3,12 @@ import StructuredData from '@/components/ui/StructuredData'
 import OfficeGalleryClient from './OfficeGalleryClient'
 
 export const metadata = getComprehensiveMetadata(
-  'Office Gallery - ConvenantSoft Technologies',
-  'Explore our modern office space, workspace, and company culture at ConvenantSoft Technologies. See where innovation happens and meet our vibrant team environment.',
+  'Office Gallery - Cornerstone Digital Technologies',
+  'Explore our modern office space, workspace, and company culture at Cornerstone Digital Technologies. See where innovation happens and meet our vibrant team environment.',
   '/office-gallery',
   '/About/image-box1.jpg',
   [
-    'ConvenantSoft technologies office',
+    'Cornerstone Digital Technologies technologies office',
     'office gallery',
     'company workspace',
     'office environment',
@@ -24,8 +24,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function OfficeGallery() {
   const structuredData = getStructuredData(
-    'Office Gallery - ConvenantSoft Technologies',
-    'Explore our modern office space, workspace, and company culture at ConvenantSoft Technologies. See where innovation happens and meet our vibrant team environment.',
+    'Office Gallery - Cornerstone Digital Technologies',
+    'Explore our modern office space, workspace, and company culture at Cornerstone Digital Technologies. See where innovation happens and meet our vibrant team environment.',
     '/office-gallery',
     'Organization'
   )

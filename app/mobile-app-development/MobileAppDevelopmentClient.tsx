@@ -74,7 +74,7 @@ export default function MobileAppDevelopmentClient() {
               </h2>
               <div className='max-w-5xl mx-auto space-y-6 text-gray-600 text-base sm:text-lg leading-relaxed'>
                 <p>
-                  ConvenantSoft Software Technologies USA builds next-generation AI-powered mobile applications for businesses across Florida and the USA, helping organizations transform the way they interact with their customers and workforce. By integrating machine learning, natural language processing, predictive analytics, computer vision, and intelligent automation into mobile-first solutions, we deliver apps that are personalized, adaptive, and future-ready.
+                  Cornerstone Digital Technologies USA builds next-generation AI-powered mobile applications for businesses across Florida and the USA, helping organizations transform the way they interact with their customers and workforce. By integrating machine learning, natural language processing, predictive analytics, computer vision, and intelligent automation into mobile-first solutions, we deliver apps that are personalized, adaptive, and future-ready.
                 </p>
                 <p>
                   Our expertise spans native iOS/Android apps, cross-platform frameworks like Flutter and React Native, and progressive mobile solutions that seamlessly integrate with enterprise systems and cloud platforms. From AI-driven healthcare apps in Miami and Orlando to intelligent eCommerce platforms in Tampa and Fort Lauderdale to smart financial assistant apps in Jacksonville and nearby regions, we design mobile applications that evolve with users, boost engagement, and create measurable business outcomes.

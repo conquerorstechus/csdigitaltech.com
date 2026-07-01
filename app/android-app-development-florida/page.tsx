@@ -4,7 +4,7 @@ import AndroidAppDevelopmentClient from "./AndroidAppDevelopmentClient";
 
 export const metadata = getComprehensiveMetadata(
   "Android App Development Company in Florida",
-  "ConvenantSoft Technologies is a leading Android app development company in Florida offering native Android application development, custom mobile app solutions, and expert Android developers. Get high-performance Android apps built with latest technologies.",
+  "Cornerstone Digital Technologies is a leading Android app development company in Florida offering native Android application development, custom mobile app solutions, and expert Android developers. Get high-performance Android apps built with latest technologies.",
   "/android-app-development-florida",
   "/WebDevlopment/androidappright.png",
   [
@@ -56,8 +56,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function AndroidAppDevelopment() {
   const structuredData = getStructuredData(
-    "Android App Development Company in Florida | ConvenantSoft Tech",
-    "ConvenantSoft Technologies is a leading Android app development company in Florida offering native Android application development, custom mobile app solutions, and expert Android developers. Get high-performance Android apps built with latest technologies.",
+    "Android App Development Company in Florida | Cornerstone Digital Technologies Tech",
+    "Cornerstone Digital Technologies is a leading Android app development company in Florida offering native Android application development, custom mobile app solutions, and expert Android developers. Get high-performance Android apps built with latest technologies.",
     "/android-app-development-florida",
     "Service"
   );

@@ -4,7 +4,7 @@ import StructuredData from '@/components/ui/StructuredData'
 
 export const metadata = getComprehensiveMetadata(
   'Leading Software Services in Florida',
-  'Get reliable Software Development Services in Florida with ConvenantSoft Technologies, offering tailored, scalable, and high-performance solutions to drive your business growth.',
+  'Get reliable Software Development Services in Florida with Cornerstone Digital Technologies, offering tailored, scalable, and high-performance solutions to drive your business growth.',
   '/services/software-development-in-florida',
   '/softwaredevelopment1.jpg',
   [

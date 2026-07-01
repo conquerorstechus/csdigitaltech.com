@@ -4,7 +4,7 @@ import CloudDevelopmentClient from "./CloudDevelopmentClient";
 
 export const metadata = getComprehensiveMetadata(
   "Cloud development Company in Florida",
-  "ConvenantSoft Technologies is a leading cloud development company in Florida offering cloud services, cloud infrastructure support, 24/7 cloud monitoring, DevOps services, and managed cloud solutions. Expert cloud developers for AWS, Azure, and Google Cloud.",
+  "Cornerstone Digital Technologies is a leading cloud development company in Florida offering cloud services, cloud infrastructure support, 24/7 cloud monitoring, DevOps services, and managed cloud solutions. Expert cloud developers for AWS, Azure, and Google Cloud.",
   "/cloud-development-company-in-florida",
   "/WebDevlopment/8-1.jpg",
   [
@@ -70,8 +70,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function CloudDevelopment() {
   const structuredData = getStructuredData(
-    "Cloud development Company in Florida | ConvenantSoft Tech",
-    "ConvenantSoft Technologies is a leading cloud development company in Florida offering cloud services, cloud infrastructure support, 24/7 cloud monitoring, DevOps services, and managed cloud solutions. Expert cloud developers for AWS, Azure, and Google Cloud.",
+    "Cloud development Company in Florida | Cornerstone Digital Technologies Tech",
+    "Cornerstone Digital Technologies is a leading cloud development company in Florida offering cloud services, cloud infrastructure support, 24/7 cloud monitoring, DevOps services, and managed cloud solutions. Expert cloud developers for AWS, Azure, and Google Cloud.",
     "/cloud-development-company-in-florida",
     "Service"
   );

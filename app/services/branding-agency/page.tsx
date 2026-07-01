@@ -4,7 +4,7 @@ import BrandingAgencyClient from './BrandingAgencyClient'
 
 export const metadata = getComprehensiveMetadata(
   'Branding Marketing Agency in Florida',
-  'Discover expert branding agency services at ConvenantSoft Technologies—offering brand strategy, identity design, and digital branding solutions to elevate your business presence and impact.',
+  'Discover expert branding agency services at Cornerstone Digital Technologies—offering brand strategy, identity design, and digital branding solutions to elevate your business presence and impact.',
   '/services/branding-agency',
   '/WebDevlopment/smartphone-with-open-pages-landing-page_52683-22969.jpg',
   [

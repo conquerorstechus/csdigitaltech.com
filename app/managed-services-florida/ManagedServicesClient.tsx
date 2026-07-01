@@ -71,7 +71,7 @@ export default function ManagedServicesClient() {
               We are Best in Providing Managed Services
             </h2>
             <p className='mt-4 text-gray-500  text-sm sm:text-lg lg:leading-8'>
-              ConvenantSoft is a leading tech provider working primarily with
+              Cornerstone Digital Technologies is a leading tech provider working primarily with
               educational, Manufacturing, ecommerce, Travelling industries who
               provides IT managed services, custom software development, CRM
               consulting, and sales intelligence. As a managed service provider

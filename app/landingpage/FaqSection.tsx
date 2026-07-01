@@ -13,7 +13,7 @@ export default function FaqSection() {
 
   const leftColumnFAQs: FAQItem[] = [
     {
-      question: "What services does ConvenantSoft Software Technologies offer?",
+      question: "What services does Cornerstone Digital Technologies offer?",
       answer: "We provide end-to-end IT solutions, including custom software development, cloud services, mobile applications, UI/UX design, QA & testing, digital marketing, Data Analytics and IT consulting across multiple platforms and industries."
     },
     {
@@ -92,7 +92,7 @@ export default function FaqSection() {
       answer: "Yes, we provide strategic technology consulting to help businesses choose the right technologies, platforms, and solutions for their needs."
     },
     {
-      question: "How do I get started with ConvenantSoft Software Technologies?",
+      question: "How do I get started with Cornerstone Digital Technologies?",
       answer: "Contact us for a free consultation where we'll discuss your requirements, provide recommendations, and create a customized project plan."
     }
   ];

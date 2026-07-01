@@ -43,7 +43,7 @@ export default function HTML5DevelopmentClient() {
               HTML5 Development Company in Florida
             </h2>
             <p className='mt-4 text-gray-500  text-sm sm:text-lg lg:leading-8'>
-              At ConvenantSoft, we are the best HTML5 application development
+              At Cornerstone Digital Technologies, we are the best HTML5 application development
               company in Florida. We have a dedicated team of HTML developers
               who provide exclusive and customized solutions as per client’s
               requirements.
@@ -183,7 +183,7 @@ export default function HTML5DevelopmentClient() {
                   HTML5 as a Base Technology Includes
                 </h2>
                 <p className='text-gray-500 lg:text-base text-sm font-medium lg:leading-8'>
-                  Bootstrap programmers at ConvenantSoft believe clients’ growth is
+                  Bootstrap programmers at Cornerstone Digital Technologies believe clients’ growth is
                   their growth and thus, they make efforts to accomplish the
                   client’s goals by implementing the latest technology and even
                   ever-changing trends of the market. We, with our talented

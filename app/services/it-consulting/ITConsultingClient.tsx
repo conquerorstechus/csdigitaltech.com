@@ -99,7 +99,7 @@ export default function ITConsultingClient() {
                 Smarter Consulting for Smarter Businesses
               </h2>
               <p className='text-gray-800 text-lg leading-8 tracking-wide text-justify'>
-                ConvenantSoft Software Technologies USA brings together AI innovation and IT consulting expertise to help businesses in Florida and across other regions in the USA transform their technology landscape. Whether you need to integrate AI into enterprise systems, build custom LLMs, modernize legacy applications, or scale IT operations, our consulting team ensures you stay ahead in a fast-moving digital world.
+                Cornerstone Digital Technologies USA brings together AI innovation and IT consulting expertise to help businesses in Florida and across other regions in the USA transform their technology landscape. Whether you need to integrate AI into enterprise systems, build custom LLMs, modernize legacy applications, or scale IT operations, our consulting team ensures you stay ahead in a fast-moving digital world.
               </p>
               <p className='text-gray-800 text-lg leading-8 tracking-wide text-justify'>We don’t just advise—we implement, integrate, and optimize. From AI-powered automation and testing to data strategy, cloud solutions, and ERP support, we provide end-to-end consulting that reduces costs, accelerates time-to-market, and delivers measurable outcomes.
               </p>
@@ -168,7 +168,7 @@ export default function ITConsultingClient() {
               Your business doesn't just need technology—it needs the right AI and IT consulting partner who understands your market and challenges.
             </p>
             <p className='text-white text-lg leading-relaxed mb-8'>
-              At ConvenantSoft Software Technologies USA, we deliver AI-driven consulting that simplifies technology adoption, improves efficiency, and accelerates growth for businesses across Florida and beyond.
+              At Cornerstone Digital Technologies USA, we deliver AI-driven consulting that simplifies technology adoption, improves efficiency, and accelerates growth for businesses across Florida and beyond.
             </p>
 
             <div className='flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6'>

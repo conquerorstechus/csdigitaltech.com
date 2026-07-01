@@ -12,7 +12,7 @@ import StructuredData from '@/components/ui/StructuredData'
 
 export const metadata = getComprehensiveMetadata(
   'Software Development Company Florida',
-  'Expert Software development company in Florida. ConvenantSoft Technologies powers business growth with advanced web, mobile development, AI/IoT, cloud tech, and IT consulting based in Tampa.',
+  'Expert Software development company in Florida. Cornerstone Digital Technologies powers business growth with advanced web, mobile development, AI/IoT, cloud tech, and IT consulting based in Tampa.',
   '/',
   '/images/home-banner.jpg',
   [
@@ -62,7 +62,7 @@ export const metadata = getComprehensiveMetadata(
 export default function HomePage () {
   const structuredData = getStructuredData(
     'Software Development Company Florida',
-    'Expert Software development company in Florida. ConvenantSoft Technologies powers business growth with advanced web, mobile development, AI/IoT, cloud tech, and IT consulting based in Tampa.',
+    'Expert Software development company in Florida. Cornerstone Digital Technologies powers business growth with advanced web, mobile development, AI/IoT, cloud tech, and IT consulting based in Tampa.',
     '/',
     'Organization'
   )

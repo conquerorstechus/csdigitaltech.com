@@ -4,7 +4,7 @@ import DigitalStrategyServicesClient from "./DigitalStrategyServicesClient";
 
 export const metadata = getComprehensiveMetadata(
   "Digital Strategy Services in Florida",
-  "Achieve digital success with ConvenantSoft Technologies in Florida. We design smart, customized digital strategies that strengthen brand visibility and deliver real business impact.",
+  "Achieve digital success with Cornerstone Digital Technologies in Florida. We design smart, customized digital strategies that strengthen brand visibility and deliver real business impact.",
   "/digital-strategy-services-florida",
   "/WebDevlopment/two-min.jpg",
   [
@@ -44,8 +44,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function DigitalStrategyServices() {
   const structuredData = getStructuredData(
-    "Digital Strategy Services in Florida | ConvenantSoft Tech",
-    "ConvenantSoft Technologies is a leading digital strategy services company in Florida offering digital transformation consulting, digital business strategy, and digital innovation strategy. Get comprehensive digital strategy solutions for your business.",
+    "Digital Strategy Services in Florida | Cornerstone Digital Technologies Tech",
+    "Cornerstone Digital Technologies is a leading digital strategy services company in Florida offering digital transformation consulting, digital business strategy, and digital innovation strategy. Get comprehensive digital strategy solutions for your business.",
     "/digital-strategy-services-florida",
     "Service"
   );

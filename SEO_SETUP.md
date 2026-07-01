@@ -15,7 +15,7 @@ YAHOO_VERIFICATION=your_yahoo_verification_code_here
 
 # Social Media Handles (for structured data)
 NEXT_PUBLIC_TWITTER_HANDLE=@ConquerorsTech
-NEXT_PUBLIC_LINKEDIN_URL=https://www.linkedin.com/company/ConvenantSoft-technologies
+NEXT_PUBLIC_LINKEDIN_URL=https://www.linkedin.com/company/Cornerstone Digital Technologies-technologies
 NEXT_PUBLIC_FACEBOOK_URL=https://www.facebook.com/conquerorstech
 ```
 
@@ -135,7 +135,7 @@ export const metadata = getComprehensiveMetadata(
 ### For Service Pages:
 ```typescript
 export const metadata = getComprehensiveMetadata(
-  "Web Development Services | ConvenantSoft",
+  "Web Development Services | Cornerstone Digital Technologies",
   "Your description here...",
   "/web-development",
   "/images/web-dev-banner.jpg",
@@ -147,7 +147,7 @@ export const metadata = getComprehensiveMetadata(
 ### For Regular Pages:
 ```typescript
 export const metadata = getComprehensiveMetadata(
-  "About Us | ConvenantSoft",
+  "About Us | Cornerstone Digital Technologies",
   "Your description here...",
   "/about-us",
   "/images/about-banner.jpg",
@@ -236,7 +236,7 @@ import PageClient from './PageClient';
 import StructuredData from "@/components/ui/StructuredData";
 
 export const metadata = getComprehensiveMetadata(
-  "Page Title | ConvenantSoft",
+  "Page Title | Cornerstone Digital Technologies",
   "Page description...",
   "/page-path",
   "/image-path.jpg",
@@ -246,7 +246,7 @@ export const metadata = getComprehensiveMetadata(
 
 export default function Page() {
   const structuredData = getStructuredData(
-    "Page Title | ConvenantSoft",
+    "Page Title | Cornerstone Digital Technologies",
     "Page description...",
     "/page-path",
     "Service"

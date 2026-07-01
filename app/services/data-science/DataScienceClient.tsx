@@ -158,7 +158,7 @@ export default function DataScienceClient() {
                 Turning Data Into Intelligent Business Decisions
               </h2>
               <p className='text-gray-700 text-sm sm:text-lg leading-7 md:leading-8 tracking-wide text-justify md:text-left'>
-                ConvenantSoft Software Technologies USA delivers AI-driven data science and analytics solutions that empower organisations to predict trends, optimise decision-making, and uncover hidden insights within their data.
+                Cornerstone Digital Technologies USA delivers AI-driven data science and analytics solutions that empower organisations to predict trends, optimise decision-making, and uncover hidden insights within their data.
               </p>
               <p className='text-gray-700 text-sm sm:text-lg leading-7 md:leading-8 tracking-wide mt-4 text-justify md:text-left'>
                 By combining Agentic Architecture, advanced AI models, and intelligent automation, we help businesses move beyond static reports to real-time, predictive, and adaptive analytics that drive measurable business outcomes in Florida and across other regions in the USA.

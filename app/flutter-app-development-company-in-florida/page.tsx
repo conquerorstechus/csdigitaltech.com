@@ -4,7 +4,7 @@ import FlutterAppDevelopmentClient from "./FlutterAppDevelopmentClient";
 
 export const metadata = getComprehensiveMetadata(
   "Flutter App Development Company in Florida",
-  "ConvenantSoft Technologies is a leading Flutter app development company in Florida offering cross-platform Flutter development, mobile app development, and expert Flutter developers. Get high-quality Flutter apps built with latest technologies.",
+  "Cornerstone Digital Technologies is a leading Flutter app development company in Florida offering cross-platform Flutter development, mobile app development, and expert Flutter developers. Get high-quality Flutter apps built with latest technologies.",
   "/flutter-app-development-company-in-florida",
   "/WebDevlopment/Flutter-banner.jpg",
   [
@@ -36,8 +36,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function FlutterAppDevelopment() {
   const structuredData = getStructuredData(
-    "Flutter App Development Company in Florida | ConvenantSoft Tech",
-    "ConvenantSoft Technologies is a leading Flutter app development company in Florida offering cross-platform Flutter development, mobile app development, and expert Flutter developers. Get high-quality Flutter apps built with latest technologies.",
+    "Flutter App Development Company in Florida | Cornerstone Digital Technologies Tech",
+    "Cornerstone Digital Technologies is a leading Flutter app development company in Florida offering cross-platform Flutter development, mobile app development, and expert Flutter developers. Get high-quality Flutter apps built with latest technologies.",
     "/flutter-app-development-company-in-florida",
     "Service"
   );

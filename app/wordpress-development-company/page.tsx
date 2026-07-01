@@ -4,7 +4,7 @@ import WordPressDevelopmentClient from "./WordPressDevelopmentClient";
 
 export const metadata = getComprehensiveMetadata(
   "WordPress Web Development Services",
-  "Boost your online presence with custom WordPress development by ConvenantSoft Technologies. Fast, secure, user-friendly websites built to grow your business.",
+  "Boost your online presence with custom WordPress development by Cornerstone Digital Technologies. Fast, secure, user-friendly websites built to grow your business.",
   "/wordpress-development-company",
   "/WebDevlopment/2020-08-05-3.jpg",
   [
@@ -35,7 +35,7 @@ export const metadata = getComprehensiveMetadata(
 export default function WordPressDevelopment() {
   const structuredData = getStructuredData(
     "WordPress Development Company - Custom WordPress Website Development Services",
-    "ConvenantSoft Technologies is a leading WordPress development company offering custom WordPress website development, theme customization, plugin development, and WordPress maintenance services. Expert WordPress developers for your business.",
+    "Cornerstone Digital Technologies is a leading WordPress development company offering custom WordPress website development, theme customization, plugin development, and WordPress maintenance services. Expert WordPress developers for your business.",
     "/wordpress-development-company",
     "Service"
   );

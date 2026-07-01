@@ -18,10 +18,10 @@ const portfolioItems = [
     image: '/portfolio/E-Commerce1.png',
     imageintroduction: '/portfolio/E-Commerce.png',
     introductionText:
-      'ConvenantSoft Technologies delivers custom B2B & B2C e-commerce solutions, designing user-friendly sites and enhancing apps to boost business growth for clients worldwide. Elevate your online presence today.',
+      'Cornerstone Digital Technologies delivers custom B2B & B2C e-commerce solutions, designing user-friendly sites and enhancing apps to boost business growth for clients worldwide. Elevate your online presence today.',
     category: 'Best E-commerce Application',
     subcategory:
-      'ConvenantSoft Technologies: Experts in custom e-commerce solutions. We build tailored, user-friendly applications to help your business thrive globally, offering growth-oriented websites and unique feature enhancements.',
+      'Cornerstone Digital Technologies: Experts in custom e-commerce solutions. We build tailored, user-friendly applications to help your business thrive globally, offering growth-oriented websites and unique feature enhancements.',
     technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
     duration: '4-6 months',
     client: 'Retail Solutions Inc.',
@@ -34,7 +34,7 @@ const portfolioItems = [
     ],
     subfeatures: [
       'Your web presence is engineered for online success. It is built to ensure prominent rankings and be liked as much by the search engines as by visitors to your store or site.',
-      'ConvenantSoft Technologies: Empowering businesses with customizable e-commerce solutions for seamless operations and enhanced customer experiences. Enhance online presence, user-friendly features.',
+      'Cornerstone Digital Technologies: Empowering businesses with customizable e-commerce solutions for seamless operations and enhanced customer experiences. Enhance online presence, user-friendly features.',
       'The shopping cart and the checkout process include every convenience to make the experience a memorable one for your customers and ensure repeat custom.',
       'It is equally easy for store owners to process orders and manages to ship from their store. These features are seamlessly woven into the store.',
       'We help for your online business to grow in leaps and bounds by creating or upgrading your current website to match the latest trends, also provide maintenance and support to fix any issues and improve performance.'
@@ -635,7 +635,7 @@ export async function generateMetadata({
   }
 
   // Use custom meta title if available, otherwise fallback to default
-  const metaTitle = metaTitles[slug] || `${item.title} - ${item.category} Development Project | ConvenantSoft Technologies`
+  const metaTitle = metaTitles[slug] || `${item.title} - ${item.category} Development Project | Cornerstone Digital Technologies`
 
   // Use custom meta description if available, otherwise fallback to default
   const metaDescription = metaDescriptions[slug] || item.introductionText || item.description
@@ -650,7 +650,7 @@ export async function generateMetadata({
       'portfolio project',
       'software development project',
       'custom software solution',
-      'ConvenantSoft technologies portfolio',
+      'Cornerstone Digital Technologies technologies portfolio',
       'florida software development'
     ]
     const technologyKeywords = item.technologies.map(tech => tech.toLowerCase())
@@ -663,7 +663,7 @@ export async function generateMetadata({
       'custom software solution',
       'web application development',
       'mobile app development',
-      'ConvenantSoft technologies portfolio'
+      'Cornerstone Digital Technologies technologies portfolio'
     ]
 
     const categoryKeywords = item.category ? [
@@ -709,7 +709,7 @@ export default async function PortfolioDetailPage({
   }
 
   const structuredData = getStructuredData(
-    `${item.title} - ${item.category} Development Project | ConvenantSoft Technologies`,
+    `${item.title} - ${item.category} Development Project | Cornerstone Digital Technologies`,
     item.introductionText || item.description,
     `/portfolio/${slug}`,
     'SoftwareApplication',

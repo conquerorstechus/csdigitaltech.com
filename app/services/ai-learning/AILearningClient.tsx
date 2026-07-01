@@ -149,7 +149,7 @@ export default function AILearningClient() {
                 Revolutionizing Education with AI
               </h2>
               <p className='text-gray-700 text-sm sm:text-lg leading-7 md:leading-8 tracking-wide text-justify md:text-left'>
-                ConvenantSoft Software Technologies USA helps educational institutions and training providers across Florida and the surrounding regions in the USA unlock the future of learning with AI-powered solutions.
+                Cornerstone Digital Technologies USA helps educational institutions and training providers across Florida and the surrounding regions in the USA unlock the future of learning with AI-powered solutions.
               </p>
               <p className='text-gray-700 text-sm sm:text-lg leading-7 md:leading-8 tracking-wide mt-4 text-justify md:text-left'>
                 Our services go beyond traditional e-learning platforms by integrating fine-tuned Large Language Models (LLMs), adaptive learning algorithms, and intelligent content generation tools to deliver personalized, scalable, and impactful educational experiences.

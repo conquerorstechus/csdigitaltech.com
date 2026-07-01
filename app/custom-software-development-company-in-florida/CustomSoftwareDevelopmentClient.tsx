@@ -68,7 +68,7 @@ export default function CustomSoftwareDevelopmentClient() {
               Custom Software Development Company in Florida
             </h2>
             <p className='mt-4 text-gray-500  text-sm sm:text-lg lg:leading-8'>
-              At ConvenantSoft, our team is handling different projects which are
+              At Cornerstone Digital Technologies, our team is handling different projects which are
               customized according to the requirement. Where customization is
               essential among the chief drivers of growth with ever-changing
               consumer preferences, Custom Software Application Development

@@ -4,7 +4,7 @@ import StructuredData from '@/components/ui/StructuredData'
 
 export const metadata = getComprehensiveMetadata(
   'AI & ML Services in Florida ',
-  'Drive business growth in Florida with ConvenantSoft’ AI & ML expertise, providing smart automation, cost reduction, and improved customer interactions. Explore tailored solutions today.',
+  'Drive business growth in Florida with Cornerstone Digital Technologies’ AI & ML expertise, providing smart automation, cost reduction, and improved customer interactions. Explore tailored solutions today.',
   '/services/ai-ml-services-in-Florida',
   '/Digitalcloud/business-brainstorming-graph-chart-report-data-concept_53876-31213.webp',
   [

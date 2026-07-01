@@ -167,7 +167,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
         "Depending on complexity, migrations take 8–16 weeks, while large-scale enterprise transformations may take longer."
     },
     {
-      question: "Why choose ConvenantSoft Software Technologies USA?",
+      question: "Why choose Cornerstone Digital Technologies USA?",
       answer:
         "Because we deliver AI-powered, future-ready solutions that don’t just move you to the cloud but make your business smarter, faster, and more competitive wherever in Florida and across other regions in the USA."
     }
@@ -297,7 +297,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
         "Yes. We offer 24/7 monitoring, AI model retraining, system updates, and continuous optimisation to keep your solutions effective."
     },
     {
-      question: "What makes ConvenantSoft different from other AI providers in Florida?",
+      question: "What makes Cornerstone Digital Technologies different from other AI providers in Florida?",
       answer:
         "We don't just sell AI—we seamlessly integrate it into your existing systems. With 15+ years of expertise and a skilled team in AI/ML frameworks, we deliver future-ready, compliant, and cost-effective implementations for Florida businesses and across other regions in the USA."
     }
@@ -359,7 +359,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
         "Costs depend on the project's scope, integrations, and level of customisation. We offer flexible pricing models customized to your specific requirements following an initial consultation."
     },
     {
-      question: "Why should I choose ConvenantSoft Software Technologies USA for LLM integration in Florida?",
+      question: "Why should I choose Cornerstone Digital Technologies USA for LLM integration in Florida?",
       answer:
         "Because we're not just AI consultants—we're a service delivery partner. We help businesses in Florida and across other regions in the USA implement AI quickly, securely, and effectively with local support, deep enterprise experience, and proven results."
     }
@@ -649,7 +649,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
         'Yes, we provide security testing to identify vulnerabilities, assess threats, and ensure data protection using tools and techniques aligned with OWASP standards.'
     },
     {
-      question: 'What are the benefits of outsourcing QA to ConvenantSoft?',
+      question: 'What are the benefits of outsourcing QA to Cornerstone Digital Technologies?',
       answer:
         'Outsourcing QA to us provides access to experienced professionals, faster delivery cycles, reduced overhead, lower defect rates, and cost-effective test automation solutions.'
     },
@@ -921,9 +921,9 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
         'HTML5 introduces improved semantic elements, multimedia support (audio/video), better performance, and APIs for offline usage, making it ideal for modern web and mobile applications.'
     },
     {
-      question: 'Why should I choose ConvenantSoft for HTML5 development?',
+      question: 'Why should I choose Cornerstone Digital Technologies for HTML5 development?',
       answer:
-        'At ConvenantSoft, we combine technical expertise, a results-driven approach, and an experienced team of developers to deliver high-performance, scalable, and customized HTML5 solutions on time and within budget.'
+        'At Cornerstone Digital Technologies, we combine technical expertise, a results-driven approach, and an experienced team of developers to deliver high-performance, scalable, and customized HTML5 solutions on time and within budget.'
     },
     {
       question: 'What industries do you serve with your HTML5 solutions?',
@@ -1022,7 +1022,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
   WordPressDevelopment: [
     {
       question:
-        'What makes ConvenantSoft a top WordPress development company in Florida, USA?',
+        'What makes Cornerstone Digital Technologies a top WordPress development company in Florida, USA?',
       answer:
         'We combine years of technical expertise, a strong design sense, and an agile development process to deliver scalable, SEO-friendly, and fully customized WordPress websites. Our customer-first approach and successful delivery to global clients make us a trusted WordPress development agency.'
     },
@@ -1137,7 +1137,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
     },
     {
       question:
-        'Is ConvenantSoft Software Technologies specialized in Drupal development?',
+        'Is Cornerstone Digital Technologies specialized in Drupal development?',
       answer:
         'Yes, we are a top Drupal development company in Florida offering full-cycle Drupal services—from discovery and design to development, integration, testing, and maintenance.'
     },
@@ -1234,7 +1234,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
         'Yes. We integrate Google Analytics, Tag Manager, and other tools for real-time tracking, user insights, and behavior analysis.'
     },
     {
-      question: 'Why should I choose ConvenantSoft for my Drupal project?',
+      question: 'Why should I choose Cornerstone Digital Technologies for my Drupal project?',
       answer:
         'We combine technical expertise, industry experience, and a client-centric approach. With robust coding standards, custom UX, and agile delivery, we bring your vision to life with precision and reliability.'
     }
@@ -1248,7 +1248,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
     },
     {
       question:
-        'What makes ConvenantSoft Software Technologies the best BI development company in Florida?',
+        'What makes Cornerstone Digital Technologies the best BI development company in Florida?',
       answer:
         'We offer end-to-end BI solutions customized to your business goals, combining industry-specific knowledge with cutting-edge tools and a customer-first mindset. Our commitment to quality and innovation has earned us a reputation for excellence in BI development.'
     },
@@ -1362,7 +1362,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
     },
     {
       question:
-        'What CMS platforms do you support at ConvenantSoft Software Technologies?',
+        'What CMS platforms do you support at Cornerstone Digital Technologies?',
       answer:
         'We support a wide range of CMS platforms, including both open-source and proprietary systems such as WordPress, Drupal, Joomla, Magento, Wix, Optimizely, Shopify, Microsoft SharePoint, and IBM ECM.'
     },
@@ -1419,7 +1419,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
         'Yes, modern CMS platforms allow for omni-channel content delivery, meaning you can manage content for mobile apps, websites, and even IoT devices from a single interface.'
     },
     {
-      question: 'How does ConvenantSoft ensure on-time and on-budget CMS project delivery?',
+      question: 'How does Cornerstone Digital Technologies ensure on-time and on-budget CMS project delivery?',
       answer:
         'Each CMS project is led by a dedicated project manager and executed by a skilled team using agile methodology, detailed planning, and client communication checkpoints to ensure timely and cost-effective delivery.'
     },
@@ -1458,7 +1458,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
   CloudDevelopment: [
     {
       question:
-        'What cloud services does ConvenantSoft Software Technologies provide?',
+        'What cloud services does Cornerstone Digital Technologies provide?',
       answer:
         'We offer end-to-end cloud services, including cloud migration, infrastructure setup, DevOps, IaaS, PaaS, SaaS implementation, 24/7 monitoring, hybrid deployments, and managed cloud support across AWS, Azure, and GCP.'
     },
@@ -1558,7 +1558,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
     },
     {
       question:
-        'What makes ConvenantSoft one of the best cloud-based companies in Florida?',
+        'What makes Cornerstone Digital Technologies one of the best cloud-based companies in Florida?',
       answer:
         'Our combination of technical expertise, 15+ years of experience, 45+ country reach, customer-first approach, and 24×7 support makes us a trusted partner for global cloud transformation.'
     }
@@ -1572,9 +1572,9 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
     },
     {
       question:
-        'Why should I choose ConvenantSoft for custom software development?',
+        'Why should I choose Cornerstone Digital Technologies for custom software development?',
       answer:
-        'ConvenantSoft Software Technologies brings 15+ years of experience, agile methodology, a cross-functional team, and deep expertise in technologies like PHP, Laravel, Java, Spring Boot, .NET Core, and more—delivering scalable, efficient, and industry-specific software solutions.'
+        'Cornerstone Digital Technologies brings 15+ years of experience, agile methodology, a cross-functional team, and deep expertise in technologies like PHP, Laravel, Java, Spring Boot, .NET Core, and more—delivering scalable, efficient, and industry-specific software solutions.'
     },
     {
       question:
@@ -1666,7 +1666,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
     },
     {
       question:
-        'How do I get started with ConvenantSoft for a custom software project?',
+        'How do I get started with Cornerstone Digital Technologies for a custom software project?',
       answer:
         'Simply contact our team via info@conquerorstech.net or call us at +91 70131 96804. We’ll schedule a consultation to understand your requirements and provide a tailored proposal.'
     }
@@ -1680,7 +1680,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
     },
     {
       question:
-        'Why choose ConvenantSoft Software Technologies for Full Stack Development?',
+        'Why choose Cornerstone Digital Technologies for Full Stack Development?',
       answer:
         'We offer industry-standard development across all layers—UI/UX, backend logic, database systems, and cloud integration—with a client-focused approach, transparent communication, and unmatched quality assurance.'
     },
@@ -1788,7 +1788,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
     },
     {
       question:
-        'Why should I choose ConvenantSoft Software Technologies for Laravel development?',
+        'Why should I choose Cornerstone Digital Technologies for Laravel development?',
       answer:
         'Our team comprises experienced Laravel developers skilled in delivering secure, scalable, and feature-rich web and mobile applications. We focus on clean code, agile methodology, and a customer-first approach to ensure every project is a success.'
     },
@@ -1902,7 +1902,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
     },
     {
       question:
-        'What makes ConvenantSoft Software Technologies a leading data science company in USA?',
+        'What makes Cornerstone Digital Technologies a leading data science company in USA?',
       answer:
         'With over 15 years of expertise, we deliver cutting-edge solutions in AI, machine learning, predictive analytics, and deep learning. Our team blends technical skill with business intelligence to deliver results that align with your goals.'
     },
@@ -1990,7 +1990,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
     },
     {
       question:
-        'How can I get started with ConvenantSoft Software Technologies for a data science project?',
+        'How can I get started with Cornerstone Digital Technologies for a data science project?',
       answer:
         'You can start by contacting us via phone or email, or filling out our business inquiry form. Our team will schedule a free consultation to understand your needs and recommend the best approach.'
     }
@@ -2004,13 +2004,13 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
     },
     {
       question:
-        'How does ConvenantSoft approach digital strategy development?',
+        'How does Cornerstone Digital Technologies approach digital strategy development?',
       answer:
         'We take a holistic, tailored approach by combining deep industry insights, advanced analytics, and a collaborative planning process. Our strategy includes a detailed digital transformation framework, technology mapping, and execution timelines designed to align with your business goals.'
     },
     {
       question:
-        'What makes ConvenantSoft the best digital strategy provider in Florida?',
+        'What makes Cornerstone Digital Technologies the best digital strategy provider in Florida?',
       answer:
         'Our multidisciplinary team, customer-centric mindset, and years of experience in implementing AI, cloud, IoT, automation, and data-driven strategies make us a top choice. We blend high-tech innovation with a high-touch, collaborative approach.'
     },
@@ -2098,7 +2098,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
     },
     {
       question:
-        'How do I get started with ConvenantSoft’ digital strategy services?',
+        'How do I get started with Cornerstone Digital Technologies’ digital strategy services?',
       answer:
         'Simply reach out via our contact form or email us at info@conquerorstech.net. We’ll schedule a discovery session to understand your needs and begin building a customized strategic plan.'
     }
@@ -2112,7 +2112,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
     },
     {
       question:
-        'Why should I choose ConvenantSoft Software Technologies for DevOps services?',
+        'Why should I choose Cornerstone Digital Technologies for DevOps services?',
       answer:
         'We specialize in tailoring DevOps strategies that align with your unique business goals. Our team brings years of experience in automation, CI/CD, cloud integration, and agile methodologies—ensuring rapid delivery, reduced downtime, and maximum ROI.'
     },
@@ -2214,13 +2214,13 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
   IOTSerices: [
     {
       question:
-        'What IoT services does ConvenantSoft Software Technologies provide?',
+        'What IoT services does Cornerstone Digital Technologies provide?',
       answer:
         'We offer end-to-end IoT solutions, including IoT consulting, application development, API and third-party integration, cloud deployment, wearable connectivity, gateway integration, real-time analytics, and AI-powered automation across both industrial and consumer IoT ecosystems.'
     },
     {
       question:
-        'How does ConvenantSoft stand out as an IoT development company?',
+        'How does Cornerstone Digital Technologies stand out as an IoT development company?',
       answer:
         'We combine deep domain expertise with scalable product engineering, AI/ML integration, and cloud-native architecture. Our strength lies in securely connecting the physical and digital worlds, delivering intelligent insights and automation tailored to your industry.'
     },
@@ -2314,7 +2314,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
     },
     {
       question:
-        'How do I get started with IoT development with ConvenantSoft?',
+        'How do I get started with IoT development with Cornerstone Digital Technologies?',
       answer:
         'Simply reach out to us via info@conquerorstech.net or use our contact form. Our IoT consultants will schedule a discovery session to assess your needs and propose the best-fit solution.'
     }
@@ -2345,7 +2345,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
     },
     {
       question:
-        'How does ConvenantSoft help businesses transition to microservices?',
+        'How does Cornerstone Digital Technologies help businesses transition to microservices?',
       answer:
         ' We assess your current architecture, identify modular components, and implement a step-by-step migration strategy using cutting-edge tools and frameworks. Our team ensures seamless integration and deployment with zero downtime.'
     },
@@ -2422,7 +2422,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
     },
     {
       question:
-        'Why should I choose ConvenantSoft for microservices development?',
+        'Why should I choose Cornerstone Digital Technologies for microservices development?',
       answer:
         'With over 15 years of experience, a global client base, and expertise in modern technologies, our flexible and results-driven team ensures your microservices journey is efficient, secure, and future-ready.'
     }
@@ -2601,7 +2601,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
         'No. We build easy-to-use dashboards and CMS interfaces. Your team can manage content while AI automates the heavy lifting, like personalisation, recommendations, and SEO optimisation.'
     },
     {
-      question: 'Why should I choose ConvenantSoft Software Technologies USA for AI-driven web design in Florida?',
+      question: 'Why should I choose Cornerstone Digital Technologies USA for AI-driven web design in Florida?',
       answer:
         'Because we combine 15+ years of expertise with AI-first development and deep knowledge of Florida competitive business landscape. We deliver localised, scalable, and intelligent solutions designed for real business growth.'
     }
@@ -2780,7 +2780,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
         'Costs depend on complexity, data sources, and integrations. We offer flexible pricing models—from proof-of-concept to full enterprise rollout.'
     },
     {
-      question: 'Why should I choose ConvenantSoft Software Technologies USA for MMRAG?',
+      question: 'Why should I choose Cornerstone Digital Technologies USA for MMRAG?',
       answer:
         '15+ years of enterprise software expertise, AI-first approach with proven implementations, Local experience working with Florida businesses, Customised, secure, and scalable AI solutions, Dedicated support and flexible engagement models.'
     }

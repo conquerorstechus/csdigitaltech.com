@@ -4,7 +4,7 @@ import MicroservicesDevelopmentClient from "./MicroservicesDevelopmentClient";
 
 export const metadata = getComprehensiveMetadata(
   "Microservices Development Firm Florida",
-  "Streamline your architecture with ConvenantSoft Technologies, a top Microservices Development Company in Florida offering scalable, flexible, and high-performance application solutions.",
+  "Streamline your architecture with Cornerstone Digital Technologies, a top Microservices Development Company in Florida offering scalable, flexible, and high-performance application solutions.",
   "/microservices-development-company-in-florida",
   "/WebDevlopment/9 (2).jpg",
   [
@@ -40,8 +40,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function MicroservicesDevelopment() {
   const structuredData = getStructuredData(
-    "Micro Services Development Company in Florida | ConvenantSoft Tech",
-    "ConvenantSoft Technologies is a leading microservices development company in Florida offering custom microservices development, microservices architecture, and expert microservices developers. Get scalable microservices solutions with Java, .NET, and Azure.",
+    "Micro Services Development Company in Florida | Cornerstone Digital Technologies Tech",
+    "Cornerstone Digital Technologies is a leading microservices development company in Florida offering custom microservices development, microservices architecture, and expert microservices developers. Get scalable microservices solutions with Java, .NET, and Azure.",
     "/microservices-development-company-in-florida",
     "Service"
   );

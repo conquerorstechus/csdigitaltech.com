@@ -4,7 +4,7 @@ import IonicApplicationDevelopmentClient from "./IonicApplicationDevelopmentClie
 
 export const metadata = getComprehensiveMetadata(
   "Ionic Application Development Company in Florida",
-  "ConvenantSoft Technologies is a leading Ionic application development company in Florida offering custom Ionic development, cross-platform mobile apps, and expert Ionic developers. Get high-quality Ionic apps built with web technologies.",
+  "Cornerstone Digital Technologies is a leading Ionic application development company in Florida offering custom Ionic development, cross-platform mobile apps, and expert Ionic developers. Get high-quality Ionic apps built with web technologies.",
   "/ionic-application-development-company-in-florida",
   "/WebDevlopment/ionicrightimage.png",
   [
@@ -53,8 +53,8 @@ export const metadata = getComprehensiveMetadata(
 
 export default function IonicApplicationDevelopment() {
   const structuredData = getStructuredData(
-    "Ionic Application Development Company in Florida | ConvenantSoft Tech",
-    "ConvenantSoft Technologies is a leading Ionic application development company in Florida offering custom Ionic development, cross-platform mobile apps, and expert Ionic developers. Get high-quality Ionic apps built with web technologies.",
+    "Ionic Application Development Company in Florida | Cornerstone Digital Technologies Tech",
+    "Cornerstone Digital Technologies is a leading Ionic application development company in Florida offering custom Ionic development, cross-platform mobile apps, and expert Ionic developers. Get high-quality Ionic apps built with web technologies.",
     "/ionic-application-development-company-in-florida",
     "Service"
   );

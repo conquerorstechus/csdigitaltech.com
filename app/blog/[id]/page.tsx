@@ -101,18 +101,18 @@ const blogPosts = [
         AI is a serious business now. Tailor Custom AI & LLM Services to you, and you win.
       </p>
       <p class="mb-6 text-lg leading-relaxed">
-        ConvenantSoft Software Technologies in Florida does this well. Custom AI & LLMs, secure builds, predictions, automation. They fit it to your systems, sharpen your choices, speed things up, and show real gains. They build custom machine learning models and AI-driven solutions designed to enhance analytics, automate decision-making, and support adaptive, data-centric growth for enterprises.
+        Cornerstone Digital Technologies in Florida does this well. Custom AI & LLMs, secure builds, predictions, automation. They fit it to your systems, sharpen your choices, speed things up, and show real gains. They build custom machine learning models and AI-driven solutions designed to enhance analytics, automate decision-making, and support adaptive, data-centric growth for enterprises.
       </p>
       <p class="mb-6 text-lg leading-relaxed">
         For Florida teams, it builds strength, clear views, and lasting edges. Custom AI is how you get there.
       </p>
     `,
-    excerpt: "Unlock the potential of custom AI & LLM solutions with ConvenantSoft Tech. Empower your business with intelligent automation and advanced LLM services.",
+    excerpt: "Unlock the potential of custom AI & LLM solutions with Cornerstone Digital Technologies Tech. Empower your business with intelligent automation and advanced LLM services.",
     image: "/Florida Companies.png",
     category: "Artificial Intelligence",
     date: "March 11, 2026",
     readTime: "7 min read",
-    author: "ConvenantSoft Tech Team",
+    author: "Cornerstone Digital Technologies Tech Team",
     tags: ["custom AI ML solutions", "custom AI solutions", "AI ML model development", "custom LLM services", "LLM services", "custom AI solutions company", "custom AI & LLM solutions in Florida", "custom AI solutions for businesses", "custom AI software solutions", "enterprise llm integration", "ai chatbot development", "large language models", "llm customization", "openai integration", "llm consulting", "ai process automation", "enterprise chatbots", "custom ai integration", "llm implementation"],
     views: "1.2k"
   },
@@ -217,8 +217,8 @@ const blogPosts = [
 const relatedPosts = [
   {
     id: 4,
-    title: "Unlock your Custom AI & LLM Solutions with ConvenantSoft",
-    excerpt: "Unlock the potential of custom AI & LLM solutions with ConvenantSoft Tech. Empower your business with intelligent automation and advanced LLM services.",
+    title: "Unlock your Custom AI & LLM Solutions with Cornerstone Digital Technologies",
+    excerpt: "Unlock the potential of custom AI & LLM solutions with Cornerstone Digital Technologies Tech. Empower your business with intelligent automation and advanced LLM services.",
     image: "/Florida Companies.png",
     category: "Artificial Intelligence",
     date: "March 11, 2026"
@@ -255,7 +255,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     "technology article",
     "software development insights",
     "tech blog Florida",
-    "ConvenantSoft technologies blog"
+    "Cornerstone Digital Technologies technologies blog"
   ]
   
   const contentKeywords = blogPost.tags ? blogPost.tags.map(tag => tag.toLowerCase()) : []
@@ -291,7 +291,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
   }
 
   const structuredData = getStructuredData(
-    `${blogPost.title} - Technology Blog | ConvenantSoft Technologies`,
+    `${blogPost.title} - Technology Blog | Cornerstone Digital Technologies`,
     blogPost.excerpt,
     `/blog/${id}`,
     "Article",

@@ -1,4 +1,4 @@
-# Sitemap Setup for ConvenantSoft Tech FD
+# Sitemap Setup for Cornerstone Digital Technologies Tech FD
 
 This project has been configured with automatic sitemap generation. Here's how to use it:
 
