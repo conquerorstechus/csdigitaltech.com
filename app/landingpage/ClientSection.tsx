@@ -54,7 +54,9 @@ export default function ClientSection() {
     <section className="relative bg-gradient-to-b from-sky-50 via-white to-blue-50/60 lg:py-16 py-8 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(59,130,246,0.08)_0%,_transparent_70%)] pointer-events-none" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Client Logos Carousel */}
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-8 md:mb-12">
+          Trusted By Growing Brands &amp; Businesses
+        </h2>
         <div className="w-full">
           <Carousel
             opts={{

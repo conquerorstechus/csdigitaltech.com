@@ -1,9 +1,9 @@
 'use client'
 
 import { FaChevronRight, FaCubes, FaLinkedin } from 'react-icons/fa'
-import CountUp from 'react-countup'
 import { useState } from 'react'
 import Image from 'next/image'
+import ClientSection from '../landingpage/ClientSection'
 
 export default function AboutUsClient() {
   const services = [
@@ -14,13 +14,6 @@ export default function AboutUsClient() {
     'Digital marketing, Marketing automation',
     'Analytics, Data Science and Machine Learning',
     'Cloud Services & IT Support'
-  ]
-
-  const stats = [
-    { number: 3850, label: 'CLIENTS SERVED' },
-    { number: 120, label: 'PROJECTS DONE' },
-    { number: 60, label: 'TEAM & ADVISORS' },
-    { number: 16, label: 'GLORIOUS YEARS' }
   ]
 
   const faqs = [
@@ -447,20 +440,7 @@ export default function AboutUsClient() {
         </div>
       </section>
 
-      <div className='bg-gradient-to-r from-cyan-400 to-purple-600 text-white py-10'>
-        <div className='max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center'>
-          {stats.map((stat, idx) => (
-            <div key={idx}>
-              <h2 className='text-4xl font-bold mb-2'>
-                <CountUp end={stat.number} duration={2.5} />+
-              </h2>
-              <p className='text-sm font-semibold tracking-wide'>
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
+      <ClientSection />
 
       <section className='max-w-6xl mx-auto px-4 py-12'>
         <h2 className='text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center'>
