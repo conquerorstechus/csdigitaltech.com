@@ -140,7 +140,7 @@ export function getStructuredData(
       },
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+1-813-563-0060",
+        "telephone": "+1-908-922-1063",
         "contactType": "customer service",
         "email": "info@conquerorstech.com",
         "areaServed": "US",
@@ -253,7 +253,7 @@ export function getStructuredData(
       "name": "Cornerstone Digital Technologies",
       "description": pageDescription,
       "url": domain,
-      "telephone": "+1-813-563-0060",
+      "telephone": "+1-908-922-1063",
       "email": "info@conquerorstech.com",
       "address": {
         "@type": "PostalAddress",

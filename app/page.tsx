@@ -75,7 +75,7 @@ export default function HomePage () {
       <HeroSection />
       <AboutSection />
       <FeaturesSection />
-      <TechnologySection />
+      
       <ClientSection />
       <CTASection />
       <CustomerSection />

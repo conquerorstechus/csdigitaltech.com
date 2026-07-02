@@ -46,8 +46,8 @@ const Footer = () => {
                   src='/cornerstone-logo-footer.png'
                   alt='Cornerstone Digital Technologies logo'
                   title='Cornerstone Digital Technologies — csdigitaltech.com'
-                  width={866}
-                  height={288}
+                  width={860}
+                  height={290}
                   className='w-56 md:w-72 h-auto object-contain'
                 />
               </Link>

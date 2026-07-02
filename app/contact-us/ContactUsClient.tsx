@@ -1,78 +1,8 @@
 'use client'
 
-import { Mail, Phone } from 'lucide-react'
-import { FiMapPin } from 'react-icons/fi'
 import ContactForm from './ContactForm'
-import { FaFlagUsa } from 'react-icons/fa'
 
 export default function ContactUsClient() {
-  const IndiaFlagIcon = ({ size = 24 }) => (
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      width={size}
-      height={size}
-      viewBox='0 0 512 512'
-    >
-      {/* Saffron */}
-      <rect width='512' height='170.67' fill='#FF9933' />
-      {/* White */}
-      <rect y='170.67' width='512' height='170.67' fill='#FFFFFF' />
-      {/* Green */}
-      <rect y='341.33' width='512' height='170.67' fill='#138808' />
-      {/* Blue Ashoka Chakra */}
-      <circle
-        cx='256'
-        cy='256'
-        r='43'
-        fill='none'
-        stroke='#000080'
-        strokeWidth='4'
-      />
-      {[...Array(24)].map((_, i) => (
-        <line
-          key={i}
-          x1='256'
-          y1='256'
-          x2={256 + 43 * Math.cos((i * 15 * Math.PI) / 180)}
-          y2={256 + 43 * Math.sin((i * 15 * Math.PI) / 180)}
-          stroke='#000080'
-          strokeWidth='2'
-        />
-      ))}
-    </svg>
-  )
-
-  const USAFlagIcon = ({ size = 24 }) => (
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      width={size}
-      height={size}
-      viewBox='0 0 7410 3900'
-    >
-      <rect width='7410' height='3900' fill='#b22234' />
-      {[...Array(6)].map((_, i) => (
-        <rect
-          key={i}
-          y={(i * 2 + 1) * 300}
-          width='7410'
-          height='300'
-          fill='#fff'
-        />
-      ))}
-      <rect width='2964' height='2100' fill='#3c3b6e' />
-      {[...Array(9)].map((_, row) =>
-        [...Array(row % 2 === 0 ? 6 : 5)].map((_, col) => (
-          <circle
-            key={`${row}-${col}`}
-            cx={(col + 0.5 + (row % 2 ? 0.5 : 0)) * (2964 / 6)}
-            cy={(row + 0.5) * (2100 / 9)}
-            r='90'
-            fill='#fff'
-          />
-        ))
-      )}
-    </svg>
-  )
   return (
     <main className='bg-gray-50'>
       {/* Header */}
@@ -117,7 +47,7 @@ export default function ContactUsClient() {
                 United States.
               </p>
               <p className='mt-2'>
-                <span className='font-semibold'>Tel:</span> +1 (813) 563-0060
+                <span className='font-semibold'>Tel:</span> +1 908-922-1063
               </p>
               <p className='mt-2'>
                 <span className='font-semibold'>Mail:</span>{' '}
@@ -126,44 +56,6 @@ export default function ContactUsClient() {
               <p className="font-medium text-gray-600 border rounded-lg px-3 bg-gray-50 mt-3 w-fit">
                 Cornerstone Digital Technologies LLC.
               </p>
-            </div>
-          </div>
-
-          {/* GCC India */}
-          <div>
-            <div className="bg-white p-6 rounded-xl shadow-md text-gray-700 leading-relaxed">
-              {/* Heading */}
-              <div className="flex items-center gap-3 mb-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="24" viewBox="0 0 32 24"><g fill="none"><path fill="#f7fcff" fill-rule="evenodd" d="M0 0v24h32V0z" clip-rule="evenodd" /><mask id="SVGTrazyc7b" width="32" height="24" x="0" y="0" maskUnits="userSpaceOnUse"><path fill="#fff" fill-rule="evenodd" d="M0 0v24h32V0z" clip-rule="evenodd" /></mask><g fill-rule="evenodd" clip-rule="evenodd" mask="url(#SVGTrazyc7b)"><path fill="#ff8c1a" d="M0 0v8h32V0z" /><path fill="#5eaa22" d="M0 16v8h32v-8z" /><path fill="#3d58db" d="M12 12a4 4 0 1 0 8 0a4 4 0 0 0-8 0m7 0a3 3 0 1 1-6 0a3 3 0 0 1 6 0" /><path fill="#3d58db" d="m15.995 12.86l-.571 3.121l.331-3.155l-1.427 2.834l1.207-2.934l-2.167 2.316l1.984-2.474l-2.732 1.612l2.602-1.816l-3.076.777l3.007-1.009l-3.17-.121l3.17-.12l-3.007-1.01l3.076.777l-2.602-1.815l2.732 1.612l-1.984-2.475l2.167 2.316l-1.207-2.934l1.427 2.834l-.331-3.155l.57 3.12l.571-3.12l-.331 3.155l1.427-2.834l-1.207 2.934L18.62 8.98l-1.984 2.475l2.732-1.612l-2.602 1.815l3.076-.777l-3.008 1.01l3.17.12l-3.17.121l3.008 1.01l-3.076-.778l2.602 1.816l-2.732-1.612l1.984 2.474l-2.167-2.316l1.207 2.934l-1.427-2.834l.331 3.155z" /></g></g></svg>
-                <span className="font-semibold text-lg text-gray-800">India Location</span>
-              </div>
-
-              {/* Address */}
-              <p className="mb-4">
-                No.#16, Triveni Building, Silicon Valley,
-                <br />
-                Madhapur, Hitech City, Near Cyber Towers,
-                <br />
-                Hyderabad, Telangana – 500081.
-              </p>
-
-              {/* GST & CIN */}
-              <div className="border rounded-lg p-3 bg-gray-50 mb-3">
-                <div className="flex justify-between items-center">
-                  <span className="font-semibold text-gray-800">GSTIN:</span>
-                  <span className="text-gray-600">36AAGCC1702L1ZT</span>
-                </div>
-                <div className="border-t mt-2 pt-2 flex justify-between items-center">
-                  <span className="font-semibold text-gray-800">CIN:</span>
-                  <span className="text-gray-600">U72300TG2015PTC100449</span>
-                </div>
-              </div>
-
-              {/* Company Name */}
-              <p className="font-medium text-gray-600 border rounded-lg px-3 bg-gray-50 w-fit">
-                Cornerstone Digital Technologies Pvt. Ltd.
-              </p>
-
             </div>
           </div>
         </div>

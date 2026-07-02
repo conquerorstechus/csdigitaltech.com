@@ -200,44 +200,44 @@ export default function AboutUsClient() {
         <div className='max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-center'>
           {/* Left column - text */}
           <div className='w-full lg:w-2/3 text-lg text-justify leading-8'>
-            <p>
-              <strong>Cornerstone Digital Technologies </strong> is the pioneers
-              in the software development services, digital solutions and
-              marketing industry, established by the seasoned professionals in
-              the year 2009. We help our clients to accelerate their business
-              growth by providing innovative digital solutions, unique ideas to
-              solve complex business needs across various industries like
-              Healthcare, Education, Retail & E-Commerce, CRM, Travel &
-              Logistics, Manufacturing etc.,
-            </p>
+            <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-6'>
+              About Us
+            </h2>
 
-            <p className='font-semibold'>
-              We are anchored around a fascinating story behind its
-              establishment since 2009.
+            <p>
+              Covenant Soft US is a fast-growing digital marketing company in
+              Tampa, Florida, built with a clear mission—to help businesses grow
+              by combining cutting-edge technology with results-driven
+              marketing.
             </p>
 
             <p>
-              A swiftly grown young techie having 6+ years of experience,
-              leading a high performing & risk-taking project team of more than
-              120 members, who were working for a top-notch of fortune 500
-              company had received a call for serving people and nations
-              triggering his hidden entrepreneurial mindset. Although it was a
-              tough decision to challenge himself by quitting the option of
-              having secured life which is giving comfortable returns sufficing
-              his family requirements, he took an assertive step forward to obey
-              his calling and with the only belief in his Almighty.
+              Led by Sam Kasimalla, an ex-FAANG engineer, Covenant Soft Software
+              Technologies LLC brings Silicon Valley–level innovation into the
+              digital marketing space. Our foundation is rooted in advanced
+              technologies like AI, Next.js, and cloud infrastructure, allowing
+              us to deliver smarter, faster, and more scalable marketing
+              solutions.
             </p>
 
-            <p className='font-semibold'>
-              He trusted that “you’ll reap what you sow”.
-            </p>
             <p>
-              He soon began to sharpen his saw to become an entrepreneur and
-              framed his mind into trizonal market assessments. Witnessing the
-              past, highlighting the advantages & risk of entering the volatile
-              market with prevailing conditions and visualizing the scope for
-              future, he wisely drew a line to bridge the gap of people doing
-              business who needed technology to grow with operational ease.
+              As a Tampa-based digital marketing agency, we specialize in helping
+              businesses stand out in competitive markets. From high-converting
+              email marketing and performance-driven campaigns to modern web
+              experiences and automation, everything we build is designed with
+              one goal: measurable growth.
+            </p>
+
+            <p>
+              We believe great marketing isn&apos;t just about visibility—it&apos;s
+              about results. That&apos;s why we focus on strategies that drive real
+              ROI, attract the right audience, and convert attention into revenue.
+            </p>
+
+            <p>
+              At Covenant Soft US, we&apos;re not just another digital marketing
+              company in Tampa, Florida—we&apos;re your technology-powered growth
+              partner, committed to helping you scale with confidence.
             </p>
           </div>
 

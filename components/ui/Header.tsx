@@ -93,19 +93,23 @@ const Header = () => {
       {/* Loading Overlay */}
      {/* {isLoading && <Loader />} */}
 
-      <header className='bg-white shadow-sm sticky top-0 z-50'>
+      <header className='bg-white shadow-sm sticky top-0 z-50 overflow-hidden'>
         <div className='max-w-7xl mx-auto px-4'>
-          <div className='flex justify-between items-center h-20'>
+          <div className='flex justify-between items-center h-24'>
             {/* Logo */}
-            <Link href='/' onClick={() => handleNavigation('/')}>
+            <Link
+              href='/'
+              onClick={() => handleNavigation('/')}
+              className='flex shrink-0 items-center'
+            >
               <Image
                 src='/cornerstone-logo.png'
                 title='Cornerstone Digital Technologies'
                 alt='Cornerstone Digital Technologies logo'
-                width={640}
-                height={213}
+                width={1024}
+                height={344}
                 priority
-                className='w-56 sm:w-72 h-auto object-contain'
+                className='h-16 sm:h-20 lg:h-[5.5rem] w-auto max-w-[16rem] sm:max-w-[20rem] lg:max-w-[22rem] object-contain object-left'
               />
             </Link>
 
