@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { useNavigation } from '@/hooks/useNavigation'
 import SearchModal from './SearchModal'
+import { DIGITAL_MARKETING_URL, isExternalUrl } from '@/lib/constants'
 
 const servicesCategories = [
   {
@@ -38,7 +39,7 @@ const servicesCategories = [
     category: 'Quality & Marketing',
     items: [
       { label: 'QA / Testing Services', href: '/services/testing-services-in-Florida' },
-      { label: 'Digital Marketing', href: '/services/branding-agency' }
+      { label: 'Digital Marketing', href: DIGITAL_MARKETING_URL }
     ]
   }
 ]
@@ -156,13 +157,22 @@ const Header = () => {
                                   <ul className='mt-3 space-y-2'>
                                     {category.items.map(service => (
                                       <li key={service.href}>
-                                        <Link
-                                          href={service.href}
-                                          onClick={() => handleNavigation(service.href)}
-                                          className='block text-sm text-gray-700 hover:text-red-600 transition-colors'
-                                        >
-                                          {service.label}
-                                        </Link>
+                                        {isExternalUrl(service.href) ? (
+                                          <a
+                                            href={service.href}
+                                            className='block text-sm text-gray-700 hover:text-red-600 transition-colors'
+                                          >
+                                            {service.label}
+                                          </a>
+                                        ) : (
+                                          <Link
+                                            href={service.href}
+                                            onClick={() => handleNavigation(service.href)}
+                                            className='block text-sm text-gray-700 hover:text-red-600 transition-colors'
+                                          >
+                                            {service.label}
+                                          </Link>
+                                        )}
                                       </li>
                                     ))}
                                   </ul>
@@ -281,14 +291,24 @@ const Header = () => {
             </h4>
             <div className='space-y-1'>
               {category.items.map(service => (
-                <Link
-                  key={service.href}
-                  href={service.href}
-                  onClick={() => handleNavigation(service.href)}
-                  className='block py-2 px-3 text-sm text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-md'
-                >
-                  {service.label}
-                </Link>
+                isExternalUrl(service.href) ? (
+                  <a
+                    key={service.href}
+                    href={service.href}
+                    className='block py-2 px-3 text-sm text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-md'
+                  >
+                    {service.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={service.href}
+                    href={service.href}
+                    onClick={() => handleNavigation(service.href)}
+                    className='block py-2 px-3 text-sm text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-md'
+                  >
+                    {service.label}
+                  </Link>
+                )
               ))}
             </div>
           </div>

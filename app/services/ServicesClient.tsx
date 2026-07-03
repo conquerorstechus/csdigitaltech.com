@@ -30,10 +30,7 @@ import {
 import Header from '@/components/ui/Header'
 import Footer from '@/components/ui/Footer'
 import Link from 'next/link'
-
-const DIGITAL_MARKETING_URL = 'https://conquerors-quotegen.vercel.app/'
-
-const isExternalUrl = (href: string) => /^https?:\/\//.test(href)
+import { DIGITAL_MARKETING_URL, isExternalUrl } from '@/lib/constants'
 
 const services = [
   {

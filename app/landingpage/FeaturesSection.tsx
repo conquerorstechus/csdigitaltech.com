@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { DIGITAL_MARKETING_URL, isExternalUrl } from '@/lib/constants';
 
 const services = [
   {
@@ -53,7 +54,7 @@ const services = [
     title: 'Digital Marketing',
     description:
       'Marketing and advertising of a business, product, or service using online channels, social media, email, pay-per-click, SEO, Online Reputation Management, Marketing Automation etc.,',
-    link: '/services/branding-agency'
+    link: DIGITAL_MARKETING_URL
   }
 ];
 
@@ -93,15 +94,27 @@ const FeaturesSection = () => {
                   </p>
 
                   <div className="mt-auto">
-                    <Link href={service.link}>
-                      <Button
-                        variant="outline"
-                        className="bg-transparent border-white group-hover:border-green-600 text-white group-hover:text-green-600 hover:bg-white hover:text-green-600 hover:border-green-600 transition-all duration-300 flex items-center gap-2"
-                      >
-                        LEARN MORE
-                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                      </Button>
-                    </Link>
+                    {isExternalUrl(service.link) ? (
+                      <a href={service.link}>
+                        <Button
+                          variant="outline"
+                          className="bg-transparent border-white group-hover:border-green-600 text-white group-hover:text-green-600 hover:bg-white hover:text-green-600 hover:border-green-600 transition-all duration-300 flex items-center gap-2"
+                        >
+                          LEARN MORE
+                          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                        </Button>
+                      </a>
+                    ) : (
+                      <Link href={service.link}>
+                        <Button
+                          variant="outline"
+                          className="bg-transparent border-white group-hover:border-green-600 text-white group-hover:text-green-600 hover:bg-white hover:text-green-600 hover:border-green-600 transition-all duration-300 flex items-center gap-2"
+                        >
+                          LEARN MORE
+                          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                        </Button>
+                      </Link>
+                    )}
                   </div>
                 </div>
 
