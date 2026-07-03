@@ -93,7 +93,7 @@ const Header = () => {
       {/* Loading Overlay */}
      {/* {isLoading && <Loader />} */}
 
-      <header className='bg-white shadow-sm sticky top-0 z-50 overflow-hidden'>
+      <header className='bg-white shadow-sm sticky top-0 z-50'>
         <div className='max-w-7xl mx-auto px-4'>
           <div className='flex justify-between items-center h-24'>
             {/* Logo */}
@@ -118,54 +118,66 @@ const Header = () => {
               <nav className='hidden lg:flex items-center space-x-8 relative'>
                 {navItems.map(item => (
                   <div key={item.label} className='relative group'>
-                    <Link
-                      href={item.href}
-                      onClick={() => handleNavigation(item.href)}
-                      className={getNavLinkClassName(item.href)}
-                    >
-                      {item.label}
-                      {(item.hasMegaMenu || item.hasDropdown) && (
+                    {item.hasMegaMenu ? (
+                      <Link
+                        href={item.href}
+                        onClick={() => handleNavigation(item.href)}
+                        className={getNavLinkClassName(item.href)}
+                        aria-haspopup='true'
+                        aria-expanded='false'
+                      >
+                        {item.label}
                         <ChevronDown className='ml-1 h-4 w-4 transition-transform group-hover:rotate-180' />
-                      )}
-                    </Link>
+                      </Link>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        onClick={() => handleNavigation(item.href)}
+                        className={getNavLinkClassName(item.href)}
+                      >
+                        {item.label}
+                        {item.hasDropdown && (
+                          <ChevronDown className='ml-1 h-4 w-4 transition-transform group-hover:rotate-180' />
+                        )}
+                      </Link>
+                    )}
 
                     {/* Mega Menu for Services */}
                     {item.hasMegaMenu && (
-                      <div className='absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[800px] bg-white shadow-2xl rounded-lg opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all duration-300 border border-gray-100 z-40'>
-                        <div className='p-6'>
-                          <div className='grid grid-cols-4 gap-6'>
-                            {servicesCategories.map((category, idx) => (
-                              <div key={idx} className='space-y-3'>
-                                <h3 className='font-bold text-sm text-gray-900 uppercase tracking-wide pb-2 border-b border-gray-200'>
-                                  {category.category}
-                                </h3>
-                                <div className='space-y-2'>
-                                  {category.items.map(service => (
-                                    <Link
-                                      key={service.href}
-                                      href={service.href}
-                                      onClick={() => handleNavigation(service.href)}
-                                      className='group/item flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:text-red-600 hover:bg-red-50 rounded-md transition-all duration-200 font-medium'
-                                    >
-                                      <span>{service.label}</span>
-                                      <ChevronRight className='h-4 w-4 opacity-0 group-hover/item:opacity-100 translate-x-[-8px] group-hover/item:translate-x-0 transition-all duration-200' />
-                                    </Link>
-                                  ))}
+                      <div className='absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all duration-200 z-50'>
+                        <div className='w-[800px] bg-white shadow-2xl rounded-lg border border-gray-100'>
+                          <div className='p-6'>
+                            <div className='grid grid-cols-4 gap-6'>
+                              {servicesCategories.map((category, idx) => (
+                                <div key={idx}>
+                                  <h3 className='font-bold text-sm text-gray-900 uppercase tracking-wide pb-2 border-b border-gray-200'>
+                                    {category.category}
+                                  </h3>
+                                  <ul className='mt-3 space-y-2'>
+                                    {category.items.map(service => (
+                                      <li key={service.href}>
+                                        <Link
+                                          href={service.href}
+                                          onClick={() => handleNavigation(service.href)}
+                                          className='block text-sm text-gray-700 hover:text-red-600 transition-colors'
+                                        >
+                                          {service.label}
+                                        </Link>
+                                      </li>
+                                    ))}
+                                  </ul>
                                 </div>
-                              </div>
-                            ))}
-                          </div>
-                          
-                          {/* Bottom CTA */}
-                          <div className='mt-6 pt-6 border-t border-gray-200'>
-                            <div className='flex items-center justify-between'>
-                              <p className='text-sm text-gray-600'>
-                                Can't find what you're looking for?
+                              ))}
+                            </div>
+
+                            <div className='mt-6 pt-6 border-t border-gray-200 flex items-center justify-between'>
+                              <p className='text-sm text-gray-500'>
+                                Can&apos;t find what you&apos;re looking for?
                               </p>
                               <Link
                                 href='/contact-us'
                                 onClick={() => handleNavigation('/contact-us')}
-                                className='inline-block px-4 py-2 bg-red-600 text-white text-sm font-semibold rounded-md hover:bg-red-700 transition-colors'
+                                className='inline-block px-5 py-2 bg-red-600 text-white text-sm font-semibold rounded-md hover:bg-red-700 transition-colors'
                               >
                                 Contact Us
                               </Link>
@@ -242,12 +254,11 @@ const Header = () => {
                 {(item.hasMegaMenu || item.hasDropdown) ? (
   <>
     <button
-      onClick={() => {
-        handleNavigation(item.href)
+      onClick={() =>
         setOpenSubmenu(prev =>
           prev === item.label ? '' : item.label
         )
-      }}
+      }
       className={`w-full text-left py-2 px-3 rounded-md font-medium flex justify-between items-center ${
         isActive(item.href)
           ? 'text-red-600 bg-gray-100'

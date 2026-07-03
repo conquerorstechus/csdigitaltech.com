@@ -14,8 +14,6 @@ import client18 from '../assets/client/client18.png';
 import client19 from '../assets/client/client19.png';
 import client20 from '../assets/client/client20.png';
 import client21 from '../assets/client/client21.png';
-import client25 from '../assets/client/client25.png';
-import j127 from '../assets/client/j-127.jpg';
 import jcPpeConsultation from '../assets/client/jc-ppe-consultation.jpg';
 import sisiraLogo from '../assets/client/sisira-logo.jpg';
 import ustavCatering from '../assets/client/ustav-catering.jpg';
@@ -28,12 +26,10 @@ const clientLogos = [
   { name: "Butterfly Pharmacy", logo: client19 },
   { name: "BuySell Realty Pros", logo: client20 },
   { name: "Cypress Palliative & Comfort Care", logo: client21 },
-  { name: "J-127", logo: j127 },
   { name: "JC PPE Consultation", logo: jcPpeConsultation },
   { name: "Sisira", logo: sisiraLogo },
   { name: "Ustav Catering", logo: ustavCatering },
   { name: "Water Pediatric Center", logo: waterPediatricCenter },
-  { name: "Client", logo: client25 },
 ];
 
 export default function ClientSection() {

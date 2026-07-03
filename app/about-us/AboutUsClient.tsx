@@ -198,14 +198,14 @@ export default function AboutUsClient() {
             </h2>
 
             <p>
-              Covenant Soft US is a fast-growing digital marketing company in
+              Conerstone Digital Technologies fast-growing digital marketing company in
               Tampa, Florida, built with a clear mission—to help businesses grow
               by combining cutting-edge technology with results-driven
               marketing.
             </p>
 
             <p>
-              Led by Sam Kasimalla, an ex-FAANG engineer, Covenant Soft Software
+              Led by Sam Kasimalla, an ex-FAANG engineer, Cornerstone Digital 
               Technologies LLC brings Silicon Valley–level innovation into the
               digital marketing space. Our foundation is rooted in advanced
               technologies like AI, Next.js, and cloud infrastructure, allowing
