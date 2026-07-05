@@ -142,7 +142,7 @@ export function getStructuredData(
         "@type": "ContactPoint",
         "telephone": "+1-908-922-1063",
         "contactType": "customer service",
-        "email": "info@conquerorstech.com",
+        "email": "info@csdigitaltech.com",
         "areaServed": "US",
         "availableLanguage": "English"
       },
@@ -254,7 +254,7 @@ export function getStructuredData(
       "description": pageDescription,
       "url": domain,
       "telephone": "+1-908-922-1063",
-      "email": "info@conquerorstech.com",
+      "email": "info@csdigitaltech.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "19046 Bruce B. Downs Blvd. #1376",

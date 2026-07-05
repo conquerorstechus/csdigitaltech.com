@@ -51,7 +51,7 @@ export default function ContactUsClient() {
               </p>
               <p className='mt-2'>
                 <span className='font-semibold'>Mail:</span>{' '}
-                info@conquerorstech.com
+                info@csdigitaltech.com
               </p>
               <p className="font-medium text-gray-600 border rounded-lg px-3 bg-gray-50 mt-3 w-fit">
                 Cornerstone Digital Technologies LLC.

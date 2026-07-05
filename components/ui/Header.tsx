@@ -45,9 +45,7 @@ const servicesCategories = [
 ]
 
 const aboutMenuItems = [
-  { label: 'About Cornerstone Digital Technologies', href: '/about-us' },
-  { label: 'Our Team', href: '/our-team' },
-  { label: 'Office gallery', href: '/office-gallery' }
+  { label: 'About Cornerstone Digital Technologies', href: '/about-us' }
 ]
 
 const navItems = [

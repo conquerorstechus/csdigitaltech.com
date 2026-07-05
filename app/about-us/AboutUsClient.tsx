@@ -198,8 +198,7 @@ export default function AboutUsClient() {
             </h2>
 
             <p>
-              Conerstone Digital Technologies fast-growing digital marketing company in
-              Tampa, Florida, built with a clear mission—to help businesses grow
+              Cornerstone Digital Technologies is a fast-growing digital marketing company in
               by combining cutting-edge technology with results-driven
               marketing.
             </p>
@@ -228,7 +227,7 @@ export default function AboutUsClient() {
             </p>
 
             <p>
-              At Covenant Soft US, we&apos;re not just another digital marketing
+              At Cornerstone Digital Technologies US, we&apos;re not just another digital marketing
               company in Tampa, Florida—we&apos;re your technology-powered growth
               partner, committed to helping you scale with confidence.
             </p>
@@ -270,22 +269,8 @@ export default function AboutUsClient() {
             WE CATER OUR SERVICES ACROSS
           </h2>
 
-          <div className='relative bg-[#142359] lg:rounded-tl-full lg:rounded-bl-full rounded-md  flex flex-col md:flex-row overflow-hidden'>
-            {/* Left Side Image */}
-            <div className='w-full md:w-1/2 p-8 flex items-center justify-center'>
-              <div className='relative w-full aspect-square'>
-                <Image
-                  src='/About/it-services-03.webp'
-                  alt='Services Illustration'
-                  title='IT Services and Solutions we provide across industries'
-                  fill
-                  className='object-contain'
-                />
-              </div>
-            </div>
-
-            {/* Right Side Services List */}
-            <div className='w-full md:w-1/2 py-10 px-6 md:px-12 flex flex-col justify-center gap-6'>
+          <div className='relative bg-[#142359] lg:rounded-tl-full lg:rounded-bl-full rounded-md p-8 overflow-hidden'>
+            <div className='w-full py-10 px-6 md:px-12 flex flex-col justify-center gap-6'>
               {services.map((service, index) => (
                 <div key={index} className='flex items-start gap-4 lg:my-3'>
                   <FaCubes className='text-white mt-1' size={20} />

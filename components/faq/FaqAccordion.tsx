@@ -1126,7 +1126,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
       question:
         'How can I get started with your WordPress development services?',
       answer:
-        'Just contact us through our website or email us at info@conquerorstech.net. Share your business goals, and we’ll provide a free consultation and project proposal.'
+        'Just contact us through our website or email us at info@csdigitaltech.com. Share your business goals, and we’ll provide a free consultation and project proposal.'
     }
   ],
   DrupalDevelopment: [
@@ -1452,7 +1452,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
       question:
         'How do I get started with your CMS services?',
       answer:
-        'You can reach out via our Contact Page or email us at info@conquerorstech.net. Our CMS experts will schedule a consultation to understand your needs and recommend the right solution.'
+        'You can reach out via our Contact Page or email us at info@csdigitaltech.com. Our CMS experts will schedule a consultation to understand your needs and recommend the right solution.'
     }
   ],
   CloudDevelopment: [
@@ -1668,7 +1668,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
       question:
         'How do I get started with Cornerstone Digital Technologies for a custom software project?',
       answer:
-        'Simply contact our team via info@conquerorstech.net or call us at +91 70131 96804. We’ll schedule a consultation to understand your requirements and provide a tailored proposal.'
+        'Simply contact our team via info@csdigitaltech.com or call us at +91 70131 96804. We’ll schedule a consultation to understand your requirements and provide a tailored proposal.'
     }
   ],
   FullStack: [
@@ -2100,7 +2100,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
       question:
         'How do I get started with Cornerstone Digital Technologies’ digital strategy services?',
       answer:
-        'Simply reach out via our contact form or email us at info@conquerorstech.net. We’ll schedule a discovery session to understand your needs and begin building a customized strategic plan.'
+        'Simply reach out via our contact form or email us at info@csdigitaltech.com. We’ll schedule a discovery session to understand your needs and begin building a customized strategic plan.'
     }
   ],
   devopsdevelopment: [
@@ -2316,7 +2316,7 @@ const allFaqs: Record<FaqsProps['faqId'], FaqItem[]> = {
       question:
         'How do I get started with IoT development with Cornerstone Digital Technologies?',
       answer:
-        'Simply reach out to us via info@conquerorstech.net or use our contact form. Our IoT consultants will schedule a discovery session to assess your needs and propose the best-fit solution.'
+        'Simply reach out to us via info@csdigitaltech.com or use our contact form. Our IoT consultants will schedule a discovery session to assess your needs and propose the best-fit solution.'
     }
   ],
   Microservice: [
