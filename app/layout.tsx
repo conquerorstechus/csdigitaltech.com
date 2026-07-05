@@ -2,6 +2,7 @@
 
 import type { Metadata } from "next"
 import type React from "react"
+import { Inter, Plus_Jakarta_Sans } from "next/font/google"
 import "./globals.css"
 import Header from "@/components/ui/Header"
 import Footer from "@/components/ui/Footer"
@@ -9,6 +10,18 @@ import ScrollToTop from "@/components/ui/ScrollToTop"
 import PageTransition from "@/components/ui/PageTransition"
 import Loader from "../components/ui/loader"
 import Script from "next/script"
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+})
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   title: "Cornerstone Digital Technologies",
@@ -22,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${plusJakartaSans.variable}`}>
       <head>
         <link
           rel="stylesheet"
@@ -45,7 +58,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body>
+      <body className="antialiased">
         <Loader />
         <Header />
         {children}

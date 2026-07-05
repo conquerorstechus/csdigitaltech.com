@@ -1,20 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech:wght@400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --font-sans: "Inter", "Segoe UI", Arial, sans-serif;
+  --font-heading: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
+}
+
 @layer base {
   body {
-   
-    font-family: 'Asap', sans-serif;
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
   }
 }
-.montserrat {
-  font-family: "Montserrat", sans-serif;
 
+.montserrat {
+  font-family: var(--font-heading);
 }
 
 @layer utilities {
