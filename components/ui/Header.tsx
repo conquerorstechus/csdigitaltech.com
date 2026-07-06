@@ -11,35 +11,49 @@ import { DIGITAL_MARKETING_URL, isExternalUrl } from '@/lib/constants'
 
 const servicesCategories = [
   {
-    category: 'AI Services',
+    category: 'Architecture & Infrastructure',
     items: [
-      { label: 'AI & IT Consulting', href: '/services/it-consulting-in-Florida' },
-      { label: 'AI & ML Services', href: '/services/ai-ml-services-in-Florida' },
-      { label: 'Custom LLMs', href: '/services/custom-llms-in-Florida' },
-      { label: 'AI Learning Solutions', href: '/services/ai-learning-in-Florida' },
-      { label: 'AI-Powered MMRAG Services', href: '/ai-powered-mmrag-services-florida' }
+      { label: 'Scalable & Serverless AWS, Azure, GCP Architecture & Setup', href: '/services/digital-cloud-solutions' },
+      { label: 'Managed Infrastructure', href: '/managed-services-florida' }
     ]
   },
   {
-    category: 'Data Services',
+    category: 'Web & Software Development',
     items: [
-      { label: 'Data Analytics & BI', href: '/services/data-analytics-bi-in-Florida' },
-      { label: 'Data Science', href: '/services/data-science' }
+      { label: 'Websites', href: '/web-development' },
+      { label: 'Custom Software Development', href: '/services/software-development' }
     ]
   },
   {
-    category: 'Development & Cloud',
+    category: 'Digital Marketing & Lead Generation',
     items: [
-      { label: 'Software Development', href: '/services/software-development-in-florida' },
-      { label: 'Digital & Cloud Solutions', href: '/services/digital-cloud-solutions-in-Florida' },
-      { label: 'Cloud Services', href: '/services/cloud-services-in-Florida' }
+      { label: 'Social Media Marketing', href: DIGITAL_MARKETING_URL },
+      { label: 'Email Marketing', href: DIGITAL_MARKETING_URL },
+      { label: 'Search Engine Optimization (SEO)', href: DIGITAL_MARKETING_URL },
+      { label: 'Paid Ads', href: DIGITAL_MARKETING_URL },
+      { label: 'Lead Generation through Web Scraping', href: DIGITAL_MARKETING_URL }
     ]
   },
   {
-    category: 'Quality & Marketing',
+    category: 'AI & Automation',
     items: [
-      { label: 'QA / Testing Services', href: '/services/testing-services-in-Florida' },
-      { label: 'Digital Marketing', href: DIGITAL_MARKETING_URL }
+      { label: 'AI Chatbots', href: '/services/ai-ml-services' },
+      { label: 'AI Call Centers', href: '/services/ai-ml-services' },
+      { label: 'Business processes AI Automation using tools like N8N', href: '/services/ai-ml-services' },
+      { label: 'Reporting', href: '/services/data-analytics-bi' }
+    ]
+  },
+  {
+    category: 'Business Systems Integration',
+    items: [
+      { label: 'CRM Setup & Implementation', href: '/services/it-consulting' },
+      { label: 'ERP Setup & Implementation', href: '/services/it-consulting' }
+    ]
+  },
+  {
+    category: 'Quality Assurance',
+    items: [
+      { label: 'QA / Testing Services', href: '/services/testing-services' }
     ]
   }
 ]
@@ -144,9 +158,9 @@ const Header = () => {
                     {/* Mega Menu for Services */}
                     {item.hasMegaMenu && (
                       <div className='absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all duration-200 z-50'>
-                        <div className='w-[800px] bg-white shadow-2xl rounded-lg border border-gray-100'>
+                        <div className='w-[980px] bg-white shadow-2xl rounded-lg border border-gray-100'>
                           <div className='p-6'>
-                            <div className='grid grid-cols-4 gap-6'>
+                            <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6'>
                               {servicesCategories.map((category, idx) => (
                                 <div key={idx}>
                                   <h3 className='font-bold text-sm text-gray-900 uppercase tracking-wide pb-2 border-b border-gray-200'>

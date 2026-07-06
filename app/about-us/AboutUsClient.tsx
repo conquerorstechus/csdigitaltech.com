@@ -1,6 +1,6 @@
 'use client'
 
-import { FaChevronRight, FaCubes, FaLinkedin } from 'react-icons/fa'
+import { FaChevronRight, FaCubes } from 'react-icons/fa'
 import { useState } from 'react'
 import Image from 'next/image'
 import ClientSection from '../landingpage/ClientSection'
@@ -64,13 +64,6 @@ export default function AboutUsClient() {
     setActiveIndex(prev => (prev === index ? -1 : index))
   }
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-  }
-
   // Split FAQs in two columns
   const mid = Math.ceil(faqs.length / 2)
   const left = faqs.slice(0, mid)
@@ -123,7 +116,7 @@ export default function AboutUsClient() {
   )
 
   return (
-    <main className='bg-gray-50 overflow-x-hidden'>
+    <main className='bg-gray-50 overflow-x-hidden font-[family-name:var(--font-sans)]'>
       <section className='relative bg-[#211f3b] py-10 md:py-20 overflow-hidden '>
         {/* Top-left decorative image */}
         <div className='absolute top-0 left-0 w-32 md:w-48 lg:w-64 opacity-70'>
@@ -164,18 +157,8 @@ export default function AboutUsClient() {
             <p className='text-xs md:text-sm uppercase text-gray-200 mb-3'>
               //Experience. Execution. Excellence.
             </p>
-            <h1 className='text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8'>What We Actually Do</h1>
+            <h1 className='text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 font-[family-name:var(--font-heading)]'>What We Actually Do</h1>
 
-            {/* Image below heading */}
-            <div className='mb-3 w-full relative h-48'>
-              <Image
-                src='/Digitalcloud/Stacks.jpg'
-                alt='Decorative under heading'
-                title='Technology stack and development tools we use'
-                fill
-                className='mb-3 w-full h-auto rounded-md shadow-lg'
-              />
-            </div>
 
             <p className='text-lg md:text-xl leading-relaxed md:leading-loose text-white font-normal'>
               <span className='font-bold'>Cornerstone Digital Technologies</span> is the partner of
@@ -193,7 +176,7 @@ export default function AboutUsClient() {
         <div className='max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-center'>
           {/* Left column - text */}
           <div className='w-full lg:w-2/3 text-lg text-justify leading-8'>
-            <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-6'>
+            <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-[family-name:var(--font-heading)]'>
               About Us
             </h2>
 
@@ -233,39 +216,11 @@ export default function AboutUsClient() {
             </p>
           </div>
 
-          {/* Right column - image boxes */}
-          <div className='w-full lg:w-1/3 grid grid-cols-2 gap-4'>
-            {[
-              { title: 'Our Mission', src: '/About/image-box1.jpg', sectionId: 'our-mission' },
-              { title: 'Our Vision', src: '/About/image-box2.jpg', sectionId: 'our-vision' },
-              { title: 'Our Values', src: '/About/image-box3.jpg', sectionId: 'our-values' },
-              { title: 'Our Culture', src: '/About/image-box4.jpg', sectionId: 'our-culture' }
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                onClick={() => scrollToSection(item.sectionId)}
-                className='relative h-40 bg-gray-200 rounded overflow-hidden group cursor-pointer transition-all duration-300 hover:shadow-lg'
-              >
-                <Image
-                  src={item.src}
-                  alt={item.title}
-                  title={`Cornerstone Digital Technologies ${item.title}`}
-                  fill
-                  className='object-cover transition-transform duration-300 group-hover:scale-105'
-                />
-                <div className='absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/50 transition-colors duration-300'>
-                  <h3 className='text-white text-lg font-bold'>{item.title}</h3>
-                </div>
-                {/* Optional: green corner design */}
-                <div className='absolute top-0 right-0 w-0 h-0 border-t-[30px] border-t-green-500 border-l-[30px] border-l-transparent' />
-              </div>
-            ))}
-          </div>
         </div>
       </section>
       <section className=' bg-white text-white lg:pt-16 pt-8'>
         <div className='max-w-7xl mx-auto px-4'>
-          <h2 className='text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12'>
+          <h2 className='text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 font-[family-name:var(--font-heading)]'>
             WE CATER OUR SERVICES ACROSS
           </h2>
 
@@ -281,7 +236,7 @@ export default function AboutUsClient() {
           </div>
 
           <div id='our-mission' className='max-w-5xl mx-auto mt-12 px-6 sm:px-10 lg:px-0 scroll-mt-20'>
-            <h2 className='text-3xl md:text-4xl font-bold mb-8 md:mb-10 text-gray-800'>
+            <h2 className='text-3xl md:text-4xl font-bold mb-8 md:mb-10 text-gray-800 font-[family-name:var(--font-heading)]'>
               OUR MISSION
             </h2>
 
@@ -314,7 +269,7 @@ export default function AboutUsClient() {
           <div className='max-w-5xl mx-auto'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 px-6 sm:px-10 lg:px-0'>
               <div id='our-vision' className='scroll-mt-20'>
-                <h2 className='text-3xl md:text-4xl font-bold mb-6 text-gray-800'>
+                <h2 className='text-3xl md:text-4xl font-bold mb-6 text-gray-800 font-[family-name:var(--font-heading)]'>
                   Our Vision
                 </h2>
                 <div className='flex space-x-4 relative'>
@@ -328,7 +283,7 @@ export default function AboutUsClient() {
               </div>
 
               <div id='our-values' className='scroll-mt-20 mt-10 md:mt-0'>
-                <h2 className='text-3xl md:text-4xl font-bold mb-6 text-gray-800'>
+                <h2 className='text-3xl md:text-4xl font-bold mb-6 text-gray-800 font-[family-name:var(--font-heading)]'>
                   Our Values
                 </h2>
                 <div className='space-y-6 md:space-y-8'>
@@ -367,7 +322,7 @@ export default function AboutUsClient() {
             </div>
 
             <div id='our-culture' className='mt-12 md:mt-16 py-8 md:py-12 lg:px-0 px-6 sm:px-8 scroll-mt-20'>
-              <h2 className='text-3xl md:text-4xl font-bold mb-8 text-gray-800 text-center md:text-left'>
+              <h2 className='text-3xl md:text-4xl font-bold mb-8 text-gray-800 text-center md:text-left font-[family-name:var(--font-heading)]'>
                 Our Culture
               </h2>
               <div className='space-y-6 md:space-y-8'>
@@ -428,7 +383,7 @@ export default function AboutUsClient() {
       <ClientSection />
 
       <section className='max-w-6xl mx-auto px-4 py-12'>
-        <h2 className='text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center'>
+        <h2 className='text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center font-[family-name:var(--font-heading)]'>
           Our Business Operating Model
         </h2>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
