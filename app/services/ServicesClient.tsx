@@ -34,40 +34,117 @@ import { DIGITAL_MARKETING_URL, isExternalUrl } from '@/lib/constants'
 
 const services = [
   {
-    title: 'Software Development Services',
-    desc: 'Custom/Enterprise Web Applications, Information Security, Mobile Apps, Database systems, UI/UX Design.',
-    icon: <FaBriefcase className='text-3xl' />,
-    link: '/services/software-development-in-florida'
-  },
-  {
-    title: 'Digital & Cloud Solutions',
-    desc: 'Cloud solutions and implementation, API-led integrations, IoT Middleware, IoT data pipeline, Mobility and Machine Learning',
-    icon: <FaCloud className='text-3xl' />,
-    link: '/services/digital-cloud-solutions-in-Florida'
-  },
-  {
-    title: 'IT Consulting',
-    desc: 'Advanced software solutions by helping you choose the right technologies like AI, BI & Analytics, Data Science, NetSuite, SAP, Salesforce etc.,',
-    icon: <FaCogs className='text-3xl' />,
-    link: '/services/it-consulting-in-Florida'
-  },
-  {
-    title: 'QA / Testing Services',
-    desc: 'Quality Assurance with 360° view of quality across systems and processes using specialized End-to-End Managed Testing Services offerings Test Automation, Functional & Specialized Testing, Performance Testing',
-    icon: <FaMicroscope className='text-3xl' />,
-    link: '/services/testing-services-in-Florida'
-  },
-  {
-    title: 'Cloud Services',
-    desc: 'We have strong skills with AWS, Azure and Google Cloud Migration, DevOps, Cloud Infra Monitoring and 24/7 Support to enable seamless digital transformation.',
+    title: 'Architecture & Infrastructure',
+    desc: 'Scalable architecture and dependable operations for modern cloud-first businesses.',
+    note: '(Designed by Ex-AWS/FAANG engineers)',
     icon: <FaServer className='text-3xl' />,
-    link: '/services/cloud-services-in-Florida'
+    link: '/services/digital-cloud-solutions',
+    items: [
+      {
+        label: 'Scalable & Serverless AWS, Azure, GCP Architecture & Setup',
+        href: '/services/digital-cloud-solutions'
+      },
+      {
+        label: 'Managed Infrastructure',
+        href: '/managed-services-florida'
+      }
+    ]
   },
   {
-    title: 'Digital Marketing',
-    desc: 'Digital marketing is the marketing and advertising of a business, person, product, or service using online channels, electronic devices, social media, email, pay-per-click (PPC), search engine optimization (SEO),',
+    title: 'Web & Software Development',
+    desc: 'Websites and custom software built for performance, scalability, and growth.',
+    icon: <FaBriefcase className='text-3xl' />,
+    link: '/services/software-development',
+    items: [
+      {
+        label: 'Websites',
+        href: '/web-development'
+      },
+      {
+        label: 'Custom Software Development',
+        href: '/services/software-development'
+      }
+    ]
+  },
+  {
+    title: 'Digital Marketing & Lead Generation',
+    desc: 'Performance-led campaigns that convert attention into qualified leads.',
     icon: <FaBullhorn className='text-3xl' />,
-    link: DIGITAL_MARKETING_URL
+    link: DIGITAL_MARKETING_URL,
+    items: [
+      {
+        label: 'Social Media Marketing',
+        href: DIGITAL_MARKETING_URL
+      },
+      {
+        label: 'Email Marketing',
+        href: DIGITAL_MARKETING_URL
+      },
+      {
+        label: 'Search Engine Optimization (SEO)',
+        href: DIGITAL_MARKETING_URL
+      },
+      {
+        label: 'Paid Ads',
+        href: DIGITAL_MARKETING_URL
+      },
+      {
+        label: 'Lead Generation through Web Scraping',
+        href: DIGITAL_MARKETING_URL
+      }
+    ]
+  },
+  {
+    title: 'AI & Automation',
+    desc: 'Intelligent experiences and workflow automation that reduce manual effort.',
+    icon: <FaCogs className='text-3xl' />,
+    link: '/services/ai-ml-services',
+    items: [
+      {
+        label: 'AI Chatbots',
+        href: '/services/ai-ml-services'
+      },
+      {
+        label: 'AI Call Centers',
+        href: '/services/ai-ml-services'
+      },
+      {
+        label: 'Business processes AI Automation using tools like N8N',
+        href: '/services/ai-ml-services'
+      },
+      {
+        label: 'Reporting (includes Data Analytics & BI, Data Science)',
+        href: '/services/data-analytics-bi'
+      }
+    ]
+  },
+  {
+    title: 'Business Systems Integration',
+    desc: 'Connect your CRM and ERP workflows to create a unified operating model.',
+    icon: <FaCloud className='text-3xl' />,
+    link: '/services/it-consulting',
+    items: [
+      {
+        label: 'CRM Setup & Implementation',
+        href: '/services/it-consulting'
+      },
+      {
+        label: 'ERP Setup & Implementation',
+        href: '/services/it-consulting'
+      }
+    ]
+  },
+  {
+    title: 'Quality Assurance',
+    desc: 'Reliable quality engineering that strengthens releases and user confidence.',
+    icon: <FaMicroscope className='text-3xl' />,
+    link: '/services/testing-services',
+    items: [
+      {
+        label: 'QA / Testing Services',
+        href: '/services/testing-services'
+      }
+    ]
   }
 ]
 
@@ -156,14 +233,34 @@ export default function ServicesClient () {
                     <h3 className='lg:text-2xl text-xl font-semibold mb-3 transition-colors duration-300 group-hover:text-black'>
                       {service.title}
                     </h3>
-                    <p className='lg:text-base text-sm mt-6 tracking-wide text-gray-300 transition-colors font-normal duration-300 group-hover:text-gray-700 !leading-7'>
+                    <p className='lg:text-base text-sm mt-4 tracking-wide text-gray-300 transition-colors font-normal duration-300 group-hover:text-gray-700 !leading-7'>
                       {service.desc}
                     </p>
+                    {service.note ? (
+                      <p className='mt-2 text-sm italic text-gray-400 transition-colors duration-300 group-hover:text-gray-600'>
+                        {service.note}
+                      </p>
+                    ) : null}
+                    <ul className='mt-5 space-y-2 text-sm text-gray-300 transition-colors duration-300 group-hover:text-gray-700'>
+                      {service.items.map((item) => (
+                        <li key={item.label}>
+                          {isExternalUrl(item.href) ? (
+                            <a href={item.href} className='block hover:text-green-400 transition-colors duration-300'>
+                              {item.label}
+                            </a>
+                          ) : (
+                            <Link href={item.href} className='block hover:text-green-400 transition-colors duration-300'>
+                              {item.label}
+                            </Link>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
                   <div className='flex justify-between items-end pt-6'>
                     {isExternalUrl(service.link) ? (
-                      <span className={learnMoreClassName}>{learnMoreContent}</span>
+                      <a href={service.link} className={learnMoreClassName}>{learnMoreContent}</a>
                     ) : (
                       <Link href={service.link} className={learnMoreClassName}>
                         {learnMoreContent}

@@ -15,46 +15,67 @@ import { DIGITAL_MARKETING_URL, isExternalUrl } from '@/lib/constants';
 
 const services = [
   {
-    icon: Code,
-    title: 'Software Development Services',
-    description:
-      'Custom/Enterprise Web Applications, Information Security, Mobile Application Development, Database systems, UI/UX Design, Full Stack Development',
-    link: '/services/software-development-in-florida'
-  },
-  {
-    icon: Cloud,
-    title: 'Digital & Cloud Solutions',
-    description:
-      'Cloud solutions and implementation, API-led integrations, IoT Middleware, IoT data pipeline, Mobility and Machine Learning',
-    link: '/services/digital-cloud-solutions-in-Florida'
-  },
-  {
-    icon: Settings,
-    title: 'IT Consulting',
-    description:
-      'Advanced software solutions by helping you choose the right technologies like AI, BI & Analytics, Data Science, NetSuite, SAP, Salesforce etc.,',
-    link: '/services/it-consulting-in-Florida'
-  },
-  {
-    icon: TestTube,
-    title: 'QA /Testing Services',
-    description:
-      'Quality Assurance with 360° view of quality across systems and processes using specialized End-to-End Managed Testing Services offerings Test Automation, Functional Testing, Performance Testing',
-    link: '/services/testing-services-in-Florida'
-  },
-  {
     icon: Server,
-    title: 'Cloud Services',
+    title: 'Architecture & Infrastructure',
     description:
-      'We have strong skills with AWS, Azure and Google Cloud Migration, DevOps, Cloud Infra Monitoring and 24/7 Support to enable seamless digital transformation.',
-    link: '/services/cloud-services-in-Florida'
+      'Scalable architecture and dependable operations for modern cloud-first businesses.',
+    note: '(Designed by Ex-AWS/FAANG engineers)',
+    link: '/services/digital-cloud-solutions',
+    items: [
+      'Scalable & Serverless AWS, Azure, GCP Architecture & Setup',
+      'Managed Infrastructure'
+    ]
+  },
+  {
+    icon: Code,
+    title: 'Web & Software Development',
+    description:
+      'Websites and custom software built for performance, scalability, and growth.',
+    link: '/services/software-development',
+    items: ['Websites', 'Custom Software Development']
   },
   {
     icon: Megaphone,
-    title: 'Digital Marketing',
+    title: 'Digital Marketing & Lead Generation',
     description:
-      'Marketing and advertising of a business, product, or service using online channels, social media, email, pay-per-click, SEO, Online Reputation Management, Marketing Automation etc.,',
-    link: DIGITAL_MARKETING_URL
+      'Performance-led campaigns that convert attention into qualified leads.',
+    link: DIGITAL_MARKETING_URL,
+    items: [
+      'Social Media Marketing',
+      'Email Marketing',
+      'Search Engine Optimization (SEO)',
+      'Paid Ads',
+      'Lead Generation through Web Scraping'
+    ]
+  },
+  {
+    icon: Settings,
+    title: 'AI & Automation',
+    description:
+      'Intelligent experiences and workflow automation that reduce manual effort.',
+    link: '/services/ai-ml-services',
+    items: [
+      'AI Chatbots',
+      'AI Call Centers',
+      'Business processes AI Automation using tools like N8N',
+      'Reporting (includes Data Analytics & BI, Data Science)'
+    ]
+  },
+  {
+    icon: Cloud,
+    title: 'Business Systems Integration',
+    description:
+      'Connect your CRM and ERP workflows to create a unified operating model.',
+    link: '/services/it-consulting',
+    items: ['CRM Setup & Implementation', 'ERP Setup & Implementation']
+  },
+  {
+    icon: TestTube,
+    title: 'Quality Assurance',
+    description:
+      'Reliable quality engineering that strengthens releases and user confidence.',
+    link: '/services/testing-services',
+    items: ['QA / Testing Services']
   }
 ];
 
@@ -89,9 +110,22 @@ const FeaturesSection = () => {
                   <h3 className="lg:text-2xl text-xl font-bold font-poppins mb-4 group-hover:text-black transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="lg:text-base text-sm leading-relaxed mb-6 opacity-90 group-hover:text-gray-700 transition-colors duration-300">
+                  <p className="lg:text-base text-sm leading-relaxed mb-3 opacity-90 group-hover:text-gray-700 transition-colors duration-300">
                     {service.description}
                   </p>
+                  {service.note ? (
+                    <p className="text-sm italic mb-4 opacity-80 group-hover:text-gray-600 transition-colors duration-300">
+                      {service.note}
+                    </p>
+                  ) : null}
+                  <ul className="text-sm leading-relaxed mb-6 opacity-90 group-hover:text-gray-700 transition-colors duration-300 space-y-1">
+                    {service.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2">
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-green-400 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
 
                   <div className="mt-auto">
                     {isExternalUrl(service.link) ? (
