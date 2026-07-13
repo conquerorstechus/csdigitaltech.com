@@ -39,6 +39,9 @@ export default function ContactUsClient() {
                   USA Location
                 </span>
               </div>
+              <p className='font-semibold text-gray-800 mb-2'>
+                Cornerstone Digital Technologies
+              </p>
               <p>
                 19046 Bruce B. Downs Blvd. #1376,
                 <br />
@@ -53,9 +56,6 @@ export default function ContactUsClient() {
                 <span className='font-semibold'>Mail:</span>{' '}
                 info@csdigitaltech.com
               </p>
-              <p className="font-medium text-gray-600 border rounded-lg px-3 bg-gray-50 mt-3 w-fit">
-                Cornerstone Digital Technologies LLC.
-              </p>
             </div>
           </div>
         </div>
@@ -68,9 +68,28 @@ export default function ContactUsClient() {
         </div>
       </section>
 
-      <div className='w-full h-[500px]'>
+      <div className='relative w-full h-[500px]'>
+        <div className='absolute top-4 left-4 z-10 max-w-sm rounded-lg bg-white p-4 shadow-lg border border-gray-200'>
+          <p className='font-semibold text-gray-900 text-base'>
+            Cornerstone Digital Technologies
+          </p>
+          <p className='text-sm text-gray-600 mt-1 leading-relaxed'>
+            19046 Bruce B. Downs Blvd. #1376,
+            <br />
+            Tampa, Florida 33647, United States.
+          </p>
+          <a
+            href='https://www.google.com/maps/search/?api=1&query=Cornerstone+Digital+Technologies,+19046+Bruce+B.+Downs+Blvd+%231376,+Tampa,+FL+33647,+USA'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='inline-block mt-2 text-sm font-medium text-blue-600 hover:text-blue-800'
+          >
+            View larger map
+          </a>
+        </div>
         <iframe
-          src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3518.0115134649814!2d-82.35470389999999!3d28.146137699999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2b71704660979%3A0x3a5c17202490ef7a!2sConquerors%20Software%20Technologies%20LLC!5e0!3m2!1sen!2sin!4v1770186709946!5m2!1sen!2sin'
+          src='https://maps.google.com/maps?q=Cornerstone+Digital+Technologies,+19046+Bruce+B.+Downs+Blvd+%231376,+Tampa,+FL+33647,+USA&hl=en&z=16&output=embed'
+          title='Cornerstone Digital Technologies location'
           width='100%'
           height='100%'
           allowFullScreen={true}
