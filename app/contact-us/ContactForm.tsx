@@ -12,6 +12,7 @@ export default function ContactForm() {
   })
 
   const [submitted, setSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState('')
   const [loading, setLoading] = useState(false)
   const [captchaAnswer, setCaptchaAnswer] = useState('')
   const [captchaProblem, setCaptchaProblem] = useState('')
@@ -63,14 +64,13 @@ export default function ContactForm() {
 
     setLoading(true)
     setCaptchaError('')
+    setSubmitError('')
 
     try {
-    //   const res = await fetch('https://formsubmit.co/ajax/g.kondappagari@conquerorstech.net', {
-      const res = await fetch('https://www.formbackend.com/f/f1bbf8059228e273', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json'
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
       })
@@ -78,10 +78,13 @@ export default function ContactForm() {
       if (res.ok) {
         setSubmitted(true)
         setFormData({ name: '', email: '', phone: '', projectType: '', message: '' })
-        generateCaptcha() // Generate new captcha after successful submission
+        generateCaptcha()
+      } else {
+        setSubmitError('Something went wrong. Please try again or email us directly.')
       }
     } catch (err) {
       console.error('Submission error', err)
+      setSubmitError('Unable to send your message. Please try again or email us directly.')
     } finally {
       setLoading(false)
     }
@@ -93,7 +96,13 @@ export default function ContactForm() {
 
       {submitted && (
         <div className='bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6'>
-          ✅ Thank you! Your message has been sent.
+          Thank you! Your message has been sent. Check your email for a confirmation.
+        </div>
+      )}
+
+      {submitError && (
+        <div className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6'>
+          {submitError}
         </div>
       )}
 

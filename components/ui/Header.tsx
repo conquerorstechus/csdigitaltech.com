@@ -222,6 +222,7 @@ const Header = () => {
                 onClick={() => setSearchOpen(true)}
                 className='hidden lg:flex p-2 hover:bg-gray-100 rounded-lg transition-colors'
                 aria-label='Search'
+                suppressHydrationWarning
               >
                 <Search className='h-5 w-5 text-gray-700' />
               </button>
