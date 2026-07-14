@@ -27,6 +27,14 @@ export const metadata: Metadata = {
   title: "Cornerstone Digital Technologies",
   description:
     "Empowering businesses through innovative technology solutions and digital transformation services.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+    ],
+    shortcut: "/favicon.png",
+    apple: "/apple-touch-icon.png",
+  },
 }
 
 export default function RootLayout({
