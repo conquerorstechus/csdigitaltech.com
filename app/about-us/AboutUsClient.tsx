@@ -285,27 +285,27 @@ export default function AboutUsClient() {
               OUR MISSION
             </h2>
 
-            <div className='space-y-8 text-left '>
-              <div className='flex items-start space-x-4 relative'>
-                <p className='lg:text-2xl text-lg font-medium  text-gray-500 z-10'>
+            <div className='space-y-8 text-left'>
+              <div className='flex items-start gap-4'>
+                <div className='bg-red-400 w-8 h-8 md:w-10 md:h-10 rounded-full shrink-0 mt-1'></div>
+                <p className='lg:text-2xl text-lg font-medium text-gray-500'>
                   Exceeding the clients expectations by delightful platter of
                   technological quality services.
                 </p>
-                <div className='bg-red-400  w-10 h-10 -left-12 rounded-full absolute'></div>
               </div>
-              <div className='flex items-start space-x-4 relative'>
-                <p className='lg:text-2xl text-lg font-medium  text-gray-500 z-10'>
+              <div className='flex items-start gap-4'>
+                <div className='bg-green-400 w-8 h-8 md:w-10 md:h-10 rounded-full shrink-0 mt-1'></div>
+                <p className='lg:text-2xl text-lg font-medium text-gray-500'>
                   Continuous focus on upgrading our technological capabilities
                   to deliver our promises.
                 </p>
-                <div className='bg-green-400  w-10 h-10 -left-12 rounded-full absolute'></div>
               </div>
-              <div className='flex items-start space-x-4 relative'>
-                <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500 z-10'>
+              <div className='flex items-start gap-4'>
+                <div className='bg-yellow-400 w-8 h-8 md:w-10 md:h-10 rounded-full shrink-0 mt-1'></div>
+                <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500'>
                   Building trusted relationship with our clients, business
                   partners & stakeholders.
                 </p>
-                <div className='bg-yellow-400 w-8 h-8 md:w-10 md:h-10 -left-8 md:-left-12 rounded-full absolute'></div>
               </div>
             </div>
           </div>
@@ -317,13 +317,13 @@ export default function AboutUsClient() {
                 <h2 className='text-3xl md:text-4xl font-bold mb-6 text-gray-800'>
                   Our Vision
                 </h2>
-                <div className='flex space-x-4 relative'>
-                  <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500 z-10 !leading-relaxed md:!leading-10'>
+                <div className='flex items-start gap-4'>
+                  <div className='bg-red-400 w-8 h-8 md:w-10 md:h-10 rounded-full shrink-0 mt-1'></div>
+                  <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500 !leading-relaxed md:!leading-10'>
                     Leading player in digital space providing feasible solutions
                     to tomorrow’s explicit global needs through advanced
                     technological platforms/ streams.
                   </p>
-                  <div className='bg-red-400 w-8 h-8 md:w-10 md:h-10 -left-8 md:-left-10 rounded-full absolute '></div>
                 </div>
               </div>
 
@@ -332,35 +332,35 @@ export default function AboutUsClient() {
                   Our Values
                 </h2>
                 <div className='space-y-6 md:space-y-8'>
-                  <div className='flex items-center space-x-4 relative '>
-                    <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500 z-10'>
+                  <div className='flex items-start gap-4'>
+                    <div className='bg-red-400 w-8 h-8 md:w-10 md:h-10 rounded-full shrink-0 mt-1'></div>
+                    <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500'>
                       Respect Relationships
                     </p>
-                    <div className='bg-red-400 w-8 h-8 md:w-10 md:h-10 -left-8 md:-left-10 rounded-full absolute'></div>
                   </div>
-                  <div className='flex items-center space-x-4 relative '>
-                    <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500 z-10'>
+                  <div className='flex items-start gap-4'>
+                    <div className='bg-yellow-400 w-8 h-8 md:w-10 md:h-10 rounded-full shrink-0 mt-1'></div>
+                    <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500'>
                       Leadership Excellence
                     </p>
-                    <div className='bg-yellow-400 w-8 h-8 md:w-10 md:h-10 -left-8 md:-left-10 rounded-full absolute'></div>
                   </div>
-                  <div className='flex items-center space-x-4 relative '>
-                    <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500 z-10'>
+                  <div className='flex items-start gap-4'>
+                    <div className='bg-green-400 w-8 h-8 md:w-10 md:h-10 rounded-full shrink-0 mt-1'></div>
+                    <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500'>
                       Ownership Accountability
                     </p>
-                    <div className='bg-green-400 w-8 h-8 md:w-10 md:h-10 -left-8 md:-left-10 rounded-full absolute'></div>
                   </div>
-                  <div className='flex items-center space-x-4 relative '>
-                    <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500 z-10'>
+                  <div className='flex items-start gap-4'>
+                    <div className='bg-sky-400 w-8 h-8 md:w-10 md:h-10 rounded-full shrink-0 mt-1'></div>
+                    <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500'>
                       Agility
                     </p>
-                    <div className='bg-sky-400 w-8 h-8 md:w-10 md:h-10 -left-8 md:-left-10 rounded-full absolute'></div>
                   </div>
-                  <div className='flex items-center space-x-4 relative '>
-                    <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500 z-10'>
+                  <div className='flex items-start gap-4'>
+                    <div className='bg-blue-400 w-8 h-8 md:w-10 md:h-10 rounded-full shrink-0 mt-1'></div>
+                    <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500'>
                       Integrity in everything we do
                     </p>
-                    <div className='bg-blue-400 w-8 h-8 md:w-10 md:h-10 -left-8 md:-left-10 rounded-full absolute'></div>
                   </div>
                 </div>
               </div>
@@ -371,53 +371,53 @@ export default function AboutUsClient() {
                 Our Culture
               </h2>
               <div className='space-y-6 md:space-y-8'>
-                <div className='flex items-start space-x-4 relative'>
-                  <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500 z-10'>
+                <div className='flex items-start gap-4'>
+                  <div className='bg-red-400 w-8 h-8 md:w-10 md:h-10 rounded-full shrink-0 mt-1'></div>
+                  <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500'>
                     We Believe in Our ‘Calling of Serving People and Nations’.
                     Hence, Empathy Works better for us.
                   </p>
-                  <div className='bg-red-400 w-8 h-8 md:w-10 md:h-10 -left-8 md:-left-10 rounded-full absolute'></div>
                 </div>
-                <div className='flex items-start space-x-4 relative '>
-                  <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500 z-10'>
+                <div className='flex items-start gap-4'>
+                  <div className='bg-yellow-400 w-8 h-8 md:w-10 md:h-10 rounded-full shrink-0 mt-1'></div>
+                  <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500'>
                     We found a Purpose and Passion to Come Together and Win
                     Together. We Collaborate & Work.
                   </p>
-                  <div className='bg-yellow-400 w-8 h-8 md:w-10 md:h-10 -left-8 md:-left-10 rounded-full absolute'></div>
                 </div>
-                <div className='flex items-start space-x-4 relative '>
-                  <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500 z-10'>
+                <div className='flex items-start gap-4'>
+                  <div className='bg-green-400 w-8 h-8 md:w-10 md:h-10 rounded-full shrink-0 mt-1'></div>
+                  <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500'>
                     Culture of Continuous Learning & Development to Hack the
                     Growth of our Organization.
                   </p>
-                  <div className='bg-green-400 w-8 h-8 md:w-10 md:h-10 -left-8 md:-left-10 rounded-full absolute'></div>
                 </div>
-                <div className='flex items-start space-x-4 relative '>
-                  <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500 z-10'>
+                <div className='flex items-start gap-4'>
+                  <div className='bg-sky-400 w-8 h-8 md:w-10 md:h-10 rounded-full shrink-0 mt-1'></div>
+                  <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500'>
                     Capable Leadership Working Linear with Teams to Drive the
                     Performance of Organization.
                   </p>
-                  <div className='bg-sky-400 w-8 h-8 md:w-10 md:h-10 -left-8 md:-left-10 rounded-full absolute'></div>
                 </div>
-                <div className='flex items-start space-x-4 relative '>
-                  <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500 z-10'>
+                <div className='flex items-start gap-4'>
+                  <div className='bg-blue-400 w-8 h-8 md:w-10 md:h-10 rounded-full shrink-0 mt-1'></div>
+                  <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500'>
                     We are Glued together strongly with our Spiritual Ethical
                     Values & Beliefs.
                   </p>
-                  <div className='bg-blue-400 w-8 h-8 md:w-10 md:h-10 -left-8 md:-left-10 rounded-full absolute'></div>
                 </div>
-                <div className='flex items-start space-x-4 relative '>
-                  <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500 z-10'>
+                <div className='flex items-start gap-4'>
+                  <div className='bg-blue-400 w-8 h-8 md:w-10 md:h-10 rounded-full shrink-0 mt-1'></div>
+                  <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500'>
                     Freedom to Explore, Learn, Experiment and Experience Latest
                     Technologies.
                   </p>
-                  <div className='bg-blue-400 w-8 h-8 md:w-10 md:h-10 -left-8 md:-left-10 rounded-full absolute'></div>
                 </div>
-                <div className='flex items-start space-x-4 relative '>
-                  <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500 z-10'>
+                <div className='flex items-start gap-4'>
+                  <div className='bg-blue-400 w-8 h-8 md:w-10 md:h-10 rounded-full shrink-0 mt-1'></div>
+                  <p className='text-base md:text-lg lg:text-2xl font-medium text-gray-500'>
                     We Rejoice in Our Group Success.
                   </p>
-                  <div className='bg-blue-400 w-8 h-8 md:w-10 md:h-10 -left-8 md:-left-10 rounded-full absolute'></div>
                 </div>
               </div>
             </div>

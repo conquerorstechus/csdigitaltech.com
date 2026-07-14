@@ -2,23 +2,12 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import {
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
-  Phone,
-  Mail,
-  MapPin
-} from 'lucide-react'
+import { Phone, Mail } from 'lucide-react'
 import {
   FaFacebookF,
   FaInstagram,
-  FaLinkedinIn,
-  FaPinterestP,
-  FaTwitter
+  FaLinkedinIn
 } from 'react-icons/fa'
-import { FaXTwitter } from 'react-icons/fa6'
 
 const Footer = () => {
   return (
@@ -64,23 +53,38 @@ const Footer = () => {
             {/* Social Media Icons */}
             <div className='flex items-center space-x-3 md:space-x-4'>
               {[
-                { icon: <FaFacebookF />, href: 'https://www.facebook.com/ConquerorsSoftwareTechnologiesPvtLimited/', label: 'Facebook' },
-                { icon: <FaXTwitter />, href: 'https://x.com/ConquerorsTech', label: 'Twitter' },
-                { icon: <FaLinkedinIn />, href: 'https://www.linkedin.com/company/conquerorssoftwaretechnologies', label: 'LinkedIn' },
-                { icon: <FaInstagram />, href: 'https://www.instagram.com/conquerorstechnologies/', label: 'Instagram' },
-                { icon: <FaPinterestP />, href: 'https://www.pinterest.com/conquerorstech/', label: 'Pinterest' }
-              ].map((social, i) => (
-                <a
-                  key={i}
-                  href={social.href}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  aria-label={`Visit Cornerstone Digital Technologies on ${social.label}`}
-                  className='w-9 h-9 md:w-10 md:h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors'
-                >
-                  <span className='text-white text-base md:text-lg'>{social.icon}</span>
-                </a>
-              ))}
+                { icon: <FaFacebookF />, href: 'https://www.facebook.com/people/Conquerors-Software-Technologies-US/61583952656144/', label: 'Facebook' },
+                { icon: <FaLinkedinIn />, label: 'LinkedIn' },
+                { icon: <FaInstagram />, label: 'Instagram' }
+              ].map((social, i) => {
+                const iconClassName =
+                  'w-9 h-9 md:w-10 md:h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors'
+
+                if (social.href) {
+                  return (
+                    <a
+                      key={i}
+                      href={social.href}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      aria-label={`Visit Cornerstone Digital Technologies on ${social.label}`}
+                      className={iconClassName}
+                    >
+                      <span className='text-white text-base md:text-lg'>{social.icon}</span>
+                    </a>
+                  )
+                }
+
+                return (
+                  <span
+                    key={i}
+                    aria-label={social.label}
+                    className={iconClassName}
+                  >
+                    <span className='text-white text-base md:text-lg'>{social.icon}</span>
+                  </span>
+                )
+              })}
             </div>
           </div>
 

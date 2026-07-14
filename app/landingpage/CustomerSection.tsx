@@ -18,7 +18,7 @@ const testimonials = [
     id: 1,
     // name: "Arjun Kumar",
     //title: "Sr. Consultant & Delivery Head",
-    quote: "This company has best product and is providing excellent customer support. Manohar is one of the best technical expertise. He is too good to handle clients and support. I used the product of this service and it's really amazing.",
+    quote: "This company delivers high-quality digital solutions and provides outstanding customer support. Their team is knowledgeable, responsive, and committed to ensuring customer satisfaction. Working with them has been a great experience.",
     image: "https://engitech.s3.amazonaws.com/images/testi2.png" // Network/tech icon image
   },
   {
