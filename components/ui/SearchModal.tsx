@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import { Input } from '@/components/ui/input'
 import { Search, FileText, Briefcase, Code, Cloud, Smartphone, Brain, Database, ArrowRight } from 'lucide-react'
 import { useRouter } from 'next/navigation'
+import { DIGITAL_MARKETING_URL, isExternalUrl } from '@/lib/constants'
 
 // Quick suggestions shown initially
 const quickSuggestions = [
@@ -65,7 +66,7 @@ const searchData = [
   
   // Other Services
   { title: 'QA / Testing Services', href: '/services/testing-services-in-Florida', type: 'service', keywords: ['qa', 'testing', 'quality', 'assurance', 'automation'] },
-  { title: 'Digital Marketing', href: '/services/branding-agency', type: 'service', keywords: ['marketing', 'digital', 'seo', 'branding', 'social media'] },
+  { title: 'Digital Marketing', href: DIGITAL_MARKETING_URL, type: 'service', keywords: ['marketing', 'digital', 'seo', 'branding', 'social media'] },
   { title: 'Digital Strategy Services Florida', href: '/digital-strategy-services-florida', type: 'service', keywords: ['strategy', 'digital', 'transformation', 'consulting'] },
   { title: 'IoT Development Services Florida', href: '/iot-development-services-florida', type: 'service', keywords: ['iot', 'internet of things', 'devices', 'sensors'] },
   { title: 'Managed Services Florida', href: '/managed-services-florida', type: 'service', keywords: ['managed', 'services', 'support', 'maintenance'] },
@@ -167,7 +168,11 @@ export default function SearchModal({ open, onClose }: SearchModalProps) {
   }, [currentPlaceholder])
 
   const handleSelect = (href: string) => {
-    router.push(href)
+    if (isExternalUrl(href)) {
+      window.location.href = href
+    } else {
+      router.push(href)
+    }
     onClose()
     setSearchQuery('')
   }

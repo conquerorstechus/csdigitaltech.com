@@ -59,7 +59,10 @@ export function getMetadata(
       },
     },
     icons: {
-      icon: "/favicon.png",
+      icon: [
+        { url: "/favicon.ico", sizes: "any" },
+        { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+      ],
       shortcut: "/favicon.png",
       apple: "/apple-touch-icon.png",
     },
