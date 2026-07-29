@@ -9,6 +9,7 @@ import Footer from "@/components/ui/Footer"
 import ScrollToTop from "@/components/ui/ScrollToTop"
 import PageTransition from "@/components/ui/PageTransition"
 import Loader from "../components/ui/loader"
+import LeadConnectorWidget from "@/components/ui/LeadConnectorWidget"
 import Script from "next/script"
 
 const inter = Inter({
@@ -72,18 +73,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <ScrollToTop />
-        <div
-          data-chat-widget
-          data-widget-id="6a694fd5f2ad8308218b31fb"
-          data-location-id="4iidLWaLVERRIPyoOqev"
-        />
-        <Script
-          src="https://widgets.leadconnectorhq.com/loader.js"
-          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-          data-widget-id="6a694fd5f2ad8308218b31fb"
-          data-source="WEB_USER"
-          strategy="afterInteractive"
-        />
+        <LeadConnectorWidget />
         {/* <PageTransition /> */}
       </body>
     </html>
