@@ -72,6 +72,18 @@ export default function RootLayout({
         {children}
         <Footer />
         <ScrollToTop />
+        <div
+          data-chat-widget
+          data-widget-id="6a694fd5f2ad8308218b31fb"
+          data-location-id="4iidLWaLVERRIPyoOqev"
+        />
+        <Script
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="6a694fd5f2ad8308218b31fb"
+          data-source="WEB_USER"
+          strategy="afterInteractive"
+        />
         {/* <PageTransition /> */}
       </body>
     </html>
