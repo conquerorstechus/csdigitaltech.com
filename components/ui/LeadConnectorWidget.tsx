@@ -21,7 +21,7 @@ export default function LeadConnectorWidget() {
     if (!existingWidget) {
       const container = document.createElement("div")
       container.setAttribute("data-chat-widget", "")
-      container.setAttribute("data-widget-id", "6a694fd5f2ad8308218b31fb")
+      container.setAttribute("data-widget-id", "6a695a0a89b8c5f4e83f7322")
       container.setAttribute("data-location-id", "4iidLWaLVERRIPyoOqev")
       target.appendChild(container)
     }
@@ -32,7 +32,7 @@ export default function LeadConnectorWidget() {
       script.id = scriptId
       script.src = "https://widgets.leadconnectorhq.com/loader.js"
       script.setAttribute("data-resources-url", "https://widgets.leadconnectorhq.com/chat-widget/loader.js")
-      script.setAttribute("data-widget-id", "6a694fd5f2ad8308218b31fb")
+      script.setAttribute("data-widget-id", "6a695a0a89b8c5f4e83f7322")
       script.setAttribute("data-source", "WEB_USER")
       target.appendChild(script)
     }
