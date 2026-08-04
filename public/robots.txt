@@ -9,6 +9,7 @@ Allow: /_next/static/css/
 # Disallow admin and API routes
 Disallow: /admin/
 Disallow: /api/
+Disallow: /sam
 # Disallow other Next.js internals (but allow static assets above)
 Disallow: /_next/
 Disallow: /404
