@@ -1,4 +1,4 @@
-import { withOpinlyConfig } from '@opinly/next/config';
+import { withOpinlyConfig } from '@opinly/next/config'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -74,6 +74,7 @@ export default withOpinlyConfig({
   imagesPath: '/images',
   companyName: 'Cornerstone Digital Technologies',
   cdnNamespace: 'qjV-Vnn6mIXlr2x3a1dgQ',
-  siteUrl: process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://www.conquerorstech.com',
+  siteUrl:
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://csdigitaltech.com',
   unoptimizedImages: true,
 })(nextConfig)
