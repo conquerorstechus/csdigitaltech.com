@@ -25,11 +25,21 @@ export function getOpinlyRenderConfig(): OpinlyConfig {
 }
 
 export function getOpinlyClient() {
-  const apiKey = process.env.OPINLY_API_KEY;
+  const apiKey = process.env.OPINLY_API_KEY?.trim();
+
+  if (!apiKey) {
+    throw new Error(
+      '[opinly] OPINLY_API_KEY is not set. Add it under Vercel → Project Settings → Environment Variables (Production), then redeploy.'
+    );
+  }
+
+  // Default host is https://sdk.opinly.ai. Only pass url when explicitly set.
+  // Do not set OPINLY_API_URL to https://api.opinly.ai (404).
+  const url = process.env.OPINLY_API_URL?.trim() || undefined;
 
   return createOpinlyClient({
     apiKey,
-    url: process.env.OPINLY_API_URL,
+    ...(url ? { url } : {}),
   });
 }
 

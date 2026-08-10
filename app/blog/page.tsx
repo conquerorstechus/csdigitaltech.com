@@ -45,7 +45,13 @@ async function getPublishedPosts(): Promise<Post[]> {
     const result = await opinly.posts({ limit: 24, sort: 'newest' })
     return result.data
   } catch (error) {
-    console.error('[blog] Failed to fetch Opinly posts:', error)
+    const message = error instanceof Error ? error.message : String(error)
+    console.error('[blog] Failed to fetch Opinly posts:', message)
+    if (!process.env.OPINLY_API_KEY?.trim()) {
+      console.error(
+        '[blog] OPINLY_API_KEY is missing in this environment. Set it in Vercel and redeploy.'
+      )
+    }
     return []
   }
 }
