@@ -168,7 +168,7 @@ const Header = () => {
                                   </h3>
                                   <ul className='mt-3 space-y-2'>
                                     {category.items.map(service => (
-                                      <li key={service.href}>
+                                      <li key={service.label}>
                                         {isExternalUrl(service.href) ? (
                                           <a
                                             href={service.href}
@@ -306,7 +306,7 @@ const Header = () => {
               {category.items.map(service => (
                 isExternalUrl(service.href) ? (
                   <a
-                    key={service.href}
+                    key={service.label}
                     href={service.href}
                     className='block py-2 px-3 text-sm text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-md'
                   >
@@ -314,7 +314,7 @@ const Header = () => {
                   </a>
                 ) : (
                   <Link
-                    key={service.href}
+                    key={service.label}
                     href={service.href}
                     onClick={() => handleNavigation(service.href)}
                     className='block py-2 px-3 text-sm text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-md'
