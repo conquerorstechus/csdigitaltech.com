@@ -52,20 +52,6 @@ export default function RootLayout({
         />
         {/* Google Site Verification */}
         <meta name="google-site-verification" content="ADSA5Li8wGXyc8528cNUQt68EJo2c6RNHx3nV5pSX7Q" />
-        {/* Google Analytics */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-FHGK9TWLLG"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-FHGK9TWLLG');
-          `}
-        </Script>
       </head>
       <body className="antialiased">
         <Loader />
@@ -75,6 +61,20 @@ export default function RootLayout({
         <ScrollToTop />
         <LeadConnectorWidget />
         {/* <PageTransition /> */}
+        {/* Google Analytics */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-M2BSN68X69"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-M2BSN68X69');
+          `}
+        </Script>
       </body>
     </html>
   )
