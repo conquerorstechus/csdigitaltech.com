@@ -50,7 +50,7 @@ export default function ContactUsClient() {
                 United States.
               </p>
               <p className='mt-2'>
-                <span className='font-semibold'>Tel:</span> +1 908-922-1063
+                <span className='font-semibold'>Tel:</span> +1 813-797-6069
               </p>
               <p className='mt-2'>
                 <span className='font-semibold'>Mail:</span>{' '}

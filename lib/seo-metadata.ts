@@ -143,7 +143,7 @@ export function getStructuredData(
       },
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+1-908-922-1063",
+        "telephone": "+1-813-797-6069",
         "contactType": "customer service",
         "email": "info@csdigitaltech.com",
         "areaServed": "US",
@@ -256,7 +256,7 @@ export function getStructuredData(
       "name": "Cornerstone Digital Technologies",
       "description": pageDescription,
       "url": domain,
-      "telephone": "+1-908-922-1063",
+      "telephone": "+1-813-797-6069",
       "email": "info@csdigitaltech.com",
       "address": {
         "@type": "PostalAddress",
