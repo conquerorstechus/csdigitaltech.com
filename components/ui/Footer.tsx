@@ -54,8 +54,8 @@ const Footer = () => {
             <div className='flex items-center space-x-3 md:space-x-4'>
               {[
                 { icon: <FaFacebookF />, href: 'https://www.facebook.com/people/Conquerors-Software-Technologies-US/61583952656144/', label: 'Facebook' },
-                { icon: <FaLinkedinIn />, label: 'LinkedIn' },
-                { icon: <FaInstagram />, label: 'Instagram' }
+                { icon: <FaLinkedinIn />, href: 'https://www.linkedin.com/company/csdigitaltech/', label: 'LinkedIn' },
+                { icon: <FaInstagram />, href: 'https://www.instagram.com/cornerstonedigitaltech/', label: 'Instagram' }
               ].map((social, i) => {
                 const iconClassName =
                   'w-9 h-9 md:w-10 md:h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors'

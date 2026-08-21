@@ -15,7 +15,7 @@ YAHOO_VERIFICATION=your_yahoo_verification_code_here
 
 # Social Media Handles (for structured data)
 NEXT_PUBLIC_TWITTER_HANDLE=@ConquerorsTech
-NEXT_PUBLIC_LINKEDIN_URL=https://www.linkedin.com/company/Cornerstone Digital Technologies-technologies
+NEXT_PUBLIC_LINKEDIN_URL=https://www.linkedin.com/company/csdigitaltech/
 NEXT_PUBLIC_FACEBOOK_URL=https://www.facebook.com/conquerorstech
 ```
 

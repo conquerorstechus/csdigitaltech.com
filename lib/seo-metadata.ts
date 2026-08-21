@@ -116,10 +116,10 @@ export function getStructuredData(
         "height": 341
       },
       "sameAs": [
-        "https://www.linkedin.com/company/conquerorssoftwaretechnologies",
+        "https://www.linkedin.com/company/csdigitaltech/",
         "https://x.com/ConquerorsTech",
         "https://www.facebook.com/ConquerorsSoftwareTechnologiesPvtLimited/",
-        "https://www.instagram.com/conquerorstechnologies/",
+        "https://www.instagram.com/cornerstonedigitaltech/",
         "https://www.pinterest.com/conquerorstech/"
       ]
     },
