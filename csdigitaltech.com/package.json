@@ -12,6 +12,8 @@
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
     "@opinly/backend": "^1.4.0",
+    "@opinly/next": "^1.4.0",
+    "@opinly/react": "^1.4.0",
     "@opinly/shared": "^1.4.0",
     "@radix-ui/react-accordion": "1.2.2",
     "@radix-ui/react-alert-dialog": "1.1.4",

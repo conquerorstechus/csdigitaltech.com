@@ -5,12 +5,15 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+
   typescript: {
     ignoreBuildErrors: true,
   },
+
   images: {
     unoptimized: true,
   },
+
   async rewrites() {
     return [
       {
@@ -73,10 +76,12 @@ export default withOpinlyConfig({
   blogPath: '/blog',
   imagesPath: '/images',
   companyName: 'Cornerstone Digital Technologies',
-  // Prefer env so Vercel can override; fallback matches local Opinly CDN namespace.
+
   cdnNamespace:
     process.env.OPINLY_CDN_NAMESPACE || 'qjV-Vnn6mIXlr2x3a1dgQ',
+
   siteUrl:
     process.env.NEXT_PUBLIC_SITE_URL || 'https://csdigitaltech.com',
+
   unoptimizedImages: true,
 })(nextConfig)
