@@ -7,7 +7,19 @@ const WEBHOOK_URL =
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { name, email, phone, projectType, message } = body
+    const {
+      name,
+      email,
+      phone,
+      projectType,
+      message,
+      source,
+      formType,
+      resumeLink,
+      resumeFileName,
+      resumeFileMime,
+      resumeFileBase64
+    } = body
 
     if (!name || !email || !phone || !projectType || !message) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
@@ -20,14 +32,18 @@ export async function POST(request: Request) {
         Accept: 'application/json'
       },
       body: JSON.stringify({
-        formType: 'csdigitaltech-contact',
-        source: 'contact-us',
+        formType: formType || 'csdigitaltech-contact',
+        source: source || 'contact-us',
         submittedAt: new Date().toISOString(),
         name,
         email,
         phone,
         projectType,
-        message
+        message,
+        ...(resumeLink ? { resumeLink } : {}),
+        ...(resumeFileName ? { resumeFileName } : {}),
+        ...(resumeFileMime ? { resumeFileMime } : {}),
+        ...(resumeFileBase64 ? { resumeFileBase64 } : {})
       })
     })
 

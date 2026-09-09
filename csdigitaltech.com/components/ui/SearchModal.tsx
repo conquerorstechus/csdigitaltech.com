@@ -74,6 +74,7 @@ const searchData = [
   // Pages
   { title: 'Home', href: '/', type: 'page', keywords: ['home', 'main', 'index'] },
   { title: 'About Us', href: '/about-us', type: 'page', keywords: ['about', 'company', 'team', 'who we are'] },
+  { title: 'Careers', href: '/careers', type: 'page', keywords: ['careers', 'jobs', 'hiring', 'internship', 'work with us', 'openings'] },
   { title: 'Portfolio', href: '/portfolio', type: 'page', keywords: ['portfolio', 'projects', 'work', 'case studies'] },
   { title: 'Contact Us', href: '/contact-us', type: 'page', keywords: ['contact', 'get in touch', 'reach us'] },
   { title: 'Blog', href: '/blog', type: 'blog', keywords: ['blog', 'articles', 'news', 'posts'] },

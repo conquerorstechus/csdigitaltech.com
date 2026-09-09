@@ -73,6 +73,7 @@ function generateSitemapXML(routes) {
       priority = '0.51';
       changefreq = 'monthly';
     } else if (route.includes('/about-us') || route.includes('/contact-us') || 
+               route.includes('/careers') ||
                route.includes('/portfolio') || route.includes('/blog')) {
       priority = '0.80';
       changefreq = 'monthly';

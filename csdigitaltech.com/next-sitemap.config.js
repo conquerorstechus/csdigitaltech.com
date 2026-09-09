@@ -59,6 +59,7 @@ module.exports = {
     
     // About, contact, portfolio, and blog main pages get medium-high priority
     if (path.includes('/about-us') || path.includes('/contact-us') || 
+        path.includes('/careers') ||
         path === '/portfolio' || path === '/blog') {
       priority = 0.80;
       changefreq = 'monthly';
