@@ -34,7 +34,7 @@ const jobs: Job[] = [
     title: 'Digital Marketing Specialist',
     team: 'Growth',
     type: 'Full-time',
-    location: 'Tampa, FL / Hybrid',
+    location: 'Tampa, FL / Remote',
     summary:
       'Run SEO, paid ads, email, and social campaigns that generate qualified leads for growing businesses.',
     responsibilities: [
@@ -48,7 +48,7 @@ const jobs: Job[] = [
     title: 'Project Manager',
     team: 'Delivery',
     type: 'Full-time',
-    location: 'Tampa, FL / Hybrid',
+    location: 'Tampa, FL / Remote',
     summary:
       'Lead software and digital projects from kickoff to delivery, keeping scope, timeline, and stakeholders aligned.',
     responsibilities: [
@@ -109,8 +109,7 @@ export default function CareersClient() {
 
   const applyTo = (title: string) => {
     setSelectedRole(title)
-    document.getElementById('careers-apply')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
+   }
 
   return (
     <main className='bg-gray-50'>
@@ -142,26 +141,28 @@ export default function CareersClient() {
           ))}
         </div>
 
-        <div id='careers-apply' className='grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-8 items-start scroll-mt-24'>
-          <div className='space-y-4'>
-            <div className='flex items-center gap-2 text-gray-900 font-semibold'>
-              <Briefcase className='h-5 w-5 text-red-600' />
-              What to include
-            </div>
-            <p className='text-gray-700 leading-relaxed'>
-              Share a Google Drive, Dropbox, or OneDrive resume link (anyone with the link can view),
-              or upload a PDF/DOC/DOCX file, and tell us why you want to join.
-            </p>
-            <p className='text-gray-700 leading-relaxed'>
-              You can also email{' '}
-              <a className='text-red-600 font-semibold hover:underline' href='mailto:info@csdigitaltech.com'>
-                info@csdigitaltech.com
-              </a>{' '}
-              with the subject line “Careers”.
-            </p>
-          </div>
-          <CareerApplyForm selectedRole={selectedRole} />
-        </div>
+        {selectedRole && (
+  <div className='fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4'>
+    <div className='relative w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl'>
+      
+      <button
+        type='button'
+        onClick={() => setSelectedRole('')}
+        className='absolute right-4 top-3 text-2xl text-gray-500 hover:text-gray-800'
+        aria-label='Close'
+      >
+        ×
+      </button>
+
+      <h2 className='mb-5 pr-8 text-xl font-semibold text-gray-900'>
+        Apply for {selectedRole}
+      </h2>
+
+      <CareerApplyForm selectedRole={selectedRole} />
+
+    </div>
+  </div>
+)}
       </section>
     </main>
   )
