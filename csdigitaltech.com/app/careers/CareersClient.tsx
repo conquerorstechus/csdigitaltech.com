@@ -1,12 +1,13 @@
 'use client'
 
 import { useState } from 'react'
-import { Briefcase, Clock, MapPin } from 'lucide-react'
+import { Clock, MapPin } from 'lucide-react'
 import CareerApplyForm from './CareerApplyForm'
 
 type Job = {
   id: string
   title: string
+  formId: string
   team: string
   type: string
   location: string
@@ -18,6 +19,7 @@ const jobs: Job[] = [
   {
     id: 'fullstack',
     title: 'Senior Full Stack Engineer',
+    formId: 'senior_full_stack_engineer',
     team: 'Engineering',
     type: 'Full-time',
     location: 'Tampa, FL / Remote',
@@ -32,6 +34,7 @@ const jobs: Job[] = [
   {
     id: 'marketing',
     title: 'Digital Marketing Specialist',
+    formId: 'digital_marketing_specialist',
     team: 'Growth',
     type: 'Full-time',
     location: 'Tampa, FL / Remote',
@@ -46,6 +49,7 @@ const jobs: Job[] = [
   {
     id: 'project-manager',
     title: 'Project Manager',
+    formId: 'project_manager',
     team: 'Delivery',
     type: 'Full-time',
     location: 'Tampa, FL / Remote',
@@ -64,7 +68,7 @@ function JobCard({
   onApply
 }: {
   job: Job
-  onApply: (title: string) => void
+  onApply: (job: Job) => void
 }) {
   return (
     <article className='bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow'>
@@ -95,7 +99,7 @@ function JobCard({
       </ul>
       <button
         type='button'
-        onClick={() => onApply(job.title)}
+        onClick={() => onApply(job)}
         className='inline-flex items-center justify-center rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700 transition-colors'
       >
         Apply for this role
@@ -105,11 +109,7 @@ function JobCard({
 }
 
 export default function CareersClient() {
-  const [selectedRole, setSelectedRole] = useState('')
-
-  const applyTo = (title: string) => {
-    setSelectedRole(title)
-   }
+  const [selectedJob, setSelectedJob] = useState<Job | null>(null)
 
   return (
     <main className='bg-gray-50'>
@@ -137,32 +137,28 @@ export default function CareersClient() {
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-16'>
           {jobs.map(job => (
-            <JobCard key={job.id} job={job} onApply={applyTo} />
+            <JobCard key={job.id} job={job} onApply={setSelectedJob} />
           ))}
         </div>
 
-        {selectedRole && (
-  <div className='fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4'>
-    <div className='relative w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl'>
-      
-      <button
-        type='button'
-        onClick={() => setSelectedRole('')}
-        className='absolute right-4 top-3 text-2xl text-gray-500 hover:text-gray-800'
-        aria-label='Close'
-      >
-        ×
-      </button>
-
-      <h2 className='mb-5 pr-8 text-xl font-semibold text-gray-900'>
-        Apply for {selectedRole}
-      </h2>
-
-      <CareerApplyForm selectedRole={selectedRole} />
-
-    </div>
-  </div>
-)}
+        {selectedJob && (
+          <div className='fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4'>
+            <div className='relative w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl'>
+              <button
+                type='button'
+                onClick={() => setSelectedJob(null)}
+                className='absolute right-4 top-3 text-2xl text-gray-500 hover:text-gray-800'
+                aria-label='Close'
+              >
+                ×
+              </button>
+              <h2 className='mb-5 pr-8 text-xl font-semibold text-gray-900'>
+                Apply for {selectedJob.title}
+              </h2>
+              <CareerApplyForm selectedRole={selectedJob.title} formId={selectedJob.formId} />
+            </div>
+          </div>
+        )}
       </section>
     </main>
   )
