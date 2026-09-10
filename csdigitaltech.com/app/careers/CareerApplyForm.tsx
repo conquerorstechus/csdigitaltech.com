@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 
 const MAX_FILE_MB = 5
+
 const ACCEPTED_TYPES = [
   'application/pdf',
   'application/msword',
@@ -22,7 +23,7 @@ function readFileAsBase64(file: File): Promise<string> {
   })
 }
 
-export default function CareerApplyForm({ selectedRole = '' }: { selectedRole?: string }) {
+export default function CareerApplyForm({ selectedRole = '', formId = '' }: { selectedRole?: string; formId?: string }) {
   const roles = selectedRole ? [selectedRole] : []
 
   const [formData, setFormData] = useState({
@@ -149,7 +150,8 @@ export default function CareerApplyForm({ selectedRole = '' }: { selectedRole?: 
           resumeFileMime: resumeFileMime || undefined,
           resumeFileBase64: resumeFileBase64 || undefined,
           source: 'careers',
-          formType: 'csdigitaltech-careers'
+          formType: 'csdigitaltech-careers',
+          formId: formId || formData.projectType.toLowerCase().replace(/\s+/g, '_')
         })
       })
 
