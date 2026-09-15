@@ -3,6 +3,9 @@ import { storeCareersResume } from '@/lib/careers-resume-store'
 import { buildCareersWebhookPayload, wrapCareersWebhookPayload } from '@/lib/careers-webhook-payload'
 import { validateCareersApplication } from '@/lib/careers-verification'
 
+export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic'
+
 const WEBHOOK_URL =
   process.env.CONTACT_FORM_WEBHOOK_URL ??
   'https://n8n.srv1393511.hstgr.cloud/webhook/284ee9f5-ab3b-4d07-a915-d29e4d1414aa'
@@ -80,12 +83,26 @@ export async function POST(request: Request) {
     let resumeDownloadUrl = trimmedResumeLink || undefined
 
     if (isCareers && trimmedResumeFileName && trimmedResumeBase64) {
-      const storedResume = await storeCareersResume(
-        trimmedResumeBase64,
-        trimmedResumeFileName,
-        String(resumeFileMime || 'application/pdf')
-      )
-      resumeDownloadUrl = `${getSiteOrigin(request)}${storedResume.publicUrl}`
+      try {
+        const storedResume = await storeCareersResume(
+          trimmedResumeBase64,
+          trimmedResumeFileName,
+          String(resumeFileMime || 'application/pdf')
+        )
+        resumeDownloadUrl = `${getSiteOrigin(request)}${storedResume.publicUrl}`
+      } catch (storageError) {
+        console.error('Careers resume storage failed:', storageError)
+        if (!resumeDownloadUrl) {
+          return NextResponse.json(
+            {
+              error:
+                'Your resume could not be saved. Please use a Google Drive / Dropbox / OneDrive link instead.',
+              field: 'resume'
+            },
+            { status: 500 }
+          )
+        }
+      }
     }
 
     const careersPayload = isCareers
@@ -125,6 +142,7 @@ export async function POST(request: Request) {
       console.info('Careers webhook dispatch:', {
         formId: careersPayload?.formId,
         resumeFileName: trimmedResumeFileName || null,
+        resumeDownloadUrl: resumeDownloadUrl || null,
         payloadBytes: webhookJson.length
       })
     }
@@ -150,6 +168,12 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: true })
   } catch (err) {
     console.error('Contact API error:', err)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    return NextResponse.json(
+      {
+        error:
+          'Something went wrong while sending your application. Please try again or email info@csdigitaltech.com.'
+      },
+      { status: 500 }
+    )
   }
 }
