@@ -28,6 +28,10 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# temporary careers resume uploads
+.careers-resumes/
+/public/uploads/careers/
 next-env.d.ts
 
 

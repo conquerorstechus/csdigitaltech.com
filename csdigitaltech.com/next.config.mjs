@@ -14,6 +14,20 @@ const nextConfig = {
     unoptimized: true,
   },
 
+  async headers() {
+    return [
+      {
+        source: '/uploads/careers/:path*',
+        headers: [
+          {
+            key: 'Content-Disposition',
+            value: 'inline',
+          },
+        ],
+      },
+    ]
+  },
+
   async rewrites() {
     return [
       {

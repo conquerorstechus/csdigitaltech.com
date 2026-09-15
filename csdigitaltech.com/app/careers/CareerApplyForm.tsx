@@ -1,6 +1,12 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import {
+  getApplicationFieldErrorSummary,
+  getCareersFieldErrors,
+  getResumeVerificationStatus,
+  isCareersApplicationValid
+} from '@/lib/careers-form-validation'
 
 const MAX_FILE_MB = 5
 
@@ -9,6 +15,8 @@ const ACCEPTED_TYPES = [
   'application/msword',
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
 ]
+
+type VerificationStatus = 'required' | 'checking' | 'failed' | 'verified'
 
 function readFileAsBase64(file: File): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -21,6 +29,26 @@ function readFileAsBase64(file: File): Promise<string> {
     reader.onerror = () => reject(new Error('Could not read file'))
     reader.readAsDataURL(file)
   })
+}
+
+function VerificationStatusMessage({ status }: { status: VerificationStatus }) {
+  if (status === 'checking') {
+    return <p className='text-sm text-gray-600 mt-2'>Checking verification...</p>
+  }
+
+  if (status === 'verified') {
+    return <p className='text-sm text-green-700 mt-2 font-medium'>✅ Verified</p>
+  }
+
+  if (status === 'failed') {
+    return (
+      <p className='text-sm text-red-600 mt-2 font-medium'>
+        ❌ Verification failed. Please check your details and try again.
+      </p>
+    )
+  }
+
+  return <p className='text-sm text-amber-700 mt-2 font-medium'>Verification required</p>
 }
 
 export default function CareerApplyForm({ selectedRole = '', formId = '' }: { selectedRole?: string; formId?: string }) {
@@ -36,32 +64,46 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
     message: ''
   })
   const [resumeFile, setResumeFile] = useState<File | null>(null)
+  const [resumeFileName, setResumeFileName] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState('')
   const [fileError, setFileError] = useState('')
   const [loading, setLoading] = useState(false)
   const [captchaAnswer, setCaptchaAnswer] = useState('')
   const [captchaProblem, setCaptchaProblem] = useState('')
-  const [captchaSolution, setCaptchaSolution] = useState(0)
+  const [captchaToken, setCaptchaToken] = useState('')
   const [captchaError, setCaptchaError] = useState('')
+  const [securityStatus, setSecurityStatus] = useState<VerificationStatus>('required')
+  const [captchaLoading, setCaptchaLoading] = useState(true)
+  const [touched, setTouched] = useState<Record<string, boolean>>({})
 
-  const generateCaptcha = () => {
-    const num1 = Math.floor(Math.random() * 10) + 1
-    const num2 = Math.floor(Math.random() * 10) + 1
-    const operators = ['+', '-', '×']
-    const operator = operators[Math.floor(Math.random() * operators.length)]
-    let solution = num1 + num2
-    if (operator === '-') solution = num1 - num2
-    if (operator === '×') solution = num1 * num2
-    setCaptchaProblem(`${num1} ${operator} ${num2} = ?`)
-    setCaptchaSolution(solution)
+  const loadCaptcha = useCallback(async () => {
+    setCaptchaLoading(true)
     setCaptchaAnswer('')
     setCaptchaError('')
-  }
+    setSecurityStatus('required')
+
+    try {
+      const res = await fetch('/api/careers/captcha')
+      if (!res.ok) {
+        throw new Error('Failed to load verification challenge')
+      }
+
+      const data = await res.json()
+      setCaptchaProblem(data.problem)
+      setCaptchaToken(data.token)
+    } catch {
+      setCaptchaError('Unable to load security verification. Please refresh the page.')
+      setCaptchaProblem('')
+      setCaptchaToken('')
+    } finally {
+      setCaptchaLoading(false)
+    }
+  }, [])
 
   useEffect(() => {
-    generateCaptcha()
-  }, [])
+    loadCaptcha()
+  }, [loadCaptcha])
 
   useEffect(() => {
     if (selectedRole) {
@@ -69,21 +111,132 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
     }
   }, [selectedRole])
 
+  const fieldErrors = useMemo(
+    () =>
+      getCareersFieldErrors({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        projectType: formData.projectType,
+        linkedin: formData.linkedin,
+        portfolio: formData.portfolio,
+        message: formData.message,
+        hasResumeFile: Boolean(resumeFile),
+        fileError
+      }),
+    [formData, resumeFile, fileError]
+  )
+
+  const resumeVerification = useMemo(
+    () =>
+      getResumeVerificationStatus({
+        portfolio: formData.portfolio,
+        hasResumeFile: Boolean(resumeFile),
+        resumeFileName: resumeFile?.name || resumeFileName,
+        fileError
+      }),
+    [formData.portfolio, resumeFile, resumeFileName, fileError]
+  )
+
+  const applicationFieldErrors = useMemo(() => {
+    const { resume, ...rest } = fieldErrors
+    return rest
+  }, [fieldErrors])
+
+  const applicationReady = isCareersApplicationValid(fieldErrors)
+  const applicationDetailsReady = Object.keys(applicationFieldErrors).length === 0
+
+  const hasStartedApplicationDetails = Boolean(
+    formData.name ||
+      formData.email ||
+      formData.phone ||
+      formData.linkedin ||
+      formData.message
+  )
+
+  const applicationStatus: VerificationStatus = applicationReady
+    ? 'verified'
+    : hasStartedApplicationDetails
+      ? 'failed'
+      : 'required'
+
+  const applicationErrorSummary = getApplicationFieldErrorSummary(fieldErrors)
+
+  const showFieldError = (field: keyof typeof fieldErrors, value = '') =>
+    Boolean(fieldErrors[field] && (touched[field] || value.trim().length > 0))
+
+  const markTouched = (field: string) => {
+    setTouched(prev => ({ ...prev, [field]: true }))
+  }
+
+  const invalidInputClass = (field: keyof typeof fieldErrors, value = '') =>
+    showFieldError(field, value) ? 'border-red-500 focus:ring-red-400' : 'border-gray-300 focus:ring-red-400'
+
+  useEffect(() => {
+    if (!captchaToken || !captchaAnswer.trim()) {
+      setSecurityStatus('required')
+      setCaptchaError('')
+      return
+    }
+
+    const timer = window.setTimeout(async () => {
+      setSecurityStatus('checking')
+      setCaptchaError('')
+
+      try {
+        const res = await fetch('/api/careers/verify-captcha', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            token: captchaToken,
+            answer: captchaAnswer
+          })
+        })
+
+        const data = await res.json().catch(() => ({}))
+
+        if (res.ok && data.verified) {
+          setSecurityStatus('verified')
+          setCaptchaError('')
+          return
+        }
+
+        setSecurityStatus('failed')
+        setCaptchaError(data.error || 'Verification failed. Please check your details and try again.')
+      } catch {
+        setSecurityStatus('failed')
+        setCaptchaError('Unable to verify your answer. Please try again.')
+      }
+    }, 400)
+
+    return () => window.clearTimeout(timer)
+  }, [captchaAnswer, captchaToken])
+
+  const canSubmit =
+    applicationReady &&
+    resumeVerification.status === 'verified' &&
+    securityStatus === 'verified' &&
+    !loading &&
+    !captchaLoading
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     setFileError('')
 
     if (!file) {
       setResumeFile(null)
+      setResumeFileName('')
       return
     }
 
     const isAcceptedType =
       ACCEPTED_TYPES.includes(file.type) ||
-      /\.(pdf|doc|docx)$/i.test(file.name)
+      /\.(pdf|doc|docx)$/i.test(file.name) ||
+      (!file.type && /\.(pdf|doc|docx)$/i.test(file.name))
 
     if (!isAcceptedType) {
       setResumeFile(null)
+      setResumeFileName('')
       setFileError('Please upload a PDF, DOC, or DOCX file.')
       e.target.value = ''
       return
@@ -91,30 +244,45 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
 
     if (file.size > MAX_FILE_MB * 1024 * 1024) {
       setResumeFile(null)
+      setResumeFileName('')
       setFileError(`File must be ${MAX_FILE_MB}MB or smaller.`)
       e.target.value = ''
       return
     }
 
     setResumeFile(file)
+    setResumeFileName(file.name)
+    setFileError('')
+    markTouched('resume')
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    if (parseInt(captchaAnswer) !== captchaSolution) {
-      setCaptchaError('Incorrect answer. Please try again.')
-      generateCaptcha()
+    setTouched({
+      name: true,
+      email: true,
+      phone: true,
+      projectType: true,
+      linkedin: true,
+      portfolio: true,
+      message: true,
+      resume: true
+    })
+
+    if (!applicationReady) {
+      const firstError = Object.values(fieldErrors)[0]
+      if (fieldErrors.resume) setFileError(fieldErrors.resume)
+      if (firstError) setSubmitError(firstError)
       return
     }
 
-    if (!formData.portfolio.trim() && !resumeFile) {
-      setFileError('Add a Google Drive / Dropbox / OneDrive link or upload your resume.')
+    if (securityStatus !== 'verified') {
+      setCaptchaError('Please complete security verification before submitting.')
       return
     }
 
     setLoading(true)
-    setCaptchaError('')
     setSubmitError('')
     setFileError('')
 
@@ -137,23 +305,21 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
           email: formData.email,
           phone: formData.phone,
           projectType: formData.projectType,
-          message: [
-            formData.message,
-            formData.linkedin ? `LinkedIn: ${formData.linkedin}` : '',
-            formData.portfolio ? `Resume / Drive link: ${formData.portfolio}` : '',
-            resumeFileName ? `Resume file uploaded: ${resumeFileName}` : ''
-          ]
-            .filter(Boolean)
-            .join('\n'),
+          whyCornerstone: formData.message,
+          linkedin: formData.linkedin.trim() || undefined,
           resumeLink: formData.portfolio.trim() || undefined,
           resumeFileName: resumeFileName || undefined,
           resumeFileMime: resumeFileMime || undefined,
           resumeFileBase64: resumeFileBase64 || undefined,
+          captchaToken,
+          captchaAnswer,
           source: 'careers',
           formType: 'csdigitaltech-careers',
           formId: formId || formData.projectType.toLowerCase().replace(/\s+/g, '_')
         })
       })
+
+      const data = await res.json().catch(() => ({}))
 
       if (res.ok) {
         setSubmitted(true)
@@ -167,9 +333,16 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
           message: ''
         })
         setResumeFile(null)
-        generateCaptcha()
+        setResumeFileName('')
+        await loadCaptcha()
+      } else if (res.status === 400 && data.field === 'captcha') {
+        setSecurityStatus('failed')
+        setCaptchaError(data.error || 'Security verification failed. Please try again.')
+        await loadCaptcha()
+      } else if (res.status === 400 && data.field === 'resume') {
+        setFileError(data.error || 'Add a Google Drive / Dropbox / OneDrive link or upload your resume.')
       } else {
-        setSubmitError('Something went wrong. Please try again or email us at info@csdigitaltech.com.')
+        setSubmitError(data.error || 'Something went wrong. Please try again or email us at info@csdigitaltech.com.')
       }
     } catch {
       setSubmitError('Unable to send your application. Please try again or email us directly.')
@@ -207,9 +380,13 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
               required
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-400 outline-none bg-white'
+              onBlur={() => markTouched('name')}
+              className={`w-full px-4 py-2 border rounded-md focus:ring-2 outline-none bg-white ${invalidInputClass('name', formData.name)}`}
               placeholder='Your name'
             />
+            {showFieldError('name', formData.name) && (
+              <p className='text-red-600 text-sm mt-1'>{fieldErrors.name}</p>
+            )}
           </div>
           <div>
             <label className='block text-gray-700 font-medium mb-1' htmlFor='career-email'>Email</label>
@@ -219,9 +396,13 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
               required
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-400 outline-none bg-white'
+              onBlur={() => markTouched('email')}
+              className={`w-full px-4 py-2 border rounded-md focus:ring-2 outline-none bg-white ${invalidInputClass('email', formData.email)}`}
               placeholder='you@email.com'
             />
+            {showFieldError('email', formData.email) && (
+              <p className='text-red-600 text-sm mt-1'>{fieldErrors.email}</p>
+            )}
           </div>
           <div>
             <label className='block text-gray-700 font-medium mb-1' htmlFor='career-phone'>Phone</label>
@@ -231,9 +412,13 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
               required
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-400 outline-none bg-white'
+              onBlur={() => markTouched('phone')}
+              className={`w-full px-4 py-2 border rounded-md focus:ring-2 outline-none bg-white ${invalidInputClass('phone', formData.phone)}`}
               placeholder='Your phone number'
             />
+            {showFieldError('phone', formData.phone) && (
+              <p className='text-red-600 text-sm mt-1'>{fieldErrors.phone}</p>
+            )}
           </div>
         </div>
 
@@ -263,9 +448,13 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
             type='text'
             value={formData.linkedin}
             onChange={(e) => setFormData({ ...formData, linkedin: e.target.value })}
-            className='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-400 outline-none bg-white'
+            onBlur={() => markTouched('linkedin')}
+            className={`w-full px-4 py-2 border rounded-md focus:ring-2 outline-none bg-white ${invalidInputClass('linkedin', formData.linkedin)}`}
             placeholder='https://linkedin.com/in/you'
           />
+          {showFieldError('linkedin', formData.linkedin) && (
+            <p className='text-red-600 text-sm mt-1'>{fieldErrors.linkedin}</p>
+          )}
         </div>
 
         <div className='space-y-4 rounded-xl border border-gray-200 bg-gray-50 p-4'>
@@ -283,15 +472,19 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
             </label>
             <input
               id='career-portfolio'
-              type='text'
+              type='url'
               value={formData.portfolio}
               onChange={(e) => {
                 setFormData({ ...formData, portfolio: e.target.value })
                 if (fileError) setFileError('')
               }}
-              className='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-400 outline-none bg-white'
+              onBlur={() => markTouched('portfolio')}
+              className={`w-full px-4 py-2 border rounded-md focus:ring-2 outline-none bg-white ${invalidInputClass('portfolio', formData.portfolio)}`}
               placeholder='https://drive.google.com/... or Dropbox / OneDrive link'
             />
+            {showFieldError('portfolio', formData.portfolio) && (
+              <p className='text-red-600 text-sm mt-1'>{fieldErrors.portfolio}</p>
+            )}
           </div>
 
           <div>
@@ -305,12 +498,28 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
               onChange={handleFileChange}
               className='w-full text-sm text-gray-700 file:mr-4 file:rounded-md file:border-0 file:bg-red-600 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-red-700'
             />
-            {resumeFile && (
-              <p className='text-sm text-gray-600 mt-2'>Selected: {resumeFile.name}</p>
+            {(resumeFile || resumeFileName) && (
+              <p className='text-sm text-gray-600 mt-2'>Selected: {resumeFile?.name || resumeFileName}</p>
             )}
           </div>
 
-          {fileError && <p className='text-red-600 text-sm'>{fileError}</p>}
+          <div className='rounded-md border border-gray-200 bg-white px-3 py-2'>
+            <p className='text-sm font-semibold text-gray-800'>Resume verification</p>
+            <VerificationStatusMessage status={resumeVerification.status} />
+            {resumeVerification.status === 'verified' && (
+              <p className='text-sm text-green-700 mt-1'>{resumeVerification.message}</p>
+            )}
+            {resumeVerification.status === 'failed' && (
+              <p className='text-sm text-red-600 mt-1'>{resumeVerification.message}</p>
+            )}
+            {resumeVerification.status === 'required' && (
+              <p className='text-sm text-amber-700 mt-1'>{resumeVerification.message}</p>
+            )}
+          </div>
+
+          {showFieldError('resume') && fieldErrors.resume && (
+            <p className='text-red-600 text-sm'>{fieldErrors.resume}</p>
+          )}
         </div>
 
         <div>
@@ -321,9 +530,28 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
             required
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            className='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-400 outline-none bg-white'
+            onBlur={() => markTouched('message')}
+            className={`w-full px-4 py-2 border rounded-md focus:ring-2 outline-none bg-white ${invalidInputClass('message', formData.message)}`}
             placeholder='Tell us about your experience and what you want to work on.'
           />
+          {showFieldError('message', formData.message) && (
+            <p className='text-red-600 text-sm mt-1'>{fieldErrors.message}</p>
+          )}
+        </div>
+
+        <div className='rounded-md border border-gray-200 bg-gray-50 px-3 py-3'>
+          <p className='text-sm font-semibold text-gray-800'>Application verification</p>
+          <VerificationStatusMessage status={applicationDetailsReady ? 'verified' : applicationStatus} />
+          {!applicationDetailsReady && applicationErrorSummary.length > 0 && (
+            <ul className='mt-2 space-y-1 text-sm text-red-600 list-disc pl-5'>
+              {applicationErrorSummary.map(item => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          )}
+          {applicationDetailsReady && resumeVerification.status !== 'verified' && (
+            <p className='text-sm text-amber-700 mt-2'>Attach your resume above to complete application verification.</p>
+          )}
         </div>
 
         <div>
@@ -332,13 +560,14 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
           </label>
           <div className='flex items-center space-x-3'>
             <div className='bg-gray-100 px-4 py-2 rounded-md font-mono text-lg font-bold text-gray-800 min-w-[120px] text-center'>
-              {captchaProblem}
+              {captchaLoading ? 'Loading...' : captchaProblem || 'Unavailable'}
             </div>
             <button
               type='button'
-              onClick={generateCaptcha}
+              onClick={loadCaptcha}
+              disabled={captchaLoading}
               aria-label='Refresh security verification question'
-              className='text-red-600 hover:text-red-700 text-sm font-medium'
+              className='text-red-600 hover:text-red-700 disabled:opacity-60 text-sm font-medium'
             >
               Refresh
             </button>
@@ -349,19 +578,31 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
             required
             value={captchaAnswer}
             onChange={(e) => setCaptchaAnswer(e.target.value)}
-            className='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-400 outline-none mt-2 bg-white'
+            disabled={!captchaToken || captchaLoading}
+            className='w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-400 outline-none mt-2 bg-white disabled:bg-gray-100'
             placeholder='Enter your answer'
           />
+          <VerificationStatusMessage status={securityStatus} />
           {captchaError && <p className='text-red-600 text-sm mt-1'>{captchaError}</p>}
         </div>
 
         <button
           type='submit'
-          disabled={loading}
-          className='bg-red-600 hover:bg-red-700 disabled:opacity-70 text-white font-semibold py-3 px-6 rounded-md transition duration-200 w-full'
+          disabled={!canSubmit}
+          className='bg-red-600 hover:bg-red-700 disabled:opacity-70 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded-md transition duration-200 w-full'
         >
           {loading ? 'Sending...' : 'Submit application'}
         </button>
+
+        {!canSubmit && !loading && (
+          <p className='text-sm text-gray-600 text-center'>
+            {resumeVerification.status !== 'verified'
+              ? 'Upload your resume or add a shareable link to continue.'
+              : applicationStatus === 'failed'
+                ? 'Fix the highlighted fields and complete security verification to enable submission.'
+                : 'Complete application and security verification to enable submission.'}
+          </p>
+        )}
       </form>
     </div>
   )
