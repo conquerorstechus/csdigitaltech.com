@@ -24,9 +24,16 @@ export function isValidEmail(email: string): boolean {
   return value.length <= 254 && EMAIL_PATTERN.test(value)
 }
 
+export function isValidPhoneNumber(phoneNumber: string): boolean {
+  return /^\d{10}$/.test(phoneNumber.replace(/\D/g, ''))
+}
+
 export function isValidPhone(phone: string): boolean {
-  const digits = phone.replace(/\D/g, '')
-  return digits.length >= 10 && digits.length <= 15
+  const trimmed = phone.trim()
+  const withCountryCode = trimmed.match(/^(\+\d{1,4})\s(\d{10})$/)
+  if (withCountryCode) return true
+
+  return isValidPhoneNumber(trimmed)
 }
 
 export function isValidLinkedIn(linkedin: string): boolean {
@@ -87,7 +94,7 @@ export function getCareersFieldErrors(input: {
   if (!phone) {
     errors.phone = 'Phone number is required.'
   } else if (!isValidPhone(phone)) {
-    errors.phone = 'Enter a valid phone number with at least 10 digits.'
+    errors.phone = 'Enter a valid 10-digit phone number.'
   }
 
   if (!projectType) {

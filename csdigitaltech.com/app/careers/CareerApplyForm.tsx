@@ -7,6 +7,7 @@ import {
   getResumeVerificationStatus,
   isCareersApplicationValid
 } from '@/lib/careers-form-validation'
+import { formatCareersPhone, PHONE_COUNTRY_CODES } from '@/lib/careers-phone-countries'
 
 const MAX_FILE_MB = 5
 
@@ -57,7 +58,8 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
+    countryCode: '+1',
+    phoneNumber: '',
     projectType: selectedRole || '',
     linkedin: '',
     portfolio: '',
@@ -111,12 +113,14 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
     }
   }, [selectedRole])
 
+  const fullPhone = formatCareersPhone(formData.countryCode, formData.phoneNumber)
+
   const fieldErrors = useMemo(
     () =>
       getCareersFieldErrors({
         name: formData.name,
         email: formData.email,
-        phone: formData.phone,
+        phone: fullPhone,
         projectType: formData.projectType,
         linkedin: formData.linkedin,
         portfolio: formData.portfolio,
@@ -124,7 +128,7 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
         hasResumeFile: Boolean(resumeFile),
         fileError
       }),
-    [formData, resumeFile, fileError]
+    [formData, resumeFile, fileError, fullPhone]
   )
 
   const resumeVerification = useMemo(
@@ -149,7 +153,7 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
   const hasStartedApplicationDetails = Boolean(
     formData.name ||
       formData.email ||
-      formData.phone ||
+      formData.phoneNumber ||
       formData.linkedin ||
       formData.message
   )
@@ -303,7 +307,7 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          phone: formData.phone,
+          phone: fullPhone,
           projectType: formData.projectType,
           whyCornerstone: formData.message,
           linkedin: formData.linkedin.trim() || undefined,
@@ -326,7 +330,8 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
         setFormData({
           name: '',
           email: '',
-          phone: '',
+          countryCode: '+1',
+          phoneNumber: '',
           projectType: selectedRole || '',
           linkedin: '',
           portfolio: '',
@@ -371,7 +376,7 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
       )}
 
       <form onSubmit={handleSubmit} className='space-y-5'>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
           <div>
             <label className='block text-gray-700 font-medium mb-1' htmlFor='career-name'>Full name</label>
             <input
@@ -404,22 +409,44 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
               <p className='text-red-600 text-sm mt-1'>{fieldErrors.email}</p>
             )}
           </div>
-          <div>
-            <label className='block text-gray-700 font-medium mb-1' htmlFor='career-phone'>Phone</label>
+        </div>
+
+        <div>
+          <label className='block text-gray-700 font-medium mb-1' htmlFor='career-phone'>Phone</label>
+          <div className='flex gap-2'>
+            <select
+              id='career-country-code'
+              value={formData.countryCode}
+              onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
+              onBlur={() => markTouched('phone')}
+              className={`w-[120px] shrink-0 px-2 py-2 border rounded-md focus:ring-2 outline-none bg-white ${invalidInputClass('phone', formData.phoneNumber)}`}
+              aria-label='Country code'
+            >
+              {PHONE_COUNTRY_CODES.map(({ code, label }) => (
+                <option key={code} value={code}>
+                  {label}
+                </option>
+              ))}
+            </select>
             <input
               id='career-phone'
               type='tel'
+              inputMode='numeric'
               required
-              value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              maxLength={10}
+              value={formData.phoneNumber}
+              onChange={(e) => {
+                const digits = e.target.value.replace(/\D/g, '').slice(0, 10)
+                setFormData({ ...formData, phoneNumber: digits })
+              }}
               onBlur={() => markTouched('phone')}
-              className={`w-full px-4 py-2 border rounded-md focus:ring-2 outline-none bg-white ${invalidInputClass('phone', formData.phone)}`}
-              placeholder='Your phone number'
+              className={`flex-1 w-full px-4 py-2 border rounded-md focus:ring-2 outline-none bg-white ${invalidInputClass('phone', formData.phoneNumber)}`}
+              placeholder='10-digit number'
             />
-            {showFieldError('phone', formData.phone) && (
-              <p className='text-red-600 text-sm mt-1'>{fieldErrors.phone}</p>
-            )}
           </div>
+          {showFieldError('phone', formData.phoneNumber) && (
+            <p className='text-red-600 text-sm mt-1'>{fieldErrors.phone}</p>
+          )}
         </div>
 
         <div>

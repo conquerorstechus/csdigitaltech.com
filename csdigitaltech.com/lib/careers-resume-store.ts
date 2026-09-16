@@ -56,6 +56,10 @@ export type StoredCareersResume = {
   publicUrl: string
 }
 
+export function getCareersResumeViewPath(token: string) {
+  return `/careers/resume/view/${token}`
+}
+
 async function getWritableStoreDir() {
   for (const dir of STORE_DIR_CANDIDATES) {
     try {
