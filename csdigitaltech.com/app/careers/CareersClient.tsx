@@ -60,6 +60,21 @@ const jobs: Job[] = [
       'Coordinate engineers, designers, and clients to remove blockers',
       'Track risk, budget, and status so every release stays on track'
     ]
+  },
+  {
+    id: 'aws-engineer',
+    title: 'AWS Engineer',
+    formId: 'aws_engineer',
+    team: 'Cloud',
+    type: 'Full-time',
+    location: 'Tampa, FL / Remote',
+    summary:
+      'Design, deploy, and manage AWS infrastructure for client applications. At least one AWS certification is mandatory.',
+    responsibilities: [
+      'Build and maintain scalable cloud infrastructure on AWS',
+      'Implement CI/CD pipelines, monitoring, and security best practices',
+      'Hold at least one active AWS certification (Solutions Architect, SysOps, DevOps, or similar)'
+    ]
   }
 ]
 

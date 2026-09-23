@@ -363,12 +363,6 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
         Share a short introduction and your resume via Google Drive, Dropbox, OneDrive, or file upload.
       </p>
 
-      {submitted && (
-        <div className='bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6'>
-          Thank you. Your application has been sent. We will reach out if there is a match.
-        </div>
-      )}
-
       {submitError && (
         <div className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6'>
           {submitError}
@@ -629,6 +623,12 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
                 ? 'Fix the highlighted fields and complete security verification to enable submission.'
                 : 'Complete application and security verification to enable submission.'}
           </p>
+        )}
+
+        {submitted && (
+          <div className='bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded'>
+            Thank you. Your application has been sent. We will reach out if there is a match.
+          </div>
         )}
       </form>
     </div>

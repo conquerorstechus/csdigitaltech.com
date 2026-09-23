@@ -26,6 +26,7 @@ export function mapCareersFormId(formId?: string, projectType?: string): string 
   if (raw === 'senior_full_stack_engineer') return 'senior_full_stack_engineer'
   if (raw === 'digital_marketing_specialist') return 'digital_marketing_specialist'
   if (raw === 'project_manager') return 'project_manager'
+  if (raw === 'aws_engineer') return 'aws_engineer'
 
   return raw
 }
