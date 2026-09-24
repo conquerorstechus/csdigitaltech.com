@@ -170,7 +170,11 @@ export default function CareersClient() {
               <h2 className='mb-5 pr-8 text-xl font-semibold text-gray-900'>
                 Apply for {selectedJob.title}
               </h2>
-              <CareerApplyForm selectedRole={selectedJob.title} formId={selectedJob.formId} />
+              <CareerApplyForm
+                key={selectedJob.formId}
+                selectedRole={selectedJob.title}
+                formId={selectedJob.formId}
+              />
             </div>
           </div>
         )}

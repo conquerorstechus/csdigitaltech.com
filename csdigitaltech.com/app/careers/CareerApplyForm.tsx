@@ -67,6 +67,7 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
   })
   const [resumeFile, setResumeFile] = useState<File | null>(null)
   const [resumeFileName, setResumeFileName] = useState('')
+  const [resumePreviewUrl, setResumePreviewUrl] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState('')
   const [fileError, setFileError] = useState('')
@@ -112,6 +113,20 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
       setFormData(prev => ({ ...prev, projectType: selectedRole }))
     }
   }, [selectedRole])
+
+  useEffect(() => {
+    if (!resumeFile) {
+      setResumePreviewUrl('')
+      return
+    }
+
+    const previewUrl = URL.createObjectURL(resumeFile)
+    setResumePreviewUrl(previewUrl)
+
+    return () => {
+      URL.revokeObjectURL(previewUrl)
+    }
+  }, [resumeFile])
 
   const fullPhone = formatCareersPhone(formData.countryCode, formData.phoneNumber)
 
@@ -230,6 +245,7 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
     if (!file) {
       setResumeFile(null)
       setResumeFileName('')
+      setResumePreviewUrl('')
       return
     }
 
@@ -354,6 +370,16 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
     } finally {
       setLoading(false)
     }
+  }
+
+  if (submitted) {
+    return (
+      <div className='bg-white rounded-xl border shadow-md p-6 sm:p-8 w-full text-center'>
+        <div className='bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded'>
+          Thank you. Your application has been sent. We will reach out if there is a match.
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -527,7 +553,20 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
           <div className='rounded-md border border-gray-200 bg-white px-3 py-2'>
             <p className='text-sm font-semibold text-gray-800'>Resume verification</p>
             <VerificationStatusMessage status={resumeVerification.status} />
-            {resumeVerification.status === 'verified' && (
+            {resumeVerification.status === 'verified' && resumeFile && resumePreviewUrl && (
+              <p className='text-sm text-green-700 mt-1'>
+                Resume file attached:{' '}
+                <a
+                  href={resumePreviewUrl}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='font-medium text-blue-700 underline hover:text-blue-900'
+                >
+                  {resumeFile.name || resumeFileName}
+                </a>
+              </p>
+            )}
+            {resumeVerification.status === 'verified' && !resumeFile && (
               <p className='text-sm text-green-700 mt-1'>{resumeVerification.message}</p>
             )}
             {resumeVerification.status === 'failed' && (
@@ -623,12 +662,6 @@ export default function CareerApplyForm({ selectedRole = '', formId = '' }: { se
                 ? 'Fix the highlighted fields and complete security verification to enable submission.'
                 : 'Complete application and security verification to enable submission.'}
           </p>
-        )}
-
-        {submitted && (
-          <div className='bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded'>
-            Thank you. Your application has been sent. We will reach out if there is a match.
-          </div>
         )}
       </form>
     </div>

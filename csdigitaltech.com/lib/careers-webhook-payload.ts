@@ -61,7 +61,8 @@ export function buildCareersWebhookPayload(input: CareersWebhookInput) {
     ...(trimmedResumeFileName
       ? {
           resumeFileName: trimmedResumeFileName,
-          hasUploadedResume: true
+          hasUploadedResume: true,
+          ...(input.resumeFileBase64 ? { resumeFileBase64: input.resumeFileBase64 } : {})
         }
       : {}),
     ...(resumeAccessUrl

@@ -16,6 +16,7 @@ type ResumeMeta = {
   storedFileName: string
   storeDir: string
   expires: number
+  dataBase64?: string
 }
 
 function getExtension(fileName: string) {
@@ -60,6 +61,10 @@ export function getCareersResumeViewPath(token: string) {
   return `/careers/resume/view/${token}`
 }
 
+export function getCareersResumeApiPath(token: string) {
+  return `/api/careers/resume/${token}`
+}
+
 async function getWritableStoreDir() {
   for (const dir of STORE_DIR_CANDIDATES) {
     try {
@@ -94,7 +99,8 @@ export async function storeCareersResume(
     mime: getMimeType(safeName, mime),
     storedFileName,
     storeDir,
-    expires: Date.now() + TTL_MS
+    expires: Date.now() + TTL_MS,
+    dataBase64: base64
   }
 
   await fs.writeFile(path.join(storeDir, `${token}.meta.json`), JSON.stringify(meta))
@@ -136,7 +142,17 @@ export async function getCareersResume(token: string) {
       return null
     }
 
-    const data = await fs.readFile(path.join(storeDir, meta.storedFileName))
+    let data: Buffer
+
+    try {
+      data = await fs.readFile(path.join(storeDir, meta.storedFileName))
+    } catch {
+      if (!meta.dataBase64) {
+        return null
+      }
+
+      data = Buffer.from(meta.dataBase64, 'base64')
+    }
 
     return {
       data,

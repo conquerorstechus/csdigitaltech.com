@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { getCareersResumeViewPath, storeCareersResume } from '@/lib/careers-resume-store'
+import { getCareersResumeApiPath, storeCareersResume } from '@/lib/careers-resume-store'
 import { buildCareersWebhookPayload, wrapCareersWebhookPayload } from '@/lib/careers-webhook-payload'
 import { validateCareersApplication } from '@/lib/careers-verification'
 
@@ -89,7 +89,7 @@ export async function POST(request: Request) {
           trimmedResumeFileName,
           String(resumeFileMime || 'application/pdf')
         )
-        resumeDownloadUrl = `${getSiteOrigin(request)}${getCareersResumeViewPath(storedResume.token)}`
+        resumeDownloadUrl = `${getSiteOrigin(request)}${getCareersResumeApiPath(storedResume.token)}`
       } catch (storageError) {
         console.error('Careers resume storage failed:', storageError)
         if (!resumeDownloadUrl) {
@@ -118,6 +118,7 @@ export async function POST(request: Request) {
           resumeLink: trimmedResumeLink,
           resumeFileName: trimmedResumeFileName,
           resumeFileMime,
+          resumeFileBase64: trimmedResumeBase64 || undefined,
           resumeDownloadUrl
         })
       : null

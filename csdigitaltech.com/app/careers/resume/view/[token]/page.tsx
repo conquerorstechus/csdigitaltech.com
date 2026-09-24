@@ -1,5 +1,5 @@
 import { headers } from 'next/headers'
-import { getCareersResume } from '@/lib/careers-resume-store'
+import { getCareersResume, getCareersResumeApiPath } from '@/lib/careers-resume-store'
 
 export const dynamic = 'force-dynamic'
 
@@ -41,7 +41,9 @@ export default async function CareersResumeViewPage({
   }
 
   const origin = getSiteOrigin(await headers())
-  const fileUrl = origin ? `${origin}${resume.publicUrl}` : resume.publicUrl
+  const fileUrl = origin
+    ? `${origin}${getCareersResumeApiPath(token)}`
+    : getCareersResumeApiPath(token)
   const viewerSrc = getViewerSrc(fileUrl, resume.fileName)
 
   return (
