@@ -1,3 +1,4 @@
+import { get, head, put } from '@vercel/blob'
 import crypto from 'crypto'
 import fs from 'fs/promises'
 import path from 'path'
@@ -17,6 +18,20 @@ type ResumeMeta = {
   storeDir: string
   expires: number
   dataBase64?: string
+  blobUrl?: string
+  blobPathname?: string
+}
+
+type BlobResumeMeta = {
+  fileName: string
+  mime: string
+  expires: number
+  blobUrl: string
+  blobPathname: string
+}
+
+function isBlobStorageEnabled() {
+  return Boolean(process.env.BLOB_READ_WRITE_TOKEN)
 }
 
 function getExtension(fileName: string) {
@@ -55,6 +70,7 @@ function getPublicUrl(storeDir: string, storedFileName: string) {
 export type StoredCareersResume = {
   token: string
   publicUrl: string
+  downloadUrl: string
 }
 
 export function getCareersResumeViewPath(token: string) {
@@ -63,6 +79,46 @@ export function getCareersResumeViewPath(token: string) {
 
 export function getCareersResumeApiPath(token: string) {
   return `/api/careers/resume/${token}`
+}
+
+function latin1HeaderValue(value: string) {
+  return /^[\x20-\x7E]+$/.test(value)
+}
+
+export function createCareersResumeDownload(resume: { data: Buffer; fileName: string; mime: string }) {
+  const bytes = new Uint8Array(resume.data.byteLength)
+  bytes.set(resume.data)
+
+  const fileName = String(resume.fileName || 'resume.pdf').replace(/[\r\n]/g, ' ').trim() || 'resume.pdf'
+  const asciiName = fileName.replace(/[^\x20-\x7E]/g, '_').replace(/["\\]/g, '_') || 'resume.pdf'
+  const encodedName = encodeURIComponent(fileName).replace(/['()*]/g, (char) => {
+    return `%${char.charCodeAt(0).toString(16).toUpperCase()}`
+  })
+  const mime = latin1HeaderValue(String(resume.mime || '')) ? resume.mime : 'application/octet-stream'
+
+  return {
+    body: bytes,
+    headers: {
+      'Content-Type': mime,
+      'Content-Length': String(bytes.byteLength),
+      'Content-Disposition': `inline; filename="${asciiName}"; filename*=UTF-8''${encodedName}`,
+      'Cache-Control': 'private, no-store',
+      'X-Content-Type-Options': 'nosniff'
+    }
+  }
+}
+
+async function readBlobStream(stream: ReadableStream<Uint8Array> | AsyncIterable<Uint8Array>) {
+  if (typeof (stream as ReadableStream<Uint8Array>).getReader === 'function') {
+    return Buffer.from(await new Response(stream as ReadableStream<Uint8Array>).arrayBuffer())
+  }
+
+  const chunks: Buffer[] = []
+  for await (const chunk of stream as AsyncIterable<Uint8Array>) {
+    chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk))
+  }
+
+  return Buffer.concat(chunks)
 }
 
 async function getWritableStoreDir() {
@@ -81,12 +137,94 @@ async function getWritableStoreDir() {
   throw new Error('No writable resume storage directory available')
 }
 
+async function storeCareersResumeInBlob(
+  token: string,
+  base64: string,
+  fileName: string,
+  mime: string
+): Promise<StoredCareersResume> {
+  const safeName = path.basename(fileName) || 'resume.pdf'
+  const extension = getExtension(safeName)
+  const contentType = getMimeType(safeName, mime)
+  const buffer = Buffer.from(base64, 'base64')
+  const blobPathname = `careers/${token}${extension}`
+  const metaPathname = `careers/meta/${token}.json`
+
+  const fileBlob = await put(blobPathname, buffer, {
+    access: 'public',
+    contentType,
+    addRandomSuffix: false,
+    allowOverwrite: true
+  })
+
+  const blobMeta: BlobResumeMeta = {
+    fileName: safeName,
+    mime: contentType,
+    expires: Date.now() + TTL_MS,
+    blobUrl: fileBlob.url,
+    blobPathname
+  }
+
+  await put(metaPathname, JSON.stringify(blobMeta), {
+    access: 'public',
+    contentType: 'application/json',
+    addRandomSuffix: false,
+    allowOverwrite: true
+  })
+
+  return {
+    token,
+    publicUrl: fileBlob.url,
+    downloadUrl: getCareersResumeApiPath(token)
+  }
+}
+
+async function getCareersResumeFromBlob(token: string) {
+  try {
+    const metaResult = await get(`careers/meta/${token}.json`, { access: 'public' })
+
+    if (!metaResult || metaResult.statusCode !== 200 || !metaResult.stream) {
+      return null
+    }
+
+    const meta = JSON.parse((await readBlobStream(metaResult.stream)).toString('utf8')) as BlobResumeMeta
+
+    if (!meta.expires || Date.now() > meta.expires || !meta.blobPathname) {
+      return null
+    }
+
+    const fileResult = await get(meta.blobPathname, { access: 'public' })
+    if (!fileResult || fileResult.statusCode !== 200 || !fileResult.stream) {
+      return null
+    }
+
+    return {
+      data: await readBlobStream(fileResult.stream),
+      fileName: meta.fileName,
+      mime: meta.mime || 'application/pdf',
+      publicUrl: meta.blobUrl
+    }
+  } catch (error) {
+    console.error('Careers resume blob lookup failed:', error)
+    return null
+  }
+}
+
 export async function storeCareersResume(
   base64: string,
   fileName: string,
   mime = 'application/pdf'
 ): Promise<StoredCareersResume> {
   const token = crypto.randomBytes(24).toString('hex')
+
+  if (isBlobStorageEnabled()) {
+    try {
+      return await storeCareersResumeInBlob(token, base64, fileName, mime)
+    } catch (error) {
+      console.error('Careers resume blob storage failed, falling back to local storage:', error)
+    }
+  }
+
   const safeName = path.basename(fileName) || 'resume.pdf'
   const storedFileName = `${token}${getExtension(safeName)}`
   const storeDir = await getWritableStoreDir()
@@ -105,9 +243,12 @@ export async function storeCareersResume(
 
   await fs.writeFile(path.join(storeDir, `${token}.meta.json`), JSON.stringify(meta))
 
+  const apiPath = getCareersResumeApiPath(token)
+
   return {
     token,
-    publicUrl: getPublicUrl(storeDir, storedFileName)
+    publicUrl: getPublicUrl(storeDir, storedFileName),
+    downloadUrl: apiPath
   }
 }
 
@@ -130,6 +271,13 @@ export async function getCareersResume(token: string) {
     return null
   }
 
+  if (isBlobStorageEnabled()) {
+    const blobResume = await getCareersResumeFromBlob(token)
+    if (blobResume) {
+      return blobResume
+    }
+  }
+
   const located = await readResumeMeta(token)
   if (!located) return null
 
@@ -140,6 +288,26 @@ export async function getCareersResume(token: string) {
       await fs.rm(path.join(storeDir, meta.storedFileName), { force: true }).catch(() => undefined)
       await fs.rm(metaPath, { force: true }).catch(() => undefined)
       return null
+    }
+
+    if (meta.blobUrl) {
+      try {
+        const blobInfo = await head(meta.blobUrl)
+        if (blobInfo) {
+          const fileResponse = await fetch(meta.blobUrl)
+          if (fileResponse.ok) {
+            const data = Buffer.from(await fileResponse.arrayBuffer())
+            return {
+              data,
+              fileName: meta.fileName,
+              mime: meta.mime || 'application/pdf',
+              publicUrl: meta.blobUrl
+            }
+          }
+        }
+      } catch {
+        // Fall through to local file lookup.
+      }
     }
 
     let data: Buffer
