@@ -82,21 +82,7 @@ export async function POST(request: Request) {
 
     let resumeDownloadUrl = trimmedResumeLink || undefined
 
-    if (isCareers && trimmedResumeFileName && trimmedResumeBase64) {
-      if (process.env.VERCEL && !process.env.BLOB_READ_WRITE_TOKEN) {
-        console.error(
-          'Careers resume upload: BLOB_READ_WRITE_TOKEN is not set on Vercel. Uploaded resumes cannot be stored.'
-        )
-        return NextResponse.json(
-          {
-            error:
-              'Resume uploads are not available right now. Please share a Google Drive, Dropbox, or OneDrive link instead.',
-            field: 'resume'
-          },
-          { status: 503 }
-        )
-      }
-
+    if (isCareers && trimmedResumeFileName && trimmedResumeBase64 && !process.env.VERCEL) {
       try {
         const storedResume = await storeCareersResume(
           trimmedResumeBase64,
@@ -107,17 +93,7 @@ export async function POST(request: Request) {
           ? storedResume.downloadUrl
           : `${getSiteOrigin(request)}${storedResume.downloadUrl}`
       } catch (storageError) {
-        console.error('Careers resume storage failed:', storageError)
-        if (!resumeDownloadUrl) {
-          return NextResponse.json(
-            {
-              error:
-                'Your resume could not be saved. Please use a Google Drive / Dropbox / OneDrive link instead.',
-              field: 'resume'
-            },
-            { status: 500 }
-          )
-        }
+        console.error('Careers resume storage failed (non-critical, base64 sent via webhook):', storageError)
       }
     }
 
