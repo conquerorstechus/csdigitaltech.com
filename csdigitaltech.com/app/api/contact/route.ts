@@ -1,9 +1,5 @@
 import { NextResponse } from 'next/server'
-import {
-  canPersistCareersResume,
-  getStoredResumeAccessUrl,
-  storeCareersResume
-} from '@/lib/careers-resume-store'
+import { getCareersResumeViewPath, storeCareersResume } from '@/lib/careers-resume-store'
 import { buildCareersWebhookPayload, wrapCareersWebhookPayload } from '@/lib/careers-webhook-payload'
 import { validateCareersApplication } from '@/lib/careers-verification'
 
@@ -18,9 +14,26 @@ const CAREERS_WEBHOOK_URL =
   process.env.CAREERS_FORM_WEBHOOK_URL ??
   'https://n8n.srv1393511.hstgr.cloud/webhook/27a463a5-c55f-48aa-a0c4-8c3b4cec8cba'
 
+function getPublicSiteOrigin() {
+  const configured =
+    process.env.CAREERS_SITE_URL ||
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    process.env.SITE_URL ||
+    'https://csdigitaltech.com'
+
+  return configured.replace(/\/$/, '')
+}
+
 function getSiteOrigin(request: Request) {
-  const host = request.headers.get('x-forwarded-host') || request.headers.get('host')
-  const protocol = request.headers.get('x-forwarded-proto') || 'https'
+  if (process.env.VERCEL) {
+    return getPublicSiteOrigin()
+  }
+
+  const hostHeader = request.headers.get('x-forwarded-host') || request.headers.get('host') || ''
+  const host = hostHeader.split(',')[0].trim()
+  const protocol =
+    request.headers.get('x-forwarded-proto') ||
+    (/^localhost|127\.0\.0\.1/i.test(host) ? 'http' : 'https')
 
   if (host) {
     return `${protocol}://${host}`
@@ -88,21 +101,26 @@ export async function POST(request: Request) {
     let resumeDownloadUrl = trimmedResumeLink || undefined
 
     if (isCareers && trimmedResumeFileName && trimmedResumeBase64) {
-      if (!canPersistCareersResume()) {
-        console.error(
-          'Careers resume file was not stored because BLOB_READ_WRITE_TOKEN is not set. The file is still sent as an email attachment.'
+      try {
+        const storedResume = await storeCareersResume(
+          trimmedResumeBase64,
+          trimmedResumeFileName,
+          String(resumeFileMime || 'application/pdf')
         )
-      } else {
-        try {
-          const storedResume = await storeCareersResume(
-            trimmedResumeBase64,
-            trimmedResumeFileName,
-            String(resumeFileMime || 'application/pdf')
-          )
-          resumeDownloadUrl = getStoredResumeAccessUrl(storedResume, getSiteOrigin(request))
-        } catch (storageError) {
-          console.error('Careers resume storage failed (non-critical, base64 sent via webhook):', storageError)
+        const origin = getSiteOrigin(request)
+        const accessUrl = `${origin}${getCareersResumeViewPath(storedResume.token)}`
+        const isLocalUrl = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?\//i.test(accessUrl)
+
+        if (process.env.VERCEL && isLocalUrl) {
+          console.error('Refusing to email a localhost resume URL from the live site.')
+        } else if (/^https?:\/\//i.test(accessUrl)) {
+          resumeDownloadUrl = accessUrl
         }
+      } catch (storageError) {
+        console.error(
+          'Careers resume storage failed. On Vercel, connect a Blob store so BLOB_READ_WRITE_TOKEN is set. The file is still sent for the email attachment.',
+          storageError
+        )
       }
     }
 

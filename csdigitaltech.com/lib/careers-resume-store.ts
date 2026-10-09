@@ -34,10 +34,6 @@ function isBlobStorageEnabled() {
   return Boolean(process.env.BLOB_READ_WRITE_TOKEN)
 }
 
-export function canPersistCareersResume() {
-  return !process.env.VERCEL || isBlobStorageEnabled()
-}
-
 export function getStoredResumeAccessUrl(stored: StoredCareersResume, origin: string) {
   const reference =
     stored.publicUrl.startsWith('http://') || stored.publicUrl.startsWith('https://')
@@ -235,11 +231,11 @@ export async function storeCareersResume(
 ): Promise<StoredCareersResume> {
   const token = crypto.randomBytes(24).toString('hex')
 
-  if (isBlobStorageEnabled()) {
+  if (isBlobStorageEnabled() || process.env.VERCEL) {
     try {
       return await storeCareersResumeInBlob(token, base64, fileName, mime)
     } catch (error) {
-      console.error('Careers resume blob storage failed, falling back to local storage:', error)
+      console.error('Careers resume blob storage failed:', error)
       if (process.env.VERCEL) {
         throw error
       }
