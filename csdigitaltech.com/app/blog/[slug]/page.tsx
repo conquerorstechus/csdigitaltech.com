@@ -1,52 +1,77 @@
-import type { Metadata, ResolvingMetadata } from 'next'
-import Image from 'next/image'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowLeft, Calendar, Clock, User, Share2, Bookmark } from 'lucide-react'
+import { BlogCover } from '@/components/blog/BlogCover'
+import { MarkdownPost } from '@/components/blog/MarkdownPost'
 import {
-  OpinlyJsonLd,
-  buildBlogPostingJsonLd,
-  buildFaqJsonLd,
-  formatDate,
-  generateOpinlyMetadata,
-} from '@opinly/next'
-import { calculateReadingTime } from '@opinly/shared'
-import type { FullPost, Post } from '@opinly/backend'
-import { opinly } from '@/clients/opinly'
-import { PostContent } from '@/components/blog/PostContent'
-import { getOpinlyImageUrl } from '@/lib/opinly-utils'
-
-export const revalidate = 3600
+  absoluteUrl,
+  formatBlogDate,
+  getPost,
+  getPostSlugs,
+  getRelatedPosts,
+  postCanonical,
+  readingTimeMinutes,
+  type BlogPost,
+} from '@/lib/blog'
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>
 }
 
-async function getPost(slug: string): Promise<FullPost | null> {
-  try {
-    return await opinly.post(slug)
-  } catch (error) {
-    console.error(`[blog] Failed to fetch Opinly post "${slug}":`, error)
-    return null
+export const dynamicParams = true
+
+function blogPostingJsonLd(post: BlogPost) {
+  const canonical = postCanonical(post.slug)
+  const image = post.image ? absoluteUrl(post.image) : undefined
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    dateModified: post.updated || post.date,
+    ...(image ? { image } : {}),
+    author: {
+      '@type': 'Person',
+      name: post.author || 'Cornerstone Digital Technologies',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Cornerstone Digital Technologies',
+      url: absoluteUrl('/'),
+      logo: {
+        '@type': 'ImageObject',
+        url: absoluteUrl('/cornerstone-logo.png'),
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': canonical,
+    },
+    url: canonical,
   }
 }
 
-async function getRelatedPosts(currentSlug: string): Promise<Post[]> {
-  try {
-    const result = await opinly.posts({ limit: 6, sort: 'newest' })
-    return result.data.filter((post) => post.slug !== currentSlug).slice(0, 2)
-  } catch (error) {
-    console.error('[blog] Failed to fetch related Opinly posts:', error)
-    return []
+function faqJsonLd(post: BlogPost) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: post.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
   }
 }
 
-export async function generateMetadata(
-  { params }: BlogPostPageProps,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params
-  const post = await getPost(slug)
+  const post = getPost(slug)
 
   if (!post) {
     return {
@@ -55,40 +80,64 @@ export async function generateMetadata(
     }
   }
 
-  return generateOpinlyMetadata({ type: 'post', data: post }, parent)
+  const canonical = postCanonical(post.slug)
+  const image = post.image ? absoluteUrl(post.image) : undefined
+
+  return {
+    title: post.title,
+    description: post.description,
+    alternates: {
+      canonical,
+    },
+    authors: post.author ? [{ name: post.author }] : undefined,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: 'article',
+      url: canonical,
+      publishedTime: post.date || undefined,
+      modifiedTime: post.updated || undefined,
+      images: image ? [image] : undefined,
+    },
+    twitter: {
+      card: image ? 'summary_large_image' : 'summary',
+      title: post.title,
+      description: post.description,
+      images: image ? [image] : undefined,
+    },
+  }
 }
 
-export async function generateStaticParams() {
-  try {
-    const routes = await opinly.routes()
-    return routes
-      .filter((route) => route.type === 'post' && route.slug)
-      .map((route) => ({ slug: route.slug }))
-  } catch {
-    return []
-  }
+export function generateStaticParams() {
+  return getPostSlugs().map((slug) => ({ slug }))
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params
-  const post = await getPost(slug)
+  const post = getPost(slug)
 
   if (!post) {
     notFound()
   }
 
-  const relatedPosts = await getRelatedPosts(post.slug)
-  const imageSrc = getOpinlyImageUrl(post.titleFile?.fileKey)
-  const categoryName = post.category?.name ?? 'Article'
-  const authorName = post.author?.name ?? 'Cornerstone Digital Technologies'
-  const publishedLabel = formatDate(post.firstPublishedAt)
-  const readingMinutes = calculateReadingTime(post.content)
-  const tags = post.tags ?? []
+  const relatedPosts = getRelatedPosts(post.slug)
+  const categoryName = post.category || 'Article'
+  const authorName = post.author || 'Cornerstone Digital Technologies'
+  const publishedLabel = formatBlogDate(post.date)
+  const readingMinutes = readingTimeMinutes(post.content)
 
   return (
     <>
-      <OpinlyJsonLd data={buildBlogPostingJsonLd(post)} />
-      {post.faqs?.length ? <OpinlyJsonLd data={buildFaqJsonLd(post.faqs)} /> : null}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingJsonLd(post)) }}
+      />
+      {post.faqs.length ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(post)) }}
+        />
+      ) : null}
 
       <div className="min-h-screen bg-white">
         <section className="py-6 bg-gray-50 border-b border-gray-200">
@@ -129,15 +178,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               ) : null}
             </div>
 
-            {imageSrc ? (
+            {post.image ? (
               <div className="mb-8">
                 <div className="aspect-video relative bg-gray-100 rounded-lg overflow-hidden shadow-lg">
-                  <Image
-                    src={imageSrc}
-                    alt={post.titleFile?.altText || post.title}
+                  <BlogCover
+                    src={post.image}
+                    alt={post.title}
                     title={`${post.title} - ${categoryName} Article`}
-                    fill
-                    className="object-cover"
                     priority
                   />
                 </div>
@@ -155,18 +202,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </button>
             </div>
 
-            <PostContent content={post.content} />
+            <MarkdownPost content={post.content} />
 
-            {tags.length > 0 ? (
+            {post.tags.length > 0 ? (
               <div className="mt-12 pt-8 border-t border-gray-200">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Tags:</h3>
                 <div className="flex flex-wrap gap-2">
-                  {tags.map((tag) => (
+                  {post.tags.map((tag) => (
                     <span
-                      key={tag.slug}
+                      key={tag}
                       className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors"
                     >
-                      #{tag.name}
+                      #{tag}
                     </span>
                   ))}
                 </div>
@@ -182,47 +229,43 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 Related Posts
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {relatedPosts.map((related) => {
-                  const relatedImage = getOpinlyImageUrl(related.image?.fileKey)
-                  return (
-                    <Link href={`/blog/${related.slug}`} key={related.slug}>
-                      <article className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group cursor-pointer">
-                        <div className="aspect-video relative bg-gray-100 overflow-hidden">
-                          {relatedImage ? (
-                            <Image
-                              src={relatedImage}
-                              alt={related.image?.alt || related.title}
-                              title={related.title}
-                              fill
-                              className="object-cover group-hover:scale-105 transition-transform duration-300"
-                            />
-                          ) : (
-                            <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-blue-200" />
-                          )}
+                {relatedPosts.map((related) => (
+                  <Link href={`/blog/${related.slug}`} key={related.slug}>
+                    <article className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group cursor-pointer">
+                      <div className="aspect-video relative bg-gray-100 overflow-hidden">
+                        {related.image ? (
+                          <BlogCover
+                            src={related.image}
+                            alt={related.title}
+                            title={related.title}
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                        ) : (
+                          <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-blue-200" />
+                        )}
+                      </div>
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-3 gap-2">
+                          <span className="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+                            {related.category || 'Article'}
+                          </span>
+                          <span className="text-sm text-gray-500 shrink-0">
+                            {formatBlogDate(related.date)}
+                          </span>
                         </div>
-                        <div className="p-6">
-                          <div className="flex items-center justify-between mb-3 gap-2">
-                            <span className="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
-                              {related.category?.name ?? 'Article'}
-                            </span>
-                            <span className="text-sm text-gray-500 shrink-0">
-                              {formatDate(related.firstPublishedAt)}
-                            </span>
-                          </div>
-                          <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                            {related.title}
-                          </h3>
-                          <p className="text-gray-600 leading-relaxed text-sm mb-4 line-clamp-3">
-                            {related.description}
-                          </p>
-                          <div className="flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors group-hover:translate-x-1">
-                            Read More →
-                          </div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                          {related.title}
+                        </h3>
+                        <p className="text-gray-600 leading-relaxed text-sm mb-4 line-clamp-3">
+                          {related.description}
+                        </p>
+                        <div className="flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors group-hover:translate-x-1">
+                          Read More →
                         </div>
-                      </article>
-                    </Link>
-                  )
-                })}
+                      </div>
+                    </article>
+                  </Link>
+                ))}
               </div>
             </div>
           </section>

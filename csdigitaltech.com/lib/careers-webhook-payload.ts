@@ -14,6 +14,36 @@ type CareersWebhookInput = {
   resumeDownloadUrl?: string
 }
 
+export type CareersWebhookPayload = {
+  formType: string
+  source: 'careers'
+  formId?: string
+  submittedAt: string
+  name: string
+  email: string
+  phone: string
+  projectType: string
+  role: string
+  message: string
+  whyCornerstone: string
+  linkedin?: string
+  securityVerificationStatus: string
+  applicationVerificationStatus: string
+  applicationStatus: string
+  verificationNote: string
+  securityAnswer: string
+  verificationAnswer: string
+  captchaAnswer: string
+  resume?: string
+  resumeUrl?: string
+  resumeLink?: string
+  resumeDownloadUrl?: string
+  resumeFileName?: string
+  resumeFileMime?: string
+  resumeFileBase64?: string
+  hasUploadedResume?: boolean
+}
+
 export function mapCareersFormId(formId?: string, projectType?: string): string | undefined {
   const raw = String(formId || projectType || '')
     .trim()
@@ -31,12 +61,12 @@ export function mapCareersFormId(formId?: string, projectType?: string): string 
   return raw
 }
 
-export function buildCareersWebhookPayload(input: CareersWebhookInput) {
+export function buildCareersWebhookPayload(input: CareersWebhookInput): CareersWebhookPayload {
   const verifiedStatus = '✅ Verified'
   const trimmedLinkedin = String(input.linkedin || '').trim()
   const trimmedResumeLink = String(input.resumeLink || '').trim()
   const trimmedResumeFileName = String(input.resumeFileName || '').trim()
-  const resumeAccessUrl = input.resumeDownloadUrl || trimmedResumeLink
+  const resumeAccessUrl = String(input.resumeDownloadUrl || trimmedResumeLink || '').trim()
 
   return {
     formType: input.formType || 'csdigitaltech-careers',
@@ -67,18 +97,23 @@ export function buildCareersWebhookPayload(input: CareersWebhookInput) {
       : {}),
     ...(resumeAccessUrl
       ? {
-          resumeLink: resumeAccessUrl,
+          resume: resumeAccessUrl,
           resumeUrl: resumeAccessUrl,
-          resume: resumeAccessUrl
+          resumeLink: resumeAccessUrl,
+          resumeDownloadUrl: resumeAccessUrl
         }
-      : {}),
+      : trimmedResumeFileName
+        ? { resume: trimmedResumeFileName }
+        : {}),
     ...(input.resumeFileMime ? { resumeFileMime: input.resumeFileMime } : {})
   }
 }
 
 export function wrapCareersWebhookPayload(payload: Record<string, unknown>) {
+  const { resumeFileBase64, ...withoutFile } = payload
+
   return {
     ...payload,
-    body: payload
+    body: withoutFile
   }
 }

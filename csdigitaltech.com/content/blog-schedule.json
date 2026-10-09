@@ -1,0 +1,15 @@
+{
+  "enabled": false,
+  "timezone": "Asia/Kolkata",
+  "frequency": "interval",
+  "intervalMinutes": 5,
+  "time": "09:30",
+  "days": ["tuesday", "friday"],
+  "dates": [],
+  "runAt": "",
+  "postsPerRun": 1,
+  "gapMinutes": 5,
+  "maxRuns": null,
+  "mode": "publish",
+  "_help": "Edit this file and commit it to main. GitHub reads it every 5 minutes. mode check asks Gemini to review every blog on the content page. mode publish writes new posts. frequency: interval (every intervalMinutes), daily (every day at time), weekly (on days at time), dates (each YYYY-MM-DD in dates, at time), once (at runAt). time is HH:mm in timezone. days are monday through sunday. postsPerRun and gapMinutes apply only when mode is publish. maxRuns stops after that many successful runs; use null for no limit. This test checks all blog content once. Reset runCount to 0 in content/blog-schedule-state.json to run it again."
+}

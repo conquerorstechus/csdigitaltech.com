@@ -1,5 +1,9 @@
 import { NextResponse } from 'next/server'
-import { getCareersResumeApiPath, storeCareersResume } from '@/lib/careers-resume-store'
+import {
+  canPersistCareersResume,
+  getStoredResumeAccessUrl,
+  storeCareersResume
+} from '@/lib/careers-resume-store'
 import { buildCareersWebhookPayload, wrapCareersWebhookPayload } from '@/lib/careers-webhook-payload'
 import { validateCareersApplication } from '@/lib/careers-verification'
 
@@ -40,6 +44,7 @@ export async function POST(request: Request) {
       formType,
       formId,
       resumeLink,
+      portfolio,
       resumeFileName,
       resumeFileMime,
       resumeFileBase64,
@@ -58,7 +63,7 @@ export async function POST(request: Request) {
         whyCornerstone,
         message,
         linkedin,
-        resumeLink,
+        resumeLink: resumeLink || portfolio,
         resumeFileName,
         captchaToken,
         captchaAnswer
@@ -76,24 +81,28 @@ export async function POST(request: Request) {
 
     const webhookTarget = isCareers ? CAREERS_WEBHOOK_URL : WEBHOOK_URL
     const trimmedWhyCornerstone = String(whyCornerstone || message || '').trim()
-    const trimmedResumeLink = String(resumeLink || '').trim()
+    const trimmedResumeLink = String(resumeLink || portfolio || '').trim()
     const trimmedResumeFileName = String(resumeFileName || '').trim()
     const trimmedResumeBase64 = String(resumeFileBase64 || '').trim()
 
     let resumeDownloadUrl = trimmedResumeLink || undefined
 
-    if (isCareers && trimmedResumeFileName && trimmedResumeBase64 && !process.env.VERCEL) {
-      try {
-        const storedResume = await storeCareersResume(
-          trimmedResumeBase64,
-          trimmedResumeFileName,
-          String(resumeFileMime || 'application/pdf')
+    if (isCareers && trimmedResumeFileName && trimmedResumeBase64) {
+      if (!canPersistCareersResume()) {
+        console.error(
+          'Careers resume file was not stored because BLOB_READ_WRITE_TOKEN is not set. The file is still sent as an email attachment.'
         )
-        resumeDownloadUrl = storedResume.downloadUrl.startsWith('http')
-          ? storedResume.downloadUrl
-          : `${getSiteOrigin(request)}${storedResume.downloadUrl}`
-      } catch (storageError) {
-        console.error('Careers resume storage failed (non-critical, base64 sent via webhook):', storageError)
+      } else {
+        try {
+          const storedResume = await storeCareersResume(
+            trimmedResumeBase64,
+            trimmedResumeFileName,
+            String(resumeFileMime || 'application/pdf')
+          )
+          resumeDownloadUrl = getStoredResumeAccessUrl(storedResume, getSiteOrigin(request))
+        } catch (storageError) {
+          console.error('Careers resume storage failed (non-critical, base64 sent via webhook):', storageError)
+        }
       }
     }
 

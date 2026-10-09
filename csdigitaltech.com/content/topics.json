@@ -1,0 +1,74 @@
+[
+  {
+    "keyword": "custom web development",
+    "title": "How to Plan a Custom Website for a Growing Business",
+    "category": "Web Development",
+    "status": "used"
+  },
+  {
+    "keyword": "cloud migration",
+    "title": "How to Prepare a Business for Cloud Migration",
+    "category": "Cloud Services",
+    "status": "used"
+  },
+  {
+    "keyword": "SaaS vs custom software",
+    "title": "SaaS or Custom Software: How to Choose for Your Business",
+    "category": "SaaS",
+    "status": "used"
+  },
+  {
+    "keyword": "digital marketing",
+    "title": "Digital Marketing Basics for Technology Companies",
+    "category": "Digital Marketing",
+    "status": "used"
+  },
+  {
+    "keyword": "mobile app development",
+    "title": "What to Look for in a Mobile App Development Partner",
+    "category": "Mobile Apps",
+    "status": "used"
+  },
+  {
+    "keyword": "website performance",
+    "title": "Why Website Performance Matters for Business Sites",
+    "category": "Web Development",
+    "status": "used"
+  },
+  {
+    "keyword": "ecommerce development",
+    "title": "Ecommerce Development Choices for Growing Brands",
+    "category": "Ecommerce",
+    "status": "used"
+  },
+  {
+    "keyword": "application security",
+    "title": "Security Basics for Cloud-Hosted Business Applications",
+    "category": "Cloud Services",
+    "status": "unused"
+  },
+  {
+    "keyword": "AI in business software",
+    "title": "Practical AI Features to Consider in Business Software",
+    "category": "AI",
+    "status": "unused"
+  },
+  {
+    "keyword": "IT consulting",
+    "title": "How IT Consulting Shapes a Software Project",
+    "category": "IT Consulting",
+    "status": "unused"
+  },
+  {
+    "keyword": "content management systems",
+    "title": "CMS or Custom Website: How to Decide",
+    "category": "Web Development",
+    "status": "unused"
+  },
+  {
+    "keyword": "website maintenance",
+    "title": "How to Maintain a Business Website After Launch",
+    "category": "Web Development",
+    "status": "unused"
+  }
+]

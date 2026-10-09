@@ -1,3 +1,22 @@
+const fs = require('fs')
+const path = require('path')
+const matter = require('gray-matter')
+
+function blogPostPaths() {
+  const dir = path.join(__dirname, 'content', 'blog')
+  if (!fs.existsSync(dir)) return []
+
+  return fs
+    .readdirSync(dir)
+    .filter((file) => file.endsWith('.md'))
+    .map((file) => {
+      const { data } = matter(fs.readFileSync(path.join(dir, file), 'utf8'))
+      const slug = typeof data.slug === 'string' && data.slug.trim() ? data.slug.trim() : file.replace(/\.md$/, '')
+      const lastmod = data.updated || data.date
+      return { slug, lastmod }
+    })
+}
+
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
   siteUrl: process.env.SITE_URL || 'https://www.conquerorstech.com',
@@ -27,6 +46,23 @@ module.exports = {
   changefreq: 'weekly',
   priority: 0.7,
   sitemapSize: 5000,
+  additionalPaths: async (config) => {
+    const posts = blogPostPaths()
+    const entries = []
+
+    for (const post of posts) {
+      const transformed = await config.transform(config, `/blog/${post.slug}`)
+      if (!transformed) continue
+      let lastmod = transformed.lastmod
+      if (post.lastmod) {
+        const parsed = new Date(post.lastmod)
+        if (!Number.isNaN(parsed.getTime())) lastmod = parsed.toISOString()
+      }
+      entries.push({ ...transformed, lastmod })
+    }
+
+    return entries
+  },
   transform: async (config, path) => {
     // Custom transformation for different page types
     let priority = config.priority;

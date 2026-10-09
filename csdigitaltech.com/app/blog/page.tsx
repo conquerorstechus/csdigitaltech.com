@@ -1,14 +1,15 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { User, ArrowRight } from 'lucide-react'
-import { formatDate } from '@opinly/next'
-import type { Post } from '@opinly/backend'
-import { getComprehensiveMetadata, getStructuredData } from '@/lib/seo-metadata'
+import { BlogCover } from '@/components/blog/BlogCover'
 import StructuredData from '@/components/ui/StructuredData'
-import { opinly } from '@/clients/opinly'
-import { getOpinlyImageUrl } from '@/lib/opinly-utils'
+import {
+  formatBlogDate,
+  getAllPosts,
+  getSiteUrl,
+} from '@/lib/blog'
+import { getComprehensiveMetadata, getStructuredData } from '@/lib/seo-metadata'
 
-export const revalidate = 3600
+const blogCanonical = `${getSiteUrl()}/blog`
 
 export const metadata = getComprehensiveMetadata(
   'Blog - Latest Tech Insight Articles',
@@ -37,27 +38,12 @@ export const metadata = getComprehensiveMetadata(
     'technology consulting articles',
     'IT solutions blog',
   ],
-  'WebPage'
+  'WebPage',
+  blogCanonical
 )
 
-async function getPublishedPosts(): Promise<Post[]> {
-  try {
-    const result = await opinly.posts({ limit: 24, sort: 'newest' })
-    return result.data
-  } catch (error) {
-    const message = error instanceof Error ? error.message : String(error)
-    console.error('[blog] Failed to fetch Opinly posts:', message)
-    if (!process.env.OPINLY_API_KEY?.trim()) {
-      console.error(
-        '[blog] OPINLY_API_KEY is missing in this environment. Set it in Vercel and redeploy.'
-      )
-    }
-    return []
-  }
-}
-
-export default async function BlogPage() {
-  const posts = await getPublishedPosts()
+export default function BlogPage() {
+  const posts = getAllPosts()
 
   const structuredData = getStructuredData(
     'Blog - Latest Technology Insights & Software Development Articles',
@@ -92,26 +78,24 @@ export default async function BlogPage() {
               <div className="text-center py-16">
                 <p className="text-gray-600 text-lg mb-2">No published articles yet.</p>
                 <p className="text-gray-500 text-sm">
-                  Check back soon, or verify your Opinly API configuration.
+                  New articles will appear here once they are added to the blog.
                 </p>
               </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {posts.map((post) => {
-                  const imageSrc = getOpinlyImageUrl(post.image?.fileKey)
-                  const categoryName = post.category?.name ?? 'Article'
-                  const publishedLabel = formatDate(post.firstPublishedAt)
+                  const categoryName = post.category || 'Article'
+                  const publishedLabel = formatBlogDate(post.date)
 
                   return (
                     <Link href={`/blog/${post.slug}`} key={post.slug} className="flex">
                       <article className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group cursor-pointer flex flex-col w-full h-full">
                         <div className="aspect-video relative bg-gray-100 overflow-hidden shrink-0">
-                          {imageSrc ? (
-                            <Image
-                              src={imageSrc}
-                              alt={post.image?.alt || post.title}
+                          {post.image ? (
+                            <BlogCover
+                              src={post.image}
+                              alt={post.title}
                               title={post.title}
-                              fill
                               className="object-cover group-hover:scale-105 transition-transform duration-300"
                             />
                           ) : (
@@ -135,10 +119,10 @@ export default async function BlogPage() {
                           </p>
                           <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                             <div className="flex items-center gap-4 text-sm text-gray-500">
-                              {post.author?.name ? (
+                              {post.author ? (
                                 <div className="flex items-center">
                                   <User className="w-4 h-4 mr-1 text-blue-500" />
-                                  {post.author.name}
+                                  {post.author}
                                 </div>
                               ) : null}
                             </div>
@@ -169,9 +153,15 @@ export default async function BlogPage() {
               <input
                 type="email"
                 placeholder="Enter your email"
+                autoComplete="email"
+                suppressHydrationWarning
                 className="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-blue-300 focus:outline-none"
               />
-              <button className="px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+              <button
+                type="button"
+                suppressHydrationWarning
+                className="px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+              >
                 Subscribe
               </button>
             </div>
