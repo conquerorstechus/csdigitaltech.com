@@ -6,7 +6,7 @@ description: >-
 slug: what-to-look-for-in-a-mobile-app-development-partner
 date: '2026-10-06'
 updated: '2026-10-06'
-image: /blog/enterprise-mobility-cover.webp
+image: /blog/what-to-look-for-in-a-mobile-app-development-partner-cover.jpg
 category: Mobile Apps
 author: Cornerstone Digital Technologies
 ---

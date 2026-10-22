@@ -141,7 +141,7 @@ jobs:
           echo "Published ${url}"
           git pull --rebase --autostash origin main
           BLOG_URL="$url" node scripts/check-blog-schedule.mjs --mark
-          git add content/blog content/topics.json content/blog-schedule-state.json
+          git add content/blog content/topics.json content/blog-schedule-state.json public/blog
           git commit -m "auto: blog post"
           git push origin main
           echo "Pushed ${url}. Next post is due 14 days after this successful run."

@@ -189,34 +189,98 @@ function pickRelated(topic: Topic, posts: ExistingPost[], count: number): Existi
   return ranked.slice(0, Math.min(count, ranked.length)).map((item) => item.post)
 }
 
-function imageFor(topic: Topic): string {
-  const text = `${topic.category} ${topic.keyword}`.toLowerCase()
-  const choices: Array<[RegExp, string]> = [
-    [/saas/, 'software-as-a-service-cover.webp'],
-    [/cloud|security/, 'cloud-services-cover.webp'],
-    [/mobile|app/, 'enterprise-mobility-cover.webp'],
-    [/market/, 'digital-transformation-cover.webp'],
-    [/ai|architecture/, 'software-architecture-cover.webp'],
-    [/consult|it /, 'it-services-cover.webp'],
-    [/ecommerce|commerce/, 'digital-solutions-cover.webp'],
-    [/web|cms|website/, 'digital-solutions-cover.webp'],
-  ]
+const coverChoices: Array<[RegExp, string]> = [
+  [/saas/, 'software-as-a-service-cover.webp'],
+  [/cloud|security/, 'cloud-services-cover.webp'],
+  [/mobile|app/, 'enterprise-mobility-cover.webp'],
+  [/market/, 'digital-transformation-cover.webp'],
+  [/ai|architecture/, 'software-architecture-cover.webp'],
+  [/consult|it /, 'it-services-cover.webp'],
+  [/ecommerce|commerce/, 'digital-solutions-cover.webp'],
+  [/web|cms|website/, 'digital-solutions-cover.webp'],
+]
+const imageModels = ['imagen-4.0-generate-001', 'imagen-4.0-fast-generate-001']
 
-  for (const [pattern, filename] of choices) {
-    if (pattern.test(text) && fs.existsSync(path.join(publicBlogDir, filename))) {
+function listCoverFiles(): string[] {
+  if (!fs.existsSync(publicBlogDir)) return []
+  return fs
+    .readdirSync(publicBlogDir)
+    .filter((file) => /\.(webp|png|jpe?g|gif|avif)$/i.test(file))
+    .sort()
+}
+
+function usedImagePaths(): Map<string, number> {
+  const counts = new Map<string, number>()
+  if (!fs.existsSync(blogDir)) return counts
+  for (const file of fs.readdirSync(blogDir).filter((name) => name.endsWith('.md'))) {
+    const { data } = matter(fs.readFileSync(path.join(blogDir, file), 'utf8'))
+    const image = typeof data.image === 'string' ? data.image.trim() : ''
+    if (!image) continue
+    counts.set(image, (counts.get(image) ?? 0) + 1)
+  }
+  return counts
+}
+
+function extensionFor(mimeType: string | undefined): string {
+  if (mimeType?.includes('jpeg') || mimeType?.includes('jpg')) return 'jpg'
+  if (mimeType?.includes('webp')) return 'webp'
+  return 'png'
+}
+
+async function generateCover(client: GoogleGenAI, topic: Topic, slug: string): Promise<string | undefined> {
+  const prompt = `Editorial 16:9 photograph for a business technology article titled "${topic.title}". Category: ${topic.category}. Show one specific scene that matches this title and would not be confused with a generic cloud or office photo. No text, letters, logos, or watermarks.`
+
+  for (const model of imageModels) {
+    try {
+      const response = await client.models.generateImages({
+        model,
+        prompt,
+        config: {
+          numberOfImages: 1,
+          aspectRatio: '16:9',
+        },
+      })
+      const image = response.generatedImages?.[0]?.image
+      if (!image?.imageBytes) {
+        console.error(`Cover model ${model} returned no image.`)
+        continue
+      }
+      const filename = `${slug}-cover.${extensionFor(image.mimeType)}`
+      fs.mkdirSync(publicBlogDir, { recursive: true })
+      fs.writeFileSync(path.join(publicBlogDir, filename), Buffer.from(image.imageBytes, 'base64'))
+      console.log(`Created a unique cover with ${model}: /blog/${filename}`)
       return `/blog/${filename}`
+    } catch (error) {
+      console.error(`Cover model ${model} failed: ${errorText(error)}`)
     }
   }
 
-  const fallback = fs.existsSync(publicBlogDir)
-    ? fs
-        .readdirSync(publicBlogDir)
-        .filter((file) => /\.(webp|png|jpe?g|gif|avif)$/i.test(file))
-        .sort()[0]
-    : undefined
+  return undefined
+}
 
-  if (!fallback) fail('No image found in public/blog, so a new post would have a broken cover.')
-  return `/blog/${fallback}`
+async function imageFor(topic: Topic, slug: string, client: GoogleGenAI): Promise<string> {
+  const named = listCoverFiles().find((file) => file.startsWith(`${slug}-cover.`))
+  if (named) return `/blog/${named}`
+
+  const used = usedImagePaths()
+  const text = `${topic.category} ${topic.keyword}`.toLowerCase()
+  for (const [pattern, filename] of coverChoices) {
+    const image = `/blog/${filename}`
+    if (pattern.test(text) && !used.has(image) && fs.existsSync(path.join(publicBlogDir, filename))) {
+      return image
+    }
+  }
+
+  const unused = listCoverFiles().find((file) => !used.has(`/blog/${file}`))
+  if (unused) return `/blog/${unused}`
+
+  const created = await generateCover(client, topic, slug)
+  if (created) return created
+
+  const leastUsed = [...used.entries()].sort((a, b) => a[1] - b[1] || a[0].localeCompare(b[0]))[0]
+  if (!leastUsed) fail('No image found in public/blog, so a new post would have a broken cover.')
+  console.error(`Every cover is already used and a new image could not be created. Reusing ${leastUsed[0]}.`)
+  return leastUsed[0]
 }
 
 function postUrl(slug: string): string {
@@ -687,7 +751,7 @@ async function main() {
       slug,
       date,
       updated: date,
-      image: imageFor(topic),
+      image: await imageFor(topic, slug, client),
       category: topic.category,
       author,
     })

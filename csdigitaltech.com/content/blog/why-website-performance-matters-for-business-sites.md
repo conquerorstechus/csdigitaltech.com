@@ -6,7 +6,7 @@ description: >-
 slug: why-website-performance-matters-for-business-sites
 date: '2026-10-06'
 updated: '2026-10-06'
-image: /blog/digital-solutions-cover.webp
+image: /blog/why-website-performance-matters-for-business-sites-cover.jpg
 category: Web Development
 author: Cornerstone Digital Technologies
 ---

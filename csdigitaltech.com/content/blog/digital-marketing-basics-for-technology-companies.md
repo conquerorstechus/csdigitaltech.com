@@ -7,7 +7,7 @@ description: >-
 slug: digital-marketing-basics-for-technology-companies
 date: '2026-10-06'
 updated: '2026-10-06'
-image: /blog/digital-transformation-cover.webp
+image: /blog/digital-marketing-basics-for-technology-companies-cover.jpg
 category: Digital Marketing
 author: Cornerstone Digital Technologies
 ---

@@ -7,7 +7,7 @@ description: >-
 slug: how-to-plan-a-custom-website-for-a-growing-business
 date: '2026-10-01'
 updated: '2026-10-01'
-image: /blog/digital-solutions-cover.webp
+image: /blog/how-to-plan-a-custom-website-for-a-growing-business-cover.jpg
 category: Web Development
 author: Cornerstone Digital Technologies
 ---

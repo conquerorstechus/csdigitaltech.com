@@ -7,7 +7,7 @@ description: >-
 slug: security-basics-for-cloud-hosted-business-applications
 date: '2026-10-22'
 updated: '2026-10-22'
-image: /blog/cloud-services-cover.webp
+image: /blog/security-basics-for-cloud-hosted-business-applications-cover.jpg
 category: Cloud Services
 author: Cornerstone Digital Technologies
 ---

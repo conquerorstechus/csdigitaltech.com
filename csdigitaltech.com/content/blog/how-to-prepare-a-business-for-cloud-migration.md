@@ -7,7 +7,7 @@ description: >-
 slug: how-to-prepare-a-business-for-cloud-migration
 date: '2026-10-06'
 updated: '2026-10-06'
-image: /blog/cloud-services-cover.webp
+image: /blog/how-to-prepare-a-business-for-cloud-migration-cover.jpg
 category: Cloud Services
 author: Cornerstone Digital Technologies
 ---
