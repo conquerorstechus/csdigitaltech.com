@@ -1,8 +1,8 @@
 {
-  "enabled": false,
+  "enabled": true,
   "timezone": "Asia/Kolkata",
   "frequency": "interval",
-  "intervalMinutes": 5,
+  "intervalMinutes": 20160,
   "time": "09:30",
   "days": ["tuesday", "friday"],
   "dates": [],
@@ -11,5 +11,5 @@
   "gapMinutes": 5,
   "maxRuns": null,
   "mode": "publish",
-  "_help": "Edit this file and commit it to main. GitHub reads it every 5 minutes. mode check asks Gemini to review every blog on the content page. mode publish writes new posts. frequency: interval (every intervalMinutes), daily (every day at time), weekly (on days at time), dates (each YYYY-MM-DD in dates, at time), once (at runAt). time is HH:mm in timezone. days are monday through sunday. postsPerRun and gapMinutes apply only when mode is publish. maxRuns stops after that many successful runs; use null for no limit. This test checks all blog content once. Reset runCount to 0 in content/blog-schedule-state.json to run it again."
+  "_help": "Edit this file and commit it to main. GitHub wakes the auto-blog workflow every hour and this file decides whether to publish. The live cycle is frequency interval and intervalMinutes 20160, which is 14 days after the last successful publication in content/blog-schedule-state.json. Timezone Asia/Kolkata is used for clock-based frequencies; the 14-day gap is measured from lastRunAt and does not observe daylight saving. mode publish writes one new post. postsPerRun must stay 1 so a retry cannot publish a backlog. maxRuns null means the cycle does not end. A failed run must not update lastRunAt. Resetting lastRunAt makes the next post due 14 days after that timestamp."
 }

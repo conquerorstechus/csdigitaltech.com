@@ -696,7 +696,9 @@ async function main() {
     fs.writeFileSync(target, file)
     topics[index] = { ...topic, status: 'used' }
     writeTopics(topics)
+    const publishedUrl = postUrl(slug)
     console.log(path.relative(root, target).split(path.sep).join('/'))
+    console.log(`PUBLISHED_URL=${publishedUrl}`)
     return
   }
 

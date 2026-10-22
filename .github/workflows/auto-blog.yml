@@ -1,0 +1,154 @@
+# Publishing time, date, and frequency are set in
+# csdigitaltech.com/content/blog-schedule.json.
+# The cron only wakes GitHub once an hour. The schedule file decides whether
+# 14 days have passed since the last successful post. The job exits immediately
+# when no post is due. A failed publish does not advance lastRunAt, so the next
+# wake retries one post and does not publish a backlog.
+name: Auto blog
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Publish now, even if the schedule file says to wait
+        required: false
+        default: false
+        type: boolean
+      frequency:
+        description: "Optional override: interval, daily, weekly, dates, or once. Blank uses blog-schedule.json"
+        required: false
+        default: ""
+        type: string
+      time:
+        description: "Optional override HH:mm in the schedule timezone. Blank uses the file"
+        required: false
+        default: ""
+        type: string
+      days:
+        description: "Optional override weekdays, comma-separated. Blank uses the file"
+        required: false
+        default: ""
+        type: string
+      dates:
+        description: "Optional override dates, comma-separated YYYY-MM-DD. Blank uses the file"
+        required: false
+        default: ""
+        type: string
+      run_at:
+        description: "Optional one-time ISO time, such as 2026-10-06T11:30:00+05:30"
+        required: false
+        default: ""
+        type: string
+      interval_minutes:
+        description: "Optional interval in minutes (5 or more). Blank uses the file"
+        required: false
+        default: ""
+        type: string
+      posts_per_run:
+        description: "Optional number of posts for this run (1-5). Blank uses the file"
+        required: false
+        default: ""
+        type: string
+      gap_minutes:
+        description: "Optional minutes between posts in this run. Blank uses the file"
+        required: false
+        default: ""
+        type: string
+  schedule:
+    - cron: "0 * * * *"
+
+concurrency:
+  group: auto-blog
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Decide whether to publish
+        id: schedule
+        working-directory: csdigitaltech.com
+        env:
+          BLOG_FORCE: ${{ inputs.force && 'true' || '' }}
+          BLOG_FREQUENCY: ${{ inputs.frequency }}
+          BLOG_TIME: ${{ inputs.time }}
+          BLOG_DAYS: ${{ inputs.days }}
+          BLOG_DATES: ${{ inputs.dates }}
+          BLOG_RUN_AT: ${{ inputs.run_at }}
+          BLOG_INTERVAL_MINUTES: ${{ inputs.interval_minutes }}
+          BLOG_POSTS_PER_RUN: ${{ inputs.posts_per_run }}
+          BLOG_GAP_MINUTES: ${{ inputs.gap_minutes }}
+        run: node scripts/check-blog-schedule.mjs
+
+      - name: Install dependencies
+        if: steps.schedule.outputs.publish == 'true'
+        working-directory: csdigitaltech.com
+        run: npm ci
+
+      - name: Check all blog content with Gemini
+        if: steps.schedule.outputs.publish == 'true' && steps.schedule.outputs.mode == 'check'
+        working-directory: csdigitaltech.com
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-3.5-flash-lite
+          BLOG_SLOT: ${{ steps.schedule.outputs.slot }}
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          npx tsx scripts/check-blog-content.ts
+          node scripts/check-blog-schedule.mjs --mark
+          git add content/blog-schedule-state.json
+          git diff --cached --quiet || git commit -m "auto: checked all blog content"
+          git push origin main
+
+      - name: Publish scheduled posts
+        if: steps.schedule.outputs.publish == 'true' && steps.schedule.outputs.mode != 'check'
+        working-directory: csdigitaltech.com
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-3.5-flash-lite
+          POSTS: ${{ steps.schedule.outputs.posts }}
+          BLOG_SLOT: ${{ steps.schedule.outputs.slot }}
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          case "$POSTS" in
+            1) ;;
+            *) echo "This schedule publishes one post per run." >&2; exit 1 ;;
+          esac
+          npx tsx scripts/generate-post.ts | tee /tmp/generate-post.log
+          url=$(grep '^PUBLISHED_URL=' /tmp/generate-post.log | tail -n 1 | cut -d= -f2- || true)
+          rm -f /tmp/generate-post.log
+          if [ -z "$url" ]; then
+            echo "Generation finished without a publication URL, so this run was not recorded." >&2
+            exit 1
+          fi
+          echo "Published ${url}"
+          git pull --rebase --autostash origin main
+          BLOG_URL="$url" node scripts/check-blog-schedule.mjs --mark
+          git add content/blog content/topics.json content/blog-schedule-state.json
+          git commit -m "auto: blog post"
+          git push origin main
+          echo "Pushed ${url}. Next post is due 14 days after this successful run."
+
+      - name: Report a failed publish
+        if: failure() && steps.schedule.outputs.publish == 'true' && steps.schedule.outputs.mode != 'check'
+        working-directory: csdigitaltech.com
+        run: |
+          echo "Blog publish failed. The last successful publication time was not advanced."
+          echo "The next hourly check will retry a single post. Missed cycles are not published as a batch."

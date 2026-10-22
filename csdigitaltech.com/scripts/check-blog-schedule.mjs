@@ -6,9 +6,11 @@
  *
  *   node scripts/check-blog-schedule.mjs
  *   node scripts/check-blog-schedule.mjs --mark
+ *   node scripts/check-blog-schedule.mjs --fail
  *
- * --mark records a run and does not publish. The workflow commits that
- * update together with the new post.
+ * --mark records a successful run and does not publish. The workflow commits
+ * that update together with the new post. --fail records an error without
+ * moving lastRunAt, so a failed run is not treated as a publication.
  */
 import fs from 'fs'
 import path from 'path'
@@ -158,7 +160,8 @@ function loadSchedule() {
   if (schedule.maxRuns != null) schedule.maxRuns = parseCount(schedule.maxRuns, 'maxRuns', 1, 1000)
 
   if (schedule.frequency === 'interval') {
-    schedule.intervalMinutes = parseCount(schedule.intervalMinutes, 'intervalMinutes', 5, 10080)
+    // 44640 minutes is 31 days. 20160 minutes is the 14-day publishing cycle.
+    schedule.intervalMinutes = parseCount(schedule.intervalMinutes, 'intervalMinutes', 5, 44640)
   }
   if (schedule.frequency === 'daily' || schedule.frequency === 'weekly' || schedule.frequency === 'dates') {
     schedule.clock = parseClock(schedule.time, 'time')
@@ -186,13 +189,16 @@ function loadSchedule() {
 
 function loadState() {
   if (!fs.existsSync(statePath)) {
-    return { runCount: 0, lastRunAt: null, lastSlot: null }
+    return { runCount: 0, lastRunAt: null, lastSlot: null, lastStatus: null, lastUrl: null, lastError: null }
   }
   const state = readJson(statePath, 'content/blog-schedule-state.json')
   return {
     runCount: Number.isInteger(state.runCount) ? state.runCount : 0,
     lastRunAt: typeof state.lastRunAt === 'string' ? state.lastRunAt : null,
     lastSlot: typeof state.lastSlot === 'string' ? state.lastSlot : null,
+    lastStatus: typeof state.lastStatus === 'string' ? state.lastStatus : null,
+    lastUrl: typeof state.lastUrl === 'string' ? state.lastUrl : null,
+    lastError: typeof state.lastError === 'string' ? state.lastError : null,
   }
 }
 
@@ -230,14 +236,32 @@ function due(schedule, state, now) {
   return { publish: true, slot, reason: `Scheduled time ${schedule.clock.text} ${schedule.timezone} is open.` }
 }
 
+function writeState(state) {
+  fs.writeFileSync(statePath, `${JSON.stringify(state, null, 2)}\n`)
+}
+
 function mark(slot) {
   if (!slot) fail('A schedule slot is required to record a run.')
   const state = loadState()
   state.runCount += 1
   state.lastRunAt = new Date().toISOString()
   state.lastSlot = slot
-  fs.writeFileSync(statePath, `${JSON.stringify(state, null, 2)}\n`)
+  state.lastStatus = 'success'
+  state.lastError = null
+  const url = envText('BLOG_URL')
+  if (url) state.lastUrl = url
+  writeState(state)
   console.log(`Recorded run ${state.runCount} for ${state.lastSlot}.`)
+  if (state.lastUrl) console.log(`Recorded URL ${state.lastUrl}.`)
+}
+
+function recordFailure(message) {
+  const state = loadState()
+  state.lastStatus = 'failed'
+  state.lastError = (message || 'Blog publish failed.').slice(0, 500)
+  state.lastFailureAt = new Date().toISOString()
+  writeState(state)
+  console.log(`Recorded a failed attempt at ${state.lastFailureAt}. lastRunAt was not changed.`)
 }
 
 function main() {
@@ -247,6 +271,11 @@ function main() {
 
   if (process.argv.includes('--mark')) {
     mark(envText('BLOG_SLOT'))
+    return
+  }
+
+  if (process.argv.includes('--fail')) {
+    recordFailure(envText('BLOG_ERROR'))
     return
   }
 

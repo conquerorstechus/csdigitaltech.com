@@ -1,5 +1,8 @@
 {
-  "runCount": 6,
-  "lastRunAt": "2026-10-06T07:22:27.629Z",
-  "lastSlot": "interval:2026-10-06T07:21:47.432Z"
+  "runCount": 7,
+  "lastRunAt": "2026-10-22T07:54:32.296Z",
+  "lastSlot": "interval:2026-10-22T07:54:32.296Z",
+  "lastStatus": "success",
+  "lastUrl": "https://csdigitaltech.com/blog/security-basics-for-cloud-hosted-business-applications",
+  "lastError": null
 }

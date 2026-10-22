@@ -16,4 +16,4 @@ Disallow: /404
 Disallow: /500
 
 # Sitemap
-Sitemap: https://www.conquerorstech.com/sitemap.xml
+Sitemap: https://csdigitaltech.com/sitemap.xml
