@@ -10,7 +10,7 @@ import ScrollToTop from "@/components/ui/ScrollToTop"
 import PageTransition from "@/components/ui/PageTransition"
 import Loader from "../components/ui/loader"
 import LeadConnectorWidget from "@/components/ui/LeadConnectorWidget"
-import Script from "next/script"
+import CookieConsent from "@/components/cookie-consent/CookieConsent"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -54,27 +54,16 @@ export default function RootLayout({
         <meta name="google-site-verification" content="ADSA5Li8wGXyc8528cNUQt68EJo2c6RNHx3nV5pSX7Q" />
       </head>
       <body className="antialiased">
-        <Loader />
-        <Header />
-        {children}
-        <Footer />
-        <ScrollToTop />
-        <LeadConnectorWidget />
-        {/* <PageTransition /> */}
-        {/* Google Analytics */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-S0TVKR1DTW"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-S0TVKR1DTW');
-          `}
-        </Script>
+        <CookieConsent>
+          <Loader />
+          <Header />
+          {children}
+          <Footer />
+          <ScrollToTop />
+          <LeadConnectorWidget />
+          {/* <PageTransition /> */}
+          {/* Optional analytics loads only after cookie consent. */}
+        </CookieConsent>
       </body>
     </html>
   )

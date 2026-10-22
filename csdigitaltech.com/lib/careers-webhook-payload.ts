@@ -67,6 +67,7 @@ export function buildCareersWebhookPayload(input: CareersWebhookInput): CareersW
   const trimmedResumeLink = String(input.resumeLink || '').trim()
   const trimmedResumeFileName = String(input.resumeFileName || '').trim()
   const resumeAccessUrl = String(input.resumeDownloadUrl || trimmedResumeLink || '').trim()
+  const hasResumeUrl = /^https?:\/\//i.test(resumeAccessUrl)
 
   return {
     formType: input.formType || 'csdigitaltech-careers',
@@ -95,16 +96,14 @@ export function buildCareersWebhookPayload(input: CareersWebhookInput): CareersW
           ...(input.resumeFileBase64 ? { resumeFileBase64: input.resumeFileBase64 } : {})
         }
       : {}),
-    ...(resumeAccessUrl
+    ...(hasResumeUrl
       ? {
           resume: resumeAccessUrl,
           resumeUrl: resumeAccessUrl,
           resumeLink: resumeAccessUrl,
           resumeDownloadUrl: resumeAccessUrl
         }
-      : trimmedResumeFileName
-        ? { resume: trimmedResumeFileName }
-        : {}),
+      : {}),
     ...(input.resumeFileMime ? { resumeFileMime: input.resumeFileMime } : {})
   }
 }

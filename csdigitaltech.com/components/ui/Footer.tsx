@@ -8,8 +8,11 @@ import {
   FaInstagram,
   FaLinkedinIn
 } from 'react-icons/fa'
+import { useCookieConsent } from '@/components/cookie-consent/CookieConsentProvider'
 
 const Footer = () => {
+  const { openSettings } = useCookieConsent()
+
   return (
     <footer className='relative bg-[#262051] text-white pt-16 pb-8 overflow-hidden'>
       {/* Background Image */}
@@ -154,9 +157,19 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section - Copyright & Privacy */}
-        <div className='border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center'>
-          <Link href='/privacy-policy' className='text-sm text-white'>Privacy Policy</Link>
-          <div className='text-sm text-white mt-4 md:mt-0'>
+        <div className='border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4'>
+          <div className='flex flex-wrap items-center justify-center gap-x-6 gap-y-2'>
+            <Link href='/privacy-policy' className='text-sm text-white'>Privacy Policy</Link>
+            <button
+              type='button'
+              id='footer-cookie-settings'
+              onClick={openSettings}
+              className='text-sm text-white hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm'
+            >
+              Cookie Settings
+            </button>
+          </div>
+          <div className='text-sm text-white mt-4 md:mt-0 text-center md:text-right'>
             {/* © 2010–2025 All Rights Reserved. Powered by Cornerstone Digital Technologies LLC (USA) & Cornerstone Digital Technologies Pvt. Ltd. (USA). */}
             © 2010–2026 All Rights Reserved. Powered by Cornerstone Digital Technologies LLC.
 

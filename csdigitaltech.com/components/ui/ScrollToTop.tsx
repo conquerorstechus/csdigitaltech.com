@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from 'react'
 import { ChevronUp } from 'lucide-react'
+import { useCookieConsent } from '@/components/cookie-consent/CookieConsentProvider'
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false)
+  const { showBanner } = useCookieConsent()
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -31,7 +33,8 @@ const ScrollToTop = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 w-12 h-12 bg-[#1a1a2e] text-white rounded-lg shadow-lg hover:bg-[#16213e] transition-all duration-300 z-50 flex items-center justify-center"
+          className={`fixed right-4 md:right-8 w-12 h-12 bg-[#1a1a2e] text-white rounded-lg shadow-lg hover:bg-[#16213e] transition-all duration-300 z-50 flex items-center justify-center ${showBanner ? '' : 'bottom-8'}`}
+          style={showBanner ? { bottom: 'calc(var(--cookie-banner-height, 8rem) + 1rem)' } : undefined}
           aria-label="Scroll to top"
         >
           <ChevronUp className="w-6 h-6" />
