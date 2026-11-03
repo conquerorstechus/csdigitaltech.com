@@ -5,6 +5,7 @@ import { ArrowRight, Calendar, Check, Layers, Play, type LucideIcon } from "luci
 import { Button } from "@/components/ui/button"
 import { cn, SCHEDULE_APPOINTMENT_URL } from "@/lib/utils"
 import { type DynamicPricingFeatureIcon, type DynamicPricingServiceContent, type DynamicPricingTier } from "@/components/pricing/dynamic-pricing-data"
+import pricingData from "@/data/pricing.json"
 
 type PackagePlan = {
   id: "starter" | "standard" | "plus"
@@ -101,7 +102,7 @@ export function PackagesSection({
                     <span className="text-sm font-medium text-foreground">Carousel Posts</span>
                   </div>
                   <span className="shrink-0 rounded-full border border-border bg-muted px-2.5 py-0.5 text-xs text-muted-foreground">
-                    $5 extra per post
+                    ${pricingData.addOns.carouselPosts.pricePerPost} extra per post
                   </span>
                 </div>
               </div>

@@ -20,6 +20,7 @@ import {
   ShoppingCart,
 } from "lucide-react"
 import { usePersistedCheckoutCart } from "@/hooks/use-persisted-checkout-cart"
+import pricingData from "@/data/pricing.json"
 
 type ServiceQuantityOption = {
   quantity: number
@@ -36,10 +37,7 @@ interface ServiceCardConfig {
   description: string
   badge: string
   badgeColor: string
-  basePrice: number
-  /** Optional display-only range for card header price text. */
-  displayPriceRange?: string
-  quantityOptions: ServiceQuantityOption[]
+  pricingKey: keyof typeof pricingData.services | "carouselPosts"
   link: string
   category: string
 }
@@ -53,13 +51,7 @@ const serviceCardsData: ServiceCardConfig[] = [
       "4, 8, or 12 posts per month for 2 channels (FB/Insta)—on-brand static posts with captions and hashtags.",
     badge: "SOCIAL MEDIA",
     badgeColor: "bg-blue-100 text-blue-700",
-    basePrice: 99,
-    displayPriceRange: "$99–$199",
-    quantityOptions: [
-      { quantity: 4, price: 99 },
-      { quantity: 8, price: 149 },
-      { quantity: 12, price: 199 },
-    ],
+    pricingKey: "posts",
     link: "/services/posts",
     category: "posts",
   },
@@ -70,8 +62,7 @@ const serviceCardsData: ServiceCardConfig[] = [
     description: "Add another social platform to your plan—monthly per channel.",
     badge: "SOCIAL MEDIA",
     badgeColor: "bg-blue-100 text-blue-700",
-    basePrice: 10,
-    quantityOptions: [{ quantity: 1, price: 10, label: "Add another social platform" }],
+    pricingKey: "additional-social-channel",
     link: "/services/posts",
     category: "posts",
   },
@@ -82,13 +73,7 @@ const serviceCardsData: ServiceCardConfig[] = [
     description: "4–8 videos (15–60 sec) per month for Reels, TikTok, and Shorts.",
     badge: "SOCIAL MEDIA",
     badgeColor: "bg-blue-100 text-blue-700",
-    basePrice: 149,
-    displayPriceRange: "$149–$249",
-    quantityOptions: [
-      { quantity: 4, price: 149 },
-      { quantity: 6, price: 199 },
-      { quantity: 8, price: 249 },
-    ],
+    pricingKey: "videos",
     link: "/videos",
     category: "videos",
   },
@@ -99,13 +84,7 @@ const serviceCardsData: ServiceCardConfig[] = [
     description: "2–6 SEO-optimized blog posts per month for your website.",
     badge: "SEO",
     badgeColor: "bg-emerald-100 text-emerald-700",
-    basePrice: 149,
-    displayPriceRange: "$149–$349",
-    quantityOptions: [
-      { quantity: 2, price: 149 },
-      { quantity: 4, price: 249 },
-      { quantity: 6, price: 349 },
-    ],
+    pricingKey: "blogs",
     link: "/services/blogs",
     category: "blogs",
   },
@@ -116,13 +95,7 @@ const serviceCardsData: ServiceCardConfig[] = [
     description: "2–6 custom designed emails per month. Works with any email platform.",
     badge: "EMAIL MARKETING",
     badgeColor: "bg-purple-100 text-purple-700",
-    basePrice: 199,
-    displayPriceRange: "$199–$399",
-    quantityOptions: [
-      { quantity: 2, price: 199 },
-      { quantity: 4, price: 299 },
-      { quantity: 6, price: 399 },
-    ],
+    pricingKey: "emails",
     link: "/services/emails",
     category: "emails",
   },
@@ -132,15 +105,8 @@ const serviceCardsData: ServiceCardConfig[] = [
     icon: <Mail className="w-5 h-5" />,
     description: "Additional carousel post—multi-slide creative for social engagement.",
     badge: "CAROUSEL POSTS",
-    badge: "CAROUSEL  POST",
     badgeColor: "bg-purple-100 text-purple-700",
-    basePrice: 10,
-    displayPriceRange: "$10–$50",
-    quantityOptions: [
-      { quantity: 2, price: 10},
-      { quantity: 5, price: 25 },
-      { quantity: 10, price: 50 },
-    ],
+    pricingKey: "carouselPosts",
     link: "/services/carousel-posts",
     category: "posts",
   },
@@ -151,13 +117,7 @@ const serviceCardsData: ServiceCardConfig[] = [
     description: "Targeted follower growth—Starter (basic), Standard (moderate), or Plus (advanced) engagement.",
     badge: "SOCIAL MEDIA",
     badgeColor: "bg-blue-100 text-blue-700",
-    basePrice: 179,
-    displayPriceRange: "$99–$299",
-    quantityOptions: [
-      { quantity: 1, price: 179, label: "Starter — Basic growth" },
-      { quantity: 2, price: 249, label: "Standard — Moderate growth" },
-      { quantity: 3, price: 349, label: "Plus — Advanced growth" },
-    ],
+    pricingKey: "instagram-growth",
     link: "/services/instagram-growth",
     category: "instagram-growth",
   },
@@ -168,13 +128,7 @@ const serviceCardsData: ServiceCardConfig[] = [
     description: "Facebook & Instagram ads management—1–3 campaigns, setup, testing, and optimization.",
     badge: "PAID ADS",
     badgeColor: "bg-orange-100 text-orange-700",
-    basePrice: 549,
-    displayPriceRange: "$199–$499",
-    quantityOptions: [
-      { quantity: 1, price: 549, label: "Starter — 1 campaign" },
-      { quantity: 2, price: 749, label: "Standard — 2 campaigns" },
-      { quantity: 3, price: 999, label: "Plus — 3 campaigns" },
-    ],
+    pricingKey: "meta-ads",
     link: "/services/meta-ads",
     category: "meta-ads",
   },
@@ -185,13 +139,7 @@ const serviceCardsData: ServiceCardConfig[] = [
     description: "Google Ads campaign management—1–3 campaigns for qualified leads and sales.",
     badge: "PAID ADS",
     badgeColor: "bg-orange-100 text-orange-700",
-    basePrice: 549,
-    displayPriceRange: "$199–$499",
-    quantityOptions: [
-      { quantity: 1, price: 549, label: "Starter — 1 campaign" },
-      { quantity: 2, price: 749, label: "Standard — 2 campaigns" },
-      { quantity: 3, price: 999, label: "Plus — 3 campaigns" },
-    ],
+    pricingKey: "google-ads",
     link: "/services/google-ads",
     category: "google-ads",
   },
@@ -203,8 +151,7 @@ const serviceCardsData: ServiceCardConfig[] = [
     description: "Full SEO—strategy, execution, and monthly visibility into performance.",
     badge: "SEO",
     badgeColor: "bg-emerald-100 text-emerald-700",
-    basePrice: 549,
-    quantityOptions: [{ quantity: 1, price: 549 }],
+    pricingKey: "managed-seo",
     link: "/services/managed-seo",
     category: "backlinks",
   },
@@ -215,8 +162,7 @@ const serviceCardsData: ServiceCardConfig[] = [
     description: "5 static ad creatives per month—concepts, design, and copy for paid social.",
     badge: "PAID SOCIAL",
     badgeColor: "bg-pink-100 text-pink-700",
-    basePrice: 149,
-    quantityOptions: [{ quantity: 5, price: 149 }],
+    pricingKey: "static-ads",
     link: "/services/static-ads",
     category: "static-ads",
   },
@@ -228,8 +174,7 @@ const serviceCardsData: ServiceCardConfig[] = [
       "2 video ads per month for paid social—scripting, editing, and copy for Meta, TikTok, and YouTube placements.",
     badge: "PAID SOCIAL",
     badgeColor: "bg-pink-100 text-pink-700",
-    basePrice: 149,
-    quantityOptions: [{ quantity: 2, price: 149 }],
+    pricingKey: "video-ads",
     link: "/video-ads",
     category: "video-ads",
   },
@@ -248,6 +193,22 @@ const serviceCardsData: ServiceCardConfig[] = [
   },
   */
 ]
+
+function getQuantityOptions(pricingKey: ServiceCardConfig["pricingKey"]): ServiceQuantityOption[] {
+  if (pricingKey === "carouselPosts") {
+    return pricingData.addOns.carouselPosts.quantities.map((quantity) => ({
+      quantity,
+      price: quantity * pricingData.addOns.carouselPosts.pricePerPost,
+    }))
+  }
+
+  return pricingData.services[pricingKey].map((option) => ({
+    quantity: option.quantity,
+    price: option.price,
+    label: "label" in option ? option.label : undefined,
+    billing: "billing" in option ? option.billing as ServiceQuantityOption["billing"] : undefined,
+  }))
+}
 
 function optionLabel(config: ServiceCardConfig, option: ServiceQuantityOption) {
   const suffix = option.billing === "per-post" ? "/post" : "/mo"
@@ -298,9 +259,13 @@ function ServiceCard({
 }) {
   const [selectedOption, setSelectedOption] = useState(0)
   const [selectReady, setSelectReady] = useState(false)
-  const currentOption = config.quantityOptions[selectedOption]
+  const quantityOptions = getQuantityOptions(config.pricingKey)
+  const currentOption = quantityOptions[selectedOption] ?? quantityOptions[0]
   const priceSuffix = currentOption.billing === "per-post" ? "/post" : "/mo"
-  const displayPrice = config.displayPriceRange ?? `$${currentOption.price}`
+  const prices = quantityOptions.map((option) => option.price)
+  const minPrice = Math.min(...prices)
+  const maxPrice = Math.max(...prices)
+  const displayPrice = minPrice === maxPrice ? `$${minPrice}` : `$${minPrice}–$${maxPrice}`
 
   useEffect(() => {
     setSelectReady(true)
@@ -342,7 +307,7 @@ function ServiceCard({
             onChange={(e) => setSelectedOption(Number(e.target.value))}
             className="w-full appearance-none bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-700 pr-8 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           >
-            {config.quantityOptions.map((option, idx) => (
+            {quantityOptions.map((option, idx) => (
               <option key={idx} value={idx}>
                 {optionLabel(config, option)}
               </option>

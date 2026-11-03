@@ -1,0 +1,63 @@
+{
+  "services": {
+    "posts": [
+      { "quantity": 4, "price": 99, "tickLabel": "4", "selectionLabel": "4 posts" },
+      { "quantity": 8, "price": 149, "tickLabel": "8", "selectionLabel": "8 posts" },
+      { "quantity": 12, "price": 199, "tickLabel": "12", "selectionLabel": "12 posts" }
+    ],
+    "videos": [
+      { "quantity": 4, "price": 149, "tickLabel": "4", "selectionLabel": "4 videos" },
+      { "quantity": 6, "price": 199, "tickLabel": "8", "selectionLabel": "8 videos" },
+      { "quantity": 8, "price": 249, "tickLabel": "12", "selectionLabel": "12 videos" }
+    ],
+    "static-ads": [
+      { "quantity": 5, "price": 149, "tickLabel": "4", "selectionLabel": "4 static ad creatives" }
+    ],
+    "video-ads": [
+      { "quantity": 2, "price": 149, "tickLabel": "2", "selectionLabel": "2 video ads" }
+    ],
+    "emails": [
+      { "quantity": 2, "price": 99, "tickLabel": "2", "selectionLabel": "2 custom designed emails" },
+      { "quantity": 4, "price": 149, "tickLabel": "4", "selectionLabel": "4 custom designed emails" },
+    ],
+    "blogs": [
+      { "quantity": 2, "price": 49, "tickLabel": "2", "selectionLabel": "2 SEO-optimized blog posts" },
+      { "quantity": 4, "price": 99, "tickLabel": "4", "selectionLabel": "4 SEO-optimized blog posts" },
+      { "quantity": 6, "price": 499, "tickLabel": "8", "selectionLabel": "8 SEO-optimized blog posts" }
+    ],
+    "backlinks": [
+      { "quantity": 3, "price": 299, "tickLabel": "3", "selectionLabel": "3 backlinks (DA20–65)" },
+      { "quantity": 6, "price": 499, "tickLabel": "6", "selectionLabel": "6 backlinks (DA20–65)" },
+      { "quantity": 9, "price": 699, "tickLabel": "9", "selectionLabel": "9 backlinks (DA20–65)" }
+    ],
+    "meta-ads": [
+      { "quantity": 1, "price": 99, "tickLabel": "1", "selectionLabel": "1 campaign", "label": "Starter — 1 campaign" },
+      { "quantity": 2, "price": 149, "tickLabel": "2", "selectionLabel": "2 campaigns", "label": "Standard — 2 campaigns" },
+      { "quantity": 3, "price": 199, "tickLabel": "3", "selectionLabel": "3 campaigns", "label": "Plus — 3 campaigns" }
+    ],
+    "google-ads": [
+      { "quantity": 1, "price": 99, "tickLabel": "1", "selectionLabel": "1 campaign", "label": "Starter — 1 campaign" },
+      { "quantity": 2, "price": 149, "tickLabel": "2", "selectionLabel": "2 campaigns", "label": "Standard — 2 campaigns" },
+      { "quantity": 3, "price": 199, "tickLabel": "3", "selectionLabel": "3 campaigns", "label": "Plus — 3 campaigns" }
+    ],
+    "instagram-growth": [
+      { "quantity": 1, "price": 99, "tickLabel": "Starter", "selectionLabel": "Basic growth", "label": "Starter — Basic growth" },
+      { "quantity": 2, "price": 149, "tickLabel": "Standard", "selectionLabel": "Moderate growth", "label": "Standard — Moderate growth" },
+      { "quantity": 3, "price": 199, "tickLabel": "Plus", "selectionLabel": "Advanced growth", "label": "Plus — Advanced growth" }
+    ],
+    "additional-social-channel": [
+      { "quantity": 1, "price": 10, "label": "Add another social platform" }
+    ],
+    "managed-seo": [
+      { "quantity": 1, "price": 149, "tickLabel": "Starter", "selectionLabel": "Starter — Basic SEO management" },
+      { "quantity": 2, "price": 249, "tickLabel": "Standard", "selectionLabel": "Standard — Moderate SEO management" },
+      { "quantity": 3, "price": 399, "tickLabel": "Plus", "selectionLabel": "Plus — Advanced SEO management" }
+    ]
+  },
+  "addOns": {
+    "carouselPosts": {
+      "pricePerPost": 5,
+      "quantities": [2, 5, 10]
+    }
+  }
+}
