@@ -77,6 +77,7 @@ const navItems = [
     hasDropdown: true
   },
   { label: 'Blogs', href: '/blog' },
+  { label: 'Website Audit', href: '/website-audit' },
  { label: 'Careers', href :'/careers'}, 
   { label: 'Contact Us', href: '/contact-us' }
 ]

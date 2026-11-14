@@ -1,0 +1,199 @@
+/*
+ * Styles for the /marketing section (ported from conquerors-quotegen).
+ *
+ * The shadcn design tokens are scoped to .marketing-theme so they don't leak into
+ * the rest of csdigitaltech.com. The main site's Tailwind config reads them as
+ * hsl(var(--token)), so they are expressed as bare HSL components here.
+ * This file deliberately has no @layer/@apply so it works with Tailwind 3.
+ */
+.marketing-theme {
+  --background: 0 0% 100%;
+  --foreground: 210 74% 17%;
+  --card: 0 0% 100%;
+  --card-foreground: 210 74% 17%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 210 74% 17%;
+  --primary: 214 70% 39%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 216 100% 98%;
+  --secondary-foreground: 210 74% 17%;
+  --muted: 207 14% 88%;
+  --muted-foreground: 220 9% 46%;
+  --accent: 205 90% 60%;
+  --accent-foreground: 210 74% 17%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 207 14% 88%;
+  --input: 0 0% 100%;
+  --ring: 214 70% 39%;
+  --chart-1: 214 70% 39%;
+  --chart-2: 205 90% 60%;
+  --chart-3: 210 74% 17%;
+  --chart-4: 213 94% 68%;
+  --chart-5: 213 97% 87%;
+  --radius: 0.75rem;
+  background-color: #ffffff;
+  color: hsl(var(--foreground));
+}
+
+:where(.marketing-theme) * {
+  border-color: hsl(var(--border));
+}
+
+/* Carousel animations */
+/* Hero social marquee: duplicate item stack, then animate -50% for seamless loop */
+@keyframes scroll-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scroll-up-slow {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scroll-up-slower {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+/* Hero work marquee: ~20–25s per loop, linear, seamless -50% */
+.carousel-column {
+  animation: scroll-up 22s linear infinite;
+}
+
+.carousel-column.slow {
+  animation: scroll-up-slow 24s linear infinite;
+}
+
+.carousel-column.slower {
+  animation: scroll-up-slower 25s linear infinite;
+}
+
+.carousel-column:hover {
+  animation-play-state: paused;
+}
+
+/* Brand scroll animation */
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.brand-scroll {
+  animation: scroll-left 30s linear infinite;
+}
+
+.brand-scroll:hover {
+  animation-play-state: paused;
+}
+
+.brand-scroll-wrapper {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+/* Video testimonial carousel */
+@keyframes scroll-horizontal {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.testimonial-scroll {
+  animation: scroll-horizontal 40s linear infinite;
+}
+
+.testimonial-scroll:hover {
+  animation-play-state: paused;
+}
+
+.testimonial-scroll-wrapper {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+}
+
+.service-stack-container {
+  position: relative;
+  width: 300px;
+  height: 240px;
+}
+
+.service-stack-card {
+  position: absolute;
+  left: 0;
+  width: 260px;
+  transform: translateY(calc(var(--card-index, 0) * 8px));
+  z-index: calc(40 + var(--card-index, 0));
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 56px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #1E5AA8;
+  box-shadow: 0 10px 24px rgba(30, 90, 168, 0.30);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.25s ease;
+}
+
+.group:hover .service-stack-card {
+  transform: translateY(calc(var(--card-index, 0) * 44px));
+}
+
+.service-stack-card:hover {
+  transform: translateY(calc(var(--card-index, 0) * 44px - 8px)) scale(1.03);
+  z-index: 90;
+  background: #154080;
+  box-shadow: 0 14px 30px rgba(21, 64, 128, 0.40);
+}
+
+.service-stack-card-active {
+  background: #154080;
+  outline: 2px solid rgba(255, 255, 255, 0.60);
+  box-shadow: 0 16px 32px rgba(21, 64, 128, 0.40);
+}
