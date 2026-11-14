@@ -5,7 +5,7 @@ export function AboutTeam() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left - Content */}
           <div className="space-y-6 order-2 lg:order-1">
-            <h2 className="text-4xl font-bold text-[#0B2A4A]">Our team always gets the best results</h2>
+            <h2 className="text-4xl font-bold text-gray-900">Our team always gets the best results</h2>
             <p className="text-lg text-[#6B7280] leading-relaxed">
               Cornerstone Digital Technologies is revolutionizing content strategy by combining cutting-edge technology with top content experts and a seamless, fully-managed process — delivering consistent results for businesses across every industry.
             </p>

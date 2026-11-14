@@ -11,7 +11,7 @@ const testimonials = [
     title: "Tech Lead",
     company: "TechFlow Solutions",
     icon: Award,
-    color: "from-blue-400 to-cyan-400"
+    color: "from-red-400 to-cyan-400"
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ const testimonials = [
     title: "Product Manager",
     company: "Innovation Labs",
     icon: Zap,
-    color: "from-indigo-400 to-blue-400"
+    color: "from-indigo-400 to-red-400"
   },
   {
     id: 6,
@@ -95,7 +95,7 @@ export function ClientReviewsSection() {
   const visibleCards = getVisibleCards()
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#0B2A4A] via-[#1E5AA8] to-[#0B2A4A]">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#262152] via-[#3B3489] to-[#262152]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -108,7 +108,7 @@ export function ClientReviewsSection() {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 z-10 w-12 h-12 rounded-full bg-[#3FA9F5] hover:bg-[#2A8FD9] transition-colors flex items-center justify-center shadow-lg"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 z-10 w-12 h-12 rounded-full bg-[#DC2626] hover:bg-[#B91C1C] transition-colors flex items-center justify-center shadow-lg"
             aria-label="Previous review"
           >
             <ChevronLeft className="w-6 h-6 text-white" />
@@ -116,7 +116,7 @@ export function ClientReviewsSection() {
 
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 z-10 w-12 h-12 rounded-full bg-[#3FA9F5] hover:bg-[#2A8FD9] transition-colors flex items-center justify-center shadow-lg"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 z-10 w-12 h-12 rounded-full bg-[#DC2626] hover:bg-[#B91C1C] transition-colors flex items-center justify-center shadow-lg"
             aria-label="Next review"
           >
             <ChevronRight className="w-6 h-6 text-white" />
@@ -142,8 +142,8 @@ export function ClientReviewsSection() {
                 {/* Client Info */}
                 <div className="border-t border-white/20 pt-4">
                   <p className="font-semibold text-white">{testimonial.name}</p>
-                  <p className="text-blue-100 text-sm">{testimonial.title}</p>
-                  <p className="text-blue-200/70 text-xs mt-1">{testimonial.company}</p>
+                  <p className="text-gray-200 text-sm">{testimonial.title}</p>
+                  <p className="text-gray-300/70 text-xs mt-1">{testimonial.company}</p>
                 </div>
               </div>
             ))}

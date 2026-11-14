@@ -3,13 +3,13 @@ import { SCHEDULE_APPOINTMENT_URL } from "@/lib/marketing/utils"
 
 export function EmailDesignHero() {
   return (
-    <section className="pt-14 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F5F9FF] to-white">
+    <section className="pt-14 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFB] to-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <span className="text-sm font-semibold text-[#1E5AA8] bg-blue-50 px-3 py-1 rounded-full flex items-center gap-2">
+              <span className="text-sm font-semibold text-[#DC2626] bg-gray-50 px-3 py-1 rounded-full flex items-center gap-2">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                 </svg>
@@ -17,8 +17,8 @@ export function EmailDesignHero() {
               </span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl font-bold text-[#0B2A4A] leading-tight">
-              Email Design Services from <span className="text-blue-600">only $149/mo</span>
+            <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 leading-tight">
+              Email Design Services from <span className="text-red-600">only $149/mo</span>
             </h1>
 
             <p className="text-xl text-[#6B7280] leading-relaxed">
@@ -26,16 +26,16 @@ export function EmailDesignHero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link href={SCHEDULE_APPOINTMENT_URL}>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg rounded-lg font-semibold flex items-center gap-2 transition-colors">
+              <Link href={SCHEDULE_APPOINTMENT_URL} target="_blank" rel="noopener noreferrer">
+                <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg rounded-lg font-semibold flex items-center gap-2 transition-colors">
                   Get started
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </button>
               </Link>
-              <Link href={SCHEDULE_APPOINTMENT_URL}>
-                <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 text-lg rounded-lg font-semibold flex items-center gap-2 transition-colors">
+              <Link href={SCHEDULE_APPOINTMENT_URL} target="_blank" rel="noopener noreferrer">
+                <button className="border-2 border-red-600 text-red-600 hover:bg-gray-50 px-8 py-3 text-lg rounded-lg font-semibold flex items-center gap-2 transition-colors">
                   Schedule demo
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

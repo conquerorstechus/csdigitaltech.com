@@ -25,10 +25,10 @@ const results = [
 
 export function MetaAdsResults() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F5F9FF]">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFB]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#0B2A4A] mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Proven Results Across Platforms
           </h2>
           <p className="text-xl text-[#6B7280] max-w-2xl mx-auto">
@@ -40,7 +40,7 @@ export function MetaAdsResults() {
           {results.map((result, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-white to-blue-50 border border-blue-100 rounded-xl p-8 text-center hover:shadow-lg transition-shadow"
+              className="bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-8 text-center hover:shadow-lg transition-shadow"
             >
               <div className="flex items-center justify-center mb-4">
                 {result.icon === 'up' && (
@@ -49,13 +49,13 @@ export function MetaAdsResults() {
                   </svg>
                 )}
                 {result.icon === 'users' && (
-                  <svg className="w-8 h-8 text-[#1E5AA8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 text-[#DC2626]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 10H9m6 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 )}
               </div>
-              <div className="text-4xl font-bold text-[#1E5AA8] mb-2">{result.metric}</div>
-              <p className="text-lg font-semibold text-[#0B2A4A] mb-1">{result.label}</p>
+              <div className="text-4xl font-bold text-[#DC2626] mb-2">{result.metric}</div>
+              <p className="text-lg font-semibold text-gray-900 mb-1">{result.label}</p>
               <p className="text-sm text-[#6B7280]">{result.subtext}</p>
             </div>
           ))}

@@ -50,7 +50,7 @@ const serviceCardsData: ServiceCardConfig[] = [
     description:
       "4, 8, or 12 posts per month for 2 channels (FB/Insta)—on-brand static posts with captions and hashtags.",
     badge: "SOCIAL MEDIA",
-    badgeColor: "bg-blue-100 text-blue-700",
+    badgeColor: "bg-gray-200 text-red-700",
     pricingKey: "posts",
     link: "/marketing/services/posts",
     category: "posts",
@@ -61,7 +61,7 @@ const serviceCardsData: ServiceCardConfig[] = [
     icon: <Share2 className="w-5 h-5" />,
     description: "Add another social platform to your plan—monthly per channel.",
     badge: "SOCIAL MEDIA",
-    badgeColor: "bg-blue-100 text-blue-700",
+    badgeColor: "bg-gray-200 text-red-700",
     pricingKey: "additional-social-channel",
     link: "/marketing/services/posts",
     category: "posts",
@@ -72,7 +72,7 @@ const serviceCardsData: ServiceCardConfig[] = [
     icon: <Video className="w-5 h-5" />,
     description: "4–8 videos (15–60 sec) per month for Reels, TikTok, and Shorts.",
     badge: "SOCIAL MEDIA",
-    badgeColor: "bg-blue-100 text-blue-700",
+    badgeColor: "bg-gray-200 text-red-700",
     pricingKey: "videos",
     link: "/marketing/videos",
     category: "videos",
@@ -116,7 +116,7 @@ const serviceCardsData: ServiceCardConfig[] = [
     icon: <TrendingUp className="w-5 h-5" />,
     description: "Targeted follower growth—Starter (basic), Standard (moderate), or Plus (advanced) engagement.",
     badge: "SOCIAL MEDIA",
-    badgeColor: "bg-blue-100 text-blue-700",
+    badgeColor: "bg-gray-200 text-red-700",
     pricingKey: "instagram-growth",
     link: "/marketing/services/instagram-growth",
     category: "instagram-growth",
@@ -281,7 +281,7 @@ function ServiceCard({
   }
 
   return (
-    <div className="bg-white border border-gray-200 rounded-xl p-5 flex flex-col hover:border-blue-300 hover:shadow-md transition-all">
+    <div className="bg-white border border-gray-200 rounded-xl p-5 flex flex-col hover:border-red-300 hover:shadow-md transition-all">
       <div className="flex items-start justify-between mb-3">
         <div className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-gray-600">
           {config.icon}
@@ -295,7 +295,7 @@ function ServiceCard({
       <p className="text-xs text-gray-500 mb-4 line-clamp-2 leading-relaxed">{config.description}</p>
 
       <div className="mb-1">
-        <span className="text-2xl font-bold text-[#3B82F6]">{displayPrice}</span>
+        <span className="text-2xl font-bold text-[#DC2626]">{displayPrice}</span>
         <span className="text-gray-500 text-sm">{priceSuffix}</span>
       </div>
       <p className="text-xs text-gray-400 mb-3">Pricing from</p>
@@ -305,7 +305,7 @@ function ServiceCard({
           <select
             value={selectedOption}
             onChange={(e) => setSelectedOption(Number(e.target.value))}
-            className="w-full appearance-none bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-700 pr-8 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-full appearance-none bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-700 pr-8 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
           >
             {quantityOptions.map((option, idx) => (
               <option key={idx} value={idx}>
@@ -327,7 +327,7 @@ function ServiceCard({
       <Button
         type="button"
         onClick={handleCheckout}
-        className="w-full bg-[#3B82F6] hover:bg-[#2563EB] text-white font-medium py-2.5 rounded-lg"
+        className="w-full bg-[#DC2626] hover:bg-[#B91C1C] text-white font-medium py-2.5 rounded-lg"
       >
         Checkout
         <ArrowRight className="w-4 h-4 ml-2" />
@@ -383,7 +383,7 @@ export function ServiceCardsGrid({ activeTab = "posts", mode = "filtered" }: Ser
       <div className="max-w-7xl mx-auto">
         {mode === "all" && (
           <div className="text-center max-w-2xl mx-auto mb-10 md:mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0B2A4A] tracking-tight mb-3">All Services</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-3">All Services</h2>
             <p className="text-base text-[#6B7280] leading-relaxed">{ALL_SERVICES_DESCRIPTION}</p>
           </div>
         )}
@@ -408,7 +408,7 @@ export function ServiceCardsGrid({ activeTab = "posts", mode = "filtered" }: Ser
             onClick={() => router.push("/marketing/checkout")}
             className={[
               "hidden sm:flex fixed bottom-6 right-6 z-40 items-center gap-2 rounded-full",
-              "bg-[#1E5AA8] text-white px-5 py-3 shadow-lg hover:bg-[#154080] transition-all",
+              "bg-[#DC2626] text-white px-5 py-3 shadow-lg hover:bg-[#B91C1C] transition-all",
               cartBounce ? "scale-105" : "scale-100",
             ].join(" ")}
             aria-label={`Checkout (${selectedCount})`}
@@ -422,7 +422,7 @@ export function ServiceCardsGrid({ activeTab = "posts", mode = "filtered" }: Ser
             onClick={() => router.push("/marketing/checkout")}
             className={[
               "sm:hidden fixed bottom-0 left-0 right-0 z-40 flex items-center justify-center gap-2",
-              "bg-[#1E5AA8] text-white px-4 py-3 shadow-[0_-6px_20px_rgba(15,23,42,0.18)] transition-all",
+              "bg-[#DC2626] text-white px-4 py-3 shadow-[0_-6px_20px_rgba(15,23,42,0.18)] transition-all",
               cartBounce ? "scale-[1.01]" : "scale-100",
             ].join(" ")}
             aria-label={`Checkout (${selectedCount})`}

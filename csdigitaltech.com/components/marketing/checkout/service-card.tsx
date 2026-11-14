@@ -49,7 +49,7 @@ export interface SelectedService {
 
 /** Presentation-only badges keyed by service id. */
 const SERVICE_BADGES: Record<string, { label: string; className: string }> = {
-  'social-posts':      { label: 'SOCIAL MEDIA',  className: 'bg-blue-100 text-blue-700' },
+  'social-posts':      { label: 'SOCIAL MEDIA',  className: 'bg-gray-200 text-red-700' },
   'instagram-stories': { label: 'ADD-ON',         className: 'bg-pink-100 text-pink-700' },
   'carousel-posts':    { label: 'ADD-ON',         className: 'bg-indigo-100 text-indigo-700' },
   'short-form-videos': { label: 'VIDEO CONTENT',  className: 'bg-violet-100 text-violet-700' },
@@ -158,7 +158,7 @@ export function ServiceCard({
       ].join(' ')}
     >
       <div className="mb-4 flex items-start justify-between gap-3">
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-slate-600 transition-colors group-hover:bg-[#1E5AA8]/10 group-hover:text-[#1E5AA8]">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-slate-600 transition-colors group-hover:bg-[#DC2626]/10 group-hover:text-[#DC2626]">
           <CardIcon className="h-5 w-5" aria-hidden />
         </div>
         {badge && (
@@ -168,7 +168,7 @@ export function ServiceCard({
         )}
       </div>
 
-      <h3 className="text-base font-semibold leading-snug tracking-tight text-[#0B2A4A]">
+      <h3 className="text-base font-semibold leading-snug tracking-tight text-gray-900">
         {name}
       </h3>
       <p className="mt-2 text-sm leading-relaxed text-[#6B7280]">{description}</p>
@@ -183,7 +183,7 @@ export function ServiceCard({
               <p
                 className={[
                   'mt-1 flex flex-wrap items-baseline gap-x-1 transition-all duration-200',
-                  priceFlash ? 'scale-[1.02] text-[#154080]' : 'text-[#1E5AA8]',
+                  priceFlash ? 'scale-[1.02] text-[#B91C1C]' : 'text-[#DC2626]',
                 ].join(' ')}
               >
                 <span className="text-3xl font-bold tracking-tight">${tierPrice}</span>
@@ -193,7 +193,7 @@ export function ServiceCard({
             </>
           ) : (
             <>
-              <p className="mt-1 text-2xl font-bold tracking-tight text-[#1E5AA8]">
+              <p className="mt-1 text-2xl font-bold tracking-tight text-[#DC2626]">
                 {priceRange}
               </p>
               <p className="mt-0.5 text-sm text-[#64748B]">{priceLabel}</p>
@@ -206,7 +206,7 @@ export function ServiceCard({
             <select
               value={selectedOption}
               onChange={(e) => setSelectedOption(e.target.value)}
-              className="w-full cursor-pointer appearance-none rounded-xl border border-slate-200 bg-white py-3 pl-4 pr-11 text-sm font-medium text-[#0B2A4A] shadow-sm transition-colors hover:border-slate-300 focus:border-[#1E5AA8] focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]/20"
+              className="w-full cursor-pointer appearance-none rounded-xl border border-slate-200 bg-white py-3 pl-4 pr-11 text-sm font-medium text-gray-900 shadow-sm transition-colors hover:border-slate-300 focus:border-[#DC2626] focus:outline-none focus:ring-2 focus:ring-[#DC2626]/20"
             >
               {options.map((option) => (
                 <option key={option} value={option}>
@@ -224,18 +224,18 @@ export function ServiceCard({
             <button
               type="button"
               onClick={() => setQuantity(Math.max(1, quantity - 1))}
-              className="flex h-10 w-10 items-center justify-center rounded-lg text-[#64748B] transition-colors hover:bg-white hover:text-[#0B2A4A]"
+              className="flex h-10 w-10 items-center justify-center rounded-lg text-[#64748B] transition-colors hover:bg-white hover:text-gray-900"
               aria-label="Decrease quantity"
             >
               <Minus className="h-4 w-4" />
             </button>
-            <span className="flex-1 select-none text-center text-sm font-semibold text-[#0B2A4A]">
+            <span className="flex-1 select-none text-center text-sm font-semibold text-gray-900">
               {quantity}
             </span>
             <button
               type="button"
               onClick={() => setQuantity(quantity + 1)}
-              className="flex h-10 w-10 items-center justify-center rounded-lg text-[#64748B] transition-colors hover:bg-white hover:text-[#0B2A4A]"
+              className="flex h-10 w-10 items-center justify-center rounded-lg text-[#64748B] transition-colors hover:bg-white hover:text-gray-900"
               aria-label="Increase quantity"
             >
               <Plus className="h-4 w-4" />
@@ -245,7 +245,7 @@ export function ServiceCard({
 
         <Button
           onClick={handleAddService}
-          className="h-11 w-full rounded-xl bg-[#1E5AA8] text-[15px] font-semibold text-white shadow-sm transition-all hover:bg-[#154080] hover:shadow-md"
+          className="h-11 w-full rounded-xl bg-[#DC2626] text-[15px] font-semibold text-white shadow-sm transition-all hover:bg-[#B91C1C] hover:shadow-md"
         >
           Add Service
         </Button>

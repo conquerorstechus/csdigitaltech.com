@@ -108,7 +108,7 @@ export default function TermsOfService() {
         </div>
 
         <div className="flex justify-center mt-12">
-          <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto">
+          <Button asChild className="bg-red-600 hover:bg-red-700 text-white w-full sm:w-auto">
             <Link href="/marketing#footer">← Back</Link>
           </Button>
         </div>

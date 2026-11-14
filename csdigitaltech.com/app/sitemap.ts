@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { buildSitemapEntries } from '@opinly/shared'
 import { absoluteUrl, getAllPosts } from '@/lib/blog'
 import { getOpinlyClient, getOpinlySitemapConfig } from '@/lib/opinly'
+import { STATIC_SITEMAP_ROUTES } from '@/lib/sitemap-routes'
 
 export const dynamic = 'force-dynamic'
 
@@ -26,7 +27,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
-  const localPaths = new Set(localPosts.map((entry) => pathnameOf(entry.url)))
+  const staticPages: MetadataRoute.Sitemap = STATIC_SITEMAP_ROUTES.map(({ path, priority }) => ({
+    url: absoluteUrl(path),
+    changeFrequency: 'monthly',
+    priority,
+  }))
+
+  const localPaths = new Set(
+    [...staticPages, ...localPosts].map((entry) => pathnameOf(entry.url)),
+  )
 
   let opinlyEntries: MetadataRoute.Sitemap = []
   try {
@@ -54,5 +63,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     opinlyEntries = []
   }
 
-  return [...localPosts, ...opinlyEntries]
+  return [...staticPages, ...localPosts, ...opinlyEntries]
 }

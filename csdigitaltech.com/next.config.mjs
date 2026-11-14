@@ -28,6 +28,30 @@ const nextConfig = {
     ]
   },
 
+  async redirects() {
+    return [
+      {
+        // The standalone demo page was replaced by the Google Calendar booking link.
+        source: '/marketing/schedule-demo',
+        destination: 'https://calendar.app.google/5WqZQDXD559r7Am1A',
+        permanent: false,
+      },
+      // Retired portfolio projects: send old links (and their search rankings) to the portfolio index.
+      ...[
+        'vehicle-booking',
+        'crm-saas',
+        'online-exam',
+        'graduates-portal',
+        'learn-eazy',
+        'stone-trading',
+      ].map((slug) => ({
+        source: `/portfolio/${slug}`,
+        destination: '/portfolio',
+        permanent: true,
+      })),
+    ]
+  },
+
   async rewrites() {
     return [
       {

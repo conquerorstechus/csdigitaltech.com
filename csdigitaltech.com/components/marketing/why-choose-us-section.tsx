@@ -8,7 +8,7 @@ export function WhyChooseUsSection() {
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0B2A4A] mb-4 text-balance">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 text-balance">
             Why Businesses Choose Our Social Media Service
           </h2>
           <p className="text-lg text-[#6B7280] max-w-2xl mx-auto">
@@ -25,30 +25,30 @@ export function WhyChooseUsSection() {
               <AlertCircle className="w-8 h-8 text-red-600" />
             </div>
 
-            <h3 className="text-sm font-bold tracking-widest text-[#1E5AA8] mb-3 uppercase">
+            <h3 className="text-sm font-bold tracking-widest text-[#DC2626] mb-3 uppercase">
               THE PROBLEM
             </h3>
-            <h4 className="text-2xl font-bold text-[#0B2A4A] mb-8 leading-tight">
+            <h4 className="text-2xl font-bold text-gray-900 mb-8 leading-tight">
               Social Media Is Time-Consuming and Hard to Maintain
             </h4>
 
             <div className="space-y-4 mb-8">
-              <p className="font-semibold text-[#0B2A4A] text-sm">Most businesses struggle with:</p>
+              <p className="font-semibold text-gray-900 text-sm">Most businesses struggle with:</p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#1E5AA8] font-bold text-lg mt-0.5">•</span>
+                  <span className="text-[#DC2626] font-bold text-lg mt-0.5">•</span>
                   <span className="text-[#6B7280]">Posting consistently</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#1E5AA8] font-bold text-lg mt-0.5">•</span>
+                  <span className="text-[#DC2626] font-bold text-lg mt-0.5">•</span>
                   <span className="text-[#6B7280]">Creating engaging designs</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#1E5AA8] font-bold text-lg mt-0.5">•</span>
+                  <span className="text-[#DC2626] font-bold text-lg mt-0.5">•</span>
                   <span className="text-[#6B7280]">Writing captions that convert</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#1E5AA8] font-bold text-lg mt-0.5">•</span>
+                  <span className="text-[#DC2626] font-bold text-lg mt-0.5">•</span>
                   <span className="text-[#6B7280]">Keeping up with trends and algorithms</span>
                 </li>
               </ul>
@@ -56,7 +56,7 @@ export function WhyChooseUsSection() {
 
             {/* Highlighted Warning Box */}
             <div className="bg-gradient-to-r from-red-50 to-orange-50 border border-red-200 rounded-2xl p-4 mt-8">
-              <p className="text-[#0B2A4A] font-bold italic text-sm">
+              <p className="text-gray-900 font-bold italic text-sm">
                 Hiring a full-time marketer can cost <span className="text-black-600">$999 / month.</span>
               </p>
             </div>
@@ -69,10 +69,10 @@ export function WhyChooseUsSection() {
               <Lightbulb className="w-8 h-8 text-emerald-600" />
             </div>
 
-            <h3 className="text-sm font-bold tracking-widest text-[#1E5AA8] mb-3 uppercase">
+            <h3 className="text-sm font-bold tracking-widest text-[#DC2626] mb-3 uppercase">
               THE SOLUTION
             </h3>
-            <h4 className="text-2xl font-bold text-[#0B2A4A] mb-6 leading-tight">
+            <h4 className="text-2xl font-bold text-gray-900 mb-6 leading-tight">
               Your Complete Social Media Team — For Less Than the Cost of a Coffee Per Day
             </h4>
 
@@ -91,14 +91,14 @@ export function WhyChooseUsSection() {
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-1 font-bold" />
-                  <span className="text-[#0B2A4A] font-medium">{item}</span>
+                  <span className="text-gray-900 font-medium">{item}</span>
                 </div>
               ))}
             </div>
 
             {/* Highlighted Quote */}
             <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-4">
-              <p className="text-[#0B2A4A] font-semibold italic text-sm">
+              <p className="text-gray-900 font-semibold italic text-sm">
                 You approve the content — we handle the rest starting @ Just $99/month.
               </p>
             </div>
@@ -107,14 +107,14 @@ export function WhyChooseUsSection() {
           {/* Card 3: How It Works */}
           <div className="group bg-white rounded-3xl shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-10 border border-slate-100">
             {/* Icon */}
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-              <Workflow className="w-8 h-8 text-blue-600" />
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gray-50 to-indigo-50 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+              <Workflow className="w-8 h-8 text-red-600" />
             </div>
 
-            <h3 className="text-sm font-bold tracking-widest text-[#1E5AA8] mb-3 uppercase">
+            <h3 className="text-sm font-bold tracking-widest text-[#DC2626] mb-3 uppercase">
               HOW IT WORKS
             </h3>
-            <h4 className="text-2xl font-bold text-[#0B2A4A] mb-10 leading-tight">
+            <h4 className="text-2xl font-bold text-gray-900 mb-10 leading-tight">
               Simple 3-Step Process
             </h4>
 
@@ -122,11 +122,11 @@ export function WhyChooseUsSection() {
               {/* Step 1 */}
               <div className="relative">
                 <div className="flex items-start gap-5">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg">
                     1
                   </div>
                   <div className="flex-1 pt-1">
-                    <h5 className="font-bold text-[#0B2A4A] mb-1 text-lg">
+                    <h5 className="font-bold text-gray-900 mb-1 text-lg">
                       Tell Us About Your Brand
                     </h5>
                     <p className="text-[#6B7280] text-sm leading-relaxed">
@@ -139,11 +139,11 @@ export function WhyChooseUsSection() {
               {/* Step 2 */}
               <div className="relative">
                 <div className="flex items-start gap-5">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg">
                     2
                   </div>
                   <div className="flex-1 pt-1">
-                    <h5 className="font-bold text-[#0B2A4A] mb-1 text-lg">
+                    <h5 className="font-bold text-gray-900 mb-1 text-lg">
                       We Create Your Content
                     </h5>
                     <p className="text-[#6B7280] text-sm leading-relaxed">
@@ -156,11 +156,11 @@ export function WhyChooseUsSection() {
               {/* Step 3 */}
               <div className="relative">
                 <div className="flex items-start gap-5">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg">
                     3
                   </div>
                   <div className="flex-1 pt-1">
-                    <h5 className="font-bold text-[#0B2A4A] mb-1 text-lg">
+                    <h5 className="font-bold text-gray-900 mb-1 text-lg">
                       You Approve & We Publish
                     </h5>
                     <p className="text-[#6B7280] text-sm leading-relaxed">

@@ -46,10 +46,10 @@ export function CategorySlider({ categories, activeCategory, onCategoryChange }:
         {showLeftArrow && (
           <button
             onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow hover:bg-blue-50"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow hover:bg-gray-50"
             aria-label="Scroll categories left"
           >
-            <ChevronLeft className="w-5 h-5 text-[#1E5AA8]" />
+            <ChevronLeft className="w-5 h-5 text-[#DC2626]" />
           </button>
         )}
 
@@ -66,8 +66,8 @@ export function CategorySlider({ categories, activeCategory, onCategoryChange }:
               onClick={() => onCategoryChange(category)}
               className={`px-6 py-2.5 rounded-full text-sm font-medium whitespace-nowrap transition-all flex-shrink-0 ${
                 activeCategory === category
-                  ? 'bg-[#1E5AA8] text-white shadow-lg'
-                  : 'bg-white text-[#6B7280] border border-blue-100 hover:border-[#1E5AA8] hover:text-[#0B2A4A]'
+                  ? 'bg-[#DC2626] text-white shadow-lg'
+                  : 'bg-white text-[#6B7280] border border-gray-200 hover:border-[#DC2626] hover:text-gray-900'
               }`}
             >
               {category}
@@ -79,10 +79,10 @@ export function CategorySlider({ categories, activeCategory, onCategoryChange }:
         {showRightArrow && (
           <button
             onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow hover:bg-blue-50"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow hover:bg-gray-50"
             aria-label="Scroll categories right"
           >
-            <ChevronRight className="w-5 h-5 text-[#1E5AA8]" />
+            <ChevronRight className="w-5 h-5 text-[#DC2626]" />
           </button>
         )}
       </div>

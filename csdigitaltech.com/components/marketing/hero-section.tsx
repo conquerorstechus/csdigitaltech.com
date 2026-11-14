@@ -28,8 +28,8 @@ type MarqueeSpeed = "normal" | "slow" | "slower"
 
 function HeroOurWorkCardDesktop({ example }: { example: PortfolioExample }) {
   return (
-    <div className="bg-white rounded-2xl border border-blue-100 overflow-hidden shadow-lg hover:shadow-xl transition-shadow hover:border-primary/50 flex-shrink-0 w-72 cursor-default">
-      <div className="px-3 py-3 border-b border-blue-100 flex items-center justify-between gap-2">
+    <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-lg hover:shadow-xl transition-shadow hover:border-primary/50 flex-shrink-0 w-72 cursor-default">
+      <div className="px-3 py-3 border-b border-gray-200 flex items-center justify-between gap-2">
         <div className="flex items-center min-w-0 flex-1">
           <Image
             src="/marketing/logo-cornerstone.png"
@@ -45,7 +45,7 @@ function HeroOurWorkCardDesktop({ example }: { example: PortfolioExample }) {
           </svg>
         </span>
       </div>
-      <div className="relative aspect-square bg-[#F5F9FF] overflow-hidden">
+      <div className="relative aspect-square bg-[#F9FAFB] overflow-hidden">
         <Image
           src={example.image}
           alt={example.title}
@@ -84,8 +84,8 @@ function HeroOurWorkCardDesktop({ example }: { example: PortfolioExample }) {
 
 function HeroOurWorkCardMobile({ example }: { example: PortfolioExample }) {
   return (
-    <div className="bg-white rounded-xl border border-blue-100 overflow-hidden shadow-md hover:shadow-lg transition-shadow hover:border-primary/50 flex-shrink-0 w-full cursor-default">
-      <div className="px-2 py-2 border-b border-blue-100 flex items-center justify-between gap-1.5">
+    <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-md hover:shadow-lg transition-shadow hover:border-primary/50 flex-shrink-0 w-full cursor-default">
+      <div className="px-2 py-2 border-b border-gray-200 flex items-center justify-between gap-1.5">
         <div className="flex items-center min-w-0 flex-1">
           <Image
             src="/marketing/logo-cornerstone.png"
@@ -101,7 +101,7 @@ function HeroOurWorkCardMobile({ example }: { example: PortfolioExample }) {
           </svg>
         </span>
       </div>
-      <div className="relative h-32 sm:h-40 bg-[#F5F9FF] overflow-hidden">
+      <div className="relative h-32 sm:h-40 bg-[#F9FAFB] overflow-hidden">
         <Image
           src={example.image}
           alt={example.title}
@@ -187,7 +187,7 @@ const [heroMob1, heroMob2] = splitIntoTwo(heroWorkItems)
 
 export function HeroSection() {
   return (
-    <section className="relative pt-14 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#0B2A4A] via-[#1E5AA8] to-[#0B2A4A] text-white">
+    <section className="relative pt-14 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#262152] via-[#3B3489] to-[#262152] text-white">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl8xXzEpIi8+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzFfMSIgeDE9IjAiIHkxPSIwIiB4Mj0iNjAiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIHN0b3AtY29sb3I9IiMzRkE5RjUiIHN0b3Atb3BhY2l0eT0iMC4xIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMUU1QUE4IiBzdG9wLW9wYWNpdHk9IjAuMDUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48L3N2Zz4=')] opacity-20"></div>
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Top Section: Badge and Title */}
@@ -196,24 +196,24 @@ export function HeroSection() {
           <div className="flex flex-col justify-start pt-4">
             {/* Badge */}
             <div className="inline-flex w-fit mb-6">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/20 border border-blue-300/50">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/20 border border-red-300/50">
                 <div className="flex gap-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-[#3FA9F5] text-[#3FA9F5]" />
+                    <Star key={i} className="w-4 h-4 fill-[#FFBB1B] text-[#FFBB1B]" />
                   ))}
                 </div>
-                <span className="text-sm font-medium text-blue-100">TOP 1% OF GLOBAL CREATIVE TALENT</span>
+                <span className="text-sm font-medium text-gray-200">TOP 1% OF GLOBAL CREATIVE TALENT</span>
               </div>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-5xl font-bold text-white leading-tight mb-6 text-pretty">
               Expert social media management from{" "}
-              <span className="text-[#3FA9F5]">only $99/mo</span>
+              <span className="text-[#FFBB1B]">only $99/mo</span>
             </h1>
 
             {/* Subheading and Description */}
-            <p className="text-lg text-blue-100 mb-8 leading-relaxed">
+            <p className="text-lg text-gray-200 mb-8 leading-relaxed">
               Stop struggling with social media. Get <strong>8+ high-quality posts every month</strong> — without hiring a marketing team. We create, design, and schedule your content so your brand stays active, visible, and growing.
             </p>
 
@@ -222,20 +222,20 @@ export function HeroSection() {
               <h3 className="text-xl font-bold text-white mb-4">What You Get</h3>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#3FA9F5] flex-shrink-0 mt-0.5" />
-                  <span className="text-blue-50">Done-for-you social media management</span>
+                  <Check className="w-5 h-5 text-[#FFBB1B] flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-50">Done-for-you social media management</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#3FA9F5] flex-shrink-0 mt-0.5" />
-                  <span className="text-blue-50">Professional designs & short-form videos</span>
+                  <Check className="w-5 h-5 text-[#FFBB1B] flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-50">Professional designs & short-form videos</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#3FA9F5] flex-shrink-0 mt-0.5" />
-                  <span className="text-blue-50">Fast delivery</span>
+                  <Check className="w-5 h-5 text-[#FFBB1B] flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-50">Fast delivery</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#3FA9F5] flex-shrink-0 mt-0.5" />
-                  <span className="text-blue-50">Cancel anytime</span>
+                  <Check className="w-5 h-5 text-[#FFBB1B] flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-50">Cancel anytime</span>
                 </div>
               </div>
             </div>
@@ -244,15 +244,15 @@ export function HeroSection() {
 
             {/* CTA Button */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Link href={SCHEDULE_APPOINTMENT_URL}>
-                <Button size="lg" className="bg-[#3FA9F5] text-[#0B2A4A] hover:bg-white px-8 py-6 text-lg font-semibold">
+              <Link href={SCHEDULE_APPOINTMENT_URL} target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-[#DC2626] text-gray-900 hover:bg-white px-8 py-6 text-lg font-semibold">
                   Schedule a Free Demo Call
                 </Button>
               </Link>
             </div>
 
             {/* Trust Line */}
-            <div className="text-sm text-blue-100">
+            <div className="text-sm text-gray-200">
               <span>
                 Trusted by <strong className="text-white"> Growing Brands & Businesses</strong>
               </span>
@@ -262,8 +262,8 @@ export function HeroSection() {
           {/* Right Side: Animated Carousel */}
           <div className="hidden lg:flex gap-6 h-screen overflow-hidden relative">
             {/* Gradient Overlays */}
-            <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-[#0B2A4A] to-transparent z-20 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#0B2A4A] to-transparent z-20 pointer-events-none" />
+            <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-[#262152] to-transparent z-20 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#262152] to-transparent z-20 pointer-events-none" />
 
             {/* Column 1 */}
             <div className="flex-1 overflow-hidden min-w-0">
@@ -284,8 +284,8 @@ export function HeroSection() {
 
         {/* Mobile: auto-scrolling Our Work cards */}
         <div className="lg:hidden mt-12 relative h-[22rem] sm:h-[26rem] overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-[#0B2A4A] to-transparent z-20 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#0B2A4A] to-transparent z-20 pointer-events-none" />
+          <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-[#262152] to-transparent z-20 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#262152] to-transparent z-20 pointer-events-none" />
           <div className="flex gap-4 h-full">
             <div className="flex-1 overflow-hidden min-w-0">
               <HeroWorkMarqueeMobile items={heroMob1} delay={0} speed="normal" />

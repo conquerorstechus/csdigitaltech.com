@@ -32,11 +32,11 @@ export function ExamplesSection() {
     : null
 
   return (
-    <section id="examples" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#F5F9FF]">
+    <section id="examples" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#F9FAFB]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#0B2A4A] mb-4">Our Work</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Work</h2>
           <p className="text-[#6B7280] max-w-2xl mx-auto text-lg">
             Explore our portfolio of professional social media posts, marketing campaigns, and digital content created for leading brands and businesses across various industries.
           </p>
@@ -55,11 +55,11 @@ export function ExamplesSection() {
           filteredExamples.map((example) => (
             <div
               key={example.id}
-              className="bg-white rounded-2xl border border-blue-100 overflow-hidden hover:border-[#1E5AA8] transition-all hover:shadow-xl group cursor-pointer"
+              className="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-[#DC2626] transition-all hover:shadow-xl group cursor-pointer"
               onClick={() => setSelectedFlyerId(example.id)}
             >
               {/* Card Header with Logo */}
-              <div className="px-4 py-3 border-b border-blue-100 flex items-center justify-between gap-2">
+              <div className="px-4 py-3 border-b border-gray-200 flex items-center justify-between gap-2">
                 <div className="flex items-center min-w-0 flex-1">
                   <Image
                     src="/marketing/logo-cornerstone.png"
@@ -69,7 +69,7 @@ export function ExamplesSection() {
                     className="h-8 w-auto max-w-full object-contain object-left"
                   />
                 </div>
-                <button className="text-[#6B7280] hover:text-[#0B2A4A]">
+                <button className="text-[#6B7280] hover:text-gray-900">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
                   </svg>
@@ -77,7 +77,7 @@ export function ExamplesSection() {
               </div>
 
               {/* Image Container */}
-              <div className="relative aspect-square bg-[#F5F9FF] overflow-hidden">
+              <div className="relative aspect-square bg-[#F9FAFB] overflow-hidden">
                 <Image
                   src={example.image}
                   alt={example.title}
@@ -94,18 +94,18 @@ export function ExamplesSection() {
                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                   </svg>
                 </button>
-                <button className="text-[#6B7280] hover:text-[#0B2A4A] transition-colors">
+                <button className="text-[#6B7280] hover:text-gray-900 transition-colors">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
                 </button>
-                <button className="text-[#6B7280] hover:text-[#0B2A4A] transition-colors">
+                <button className="text-[#6B7280] hover:text-gray-900 transition-colors">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
                   </svg>
                 </button>
                 <div className="ml-auto">
-                  <button className="text-[#6B7280] hover:text-[#0B2A4A] transition-colors">
+                  <button className="text-[#6B7280] hover:text-gray-900 transition-colors">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 19V5z" />
                     </svg>
@@ -116,7 +116,7 @@ export function ExamplesSection() {
           ))
           ) : (
             <div className="col-span-full py-16 text-center">
-              <p className="text-lg font-semibold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+              <p className="text-lg font-semibold bg-gradient-to-r from-pink-500 via-purple-500 to-red-500 bg-clip-text text-transparent">
   🚀 Coming Soon
 </p>
             </div>

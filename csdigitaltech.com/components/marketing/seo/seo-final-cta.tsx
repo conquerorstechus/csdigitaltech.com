@@ -22,7 +22,7 @@ export default function SeoFinalCta() {
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
-              <Link href={SCHEDULE_APPOINTMENT_URL} className="w-full sm:w-auto">
+              <Link href={SCHEDULE_APPOINTMENT_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <Button variant="secondary" className="w-full sm:w-auto">
                   Schedule a Demo
                 </Button>

@@ -29,10 +29,10 @@ export function StaticAdsStats() {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-[#F5F9FF] to-blue-50 border border-blue-100 rounded-xl p-8 text-center hover:shadow-lg transition-shadow"
+              className="bg-gradient-to-br from-[#F9FAFB] to-gray-50 border border-gray-200 rounded-xl p-8 text-center hover:shadow-lg transition-shadow"
             >
-              <div className="text-4xl font-bold text-[#1E5AA8] mb-2">{stat.metric}</div>
-              <p className="text-lg font-semibold text-[#0B2A4A] mb-1">{stat.label}</p>
+              <div className="text-4xl font-bold text-[#DC2626] mb-2">{stat.metric}</div>
+              <p className="text-lg font-semibold text-gray-900 mb-1">{stat.label}</p>
               <p className="text-sm text-[#6B7280]">{stat.subtext}</p>
             </div>
           ))}

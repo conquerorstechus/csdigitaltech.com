@@ -23,10 +23,10 @@ const results = [
 
 export function GoogleAdsResults() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F5F9FF]">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFB]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#0B2A4A] mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Proven Results Across Industries
           </h2>
           <p className="text-xl text-[#6B7280] max-w-2xl mx-auto">
@@ -38,10 +38,10 @@ export function GoogleAdsResults() {
           {results.map((result, index) => (
             <div
               key={index}
-              className="bg-white border border-blue-100 rounded-xl p-8 text-center hover:shadow-lg transition-shadow"
+              className="bg-white border border-gray-200 rounded-xl p-8 text-center hover:shadow-lg transition-shadow"
             >
-              <div className="text-4xl font-bold text-[#1E5AA8] mb-2">{result.metric}</div>
-              <p className="text-lg font-semibold text-[#0B2A4A] mb-1">{result.label}</p>
+              <div className="text-4xl font-bold text-[#DC2626] mb-2">{result.metric}</div>
+              <p className="text-lg font-semibold text-gray-900 mb-1">{result.label}</p>
               <p className="text-sm text-[#6B7280]">{result.subtext}</p>
             </div>
           ))}

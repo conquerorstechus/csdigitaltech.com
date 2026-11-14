@@ -53,7 +53,7 @@ export function ServiceCategoryFilter({ activeCategory, onCategoryChange }: Serv
           onClick={() => scroll('left')}
           className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow"
         >
-          <ChevronLeft className="w-5 h-5 text-[#1E5AA8]" />
+          <ChevronLeft className="w-5 h-5 text-[#DC2626]" />
         </button>
       )}
 
@@ -70,8 +70,8 @@ export function ServiceCategoryFilter({ activeCategory, onCategoryChange }: Serv
             onClick={() => onCategoryChange(category.id)}
             className={`px-4 py-2.5 rounded-full text-sm font-medium whitespace-nowrap transition-all flex-shrink-0 ${
               activeCategory === category.id
-                ? 'bg-[#1E5AA8] text-white shadow-lg'
-                : 'bg-white text-[#6B7280] border border-gray-200 hover:border-[#1E5AA8] hover:text-[#0B2A4A]'
+                ? 'bg-[#DC2626] text-white shadow-lg'
+                : 'bg-white text-[#6B7280] border border-gray-200 hover:border-[#DC2626] hover:text-gray-900'
             }`}
           >
             {category.label}
@@ -85,7 +85,7 @@ export function ServiceCategoryFilter({ activeCategory, onCategoryChange }: Serv
           onClick={() => scroll('right')}
           className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow"
         >
-          <ChevronRight className="w-5 h-5 text-[#1E5AA8]" />
+          <ChevronRight className="w-5 h-5 text-[#DC2626]" />
         </button>
       )}
     </div>

@@ -6,13 +6,9 @@ import { validateCareersApplication } from '@/lib/careers-verification'
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 
-const WEBHOOK_URL =
-  process.env.CONTACT_FORM_WEBHOOK_URL ??
-  'https://n8n.srv1393511.hstgr.cloud/webhook/284ee9f5-ab3b-4d07-a915-d29e4d1414aa'
-
-const CAREERS_WEBHOOK_URL =
-  process.env.CAREERS_FORM_WEBHOOK_URL ??
-  'https://n8n.srv1393511.hstgr.cloud/webhook/27a463a5-c55f-48aa-a0c4-8c3b4cec8cba'
+// Webhook endpoints are secrets: configure them in the environment, never in source.
+const WEBHOOK_URL = process.env.CONTACT_FORM_WEBHOOK_URL
+const CAREERS_WEBHOOK_URL = process.env.CAREERS_FORM_WEBHOOK_URL
 
 function getPublicSiteOrigin() {
   const configured =
@@ -93,6 +89,15 @@ export async function POST(request: Request) {
     }
 
     const webhookTarget = isCareers ? CAREERS_WEBHOOK_URL : WEBHOOK_URL
+    if (!webhookTarget) {
+      console.error(
+        `[contact] ${isCareers ? 'CAREERS_FORM_WEBHOOK_URL' : 'CONTACT_FORM_WEBHOOK_URL'} is not configured`
+      )
+      return NextResponse.json(
+        { error: 'This form is temporarily unavailable. Please try again later.' },
+        { status: 503 }
+      )
+    }
     const trimmedWhyCornerstone = String(whyCornerstone || message || '').trim()
     const trimmedResumeLink = String(resumeLink || portfolio || '').trim()
     const trimmedResumeFileName = String(resumeFileName || '').trim()

@@ -48,7 +48,7 @@ export function MetaAdsPricing() {
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#0B2A4A] mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Simple, Transparent Pricing
           </h2>
           <p className="text-xl text-[#6B7280] max-w-2xl mx-auto">
@@ -62,31 +62,31 @@ export function MetaAdsPricing() {
               key={index}
               className={`rounded-xl border transition-all ${
                 plan.highlighted
-                  ? 'border-[#1E5AA8] bg-white shadow-xl scale-105 md:scale-100 md:shadow-2xl'
-                  : 'border-blue-100 bg-white'
+                  ? 'border-[#DC2626] bg-white shadow-xl scale-105 md:scale-100 md:shadow-2xl'
+                  : 'border-gray-200 bg-white'
               }`}
             >
               {plan.highlighted && (
-                <div className="bg-[#1E5AA8] text-white px-4 py-2 rounded-t-xl text-center text-sm font-semibold">
+                <div className="bg-[#DC2626] text-white px-4 py-2 rounded-t-xl text-center text-sm font-semibold">
                   MOST POPULAR
                 </div>
               )}
               
               <div className="p-8">
-                <h3 className="text-2xl font-bold text-[#0B2A4A] mb-2">{plan.name}</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
                 <p className="text-sm text-[#6B7280] mb-6">{plan.description}</p>
 
                 <div className="mb-6">
-                  <span className="text-4xl font-bold text-[#1E5AA8]">${plan.price}</span>
+                  <span className="text-4xl font-bold text-[#DC2626]">${plan.price}</span>
                   <span className="text-[#6B7280]">/month</span>
                 </div>
 
-                <Link href={SCHEDULE_APPOINTMENT_URL} className="w-full block mb-8">
+                <Link href={SCHEDULE_APPOINTMENT_URL} target="_blank" rel="noopener noreferrer" className="w-full block mb-8">
                   <button
                     className={`w-full py-3 rounded-lg font-semibold transition-all ${
                       plan.highlighted
-                        ? 'bg-[#1E5AA8] hover:bg-[#154080] text-white'
-                        : 'border-2 border-[#1E5AA8] text-[#1E5AA8] bg-white hover:bg-blue-50'
+                        ? 'bg-[#DC2626] hover:bg-[#B91C1C] text-white'
+                        : 'border-2 border-[#DC2626] text-[#DC2626] bg-white hover:bg-gray-50'
                     }`}
                   >
                     Get Started

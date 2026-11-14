@@ -29,11 +29,11 @@ export function OrderSummary({ selectedServices, onRemoveService }: OrderSummary
 
   return (
     <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm h-fit w-full">
-      <h2 className="text-xl font-bold text-[#0B2A4A] mb-6">Summary</h2>
+      <h2 className="text-xl font-bold text-gray-900 mb-6">Summary</h2>
       <div className="mb-4 rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
         <p className="text-xs text-[#64748B]">
-          Selected services: <span className="font-semibold text-[#0B2A4A]">{uniqueServicesCount}</span> | Items:{' '}
-          <span className="font-semibold text-[#0B2A4A]">{selectedItemsCount}</span>
+          Selected services: <span className="font-semibold text-gray-900">{uniqueServicesCount}</span> | Items:{' '}
+          <span className="font-semibold text-gray-900">{selectedItemsCount}</span>
         </p>
       </div>
 
@@ -51,7 +51,7 @@ export function OrderSummary({ selectedServices, onRemoveService }: OrderSummary
                 className="flex items-start justify-between gap-3 pb-3 border-b border-slate-100 last:border-b-0"
               >
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-[#0B2A4A]">{service.name}</p>
+                  <p className="text-sm font-semibold text-gray-900">{service.name}</p>
                   {service.quantity ? (
                     <p className="text-xs text-[#6B7280] mt-0.5">
                       <span className="font-medium text-[#64748B]">Package: </span>
@@ -63,7 +63,7 @@ export function OrderSummary({ selectedServices, onRemoveService }: OrderSummary
                   ) : null}
                 </div>
                 <div className="flex items-center gap-3 shrink-0">
-                  <p className="text-sm font-semibold text-[#0B2A4A] tabular-nums">${total.toFixed(2)}</p>
+                  <p className="text-sm font-semibold text-gray-900 tabular-nums">${total.toFixed(2)}</p>
                   <button
                     type="button"
                     onClick={() => onRemoveService(service.id)}
@@ -81,8 +81,8 @@ export function OrderSummary({ selectedServices, onRemoveService }: OrderSummary
 
       <div className="border-t border-slate-200 pt-4 mb-4">
         <div className="flex justify-between items-center gap-4">
-          <span className="font-semibold text-[#0B2A4A]">Total</span>
-          <span className="text-2xl font-bold text-[#1E5AA8] tabular-nums">${computedTotal.toFixed(2)}</span>
+          <span className="font-semibold text-gray-900">Total</span>
+          <span className="text-2xl font-bold text-[#DC2626] tabular-nums">${computedTotal.toFixed(2)}</span>
         </div>
         <p className="text-xs text-[#6B7280] mt-1">USD</p>
       </div>
@@ -95,7 +95,7 @@ export function OrderSummary({ selectedServices, onRemoveService }: OrderSummary
           'w-full flex items-center justify-center gap-2 rounded-xl py-3 px-4 text-sm font-semibold transition-all',
           selectedServices.length === 0
             ? 'bg-slate-100 text-slate-400 cursor-not-allowed'
-            : 'bg-[#1E5AA8] hover:bg-[#154080] text-white shadow-sm hover:shadow-md',
+            : 'bg-[#DC2626] hover:bg-[#B91C1C] text-white shadow-sm hover:shadow-md',
         ].join(' ')}
       >
         Submit Request

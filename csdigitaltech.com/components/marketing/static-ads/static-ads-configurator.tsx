@@ -25,11 +25,11 @@ export function StaticAdsConfigurator() {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-4 gap-8">
           <div className="lg:col-span-3">
-            <div className="bg-white border border-blue-100 rounded-2xl overflow-hidden">
-              <div className="p-6 border-b border-blue-100">
+            <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden">
+              <div className="p-6 border-b border-gray-200">
                 <div className="flex items-start justify-between gap-6 mb-4">
                   <div className="min-w-0">
-                    <h2 className="text-xl font-bold text-[#0B2A4A] flex items-center gap-2">
+                    <h2 className="text-xl font-bold text-gray-900 flex items-center gap-2">
                       <LayoutGrid className="w-5 h-5" />
                       Static Ads
                     </h2>
@@ -37,7 +37,7 @@ export function StaticAdsConfigurator() {
                   </div>
 
                   <div className="text-right flex-shrink-0">
-                    <span className="text-2xl font-bold text-[#0B2A4A]">${price}</span>
+                    <span className="text-2xl font-bold text-gray-900">${price}</span>
                     <span className="text-[#6B7280]">/mo</span>
                   </div>
                 </div>
@@ -48,7 +48,7 @@ export function StaticAdsConfigurator() {
                 </p>
 
                 <div className="mb-2 flex items-center justify-between text-sm">
-                  <p className="font-semibold text-[#0B2A4A]">Select monthly number of static ads</p>
+                  <p className="font-semibold text-gray-900">Select monthly number of static ads</p>
                   <p className="text-[#6B7280]">{quantity}</p>
                 </div>
 
@@ -61,11 +61,11 @@ export function StaticAdsConfigurator() {
                     step={1}
                     value={quantityIndex}
                     onChange={(e) => setQuantityIndex(Number(e.target.value))}
-                    className="w-full accent-[#1E5AA8]"
+                    className="w-full accent-[#DC2626]"
                   />
                   <div className="mt-2 flex justify-between text-xs text-[#6B7280]">
                     {STATIC_AD_QUANTITY_OPTIONS.map((q) => (
-                      <span key={q} className={q === quantity ? 'text-[#0B2A4A] font-semibold' : undefined}>
+                      <span key={q} className={q === quantity ? 'text-gray-900 font-semibold' : undefined}>
                         {q}
                       </span>
                     ))}
@@ -82,28 +82,28 @@ export function StaticAdsConfigurator() {
           </div>
 
           <div className="lg:col-span-1">
-            <div className="bg-white border border-blue-100 rounded-2xl p-6 sticky top-28">
-              <h3 className="text-lg font-bold text-[#0B2A4A] mb-4">Static Ads</h3>
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 sticky top-28">
+              <h3 className="text-lg font-bold text-gray-900 mb-4">Static Ads</h3>
 
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center gap-3 text-sm text-[#6B7280]">
-                  <Paintbrush className="w-4 h-4 text-[#1E5AA8]" />
+                  <Paintbrush className="w-4 h-4 text-[#DC2626]" />
                   Static ads in your branding
                 </li>
                 <li className="flex items-center gap-3 text-sm text-[#6B7280]">
-                  <FileSearch className="w-4 h-4 text-[#1E5AA8]" />
+                  <FileSearch className="w-4 h-4 text-[#DC2626]" />
                   Fast, research-backed ideation & concepts
                 </li>
                 <li className="flex items-center gap-3 text-sm text-[#6B7280]">
-                  <CalendarCheck className="w-4 h-4 text-[#1E5AA8]" />
+                  <CalendarCheck className="w-4 h-4 text-[#DC2626]" />
                   Design & copywriting for performance
                 </li>
                 <li className="flex items-center gap-3 text-sm text-[#6B7280]">
-                  <BadgeCheck className="w-4 h-4 text-[#1E5AA8]" />
+                  <BadgeCheck className="w-4 h-4 text-[#DC2626]" />
                   Monthly delivery of fresh ad concepts
                 </li>
                 <li className="flex items-center gap-3 text-sm text-[#6B7280]">
-                  <CopyCheck className="w-4 h-4 text-[#1E5AA8]" />
+                  <CopyCheck className="w-4 h-4 text-[#DC2626]" />
                   Ready-to-launch formats for paid social
                 </li>
               </ul>
@@ -114,18 +114,18 @@ export function StaticAdsConfigurator() {
                 href={`/marketing/checkout?plan=${encodeURIComponent('Static Ads')}&price=${price}&option=${encodeURIComponent(`${quantity} static ads`)}`}
                 className="block"
               >
-                <Button className="w-full bg-[#1E5AA8] text-white hover:bg-[#154080] group">
+                <Button className="w-full bg-[#DC2626] text-white hover:bg-[#B91C1C] group">
                   Checkout
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
 
-              <button className="w-full mt-3 text-sm text-[#6B7280] hover:text-[#0B2A4A] underline">
+              <button className="w-full mt-3 text-sm text-[#6B7280] hover:text-gray-900 underline">
                 How the service works
               </button>
 
-              <div className="mt-4 pt-4 border-t border-blue-100 text-center">
-                <Link href={SCHEDULE_APPOINTMENT_URL} className="text-sm text-[#1E5AA8] hover:underline">
+              <div className="mt-4 pt-4 border-t border-gray-200 text-center">
+                <Link href={SCHEDULE_APPOINTMENT_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#DC2626] hover:underline">
                   Schedule a demo
                 </Link>
               </div>

@@ -55,8 +55,8 @@ export function PackagesSection({
                   className={cn(
                     "relative rounded-2xl border bg-card p-4 text-left transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md",
                     isSelected
-                      ? "border-[#1E5AA8] bg-[#1E5AA8]/10 shadow-[0_0_0_1px_rgba(30,90,168,0.12)]"
-                      : "border-border hover:border-[#1E5AA8]/50",
+                      ? "border-[#DC2626] bg-[#DC2626]/10 shadow-[0_0_0_1px_rgba(220,38,38,0.12)]"
+                      : "border-border hover:border-[#DC2626]/50",
                   )}
                 >
                   <div className="mb-3 flex items-start justify-between pr-7">
@@ -80,7 +80,7 @@ export function PackagesSection({
                     aria-hidden
                     className={cn(
                       "absolute right-4 top-4 flex h-5 w-5 items-center justify-center rounded-full border-2 transition-all",
-                      isSelected ? "border-[#1E5AA8] bg-[#1E5AA8]" : "border-border bg-card",
+                      isSelected ? "border-[#DC2626] bg-[#DC2626]" : "border-border bg-card",
                     )}
                   >
                     <span className={cn("h-2 w-2 rounded-full bg-white", !isSelected && "hidden")} />
@@ -94,7 +94,7 @@ export function PackagesSection({
             <div className="mt-5 border-t border-border pt-4">
               <p className="text-sm font-semibold text-foreground mb-3">Add-ons</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                <div className="flex items-center justify-between gap-3 rounded-xl border border-border bg-background px-3 py-2.5 hover:border-[#1E5AA8]/40 transition-colors">
+                <div className="flex items-center justify-between gap-3 rounded-xl border border-border bg-background px-3 py-2.5 hover:border-[#DC2626]/40 transition-colors">
                   <div className="flex items-center gap-2">
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
                       <Layers className="h-3.5 w-3.5" />
@@ -127,7 +127,7 @@ export function PackagesSection({
             <p className="mb-4 text-xs text-muted-foreground">
               Pricing is in <span className="font-semibold">USD</span>. Cancel anytime.
             </p>
-            <Button className="w-full bg-[#1E5AA8] text-white hover:bg-[#154580]" asChild>
+            <Button className="w-full bg-[#DC2626] text-white hover:bg-[#B91C1C]" asChild>
               <Link href={checkoutHref}>
                 Checkout
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -140,7 +140,7 @@ export function PackagesSection({
               </Link>
             </Button>
             <Link
-              href={SCHEDULE_APPOINTMENT_URL}
+              href={SCHEDULE_APPOINTMENT_URL} target="_blank" rel="noopener noreferrer"
               className="mt-3 flex items-center justify-center gap-2 text-sm font-medium text-primary hover:underline"
             >
               <Calendar className="h-4 w-4" />

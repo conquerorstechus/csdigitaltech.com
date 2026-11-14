@@ -53,11 +53,11 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 bg-white border-y border-blue-100">
+    <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 bg-white border-y border-gray-200">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0B2A4A] mb-4">Simple, transparent pricing</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Simple, transparent pricing</h2>
           <p className="text-[#6B7280] max-w-2xl mx-auto">
             No hidden fees. No contracts. Cancel anytime. Choose the plan that fits your needs.
           </p>
@@ -69,34 +69,34 @@ export function PricingSection() {
             <div
               key={plan.name}
               className={`relative bg-white border rounded-2xl p-8 ${
-                plan.popular ? "border-[#1E5AA8] shadow-lg" : "border-blue-100"
+                plan.popular ? "border-[#DC2626] shadow-lg" : "border-gray-200"
               }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="bg-[#1E5AA8] text-white text-sm font-medium px-4 py-1 rounded-full">
+                  <span className="bg-[#DC2626] text-white text-sm font-medium px-4 py-1 rounded-full">
                     Most Popular
                   </span>
                 </div>
               )}
 
               <div className="mb-6">
-                <h3 className="text-xl font-bold text-[#0B2A4A] mb-2">{plan.name}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{plan.name}</h3>
                 <p className="text-[#6B7280] text-sm">{plan.description}</p>
               </div>
 
               <div className="mb-6">
-                <span className="text-4xl font-bold text-[#0B2A4A]">{plan.price}</span>
+                <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
                 <span className="text-[#6B7280]">{plan.period}</span>
               </div>
 
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-[#1E5AA8]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-[#1E5AA8]" />
+                    <div className="w-5 h-5 rounded-full bg-[#DC2626]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-[#DC2626]" />
                     </div>
-                    <span className="text-[#0B2A4A] text-sm">{feature}</span>
+                    <span className="text-gray-900 text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -104,8 +104,8 @@ export function PricingSection() {
               <Button
                 className={`w-full ${
                   plan.popular
-                    ? "bg-[#1E5AA8] text-white hover:bg-[#154080]"
-                    : "bg-[#F5F9FF] text-[#1E5AA8] hover:bg-blue-100"
+                    ? "bg-[#DC2626] text-white hover:bg-[#B91C1C]"
+                    : "bg-[#F9FAFB] text-[#DC2626] hover:bg-gray-200"
                 }`}
               >
                 Get Started

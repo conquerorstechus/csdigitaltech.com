@@ -33,10 +33,10 @@ const portfolio = [
 
 export function StaticAdsPortfolio() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F5F9FF]">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFB]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#0B2A4A] mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Our Ad Portfolio
           </h2>
           <p className="text-xl text-[#6B7280] max-w-2xl mx-auto">
@@ -48,12 +48,12 @@ export function StaticAdsPortfolio() {
           {portfolio.map((item, index) => (
             <div
               key={index}
-              className="bg-white border border-blue-100 rounded-xl p-8 hover:shadow-lg transition-shadow cursor-pointer group"
+              className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow cursor-pointer group"
             >
-              <div className="w-12 h-12 rounded-lg bg-[#1E5AA8] mb-4 group-hover:bg-[#154080] transition-colors" />
-              <h3 className="text-lg font-bold text-[#0B2A4A] mb-2">{item.category}</h3>
+              <div className="w-12 h-12 rounded-lg bg-[#DC2626] mb-4 group-hover:bg-[#B91C1C] transition-colors" />
+              <h3 className="text-lg font-bold text-gray-900 mb-2">{item.category}</h3>
               <p className="text-sm text-[#6B7280] mb-3">{item.description}</p>
-              <p className="text-xs text-[#1E5AA8] font-medium">{item.style}</p>
+              <p className="text-xs text-[#DC2626] font-medium">{item.style}</p>
             </div>
           ))}
         </div>

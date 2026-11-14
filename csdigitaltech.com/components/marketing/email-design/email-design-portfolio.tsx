@@ -2,17 +2,17 @@ const portfolio = [
   { category: 'Beauty & Skincare', color: 'from-purple-100 to-pink-100', borderColor: 'border-purple-300' },
   { category: 'E-Commerce Promotion', color: 'from-orange-100 to-yellow-100', borderColor: 'border-orange-300' },
   { category: 'Lifestyle Brand', color: 'from-red-100 to-pink-100', borderColor: 'border-red-300' },
-  { category: 'Newsletter', color: 'from-blue-100 to-cyan-100', borderColor: 'border-blue-300' },
+  { category: 'Newsletter', color: 'from-gray-200 to-cyan-100', borderColor: 'border-red-300' },
   { category: 'Product Launch', color: 'from-green-100 to-emerald-100', borderColor: 'border-green-300' },
   { category: 'Seasonal Campaign', color: 'from-amber-100 to-orange-100', borderColor: 'border-amber-300' },
 ]
 
 export function EmailDesignPortfolio() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F5F9FF]">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFB]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#0B2A4A] mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Email Template Portfolio
           </h2>
           <p className="text-xl text-[#6B7280] max-w-2xl mx-auto">

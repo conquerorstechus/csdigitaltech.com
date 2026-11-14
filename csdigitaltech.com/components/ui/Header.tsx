@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X, ChevronDown, ChevronRight, Search } from 'lucide-react'
+import { Menu, X, ChevronDown, Search } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { useNavigation } from '@/hooks/useNavigation'
@@ -58,11 +58,6 @@ const servicesCategories = [
   }
 ]
 
-const aboutMenuItems = [
-  { label: 'About Cornerstone Digital Technologies', href: '/about-us' },
-  { label: 'Careers', href: '/careers' }
-]
-
 const navItems = [
   { label: 'Home', href: '/' },
   {
@@ -71,13 +66,12 @@ const navItems = [
     hasMegaMenu: true
   },
   { label: 'Portfolio', href: '/portfolio' },
+  { label: 'Marketing', href: '/marketing' },
   { 
     label: 'About', 
-    href: '/about-us',
-    hasDropdown: true
+    href: '/about-us'
   },
   { label: 'Blogs', href: '/blog' },
-  { label: 'Website Audit', href: '/website-audit' },
  { label: 'Careers', href :'/careers'}, 
   { label: 'Contact Us', href: '/contact-us' }
 ]
@@ -131,7 +125,7 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <div className='flex items-center gap-4'>
-              <nav className='hidden lg:flex items-center space-x-8 relative'>
+              <nav className='hidden xl:flex items-center space-x-8 relative'>
                 {navItems.map(item => (
                   <div key={item.label} className='relative group'>
                     {item.hasMegaMenu ? (
@@ -152,9 +146,6 @@ const Header = () => {
                         className={getNavLinkClassName(item.href)}
                       >
                         {item.label}
-                        {item.hasDropdown && (
-                          <ChevronDown className='ml-1 h-4 w-4 transition-transform group-hover:rotate-180' />
-                        )}
                       </Link>
                     )}
 
@@ -211,25 +202,6 @@ const Header = () => {
                         </div>
                       </div>
                     )}
-
-                    {/* Dropdown Menu for About */}
-                    {item.hasDropdown && (
-                      <div className='absolute top-full left-0 mt-2 w-56 bg-white shadow-2xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100 z-40'>
-                        <div className='py-2'>
-                          {aboutMenuItems.map((menuItem, idx) => (
-                            <Link
-                              key={idx}
-                              href={menuItem.href}
-                              onClick={() => handleNavigation(menuItem.href)}
-                              className='group/item flex items-center justify-between px-4 py-3 text-sm text-gray-700 hover:text-red-600 hover:bg-red-50 transition-all duration-200 font-medium'
-                            >
-                              <span>{menuItem.label}</span>
-                              <ChevronRight className='h-4 w-4 opacity-0 group-hover/item:opacity-100 translate-x-[-8px] group-hover/item:translate-x-0 transition-all duration-200' />
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    )}
                   </div>
                 ))}
               </nav>
@@ -237,7 +209,7 @@ const Header = () => {
               {/* Search Icon */}
               <button
                 onClick={() => setSearchOpen(true)}
-                className='hidden lg:flex p-2 hover:bg-gray-100 rounded-lg transition-colors'
+                className='hidden xl:flex p-2 hover:bg-gray-100 rounded-lg transition-colors'
                 aria-label='Search'
                 suppressHydrationWarning
               >
@@ -246,7 +218,7 @@ const Header = () => {
 
               {/* Mobile Menu Toggle */}
               <button
-                className='lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors'
+                className='xl:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors'
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
                 {mobileMenuOpen ? (
@@ -261,7 +233,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className='lg:hidden px-4 pb-4 max-h-[calc(100vh-80px)] overflow-y-auto'>
+          <div className='xl:hidden px-4 pb-4 max-h-[calc(100vh-80px)] overflow-y-auto'>
             {/* Mobile Search Button */}
             <button
               onClick={() => {
@@ -277,7 +249,7 @@ const Header = () => {
             <nav className='flex flex-col space-y-3'>
               {navItems.map(item => (
                 <div key={item.label}>
-                {(item.hasMegaMenu || item.hasDropdown) ? (
+                {item.hasMegaMenu ? (
   <>
     <button
       onClick={() =>
@@ -329,20 +301,6 @@ const Header = () => {
             </div>
           </div>
         ))}
-        {item.hasDropdown && (
-          <div className='pl-4 space-y-1'>
-            {aboutMenuItems.map((menuItem, idx) => (
-              <Link
-                key={idx}
-                href={menuItem.href}
-                onClick={() => handleNavigation(menuItem.href)}
-                className='block py-2 px-3 text-sm text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-md'
-              >
-                {menuItem.label}
-              </Link>
-            ))}
-          </div>
-        )}
       </div>
     )}
   </>

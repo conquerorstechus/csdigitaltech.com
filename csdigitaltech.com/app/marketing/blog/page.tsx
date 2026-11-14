@@ -168,7 +168,7 @@ export default function BlogPage() {
                   
                 </div>
                 <Badge className="mb-3">{post.category}</Badge>
-                <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-red-600 transition-colors">
                   {post.title}
                 </h3>
                 <p className="text-muted-foreground text-sm mb-4 line-clamp-2">

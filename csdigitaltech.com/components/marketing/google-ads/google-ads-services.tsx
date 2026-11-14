@@ -80,7 +80,7 @@ export function GoogleAdsServices() {
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#0B2A4A] mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Complete Google Ads Solutions
           </h2>
           <p className="text-xl text-[#6B7280] max-w-2xl mx-auto">
@@ -92,12 +92,12 @@ export function GoogleAdsServices() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group p-8 rounded-xl border border-blue-100 hover:border-[#1E5AA8] bg-white hover:shadow-lg transition-all duration-300"
+              className="group p-8 rounded-xl border border-gray-200 hover:border-[#DC2626] bg-white hover:shadow-lg transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-[#1E5AA8] transition-colors text-[#1E5AA8] group-hover:text-white">
+              <div className="w-12 h-12 rounded-lg bg-gray-50 flex items-center justify-center mb-4 group-hover:bg-[#DC2626] transition-colors text-[#DC2626] group-hover:text-white">
                 {getIcon(service.icon)}
               </div>
-              <h3 className="text-xl font-semibold text-[#0B2A4A] mb-2">{service.title}</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
               <p className="text-[#6B7280]">{service.description}</p>
             </div>
           ))}

@@ -63,7 +63,7 @@ export function ServicesDropdown() {
     <div className="relative group">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1 text-[#6B7280] hover:text-[#0B2A4A] transition-colors py-2"
+        className="flex items-center gap-1 text-[#6B7280] hover:text-gray-900 transition-colors py-2"
       >
         <span>Services</span>
         <svg
@@ -78,7 +78,7 @@ export function ServicesDropdown() {
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 mt-2 w-96 bg-white border border-blue-100 rounded-xl shadow-2xl z-50 py-2 px-2">
+        <div className="absolute top-full left-0 mt-2 w-96 bg-white border border-gray-200 rounded-xl shadow-2xl z-50 py-2 px-2">
           <div className="space-y-1">
             {serviceMenu.map((menu) => {
               const MenuIcon = menu.icon
@@ -89,14 +89,14 @@ export function ServicesDropdown() {
                     key={menu.category}
                     href={menu.link || '#'}
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50 transition-colors group/item w-full"
+                    className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors group/item w-full"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-[#1E5AA8]">
-                        <MenuIcon className="w-5 h-5 text-[#1E5AA8] group-hover/item:text-white transition-colors" />
+                      <div className="w-10 h-10 rounded-lg bg-gray-200 flex items-center justify-center flex-shrink-0 group-hover/item:bg-[#DC2626]">
+                        <MenuIcon className="w-5 h-5 text-[#DC2626] group-hover/item:text-white transition-colors" />
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-[#0B2A4A] group-hover/item:text-[#1E5AA8]">
+                        <p className="text-sm font-semibold text-gray-900 group-hover/item:text-[#DC2626]">
                           {menu.category}
                         </p>
                       </div>
@@ -111,14 +111,14 @@ export function ServicesDropdown() {
                 <div key={menu.category}>
                   <button
                     onClick={() => setExpandedCategory(isExpanded ? null : menu.category)}
-                    className="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50 transition-colors group/item w-full"
+                    className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors group/item w-full"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-[#1E5AA8]">
-                        <MenuIcon className="w-5 h-5 text-[#1E5AA8] group-hover/item:text-white transition-colors" />
+                      <div className="w-10 h-10 rounded-lg bg-gray-200 flex items-center justify-center flex-shrink-0 group-hover/item:bg-[#DC2626]">
+                        <MenuIcon className="w-5 h-5 text-[#DC2626] group-hover/item:text-white transition-colors" />
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-[#0B2A4A] group-hover/item:text-[#1E5AA8]">
+                        <p className="text-sm font-semibold text-gray-900 group-hover/item:text-[#DC2626]">
                           {menu.category}
                         </p>
                       </div>
@@ -136,13 +136,13 @@ export function ServicesDropdown() {
                             key={item.name}
                             href={item.link || '#'}
                             onClick={() => setIsOpen(false)}
-                            className="flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors group/subitem"
+                            className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group/subitem"
                           >
-                            <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0 group-hover/subitem:bg-[#1E5AA8]">
-                              <ItemIcon className="w-4 h-4 text-[#1E5AA8] group-hover/subitem:text-white transition-colors" />
+                            <div className="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover/subitem:bg-[#DC2626]">
+                              <ItemIcon className="w-4 h-4 text-[#DC2626] group-hover/subitem:text-white transition-colors" />
                             </div>
                             <div className="flex-1">
-                              <p className="text-sm font-medium text-[#0B2A4A] group-hover/subitem:text-[#1E5AA8]">
+                              <p className="text-sm font-medium text-gray-900 group-hover/subitem:text-[#DC2626]">
                                 {item.name}
                               </p>
                               <p className="text-xs text-[#6B7280]">{item.description}</p>

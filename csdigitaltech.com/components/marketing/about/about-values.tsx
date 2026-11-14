@@ -54,10 +54,10 @@ const getIcon = (type: string) => {
 
 export function AboutValues() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F5F9FF]">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFB]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#0B2A4A] mb-4">Our Core Values</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
           <p className="text-xl text-[#6B7280] max-w-2xl mx-auto">
             These principles guide everything we do and define how we serve our clients
           </p>
@@ -65,11 +65,11 @@ export function AboutValues() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {values.map((value, index) => (
-            <div key={index} className="bg-white rounded-xl p-8 border border-blue-100 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center mb-4 text-[#1E5AA8]">
+            <div key={index} className="bg-white rounded-xl p-8 border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 rounded-lg bg-gray-50 flex items-center justify-center mb-4 text-[#DC2626]">
                 {getIcon(value.icon)}
               </div>
-              <h3 className="text-xl font-semibold text-[#0B2A4A] mb-3">{value.title}</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
               <p className="text-[#6B7280] leading-relaxed">{value.description}</p>
             </div>
           ))}

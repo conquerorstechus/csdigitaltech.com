@@ -418,7 +418,7 @@ function ServiceCard({ config }: { config: ServiceConfig }) {
                     onClick={() => setSelectedVideoIndex(index)}
                     className={`px-3 py-1 rounded-lg text-sm font-medium transition-all ${
                       selectedVideoIndex === index
-                        ? "bg-[#1E5AA8] text-white"
+                        ? "bg-[#DC2626] text-white"
                         : "bg-secondary text-muted-foreground hover:bg-secondary/80"
                     }`}
                   >

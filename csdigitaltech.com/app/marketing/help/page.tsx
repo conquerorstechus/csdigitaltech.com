@@ -64,7 +64,7 @@ export default function HelpCenter() {
               >
                 <h3 className="text-lg font-semibold text-left text-gray-900">{faq.question}</h3>
                 {openFAQ === index ? (
-                  <ChevronUp className="w-5 h-5 text-blue-500 flex-shrink-0" />
+                  <ChevronUp className="w-5 h-5 text-red-500 flex-shrink-0" />
                 ) : (
                   <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
                 )}
@@ -79,16 +79,16 @@ export default function HelpCenter() {
         </div>
 
         {/* Contact Section */}
-        <div className="mt-16 bg-blue-50 rounded-lg p-8 text-center">
+        <div className="mt-16 bg-gray-50 rounded-lg p-8 text-center">
           <h2 className="text-2xl font-bold mb-3">Didn't find what you're looking for?</h2>
           <p className="text-gray-600 mb-6">Our support team is here to help. Reach out to us anytime.</p>
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+          <Button className="bg-red-600 hover:bg-red-700 text-white">
             <a href="/marketing/contact">Contact Support</a>
           </Button>
         </div>
 
         <div className="flex justify-center mt-12">
-          <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto">
+          <Button asChild className="bg-red-600 hover:bg-red-700 text-white w-full sm:w-auto">
             <Link href="/marketing#footer">← Back</Link>
           </Button>
         </div>

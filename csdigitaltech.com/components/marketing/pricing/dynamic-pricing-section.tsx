@@ -129,7 +129,7 @@ export function DynamicPricingSection({
                   className={cn(
                     "flex shrink-0 items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-medium transition-all duration-200",
                     isActive
-                      ? "border-[#1E5AA8] bg-[#1E5AA8] text-white shadow-md"
+                      ? "border-[#DC2626] bg-[#DC2626] text-white shadow-md"
                       : "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground",
                   )}
                 >

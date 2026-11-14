@@ -43,13 +43,13 @@ export default function CheckoutSuccessPage() {
               <CheckCircle2 className="h-9 w-9" strokeWidth={2} aria-hidden />
             </span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-[#0B2A4A] mb-3">Order Submitted Successfully!</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Order Submitted Successfully!</h1>
           <p className="text-base text-[#6B7280] mb-10">Thank you! Our agent will reach out to you shortly.</p>
 
           <div className="bg-white rounded-2xl border border-slate-200 shadow-sm text-left p-6 sm:p-8 space-y-6">
             <div className="space-y-3 text-sm">
               <h2 className="text-xs font-semibold uppercase tracking-wide text-[#64748B]">Your details</h2>
-              <dl className="space-y-2 text-[#0B2A4A]">
+              <dl className="space-y-2 text-gray-900">
                 <div className="flex justify-between gap-4">
                   <dt className="text-[#6B7280]">Name</dt>
                   <dd className="font-medium text-right">{order.fullName}</dd>
@@ -80,9 +80,9 @@ export default function CheckoutSuccessPage() {
               <ul className="space-y-3">
                 {order.selectedServices.map((item, i) => (
                   <li key={`${item.name}-${i}`} className="text-sm">
-                    <p className="font-semibold text-[#0B2A4A]">
+                    <p className="font-semibold text-gray-900">
                       {item.name}
-                      <span className="text-[#1E5AA8] tabular-nums"> – ${item.price.toFixed(2)}</span>
+                      <span className="text-[#DC2626] tabular-nums"> – ${item.price.toFixed(2)}</span>
                     </p>
                     {item.selectedPackage ? (
                       <p className="text-xs text-[#6B7280] mt-1">Selected package: {item.selectedPackage}</p>
@@ -94,8 +94,8 @@ export default function CheckoutSuccessPage() {
 
             <div className="border-t border-slate-100 pt-6">
               <div className="flex justify-between items-baseline gap-4">
-                <span className="text-base font-bold text-[#0B2A4A]">Total Price</span>
-                <span className="text-xl font-bold text-[#1E5AA8] tabular-nums">${order.totalPrice.toFixed(2)}</span>
+                <span className="text-base font-bold text-gray-900">Total Price</span>
+                <span className="text-xl font-bold text-[#DC2626] tabular-nums">${order.totalPrice.toFixed(2)}</span>
               </div>
               <p className="text-xs text-[#6B7280] mt-1">USD</p>
             </div>
@@ -105,14 +105,14 @@ export default function CheckoutSuccessPage() {
                 <h2 className="text-xs font-semibold uppercase tracking-wide text-[#64748B] mb-2">
                   Additional Notes
                 </h2>
-                <p className="text-[#0B2A4A] whitespace-pre-wrap leading-relaxed">{order.message.trim()}</p>
+                <p className="text-gray-900 whitespace-pre-wrap leading-relaxed">{order.message.trim()}</p>
               </div>
             ) : null}
           </div>
 
           <Link
             href="/marketing"
-            className="inline-flex mt-10 w-full sm:w-auto justify-center rounded-lg bg-[#1E5AA8] px-8 py-3 font-semibold text-white hover:bg-[#154080] transition-colors shadow-sm"
+            className="inline-flex mt-10 w-full sm:w-auto justify-center rounded-lg bg-[#DC2626] px-8 py-3 font-semibold text-white hover:bg-[#B91C1C] transition-colors shadow-sm"
           >
             Return Home
           </Link>

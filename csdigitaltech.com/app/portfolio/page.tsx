@@ -44,59 +44,24 @@ const portfolioItems = [
   },
   {
     id: 2,
-    slug: "vehicle-booking",
-    title: "Vehicle Booking Platform",
-    description: "Efficient online taxi booking platform for small and medium companies, ensuring quick and easy reservations.",
-    image: "/2-Vehicle-booking-online-1.jpg"
-  },
-  {
-    id: 3,
-    slug: "crm-saas",
-    title: "Bot Billing (SaaS) CRM",
-    description: "This system is the most competent to manage sales, purchase orders, recurring invoices, contracts with the utmost.",
-    image: "3-CRM.jpg"
-  },
-  {
-    id: 4,
-    slug: "online-exam",
-    title: "Online Learning & Examination System",
-    description: "Online Examination System is a secure learning and assessment solution that supports creating various formats...",
-    image: "/4-online-exam.jpg"
-  },
-  {
-    id: 5,
-    slug: "graduates-portal",
-    title: "Graduates Leads Congr",
-    description: "This is an education portal helpful for students who are seeking information on the higher education.",
-    image: "/5-Graduates.jpg"
-  },
-  {
-    id: 6,
     slug: "coworks-crm",
     title: "Coworks CRM & Bookings",
     description: "Streamline your office space booking process with our efficient online booking system.",
     image: "/6-coworks.jpg"
   },
   {
-    id: 7,
+    id: 3,
     slug: "learning-management",
     title: "Learning Management System",
     description: "Student can learn online using web & mobile application with experimental learning using advanced tools.",
-    image: "7-lms.jpg"
+    image: "/7-lms.jpg"
   },
   {
-    id: 8,
-    slug: "learn-eazy",
-    title: "Learn Eazy",
-    description: "Learn Eazy platform provides the best learning solutions for the students in the pursuit of realizing their dreams.",
-    image: "/8-Learn-easy.jpg"
-  },
-  {
-    id: 9,
-    slug: "stone-trading",
-    title: "Stone Trading - Inventory & CRM",
-    description: "With Stone Trading, you can say goodbye to the days of manual inventory tracking and complicated spreadsheets.",
-    image: "/9-Stone-CRM.jpg"
+    id: 4,
+    href: "/services/it-consulting",
+    title: "CRM Implementations: HubSpot, Twenty",
+    description: "End-to-end CRM setup, customization, data migration and automation on HubSpot and Twenty, tailored to your sales process.",
+    image: "/3-CRM.jpg"
   }
 ]
 
@@ -144,7 +109,7 @@ export default function PortfolioPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
               {portfolioItems.map((item) => (
-                <Link key={item.id} href={`/portfolio/${item.slug}`} className="group h-full">
+                <Link key={item.id} href={item.href ?? `/portfolio/${item.slug}`} className="group h-full">
                   <div className="h-full bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)] transition-all duration-500 flex flex-col hover:-translate-y-2">
                     <div className="aspect-[16/10] relative overflow-hidden">
                       <Image

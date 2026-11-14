@@ -77,8 +77,8 @@ function ExploreServiceCard({ service }: { service: ExploreService }) {
       <div
         className={[
           'h-full rounded-2xl border p-5 transition-all',
-          'bg-white hover:shadow-md hover:border-[#1E5AA8]/40',
-          service.featured ? 'bg-[#1E5AA8]/5' : 'bg-white',
+          'bg-white hover:shadow-md hover:border-[#DC2626]/40',
+          service.featured ? 'bg-[#DC2626]/5' : 'bg-white',
         ].join(' ')}
       >
         <div className="flex items-start justify-between gap-3">
@@ -87,13 +87,13 @@ function ExploreServiceCard({ service }: { service: ExploreService }) {
               className={[
                 'w-12 h-12 rounded-xl flex items-center justify-center',
                 'transition-colors',
-                'bg-[#1E5AA8]/10 text-[#1E5AA8] group-hover:bg-[#1E5AA8] group-hover:text-white',
+                'bg-[#DC2626]/10 text-[#DC2626] group-hover:bg-[#DC2626] group-hover:text-white',
               ].join(' ')}
             >
               <Icon className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-base font-semibold text-[#0B2A4A]">{service.title}</h3>
+              <h3 className="text-base font-semibold text-gray-900">{service.title}</h3>
               <p className="text-xs text-[#6B7280] mt-1 leading-relaxed line-clamp-3">
                 {service.description}
               </p>
@@ -124,7 +124,7 @@ export default function ServicesPage() {
           <div className="mt-10 space-y-12">
             {groups.map((group) => (
               <div key={group}>
-                <h2 className="text-xl sm:text-2xl font-bold text-[#0B2A4A] mb-6">{group}</h2>
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">{group}</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                   {exploreServices
                     .filter((s) => s.group === group)

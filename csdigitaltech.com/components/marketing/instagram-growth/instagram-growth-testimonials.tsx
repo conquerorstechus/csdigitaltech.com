@@ -21,10 +21,10 @@ const testimonials = [
 
 export function InstagramGrowthTestimonials() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F5F9FF]">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFB]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#0B2A4A] mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Trusted by Creators & Brands
           </h2>
           <p className="text-xl text-[#6B7280] max-w-2xl mx-auto">
@@ -36,7 +36,7 @@ export function InstagramGrowthTestimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white border border-blue-100 rounded-xl p-8 hover:shadow-lg transition-shadow"
+              className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow"
             >
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -48,10 +48,10 @@ export function InstagramGrowthTestimonials() {
 
               <p className="text-[#6B7280] mb-6 italic">"{testimonial.text}"</p>
 
-              <div className="flex items-center gap-3 pt-6 border-t border-blue-200">
+              <div className="flex items-center gap-3 pt-6 border-t border-gray-300">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#FD5949] to-[#D6249F] flex-shrink-0" />
                 <div>
-                  <p className="font-semibold text-[#0B2A4A] text-sm">{testimonial.name}</p>
+                  <p className="font-semibold text-gray-900 text-sm">{testimonial.name}</p>
                   <p className="text-xs text-[#6B7280]">{testimonial.title}</p>
                 </div>
               </div>

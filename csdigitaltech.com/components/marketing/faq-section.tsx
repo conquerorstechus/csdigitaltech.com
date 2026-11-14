@@ -94,7 +94,7 @@ export function FAQSection() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0B2A4A] mb-4">Frequently Asked Questions</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
           <p className="text-[#6B7280] max-w-2xl mx-auto">
             Find answers to common questions about our digital marketing, web development, and creative services.
           </p>
@@ -105,15 +105,15 @@ export function FAQSection() {
           {faqItems.map((item) => (
             <div
               key={item.id}
-              className="bg-white border border-blue-100 rounded-lg overflow-hidden hover:border-[#1E5AA8] transition-colors"
+              className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-[#DC2626] transition-colors"
             >
               <button
                 onClick={() => toggleFAQ(item.id)}
-                className="w-full flex items-center justify-between p-6 hover:bg-[#F5F9FF] transition-colors text-left"
+                className="w-full flex items-center justify-between p-6 hover:bg-[#F9FAFB] transition-colors text-left"
               >
-                <span className="text-lg font-semibold text-[#0B2A4A] pr-4">{item.question}</span>
+                <span className="text-lg font-semibold text-gray-900 pr-4">{item.question}</span>
                 <ChevronDown
-                  className={`w-5 h-5 text-[#1E5AA8] flex-shrink-0 transition-transform duration-300 ${
+                  className={`w-5 h-5 text-[#DC2626] flex-shrink-0 transition-transform duration-300 ${
                     openId === item.id ? 'transform rotate-180' : ''
                   }`}
                 />
@@ -121,7 +121,7 @@ export function FAQSection() {
 
               {/* Answer */}
               {openId === item.id && (
-                <div className="px-6 pb-6 border-t border-blue-100">
+                <div className="px-6 pb-6 border-t border-gray-200">
                   <p className="text-[#6B7280] leading-relaxed">{item.answer}</p>
                 </div>
               )}
@@ -134,8 +134,8 @@ export function FAQSection() {
           <p className="text-[#6B7280] mb-4">
             Still have questions? We're here to help!
           </p>
-          <a href={SCHEDULE_APPOINTMENT_URL}>
-            <button className="px-8 py-3 bg-[#1E5AA8] text-white font-semibold rounded-lg hover:bg-[#154080] transition-colors">
+          <a href={SCHEDULE_APPOINTMENT_URL} target="_blank" rel="noopener noreferrer">
+            <button className="px-8 py-3 bg-[#DC2626] text-white font-semibold rounded-lg hover:bg-[#B91C1C] transition-colors">
               Schedule a Free Demo Call
             </button>
           </a>

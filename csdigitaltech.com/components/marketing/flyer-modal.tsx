@@ -89,8 +89,8 @@ export function FlyerModal({ isOpen, onClose, flyer }: FlyerModalProps) {
                     priority
                   />
                 </div>
-                <Link href={SCHEDULE_APPOINTMENT_URL}>
-                  <button className="px-4 py-2 bg-[#1E5AA8] text-white rounded-full text-sm font-semibold hover:bg-[#154080] transition-colors">
+                <Link href={SCHEDULE_APPOINTMENT_URL} target="_blank" rel="noopener noreferrer">
+                  <button className="px-4 py-2 bg-[#DC2626] text-white rounded-full text-sm font-semibold hover:bg-[#B91C1C] transition-colors">
                     Schedule demo
                   </button>
                 </Link>
@@ -98,7 +98,7 @@ export function FlyerModal({ isOpen, onClose, flyer }: FlyerModalProps) {
 
               {/* Title */}
               {/*<div>
-                <h3 className="text-xl font-bold text-[#0B2A4A] mb-2">Caption</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Caption</h3>
               </div> */}
 
               {/* Caption Text */}

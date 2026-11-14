@@ -5,7 +5,5 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const SCHEDULE_APPOINTMENT_URL = '/marketing/schedule-demo'
-
-export const SCHEDULE_EMBED_URL =
-  'https://calendar.google.com/calendar/appointments/AcZssZ3oRHPdpoMQofqk5-xTqWHgAIveEeNlU_zrvK4=?gv=true'
+/** Google Calendar appointment page used by every "Schedule a demo / call" button. */
+export const SCHEDULE_APPOINTMENT_URL = 'https://calendar.app.google/5WqZQDXD559r7Am1A'

@@ -70,12 +70,12 @@ export function VideoUploadForm({ onUpload, isLoading }: VideoUploadFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white rounded-xl border border-blue-100 p-8 max-w-2xl mx-auto">
-      <h2 className="text-2xl font-bold text-[#0B2A4A] mb-6">Upload New Video</h2>
+    <form onSubmit={handleSubmit} className="bg-white rounded-xl border border-gray-200 p-8 max-w-2xl mx-auto">
+      <h2 className="text-2xl font-bold text-gray-900 mb-6">Upload New Video</h2>
 
       {/* Title Input */}
       <div className="mb-6">
-        <label className="block text-sm font-semibold text-[#0B2A4A] mb-2">
+        <label className="block text-sm font-semibold text-gray-900 mb-2">
           Video Title
         </label>
         <input
@@ -83,13 +83,13 @@ export function VideoUploadForm({ onUpload, isLoading }: VideoUploadFormProps) {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Enter video title"
-          className="w-full px-4 py-2 border border-blue-100 rounded-lg focus:outline-none focus:border-[#1E5AA8] transition-colors"
+          className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-[#DC2626] transition-colors"
         />
       </div>
 
       {/* Description Input */}
       <div className="mb-6">
-        <label className="block text-sm font-semibold text-[#0B2A4A] mb-2">
+        <label className="block text-sm font-semibold text-gray-900 mb-2">
           Description
         </label>
         <textarea
@@ -97,7 +97,7 @@ export function VideoUploadForm({ onUpload, isLoading }: VideoUploadFormProps) {
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Enter video description"
           rows={4}
-          className="w-full px-4 py-2 border border-blue-100 rounded-lg focus:outline-none focus:border-[#1E5AA8] transition-colors resize-none"
+          className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-[#DC2626] transition-colors resize-none"
         />
       </div>
 
@@ -105,8 +105,8 @@ export function VideoUploadForm({ onUpload, isLoading }: VideoUploadFormProps) {
       <div
         className={`mb-6 border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
           dragActive
-            ? 'border-[#1E5AA8] bg-blue-50'
-            : 'border-blue-200 hover:border-[#1E5AA8]'
+            ? 'border-[#DC2626] bg-gray-50'
+            : 'border-gray-300 hover:border-[#DC2626]'
         }`}
         onDragEnter={handleDrag}
         onDragLeave={handleDrag}
@@ -124,11 +124,11 @@ export function VideoUploadForm({ onUpload, isLoading }: VideoUploadFormProps) {
         {videoFile ? (
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-lg bg-[#1E5AA8] flex items-center justify-center">
+              <div className="w-12 h-12 rounded-lg bg-[#DC2626] flex items-center justify-center">
                 <Upload className="w-6 h-6 text-white" />
               </div>
               <div className="text-left">
-                <p className="font-semibold text-[#0B2A4A]">{videoFile.name}</p>
+                <p className="font-semibold text-gray-900">{videoFile.name}</p>
                 <p className="text-sm text-[#6B7280]">
                   {(videoFile.size / 1024 / 1024).toFixed(2)} MB
                 </p>
@@ -147,8 +147,8 @@ export function VideoUploadForm({ onUpload, isLoading }: VideoUploadFormProps) {
             onClick={() => fileInputRef.current?.click()}
             className="cursor-pointer"
           >
-            <Upload className="w-12 h-12 text-[#1E5AA8] mx-auto mb-2" />
-            <p className="text-[#0B2A4A] font-semibold mb-1">
+            <Upload className="w-12 h-12 text-[#DC2626] mx-auto mb-2" />
+            <p className="text-gray-900 font-semibold mb-1">
               Drag and drop your video here
             </p>
             <p className="text-sm text-[#6B7280] mb-4">
@@ -162,7 +162,7 @@ export function VideoUploadForm({ onUpload, isLoading }: VideoUploadFormProps) {
       <Button
         type="submit"
         disabled={isLoading}
-        className="w-full bg-[#1E5AA8] text-white hover:bg-[#154080] disabled:opacity-50"
+        className="w-full bg-[#DC2626] text-white hover:bg-[#B91C1C] disabled:opacity-50"
       >
         {isLoading ? 'Uploading...' : 'Upload Video'}
       </Button>

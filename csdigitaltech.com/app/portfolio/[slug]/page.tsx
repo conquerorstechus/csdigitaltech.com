@@ -58,206 +58,6 @@ const portfolioItems = [
     ]
   },
   {
-    id: 2,
-    slug: 'vehicle-booking',
-    title: 'Vehicle Booking Platform-Project',
-    description:
-      'Efficient online taxi booking platform for small and medium companies, ensuring quick and easy reservations.',
-    image: '/WebDevlopment/hero-1-1.png',
-    imageintroduction: '/portfolio/vehicalhero.webp',
-    introductionText:
-      'Vehicle Booking Platform for SMBs enables easy online taxi booking with vehicle management, pricing, coupons, payment gateways, settings, permissions, and more for smooth, flexible operations',
-    category: 'Vehicle Booking Platform',
-    subcategory:
-      'This platform for small and medium scale companies where customers can book taxis online, with a quick and easy process. There are robust features to add and manage vehicles listing, various details like vehicles name, features,',
-    technologies: ['Vue.js', 'Laravel', 'MySQL', 'Google Maps API'],
-    duration: '3-4 months',
-    client: 'CityRide Services',
-    features: [
-      'Manage Vehicles Listing',
-      'Special Fare',
-      'Email Templates',
-      'Coupon Codes',
-      'Availability Status',
-      'Request Callbacks'
-    ],
-    subfeatures: [
-      'Admin can be able to manage all the vehicles with details like name, features, type, location, hourly package, lay out date, special fare date, distance price , coupon code and published date.',
-      'Admin can set the special fare increase for any particular day in terms of setting any value in number or in percentile, for example, on Christmas, you can hike the fare by 10% or decrease the fare by 10%',
-      'E-mail alerts for different actions like payment status, booking cancel, booking confirm, booking status, booking success, reset password, new user registration with personalized message.',
-      'Coupons are available weapons for business growth, to increase the conversions, admin can set the coupon code for value or percentile, there is a provision for coupon validity period also.',
-      'To disable any vehicle for a certain period of time, due to non-availability of vehicle, then admin can deactivate for not showing it for users.',
-      'Visitors can request the callback, all these details are stored in the system, where admin can follow up them manually.'
-    ],
-    challenges: [
-      'Real-time GPS tracking accuracy',
-      'Peak hour demand management',
-      'Driver-customer communication'
-    ],
-    solutions: [
-      'Integrated high-precision GPS with geofencing',
-      'Implemented dynamic pricing algorithm',
-      'Built in-app chat system with push notifications'
-    ],
-    stats: [
-      { label: '15+ Countries', icon: '🏙️' },
-      { label: '180K+ Customers', icon: '👥' },
-      { label: 'Robust Design', icon: '⚡' },
-      { label: 'Responsive', icon: '📍' }
-    ]
-  },
-  {
-    id: 3,
-    slug: 'crm-saas',
-    title: 'Bot Billing (SaaS) CRM & Project Management development project',
-    description:
-      'This system is the most competent to manage sales, purchase orders, recurring invoices, contracts with the utmost.',
-    image: '/portfolio/saasbanner.png',
-    imageintroduction: '/portfolio/saashero.png',
-    introductionText:
-      'Bot Billing (SaaS) CRM & Project Management streamlines sales, invoices, orders, tasks, and contracts with real-time collaboration, lead tracking, follow-up alerts, and insightful sales reports.',
-    category: 'Bot Billing (SaaS) CRM & Project Management',
-    subcategory:
-      'Bot Billing (SaaS) CRM & Project Management is the ultimate tool to streamline sales, projects, and contracts. Keep tasks in one place, collaborate in real-time, and track customer leads and orders effortlessly. Gain insights with reports and never miss a follow-up with automated notifications.',
-    technologies: ['Angular', 'Python Django', 'PostgreSQL', 'Redis'],
-    duration: '6-8 months',
-    client: 'Enterprise Solutions Ltd.',
-    features: [
-      'Invoices',
-      'Quotes',
-      'Recurring Invoices',
-      'Cart Orders',
-      'Projects',
-      'E-mail/ Sms Templates',
-      'Accounting',
-      'Messaging System',
-      'Plug-ins',
-      'Leads',
-      'User Management'
-    ],
-    subfeatures: [
-      'The SaaS CRM generates detailed invoices with product information, taxes, discounts, and total price upon customer confirmation. It also offers payment initiation options through various gateways, streamlining the purchasing process.',
-
-      'SaaS has the ability to send quotes to the customer except leads before the payments are made with all the product details including taxes, discounts and fixed prices. Quotes are a preview of product details before confirmation by the customer.',
-
-      'Recurring invoices that can be configured to a specific period of time of the day and hour. when the action to be performed. The SaaS CRM generates recurring invoices, scheduled at specific times, triggering alerts for timely invoice generation.',
-
-      'SAAS helps both the customers and admin to place more than one order or payment at the same time by placing all the selected products into cart and make payment at a time. Admin can also place the products into cart on behalf of customer’s requests.',
-
-      'SaaS simplifies project management with budgeting, expense tracking, and flexible billing options. Efficiently manage projects, track progress, and optimize operations with intuitive sub-modules. Versatile billing methods for efficient project management.',
-
-      'SAAS offers email templates with predefined formats, including addresses (From, To, Cc, Bcc), subject, and body text. It also allows customization of SMS templates, enabling predefined formats for SMS content with sender and receiver details.',
-
-      'SAAS has the ultimate ability to keeping track of all the transactions such as payments, credit notes, and refunding over a large period of time. All incomes, expenses, profits, losses are tracked and calculated',
-
-      'SAAS messaging system integrates with MailChimp, facilitating message sending and receiving. Manage Inbox and Outbox messages effortlessly for streamlined communication.',
-
-      'Plug-ins allow you to optimize or customize this application to some extent by activating or deactivating the plug-ins of your choice or requirement',
-
-      'SaaS CRM enables the process of initiating an inquiry about the product in order to know the interests of customers and categorize them as leads so that they will be able to get the proposals.',
-
-      'Specific administrative structure, as well as to group users in any other way and to define the access and permission settings.'
-    ],
-    challenges: [
-      'Complex billing rule engine',
-      'Multi-tenant architecture',
-      'Data security compliance'
-    ],
-    solutions: [
-      'Built flexible rule engine with visual configuration',
-      'Implemented secure tenant isolation',
-      'Added SOC 2 compliance features'
-    ],
-    stats: [
-      { label: '12 + Countries', icon: '🏢' },
-      { label: '125 + Customers', icon: '⚡' },
-      { label: 'Robust Design', icon: '🔐' },
-      { label: 'Responsive', icon: '🤖' }
-    ]
-  },
-  {
-    id: 4,
-    slug: 'online-exam',
-    title: 'Online Learning & Examination System',
-    description:
-      'Online Examination System is a secure learning and assessment solution that supports creating various formats...',
-    image: '/portfolio/oesbanner.png',
-    imageintroduction: '/portfolio/OES1.webp',
-    introductionText:
-      'Admin controls student categories, tests, feedback, pages, FAQs, blogs, newsletters, resume builder, search, fraud disable, exam layout, CMS, multilingual exams, themes, RazorPay, reCaptcha, & LMS features.',
-    category: 'Online Learning & Examination System',
-    subcategory:
-      'The administrator can assign categories to students and display approved testimonials on the front end. Additionally, the system offers features such as a search bar, newsletter subscription, and resume builder to enhance user experience.',
-    technologies: ['React', 'Express.js', 'MongoDB', 'WebRTC'],
-    duration: '5-7 months',
-    client: 'EduTech Institute',
-    features: [
-      'Secure online examinations',
-      'Video proctoring',
-      'Question bank management',
-      'Automated grading',
-      'Certificate generation',
-      'Learning analytics'
-    ],
-    challenges: [
-      'Preventing cheating during online exams',
-      'Handling large concurrent users',
-      'Question randomization'
-    ],
-    solutions: [
-      'Implemented AI-powered proctoring system',
-      'Used load balancing and CDN for scalability',
-      'Built dynamic question randomization algorithm'
-    ],
-    stats: [
-      { label: '17+ Countries', icon: '🎓' },
-      { label: '110 K+ Customers', icon: '👨‍🎓' },
-      { label: 'Robust Design', icon: '🤖' },
-      { label: 'Responsive', icon: '🔒' }
-    ]
-  },
-  {
-    id: 5,
-    slug: 'graduates-portal',
-    title: 'Graduates Leads Conqr Development',
-    description:
-      'This is an education portal helpful for students who are seeking information on the higher education.',
-    image: '/portfolio/GE1-1.webp',
-    imageintroduction: '/portfolio/GE-1.webp',
-    introductionText:
-      'Graduates Leads Conqr offers info on 2,000+ US institutions and 25,000+ courses across fields like Management and Science, helping students explore and choose the right path for their studies.',
-    category: 'Graduates Leads Conqr',
-    subcategory:
-      'Graduates Leads Conqr is a one-stop platform for students to explore and secure admissions to undergraduate and postgraduate courses in USA. It provides reliable information on 2,000+ institutions and 25,000+ courses across various educational streams, accessible through both website and mobile site.',
-    technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
-    duration: '3-5 months',
-    client: 'Higher Education Council',
-    features: [
-      'University directory',
-      'Course comparison tools',
-      'Application tracking',
-      'Student community forum',
-      'Scholarship database',
-      'Career guidance'
-    ],
-    challenges: [
-      'Aggregating data from multiple universities',
-      'User engagement and retention',
-      'Content moderation'
-    ],
-    solutions: [
-      'Built automated data scraping with API integrations',
-      'Implemented gamification features',
-      'Added AI-powered content moderation'
-    ],
-    stats: [
-      { label: '500+ Universities', icon: '🎓' },
-      { label: '10k+ Students', icon: '👨‍🎓' },
-      { label: 'Real-time Data', icon: '📊' },
-      { label: 'Community', icon: '👥' }
-    ]
-  },
-  {
     id: 6,
     slug: 'coworks-crm',
     title: 'Coworks CRM & Bookings Development Project',
@@ -352,182 +152,24 @@ const portfolioItems = [
       { label: 'Responsive', icon: '🔄' }
     ]
   },
-  {
-    id: 8,
-    slug: 'learn-eazy',
-    title: 'Learn Eazy - Learn Wise Platform',
-    description:
-      'Learn Eazy platform provides the best learning solutions for the students in the pursuit of realizing their dreams.',
-    image: '/portfolio/hero-1-1.png',
-    imageintroduction: '/portfolio/hero-2-1 (1).webp',
-    introductionText:
-      'An LMS dashboard is an e-learning system with admin, tracking, reporting, and delivery tools—used by 58% of global institutes to manage branches and deliver online training.',
-    category: 'Learn Wise Platform',
-    subcategory:
-      'Learn Wise is a comprehensive e-learning platform that offers a wide range of courses, providing learners with access to high-quality educational content, interactive lessons, and valuable resources to enhance their knowledge and skills in various subjects.',
-    technologies: ['React', 'Firebase', 'TensorFlow', 'WebRTC'],
-    duration: '5-7 months',
-    client: 'LearnEazy Education',
-    features: [
-      'Engaging Tests',
-      'Enriched Teaching Methodology',
-      'Self Assessment'
-    ],
-    subfeatures: [
-      'Learner typically must answer the question by experimenting with animations. This test gives a chance to understand the concepts byexperimenting with the animations as these aren’t time bound.',
-      'In scientific learning activity precedes theoretical conclusions. Theinteractive animations help learner to play around to understand complex concepts which are hard to visualize otherwise.',
-      'The questions of the bank with proper tagging can assess the student’s logical and analytical skills. The tests offer best assessment of the student’s learning gaps.'
-    ],
-    challenges: [
-      'Personalized content recommendation',
-      'Real-time AI tutoring',
-      'Student engagement'
-    ],
-    solutions: [
-      'Built ML-based recommendation engine',
-      'Implemented real-time AI chat system',
-      'Added gamification and rewards system'
-    ],
-    stats: [
-      { label: '10+ Countries', icon: '🤖' },
-      { label: '125+ Customers', icon: '👨‍🎓' },
-      { label: 'Robust Design', icon: '🎯' },
-      { label: 'Responsive', icon: '🎮' }
-    ]
-  },
-  {
-    id: 9,
-    slug: 'stone-trading',
-    title: 'Stone Trading - Inventory & CRM',
-    description:
-      'With Stone Trading, you can say goodbye to the days of manual inventory tracking and complicated spreadsheets.',
-    image: '/portfolio/hero-1.png',
-    imageintroduction: '/portfolio/hero-2.webp',
-    introductionText:
-      'We provide info and services on worktops for kitchens, bathrooms, and commercial spaces with a user-friendly site, detailed specs, and high-quality images for easy exploration and decision-making.',
-    category: 'Stone Trading - Inventory & CRM',
-    subcategory:
-      'We serves as a valuable resource for those interested in finding the perfect worktops for their spaces, offering a seamless browsing experience and essential information, we may include a blog or articles section, offering helpful tips, inspiration, and trends related to worktops.',
-    technologies: ['Angular', 'Java Spring', 'Oracle', 'Redis'],
-    duration: '7-9 months',
-    client: 'Stone Trading Co.',
-    features: [
-      'Contacts & Leads Management',
-      'Manage Product Catalog',
-      'Manage Quotations, Invoices',
-      'Inventory Tracking',
-      'Delivery Tracking',
-      'Reports & Analytics',
-      'Email/SMS Notifications',
-      'Settings',
-      'Support Requests'
-    ],
-    subfeatures: [
-      'Maintain a centralized contact database of customers, suppliers, and partners involved in granite trading. Capture Leads, Enquiries and communication history',
-
-      'Manage and update comprehensive product catalog with details such as types, sizes, colors, stock availability, location, and pricing. Ensuring accurate and organized product listings',
-
-      'Provide accurate pricing and detailed breakdowns of costs related products/ services. Manage Purchase Orders, Efficiently manage quotations and invoices for worktops with streamlined processes.',
-
-      'Tracking Stock quantity, location and movements, Track and manage worktop inventory with precision, ensuring accurate stock levels and streamlined operations.',
-
-      'Track item shipment/delivery progress, timelines, and timely follow-ups, Track worktop deliveries in real-time for enhanced visibility and customer satisfaction.',
-
-      'Customer information, sales data, top-selling products and financial transactions, Drive informed decisions with detailed worktop reports and analytics',
-
-      'Stay informed and connected with timely email and SMS notifications for worktop updates and status changes.',
-      'Provide with the ability to set permissions and access levels, allowing them to control & edit, or manage certain features or data.',
-      'Efficiently handle and resolve support requests regarding kitchen worktops, ensuring customer needs are met promptly and effectively.'
-    ],
-    challenges: [
-      'Complex inventory categorization',
-      'Quality control automation',
-      'Supply chain optimization'
-    ],
-    solutions: [
-      'Built AI-powered inventory categorization',
-      'Implemented automated quality control checks',
-      'Created predictive supply chain analytics'
-    ],
-    stats: [
-      { label: '10+ Countries', icon: '📦' },
-      { label: '125+ Customers', icon: '🏭' },
-      { label: 'Robust Design', icon: '📊' },
-      { label: 'Responsive', icon: '✅' }
-    ]
-  }
 ]
 
 // Meta title mapping for portfolio items
 const metaTitles: Record<string, string> = {
-  'stone-trading': 'Stone Trading-Inventory & CRM Florida ',
-  'vehicle-booking': 'Vehicle Booking Platform Florida ',
-  'crm-saas': 'Bot Billing SaaS CRM & Projects Florida ',
   'coworks-crm': 'Coworks CRM & Booking Development FL ',
   'ecommerce': 'Best E-commerce App Development Florida ',
-  'graduates-portal': 'Graduates Leads Conqr Development FL ',
-  'learn-eazy': 'Learn Wise Platform Florida ',
   'learning-management': 'LMS App Development in Florida ',
-  'online-exam': 'Online Learning & Exam System Florida '
 }
 
 // Meta description mapping for portfolio items
 const metaDescriptions: Record<string, string> = {
-  'stone-trading': 'Professional stone trading inventory and CRM solution in Florida. Manage worktops for kitchens, bathrooms, and commercial spaces with advanced inventory tracking, CRM features, and delivery management.',
-  'vehicle-booking': 'Efficient vehicle booking platform development in Florida. Online taxi booking system with vehicle management, dynamic pricing, coupon codes, and real-time availability for seamless reservations.',
-  'crm-saas': 'Comprehensive SaaS CRM and project management system in Florida. Streamline sales, invoices, orders, tasks, and contracts with real-time collaboration, lead tracking, and automated billing.',
   'coworks-crm': 'Coworks CRM and booking system development in Florida. Streamline office space booking with flexible workspace options including private offices, dedicated desks, meeting rooms, and virtual offices.',
   'ecommerce': 'Leading e-commerce app development services in Florida. Custom B2B & B2C e-commerce solutions with SEO-friendly platforms, customized shopping carts, payment gateways, and order management systems.',
-  'graduates-portal': 'Graduates Leads Conqr development platform in Florida. Connect students with 2000+ US institutions and 25000+ courses for undergraduate and postgraduate admissions across various educational streams.',
-  'learn-eazy': 'Learn Eazy - Learn Wise Platform in Florida. Interactive online learning platform with engaging tests, enriched teaching methodology, animated content, and self-assessment tools for comprehensive student learning.',
   'learning-management': 'An LMS dashboard is an e-learning system with admin, tracking, reporting, and delivery tools—used by 58% of global institutes to manage branches and deliver online training.',
-  'online-exam': 'Advanced online learning and examination system in Florida. Secure exam platform with video proctoring, automated grading, question bank management, certificate generation, and comprehensive learning analytics.'
 }
 
 // Meta keywords mapping for portfolio items
 const metaKeywords: Record<string, string[]> = {
-  'stone-trading': [
-    'stone trading inventory crm florida',
-    'worktops inventory management',
-    'kitchen worktops crm',
-    'stone trading software florida',
-    'inventory tracking system',
-    'crm for stone traders',
-    'worktops delivery tracking',
-    'stone trading florida',
-    'inventory management florida',
-    'crm development florida',
-    'granite trading software',
-    'worktops quotation system'
-  ],
-  'vehicle-booking': [
-    'vehicle booking platform florida',
-    'taxi booking system florida',
-    'online taxi booking',
-    'vehicle reservation system',
-    'ride booking app florida',
-    'taxi management system',
-    'vehicle booking software',
-    'booking platform development florida',
-    'car rental booking system',
-    'transportation booking florida',
-    'vehicle booking app',
-    'fleet management booking'
-  ],
-  'crm-saas': [
-    'saas crm florida',
-    'bot billing crm',
-    'project management crm',
-    'saas billing system florida',
-    'recurring invoice system',
-    'crm project management',
-    'saas crm development florida',
-    'billing crm software',
-    'saas invoicing system',
-    'crm leads management',
-    'project management software florida',
-    'enterprise crm florida'
-  ],
   'coworks-crm': [
     'coworks crm florida',
     'office space booking system',
@@ -556,34 +198,6 @@ const metaKeywords: Record<string, string[]> = {
     'woocommerce development',
     'ecommerce app florida'
   ],
-  'graduates-portal': [
-    'graduates leads conqr florida',
-    'student portal development',
-    'university admission portal',
-    'graduate education portal florida',
-    'college admission system',
-    'student leads management',
-    'education portal florida',
-    'university course finder',
-    'graduate admission platform',
-    'student portal software florida',
-    'education management system',
-    'college search portal florida'
-  ],
-  'learn-eazy': [
-    'learn eazy platform florida',
-    'learn wise platform',
-    'online learning platform florida',
-    'e-learning app development',
-    'interactive learning platform',
-    'student learning app florida',
-    'educational platform development',
-    'online education florida',
-    'learning management platform',
-    'e-learning software florida',
-    'student assessment platform',
-    'educational app development florida'
-  ],
   'learning-management': [
     'lms app development florida',
     'learning management system',
@@ -598,20 +212,6 @@ const metaKeywords: Record<string, string[]> = {
     'training management system florida',
     'school management lms'
   ],
-  'online-exam': [
-    'online exam system florida',
-    'online learning system',
-    'online examination platform',
-    'exam management system florida',
-    'online assessment system',
-    'exam software development florida',
-    'proctored exam system',
-    'online test platform florida',
-    'examination software',
-    'assessment platform florida',
-    'online exam proctoring',
-    'learning examination system florida'
-  ]
 }
 
 // Generate metadata for individual portfolio items
@@ -751,59 +351,6 @@ export default async function PortfolioDetailPage({
       text: 'Wide variety of customer friendly services, flexible to scale up on a need basis, and utilization of virtual office services etc.'
     }
   ]
-  const learneasy = [
-    {
-      title: 'Quiz & Assessments',
-      text: 'Quiz & Assessments available to assess student’s logical & analytical skills'
-    },
-    {
-      title: 'Learn Online',
-      text: 'Students can learn from online using web application / Android application with experimental learning using advanced tools'
-    },
-    {
-      title: 'Notes',
-      text: 'Students can capture notes within the application while studying online'
-    },
-    {
-      title: 'Online Payment',
-      text: 'Payment can be made at convenience as it supports different online modes of payments'
-    },
-    {
-      title: 'Notifications',
-      text: 'Students will receive regular notification updates and reminders'
-    },
-    {
-      title: 'Animated Content',
-      text: ' Engaging interactive content for learning and play in all subjects, including languages, keeping students fully engaged'
-    },
-    {
-      title: 'Study Materials',
-      text: 'All grade study material in one place, including downloadable reference books, for comprehensive learning'
-    }
-  ]
-  const stonetrading = [
-    {
-      title: 'Quiz & Assessments',
-      text: 'Extensive range of worktop options for kitchens, bathrooms, and commercial spaces.'
-    },
-    {
-      title: 'Learn Online',
-      text: 'Students can learn from online using web application / Android application with experimental learning using advanced tools'
-    },
-    {
-      title: 'Notes',
-      text: 'Detailed descriptions, specifications, and visuals for each worktop product.'
-    },
-    {
-      title: 'Online Payment',
-      text: 'Resources and guides on worktop installation, maintenance, and care.'
-    },
-    {
-      title: 'Notifications',
-      text: 'Suitable for individuals and businesses seeking high-quality and visually appealing worktop solutions.'
-    },
-
-  ]
 
   return (
     <>
@@ -903,92 +450,9 @@ export default async function PortfolioDetailPage({
           </div>
         </section>
 
-        {item.id === 4 && (
-          <section className='py-12 md:py-16 lg:py-20 bg-white'>
-            <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-              <h2 className='text-2xl font-bold mb-4'>
-                What's New in the Examination Application?
-              </h2>
-              <ul className='space-y-2 grid lg:grid-cols-2 grid-cols-1 gap-8'>
-                {[
-                  'The Administrator can assign the categories to the students.',
-                  'Frontend CMS Pages',
-                  'All the tests with registration, without registration and paid tests can be appeared on the homepage.',
-                  'Sectional exams',
-                  'Student Feedback about System or Exams based. Only admin approved testimonies will be displayed on the front end.',
-                  'Practice exams',
-                  'Questions display in 2 languages',
-                  'Give an Option to admin for adding Front end pages.',
-                  'Multi layouts management',
-                  'RazorPay Payment Gateway',
-                  'Option for Adding FAQs to Admin, can be shown in front end.',
-                  'reCaptcha Management',
-                  'Email Activation link for Register Users(to avoid duplicate users).',
-                  'LMS as frontend',
-                  'Home Page Search bar.',
-                  'Newsletter Subscription',
-                  'Complete Account Disable option for the admin if any Fraud user/activity.',
-                  'Resume Builder',
-                  'Admin can add Blogs, it can be shown in front end.',
-                  'New Exam Layout'
-                ].map((item, index) => (
-                  <li key={index} className='flex items-start'>
-                    <FaChevronRight className='text-blue-500 mt-1 mr-2' />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
-        )}
 
-        {item.id === 5 && (
-          <section className='py-12 bg-white'>
-            <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-              <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
-                {/* Column 1 */}
-                <div className='text-center md:text-left'>
-                  <FaTrophy className='text-blue-800 text-3xl mx-auto md:mx-0 mb-4' />
-                  <p className='text-gray-800 leading-relaxed text-justify'>
-                    Graduates Leads Conqr is students’ one-stop-solution
-                    platform for exploring courses and helps in admissions to
-                    their dream colleges to pursue undergraduate (UG) and
-                    postgraduate (PG) courses in USA. Along with
-                    website, It is also accessible to users through the mobile
-                    site. Our website is a repository of reliable and authentic
-                    information for over 2,000+ institutions, 25,000+ courses
-                    offer specific information for students interested in UG/PG
-                    courses in USA across the most popular
-                    educational streams – Management, Science & Engineering,
-                    Banking & Finance, Information Technology, Hospitality,
-                    Aviation & Tourism, Medicine, Internship and Test
-                    Assessments.
-                  </p>
-                </div>
 
-                {/* Column 2 */}
-                <div className='text-center md:text-left'>
-                  <FaProjectDiagram className='text-blue-800 text-3xl mx-auto md:mx-0 mb-4' />
-                  <p className='text-gray-800 leading-relaxed text-justify'>
-                    Apart from colleges information, we also provide latest
-                    happenings in education sector for the betterment of each
-                    individual graduate to connect with latest technologies and
-                    research, internships and all sorts of job openings in
-                    public and private sectors. Graduates Engine collecting all
-                    the potential of young USAn graduates to build the
-                    NATION’S POWER as part of self sustainability and global
-                    outreach, all graduates community has a great potential for
-                    knowledge exchange through the community portal. We have
-                    many more options like Preparation of exams and Resume
-                    Preparation tools as well.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
-
-        {item.id !== 4 && item.id !== 5 && item.id !== 7 && (
+        {item.id !== 7 && (
           <section className='py-12 md:py-16 lg:py-20 bg-white'>
             <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
               <h2 className='text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-8 md:mb-12 lg:mb-16 text-center'>
@@ -1147,42 +611,8 @@ export default async function PortfolioDetailPage({
           </section>
         )}
 
-        {item.id === 8 && (
-          <section className='py-10 bg-white'>
-            <div className='max-w-7xl mx-auto px-4'>
-              <ul className='space-y-4'>
-                {learneasy.map((item, idx) => (
-                  <li key={idx} className='flex items-start'>
-                    <FaCheck className='text-green-600 flex-shrink-0 mt-1 mr-3' />
-                    <p className='text-gray-700 leading-relaxed'>
-                      <span className='font-semibold'>{item.title}:</span>{' '}
-                      {item.text}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
-        )}
 
 
-        {item.id === 9 && (
-          <section className='py-10 bg-white'>
-            <div className='max-w-7xl mx-auto px-4'>
-              <ul className='space-y-4'>
-                {stonetrading.map((item, idx) => (
-                  <li key={idx} className='flex items-start'>
-                    <FaCheck className='text-green-600 flex-shrink-0 mt-1 mr-3' />
-                    <p className='text-gray-700 leading-relaxed'>
-
-                      {item.text}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
-        )}
 
         <ManagedServices />
 

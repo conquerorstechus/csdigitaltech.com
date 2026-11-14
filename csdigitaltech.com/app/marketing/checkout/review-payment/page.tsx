@@ -110,30 +110,25 @@ export default function ReviewPaymentPage() {
     }
 
     try {
-      const webhookUrl =
-        process.env.NEXT_PUBLIC_LEAD_WEBHOOK_URL || process.env.NEXT_PUBLIC_WEBHOOK_URL || ''
-
-      if (webhookUrl) {
-        await fetch(webhookUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            formType: 'qoutegen-backend-pricing',
-            ...formData,
-            cartLines: lines.map((s) => ({
-              id: s.id,
-              name: s.name,
-              package: s.quantity,
-              basePrice: s.basePrice,
-              lineQty: s.lineQty ?? 1,
-              lineTotal: lineItemTotal(s),
-            })),
-            subtotal,
-            source: 'checkout/review-payment',
-            submittedAt: submittedAtIso,
-          }),
-        })
-      }
+      await fetch('/api/marketing/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formType: 'qoutegen-backend-pricing',
+          ...formData,
+          cartLines: lines.map((s) => ({
+            id: s.id,
+            name: s.name,
+            package: s.quantity,
+            basePrice: s.basePrice,
+            lineQty: s.lineQty ?? 1,
+            lineTotal: lineItemTotal(s),
+          })),
+          subtotal,
+          source: 'checkout/review-payment',
+          submittedAt: submittedAtIso,
+        }),
+      })
     } catch (err) {
       console.error('Webhook submit failed:', err)
     } finally {
@@ -157,7 +152,7 @@ export default function ReviewPaymentPage() {
         <div className="max-w-7xl mx-auto">
           <Link
             href="/marketing/checkout"
-            className="inline-flex items-center gap-2 text-[#1E5AA8] hover:text-[#154080] mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-[#DC2626] hover:text-[#B91C1C] mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Services
@@ -172,13 +167,13 @@ export default function ReviewPaymentPage() {
                 className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-7 h-full flex flex-col transition-shadow duration-200 hover:shadow-md"
               >
                 <div className="flex items-center gap-3 mb-6">
-                  <User className="w-5 h-5 text-[#1E5AA8]" aria-hidden />
-                  <h2 className="text-lg font-bold text-[#0B2A4A]">Your Details</h2>
+                  <User className="w-5 h-5 text-[#DC2626]" aria-hidden />
+                  <h2 className="text-lg font-bold text-gray-900">Your Details</h2>
                 </div>
 
                 <div className="space-y-5 flex-1">
                   <div>
-                    <label htmlFor="fullName" className="block text-sm font-medium text-[#0B2A4A] mb-2">
+                    <label htmlFor="fullName" className="block text-sm font-medium text-gray-900 mb-2">
                       Full Name
                     </label>
                     <Input
@@ -194,7 +189,7 @@ export default function ReviewPaymentPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-[#0B2A4A] mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
                       Email
                     </label>
                     <Input
@@ -209,7 +204,7 @@ export default function ReviewPaymentPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="phoneNumber" className="block text-sm font-medium text-[#0B2A4A] mb-2">
+                    <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-900 mb-2">
                       Phone Number
                     </label>
                     <Input
@@ -224,7 +219,7 @@ export default function ReviewPaymentPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-[#0B2A4A] mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-2">
                       Message <span className="text-[#6B7280] font-normal">(optional)</span>
                     </label>
                     <textarea
@@ -234,7 +229,7 @@ export default function ReviewPaymentPage() {
                       onChange={handleInputChange}
                       placeholder="Tell us what you’re looking for, any goals, and your timeline."
                       rows={5}
-                      className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#1E5AA8]"
+                      className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
                     />
                   </div>
                 </div>
@@ -244,7 +239,7 @@ export default function ReviewPaymentPage() {
             {/* 2 — Selected services (editable) */}
             <section className="order-2 h-full">
               <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-7 h-full flex flex-col transition-shadow duration-200 hover:shadow-md">
-                <h2 className="text-lg font-bold text-[#0B2A4A] mb-6">Selected services</h2>
+                <h2 className="text-lg font-bold text-gray-900 mb-6">Selected services</h2>
                 <div className="flex-1 min-h-[12rem] space-y-3">
                   {lines.length === 0 ? (
                     <p className="text-sm text-[#6B7280] text-center py-10">No services selected</p>
@@ -258,14 +253,14 @@ export default function ReviewPaymentPage() {
                           className="flex gap-3 items-start justify-between rounded-xl border border-slate-100 bg-slate-50/80 px-4 py-3"
                         >
                           <div className="min-w-0 flex-1">
-                            <p className="text-sm font-semibold text-[#0B2A4A]">{s.name}</p>
+                            <p className="text-sm font-semibold text-gray-900">{s.name}</p>
                             {pkg ? (
                               <p className="text-xs text-[#6B7280] mt-1">
                                 Package: {pkg}
                                 {(s.lineQty ?? 1) > 1 ? ` × ${s.lineQty}` : ''}
                               </p>
                             ) : null}
-                            <p className="text-sm font-semibold text-[#1E5AA8] mt-2 tabular-nums">${total.toFixed(2)}</p>
+                            <p className="text-sm font-semibold text-[#DC2626] mt-2 tabular-nums">${total.toFixed(2)}</p>
                           </div>
                           <button
                             type="button"
@@ -287,7 +282,7 @@ export default function ReviewPaymentPage() {
             <section className="order-3 md:col-span-2 xl:col-span-1 md:order-3 h-full">
               <div className="xl:sticky xl:top-24 flex flex-col gap-4 h-full">
                 <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-7 flex flex-col transition-shadow duration-200 hover:shadow-md">
-                  <h2 className="text-lg font-bold text-[#0B2A4A] mb-6">Summary</h2>
+                  <h2 className="text-lg font-bold text-gray-900 mb-6">Summary</h2>
 
                   <div className="mb-4 max-h-48 overflow-y-auto space-y-2 pr-1">
                     {lines.length === 0 ? (
@@ -298,7 +293,7 @@ export default function ReviewPaymentPage() {
                           <span className="text-[#6B7280] truncate" title={s.name}>
                             {s.name}
                           </span>
-                          <span className="font-medium text-[#0B2A4A] tabular-nums shrink-0">
+                          <span className="font-medium text-gray-900 tabular-nums shrink-0">
                             ${lineItemTotal(s).toFixed(2)}
                           </span>
                         </div>
@@ -307,13 +302,13 @@ export default function ReviewPaymentPage() {
                   </div>
 
                   <div className="border-t border-slate-200 pt-4 space-y-3">
-                    <div className="flex justify-between text-sm text-[#0B2A4A]">
+                    <div className="flex justify-between text-sm text-gray-900">
                       <span>Subtotal</span>
                       <span className="font-semibold tabular-nums">${subtotal.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between items-baseline gap-4 pt-2 border-t border-slate-100">
-                      <span className="text-base font-bold text-[#0B2A4A]">Total</span>
-                      <span className="text-2xl font-bold text-[#1E5AA8] tabular-nums">${subtotal.toFixed(2)}</span>
+                      <span className="text-base font-bold text-gray-900">Total</span>
+                      <span className="text-2xl font-bold text-[#DC2626] tabular-nums">${subtotal.toFixed(2)}</span>
                     </div>
                     <p className="text-xs text-[#6B7280]">USD</p>
                   </div>
@@ -323,7 +318,7 @@ export default function ReviewPaymentPage() {
                     type="submit"
                     form="checkout-review-form"
                     disabled={!canSubmit}
-                    className="mt-6 w-full bg-[#1E5AA8] text-white hover:bg-[#154080] py-3.5 rounded-lg font-semibold text-base transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    className="mt-6 w-full bg-[#DC2626] text-white hover:bg-[#B91C1C] py-3.5 rounded-lg font-semibold text-base transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
                     <Send className="w-4 h-4" />
                     {isSubmitting ? 'Submitting...' : 'Submit Request →'}

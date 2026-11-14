@@ -5,15 +5,15 @@ import Link from "next/link"
 
 export function CTASection() {
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0B2A4A] via-[#1E5AA8] to-[#0B2A4A] relative overflow-hidden">
+    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#262152] via-[#3B3489] to-[#262152] relative overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-[#3FA9F5] rounded-full opacity-10 blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#3FA9F5] rounded-full opacity-10 blur-3xl translate-x-1/2 translate-y-1/2"></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-[#DC2626] rounded-full opacity-10 blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#DC2626] rounded-full opacity-10 blur-3xl translate-x-1/2 translate-y-1/2"></div>
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full">
-          <Sparkles className="w-4 h-4 text-[#3FA9F5]" />
+          <Sparkles className="w-4 h-4 text-[#FFBB1B]" />
           <span className="text-sm font-semibold text-white">Limited Time Offer</span>
         </div>
 
@@ -24,12 +24,12 @@ export function CTASection() {
 
         {/* Subheading and Pricing */}
         <div className="mb-12 space-y-4">
-          <p className="text-xl sm:text-2xl text-blue-100 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl sm:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
             Let our team handle your content so you can focus on growing your business.
           </p>
           <div className="inline-block px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full">
             <p className="text-lg sm:text-xl font-bold text-white">
-              Start Today For Just <span className="text-[#3FA9F5] text-3xl">$99</span><span className="text-blue-100">/month</span>
+              Start Today For Just <span className="text-[#FFBB1B] text-3xl">$99</span><span className="text-gray-200">/month</span>
             </p>
           </div>
         </div>
@@ -37,12 +37,12 @@ export function CTASection() {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <Link href="/marketing/pricing">
-            <Button size="lg" className="bg-white text-[#0B2A4A] hover:bg-blue-50 px-10 py-7 text-lg font-bold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+            <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-50 px-10 py-7 text-lg font-bold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
               Get Started Now
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </Link>
-          <Link href={SCHEDULE_APPOINTMENT_URL}>
+          <Link href={SCHEDULE_APPOINTMENT_URL} target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
               className="border-2 border-white text-white hover:bg-white/10 px-10 py-7 text-lg font-bold bg-transparent backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
@@ -53,7 +53,7 @@ export function CTASection() {
         </div>
 
         {/* Trust signal */}
-        <p className="mt-12 text-blue-100 text-sm">
+        <p className="mt-12 text-gray-200 text-sm">
           Join 50+ growing businesses already transforming their social media presence
         </p>
       </div>

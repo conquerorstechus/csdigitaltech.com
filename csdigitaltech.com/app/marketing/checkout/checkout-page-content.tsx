@@ -244,7 +244,7 @@ export function CheckoutPageContent() {
         <div className="max-w-7xl mx-auto">
           <Link
             href="/marketing/pricing"
-            className="inline-flex items-center gap-2 text-[#1E5AA8] hover:text-[#154080] mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-[#DC2626] hover:text-[#B91C1C] mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Pricing
@@ -253,22 +253,22 @@ export function CheckoutPageContent() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             <div className="lg:col-span-2">
               <div className="mb-8">
-                <h1 className="text-4xl font-bold text-[#0B2A4A] mb-2">Select Services</h1>
+                <h1 className="text-4xl font-bold text-gray-900 mb-2">Select Services</h1>
                 <p className="text-lg text-[#6B7280] mb-4">Pick your services, cancel anytime.</p>
 
                 <div className="space-y-2 mb-8">
                   <div className="flex items-start gap-3">
-                    <span className="text-[#1E5AA8] font-bold mt-1">•</span>
+                    <span className="text-[#DC2626] font-bold mt-1">•</span>
                     <span className="text-sm text-[#6B7280]">
                       Top Digital Marketing Services in one platform
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="text-[#1E5AA8] font-bold mt-1">•</span>
+                    <span className="text-[#DC2626] font-bold mt-1">•</span>
                     <span className="text-sm text-[#6B7280]">Expert marketers and creatives</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="text-[#1E5AA8] font-bold mt-1">•</span>
+                    <span className="text-[#DC2626] font-bold mt-1">•</span>
                     <span className="text-sm text-[#6B7280]">Trusted digital marketing solutions</span>
                   </div>
                 </div>
@@ -296,7 +296,7 @@ export function CheckoutPageContent() {
             onClick={() => router.push('/marketing/checkout/review-payment')}
             className={[
               'hidden sm:flex fixed bottom-6 right-6 z-40 items-center gap-2 rounded-full',
-              'bg-[#1E5AA8] text-white px-5 py-3 shadow-lg hover:bg-[#154080] transition-all',
+              'bg-[#DC2626] text-white px-5 py-3 shadow-lg hover:bg-[#B91C1C] transition-all',
               'translate-y-0 opacity-100',
               cartBounce ? 'scale-105' : 'scale-100',
             ].join(' ')}
@@ -311,7 +311,7 @@ export function CheckoutPageContent() {
             onClick={() => router.push('/marketing/checkout/review-payment')}
             className={[
               'sm:hidden fixed bottom-0 left-0 right-0 z-40 flex items-center justify-center gap-2',
-              'bg-[#1E5AA8] text-white px-4 py-3 shadow-[0_-6px_20px_rgba(15,23,42,0.18)]',
+              'bg-[#DC2626] text-white px-4 py-3 shadow-[0_-6px_20px_rgba(15,23,42,0.18)]',
               'transition-all',
               cartBounce ? 'scale-[1.01]' : 'scale-100',
             ].join(' ')}

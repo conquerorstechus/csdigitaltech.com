@@ -22,21 +22,18 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      const webhookUrl = process.env.NEXT_PUBLIC_CONTACT_WEBHOOK_URL || ''
-      if (webhookUrl) {
-        await fetch(webhookUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            formType: 'qoutegen-backend-contact',
-            name: formData.name,
-            email: formData.email,
-            message: formData.message,
-            source: 'contact-us',
-            submittedAt: new Date().toISOString(),
-          }),
-        })
-      }
+      await fetch('/api/marketing/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formType: 'qoutegen-backend-contact',
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          source: 'contact-us',
+          submittedAt: new Date().toISOString(),
+        }),
+      })
     } catch (err) {
       console.error('Webhook error:', err)
     }
@@ -100,11 +97,11 @@ export default function ContactPage() {
                     onChange={handleChange}
                     placeholder="Tell us more about your inquiry..."
                     rows={5}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
                     required
                   />
                 </div>
-                <Button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white w-full flex items-center justify-center gap-2">
+                <Button type="submit" className="bg-red-600 hover:bg-red-700 text-white w-full flex items-center justify-center gap-2">
                   <Send className="w-4 h-4" />
                   Send Message
                 </Button>
@@ -117,7 +114,7 @@ export default function ContactPage() {
             <h2 className="text-2xl font-bold mb-6">Other ways to reach us</h2>
             <div className="space-y-6">
               <div className="flex gap-4">
-                <Mail className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
+                <Mail className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold mb-1">Email</h3>
                   <p className="text-gray-600">contact@conquerorstech.us</p>
@@ -125,7 +122,7 @@ export default function ContactPage() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <Phone className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
+                <Phone className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold mb-1">Phone</h3>
                   <p className="text-gray-600">+1 813-797-6069</p>
@@ -133,7 +130,7 @@ export default function ContactPage() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <MapPin className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
+                <MapPin className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold mb-1">Office</h3>
                   <p className="text-gray-600">19046 Bruce B. Downs Blvd. #1376, Tampa, Florida 33647,</p>
@@ -143,7 +140,7 @@ export default function ContactPage() {
             </div>
 
             {/* FAQ Link */}
-            <div className="mt-8 bg-blue-50 rounded-lg p-6">
+            <div className="mt-8 bg-gray-50 rounded-lg p-6">
               <h3 className="font-semibold mb-2">Quick Help</h3>
               <p className="text-gray-600 mb-4">Check our Help Center for quick answers to common questions.</p>
               <Button variant="outline" className="w-full">
@@ -154,7 +151,7 @@ export default function ContactPage() {
         </div>
 
         <div className="flex justify-center mt-12">
-          <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto">
+          <Button asChild className="bg-red-600 hover:bg-red-700 text-white w-full sm:w-auto">
             <Link href="/marketing#footer">← Back</Link>
           </Button>
         </div>
