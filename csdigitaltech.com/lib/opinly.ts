@@ -4,7 +4,7 @@ import type { OpinlyConfig, SeoResolved } from '@opinly/shared';
 const getSiteUrl = () =>
   process.env.SITE_URL ||
   process.env.NEXT_PUBLIC_SITE_URL ||
-  'https://www.conquerorstech.com';
+  'https://csdigitaltech.com';
 
 const getBlogPrefix = () => process.env.OPINLY_BLOG_PREFIX || '/blog';
 

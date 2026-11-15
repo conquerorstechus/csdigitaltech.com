@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowLeft, Calendar, Clock, User, Share2, Bookmark } from 'lucide-react'
+import { ogImage } from '@/lib/og'
 import { BlogCover } from '@/components/blog/BlogCover'
 import { MarkdownPost } from '@/components/blog/MarkdownPost'
 import {
@@ -23,7 +24,10 @@ export const dynamicParams = true
 
 function blogPostingJsonLd(post: BlogPost) {
   const canonical = postCanonical(post.slug)
-  const image = post.image ? absoluteUrl(post.image) : undefined
+  // Posts with a cover image use it; otherwise fall back to the branded title card.
+  const image = post.image
+    ? absoluteUrl(post.image)
+    : absoluteUrl(ogImage(post.title, post.description).url)
 
   return {
     '@context': 'https://schema.org',
@@ -100,7 +104,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       images: image ? [image] : undefined,
     },
     twitter: {
-      card: image ? 'summary_large_image' : 'summary',
+      card: 'summary_large_image',
       title: post.title,
       description: post.description,
       images: image ? [image] : undefined,

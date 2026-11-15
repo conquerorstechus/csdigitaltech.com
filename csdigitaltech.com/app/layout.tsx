@@ -11,6 +11,8 @@ import PageTransition from "@/components/ui/PageTransition"
 import Loader from "../components/ui/loader"
 import LeadConnectorWidget from "@/components/ui/LeadConnectorWidget"
 import CookieConsent from "@/components/cookie-consent/CookieConsent"
+import { SITE_NAME, SITE_URL } from "@/lib/site"
+import { ogImage } from "@/lib/og"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,10 +26,31 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   display: "swap",
 })
 
+const DEFAULT_TITLE = "Cornerstone Digital Technologies"
+const DEFAULT_DESCRIPTION =
+  "Empowering businesses through innovative technology solutions and digital transformation services."
+const defaultCard = ogImage("Software, AI & Digital Marketing for Growing Businesses")
+
 export const metadata: Metadata = {
-  title: "Cornerstone Digital Technologies",
-  description:
-    "Empowering businesses through innovative technology solutions and digital transformation services.",
+  metadataBase: new URL(SITE_URL),
+  title: DEFAULT_TITLE,
+  description: DEFAULT_DESCRIPTION,
+  // Fallback link preview for any page that does not define its own.
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "en_US",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    url: SITE_URL,
+    images: [defaultCard],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    images: [defaultCard.url],
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },

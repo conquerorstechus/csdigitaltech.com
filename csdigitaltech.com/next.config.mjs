@@ -14,6 +14,11 @@ const nextConfig = {
     unoptimized: true,
   },
 
+  // The /og link-preview route reads fonts and the logo from disk at request time.
+  outputFileTracingIncludes: {
+    '/og': ['./assets/fonts/**/*', './public/cornerstone-logo.png'],
+  },
+
   async headers() {
     return [
       {

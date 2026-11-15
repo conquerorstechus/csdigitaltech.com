@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
 
 const BLOG_PREFIX = process.env.OPINLY_BLOG_PREFIX || '/blog';
-const SITE_URL = process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://www.conquerorstech.com';
+const SITE_URL = process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://csdigitaltech.com';
 
 function normalizePath(pathname: string) {
   if (!pathname || pathname === '/') return '/';

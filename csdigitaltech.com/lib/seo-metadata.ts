@@ -1,5 +1,7 @@
 // lib/seo-metadata.ts
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
+import { ogImage } from "@/lib/og";
 
 export function getMetadata(
   pageTitle: string,
@@ -9,9 +11,12 @@ export function getMetadata(
   keywords: string[] = []
 ): Metadata {
   // Use environment variable for domain or fallback to localhost for development
-  const domain = process.env.NEXT_PUBLIC_SITE_URL || "https://conquerorstech.com";
+  const domain = SITE_URL;
   const fullUrl = `${domain}${pagePath}`;
-  const fullImage = `${domain}${imagePath}`;
+  // Every page gets a branded, page-specific 1200x630 preview card (WhatsApp, Slack, LinkedIn, X...).
+  // `imagePath` is kept for API compatibility but no longer drives the preview.
+  const card = ogImage(pageTitle, pageDescription);
+  const fullImage = `${domain}${card.url}`;
 
   // Convert keywords array to string if it's an array, or use as is if it's already a string
   const keywordsString = Array.isArray(keywords) ? keywords.join(", ") : keywords;
@@ -26,15 +31,7 @@ export function getMetadata(
       description: pageDescription,
       url: fullUrl,
       siteName: "Cornerstone Digital Technologies",
-      images: [
-        {
-          url: fullImage,
-          width: 1200,
-          height: 630,
-          alt: pageTitle,
-          type: "image/jpeg",
-        },
-      ],
+      images: [{ ...card, url: fullImage }],
       locale: "en_US",
       type: "website",
     },
@@ -96,7 +93,7 @@ export function getStructuredData(
   pageType: "Organization" | "WebPage" | "Service" | "Article" | "SoftwareApplication" | "LocalBusiness" | "FAQPage" | "BreadcrumbList" = "WebPage",
   additionalData?: any
 ) {
-  const domain = process.env.NEXT_PUBLIC_SITE_URL || "https://conquerorstech.com";
+  const domain = SITE_URL;
   const fullUrl = `${domain}${pagePath}`;
 
   const baseStructuredData = {
@@ -303,7 +300,7 @@ export function getStructuredData(
 
 // Schema for Software Development Services in Florida
 export function getSoftwareDevelopmentServicesFloridaSchema() {
-  const domain = process.env.NEXT_PUBLIC_SITE_URL || "https://conquerorstech.com";
+  const domain = SITE_URL;
   
   return {
     "@context": "https://schema.org",
@@ -396,7 +393,7 @@ export function getSoftwareDevelopmentServicesFloridaSchema() {
 
 // Schema for AI & IT Consulting Services in Florida
 export function getAITConsultingServicesFloridaSchema() {
-  const domain = process.env.NEXT_PUBLIC_SITE_URL || "https://conquerorstech.com";
+  const domain = SITE_URL;
   
   return {
     "@context": "https://schema.org",
@@ -539,7 +536,7 @@ export function getAITConsultingServicesFloridaSchema() {
 
 // Schema for AI & ML Services in Florida
 export function getAIMLServicesFloridaSchema() {
-  const domain = process.env.NEXT_PUBLIC_SITE_URL || "https://conquerorstech.com";
+  const domain = SITE_URL;
   
   return {
     "@context": "https://schema.org",
@@ -606,7 +603,7 @@ export function getAIMLServicesFloridaSchema() {
 
 // Schema for AI-Driven Custom LLMs for Enterprises in Florida
 export function getCustomLLMsFloridaSchema() {
-  const domain = process.env.NEXT_PUBLIC_SITE_URL || "https://conquerorstech.com";
+  const domain = SITE_URL;
   
   return {
     "@context": "https://schema.org",
@@ -672,7 +669,7 @@ export function getCustomLLMsFloridaSchema() {
 
 // Schema for AI-Powered Learning Solutions in Florida, USA
 export function getAILearningSolutionsFloridaSchema() {
-  const domain = process.env.NEXT_PUBLIC_SITE_URL || "https://conquerorstech.com";
+  const domain = SITE_URL;
   
   return {
     "@context": "https://schema.org",
@@ -738,7 +735,7 @@ export function getAILearningSolutionsFloridaSchema() {
 
 // Schema for AI-Powered MMRAG Services in Florida
 export function getAIPoweredMMRAGServicesFloridaSchema() {
-  const domain = process.env.NEXT_PUBLIC_SITE_URL || "https://conquerorstech.com";
+  const domain = SITE_URL;
   
   return {
     "@context": "https://schema.org",
@@ -804,7 +801,7 @@ export function getAIPoweredMMRAGServicesFloridaSchema() {
 
 // Schema for Data Analytics & BI in Florida
 export function getDataAnalyticsBIFloridaSchema() {
-  const domain = process.env.NEXT_PUBLIC_SITE_URL || "https://conquerorstech.com";
+  const domain = SITE_URL;
   
   return {
     "@context": "https://schema.org",
@@ -870,7 +867,7 @@ export function getDataAnalyticsBIFloridaSchema() {
 
 // Schema for AI-Driven Data Science & Analytics Services
 export function getDataScienceServicesSchema() {
-  const domain = process.env.NEXT_PUBLIC_SITE_URL || "https://conquerorstech.com";
+  const domain = SITE_URL;
   
   return {
     "@context": "https://schema.org",
@@ -936,7 +933,7 @@ export function getDataScienceServicesSchema() {
 
 // Schema for Digital & Cloud Solutions in Florida
 export function getDigitalCloudSolutionsFloridaSchema() {
-  const domain = process.env.NEXT_PUBLIC_SITE_URL || "https://conquerorstech.com";
+  const domain = SITE_URL;
   
   return {
     "@context": "https://schema.org",
@@ -1002,7 +999,7 @@ export function getDigitalCloudSolutionsFloridaSchema() {
 
 // Schema for Cloud Services in Florida
 export function getCloudServicesFloridaSchema() {
-  const domain = process.env.NEXT_PUBLIC_SITE_URL || "https://conquerorstech.com";
+  const domain = SITE_URL;
   
   return {
     "@context": "https://schema.org",
@@ -1075,7 +1072,7 @@ export function getCloudServicesFloridaSchema() {
 
 // Schema for Software Testing Services in Florida
 export function getTestingServicesFloridaSchema() {
-  const domain = process.env.NEXT_PUBLIC_SITE_URL || "https://conquerorstech.com";
+  const domain = SITE_URL;
   
   return {
     "@context": "https://schema.org",
@@ -1148,7 +1145,7 @@ export function getTestingServicesFloridaSchema() {
 
 // Schema for Branding Agency Services
 export function getBrandingAgencyServicesSchema() {
-  const domain = process.env.NEXT_PUBLIC_SITE_URL || "https://conquerorstech.com";
+  const domain = SITE_URL;
   
   return {
     "@context": "https://schema.org",
@@ -1214,7 +1211,7 @@ export function getBrandingAgencyServicesSchema() {
 
 // Schema for Mobile App Development Services
 export function getMobileAppDevelopmentServicesSchema() {
-  const domain = process.env.NEXT_PUBLIC_SITE_URL || "https://conquerorstech.com";
+  const domain = SITE_URL;
   
   return {
     "@context": "https://schema.org",
@@ -1280,7 +1277,7 @@ export function getMobileAppDevelopmentServicesSchema() {
 
 // Schema for Custom Web Application Development Services
 export function getWebDevelopmentServicesSchema() {
-  const domain = process.env.NEXT_PUBLIC_SITE_URL || "https://conquerorstech.com";
+  const domain = SITE_URL;
   
   return {
     "@context": "https://schema.org",

@@ -5,6 +5,7 @@ import ManagedServices from '@/components/ManagedServices/ManagedServices'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { SITE_URL } from '@/lib/site'
 import { FaCheck, FaChevronRight, FaTrophy } from 'react-icons/fa6'
 import { FaArrowRight, FaProjectDiagram } from 'react-icons/fa'
 
@@ -314,7 +315,7 @@ export default async function PortfolioDetailPage({
     `/portfolio/${slug}`,
     'SoftwareApplication',
     {
-      image: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://conquerorstech.com'}${item.image}`,
+      image: `${SITE_URL}${item.image}`,
       operatingSystem: item.technologies.join(', '),
       features: item.features,
       screenshots: [item.image, item.imageintroduction].filter(Boolean)

@@ -1,6 +1,7 @@
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
+import { SITE_URL } from '@/lib/site'
 
 export type BlogFaq = {
   question: string
@@ -26,12 +27,7 @@ const contentDir = path.join(process.cwd(), 'content', 'blog')
 let cachedPosts: BlogPost[] | null = null
 
 export function getSiteUrl(): string {
-  const raw =
-    process.env.NEXT_PUBLIC_SITE_URL ||
-    process.env.SITE_URL ||
-    process.env.OPINLY_SITE_URL ||
-    'https://csdigitaltech.com'
-  return raw.replace(/\/$/, '')
+  return SITE_URL
 }
 
 export function absoluteUrl(pathnameOrUrl: string): string {
