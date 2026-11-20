@@ -5,7 +5,7 @@ import { ogImage } from '@/lib/og'
 import { SITE_NAME } from '@/lib/site'
 import './marketing.css'
 
-const TITLE = 'Digital Marketing Services from $99/mo | Cornerstone Digital Technologies'
+const TITLE = 'Digital Marketing Services from $99/mo | Cornerstone Digital'
 const DESCRIPTION =
   'Social media management, content creation, SEO and paid ads for growing brands. Transparent pricing starting at $99/month.'
 const card = ogImage('Digital Marketing from $99/mo', DESCRIPTION)

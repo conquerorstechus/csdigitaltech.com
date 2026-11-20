@@ -1,5 +1,13 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/marketing/ui/button'
+
+export const metadata: Metadata = {
+  title: 'Terms of Service | Cornerstone Digital Technologies',
+  description:
+    'The terms for using Cornerstone Digital Technologies digital marketing services, including subscriptions, billing, cancellation and refunds.',
+  alternates: { canonical: '/marketing/terms' },
+}
 
 export default function TermsOfService() {
   return (

@@ -1,5 +1,13 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/marketing/ui/button'
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | Cornerstone Digital Technologies',
+  description:
+    'How Cornerstone Digital Technologies collects, uses and protects your information when you use our digital marketing services and website.',
+  alternates: { canonical: '/marketing/privacy' },
+}
 
 export default function PrivacyPolicy() {
   return (

@@ -10,9 +10,14 @@ import CTASection from './landingpage/CTASection'
 import Techno from './landingpage/Techno'
 import StructuredData from '@/components/ui/StructuredData'
 
-export const metadata = getComprehensiveMetadata(
+// Keep the title at 30-60 characters and the description at 70-160 for search snippets.
+const TITLE = 'Software Development Company Florida | Cornerstone Digital'
+const DESCRIPTION =
+  'Florida software development company building web, mobile, AI/IoT and cloud solutions, plus IT consulting. Based in Tampa.'
+
+const homeMetadata = getComprehensiveMetadata(
   'Software Development Company Florida',
-  'Expert Software development company in Florida. Cornerstone Digital Technologies powers business growth with advanced web, mobile development, AI/IoT, cloud tech, and IT consulting based in Tampa.',
+  DESCRIPTION,
   '/',
   '/cornerstone-logo.png',
   [
@@ -59,10 +64,19 @@ export const metadata = getComprehensiveMetadata(
   'Organization'
 )
 
+// getComprehensiveMetadata appends the brand to every title, which pushes the
+// home title past 60 characters, so set the final title explicitly here.
+export const metadata = {
+  ...homeMetadata,
+  title: { absolute: TITLE },
+  openGraph: { ...homeMetadata.openGraph, title: TITLE },
+  twitter: { ...homeMetadata.twitter, title: TITLE },
+}
+
 export default function HomePage () {
   const structuredData = getStructuredData(
     'Software Development Company Florida',
-    'Expert Software development company in Florida. Cornerstone Digital Technologies powers business growth with advanced web, mobile development, AI/IoT, cloud tech, and IT consulting based in Tampa.',
+    DESCRIPTION,
     '/',
     'Organization'
   )
