@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/marketing/hero-section"
+import { marketingMeta } from "@/lib/marketing-metadata"
 import { SocialChannels } from "@/components/marketing/social-channels"
 import { TrustSection } from "@/components/marketing/trust-section"
 import { ExamplesSection } from "@/components/marketing/examples-section"
@@ -7,6 +8,9 @@ import { ClientReviewsSection } from "@/components/marketing/client-reviews"
 import { FeaturesSection } from "@/components/marketing/features-section"
 import { FAQSection } from "@/components/marketing/faq-section"
 import { CTASection } from "@/components/marketing/cta-section"
+
+export const metadata = marketingMeta("/marketing")
+
 export default function HomePage() {
   return (
     <main className="min-h-screen">

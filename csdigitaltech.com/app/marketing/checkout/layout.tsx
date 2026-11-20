@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 
 // Cart and confirmation pages have no search value.
 export const metadata: Metadata = {
+  title: 'Checkout | Cornerstone Digital Technologies',
   robots: { index: false, follow: false },
 }
 

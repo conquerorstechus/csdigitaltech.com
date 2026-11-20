@@ -13,8 +13,10 @@ const card = ogImage('Digital Marketing from $99/mo', DESCRIPTION)
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  openGraph: { type: 'website', siteName: SITE_NAME, title: TITLE, description: DESCRIPTION, url: '/marketing', images: [card] },
-  twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: [card.url] },
+  // Title, description, and URL stay off this layout so each page can set its own.
+  // Otherwise every marketing URL inherits this homepage title and og:url.
+  openGraph: { type: 'website', siteName: SITE_NAME, images: [card] },
+  twitter: { card: 'summary_large_image', images: [card.url] },
 }
 
 export default function MarketingLayout({ children }: { children: ReactNode }) {

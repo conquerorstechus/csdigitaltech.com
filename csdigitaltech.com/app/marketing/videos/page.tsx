@@ -1,9 +1,10 @@
 import { shortFormVideosPageContent } from "@/components/marketing/service-pages/dedicated-service-config"
+import { marketingMeta } from "@/lib/marketing-metadata"
 
-export const metadata = {
+export const metadata = marketingMeta("/marketing/videos", {
   title: shortFormVideosPageContent.metaTitle,
   description: shortFormVideosPageContent.metaDescription,
-}
+})
 
 export default function ShortFormVideosPage() {
   const videoSrc = new URL('../../../components/marketing/service-pages/coming soon.mp4', import.meta.url).toString()

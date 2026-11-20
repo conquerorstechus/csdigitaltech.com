@@ -1,7 +1,14 @@
 import { PricingHero } from "@/components/marketing/pricing/pricing-hero"
+import { marketingMeta } from "@/lib/marketing-metadata"
 import { DynamicPricingSection } from "@/components/marketing/pricing/dynamic-pricing-section"
 import { ServiceCardsGrid } from "@/components/marketing/pricing/service-cards-grid"
 import { DYNAMIC_PRICING_TAB_ORDER, type DynamicPricingTabId } from "@/components/marketing/pricing/dynamic-pricing-data"
+
+export const metadata = marketingMeta("/marketing/pricing", {
+  title: "Marketing Pricing from $99/mo | Cornerstone Digital Technologies",
+  description:
+    "Transparent pricing for social media posts, paid ads, SEO, video, and email design. Plans start at $99/month.",
+})
 
 // In Next.js 15+, searchParams is a Promise in Server Components
 export default async function PricingPage({

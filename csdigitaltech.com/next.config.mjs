@@ -1,5 +1,3 @@
-import { withOpinlyConfig } from '@opinly/next/config'
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
@@ -115,16 +113,4 @@ const nextConfig = {
   },
 }
 
-export default withOpinlyConfig({
-  blogPath: '/blog',
-  imagesPath: '/images',
-  companyName: 'Cornerstone Digital Technologies',
-
-  cdnNamespace:
-    process.env.OPINLY_CDN_NAMESPACE || 'qjV-Vnn6mIXlr2x3a1dgQ',
-
-  siteUrl:
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://csdigitaltech.com',
-
-  unoptimizedImages: true,
-})(nextConfig)
+export default nextConfig

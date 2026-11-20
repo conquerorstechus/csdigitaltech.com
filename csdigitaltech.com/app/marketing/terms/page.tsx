@@ -1,13 +1,12 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/marketing/ui/button'
+import { marketingMeta } from '@/lib/marketing-metadata'
 
-export const metadata: Metadata = {
+export const metadata = marketingMeta('/marketing/terms', {
   title: 'Terms of Service | Cornerstone Digital Technologies',
   description:
     'The terms for using Cornerstone Digital Technologies digital marketing services, including subscriptions, billing, cancellation and refunds.',
-  alternates: { canonical: '/marketing/terms' },
-}
+})
 
 export default function TermsOfService() {
   return (

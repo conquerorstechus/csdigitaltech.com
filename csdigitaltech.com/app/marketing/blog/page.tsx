@@ -1,7 +1,14 @@
 import { Badge } from '@/components/marketing/ui/badge'
+import { marketingMeta } from '@/lib/marketing-metadata'
 import Link from 'next/link'
 import Image from 'next/image'
 import { AllServicesSection } from '@/components/marketing/pricing/service-cards-grid'
+
+export const metadata = marketingMeta('/marketing/blog', {
+  title: 'Marketing Blog | Cornerstone Digital Technologies',
+  description:
+    'Guides on social media management, paid ads, SEO, and agency pricing from Cornerstone Digital Technologies.',
+})
 
 const blogPosts = [
   {
