@@ -3,8 +3,8 @@ import StructuredData from '@/components/ui/StructuredData'
 import WebDevelopmentClient from './WebDevelopmentClient'
 
 export const metadata = getComprehensiveMetadata(
-  'Web App Development Company Florida',
-  'Partner with Cornerstone Digital Technologies to get high-quality custom web applications that drive growth, increase user engagement, and support your long-term digital strategy.',
+  'Custom Software Development Florida',
+  'Custom web app development in Florida for small and mid-size businesses. Reliable solutions that help you grow and engage customers.'
   '/web-development',
   '/WebDevlopment/2020-08-05-3.jpg',
   [
