@@ -3,8 +3,8 @@ import StructuredData from '@/components/ui/StructuredData'
 import MobileAppDevelopmentClient from './MobileAppDevelopmentClient'
 
 export const metadata = getComprehensiveMetadata(
-  'Mobile App Development Company Florida',
-  'Grow your business with Cornerstone Digital Technologies — a top mobile app development company that builds high-performing, engaging apps to delight your users and accelerate success.',
+  'Mobile App Development Florida',
+  'Mobile app development for Florida businesses. Get a reliable, easy-to-use app built for your users and your goals.'
   '/mobile-app-development',
   '/WebDevlopment/smartphone-with-open-pages-landing-page_52683-22969.jpg',
   [
